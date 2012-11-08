@@ -1,0 +1,147 @@
+\documentclass[prc,12pt]{revtex4}
+%\documentclass[12pt]{article}
+
+%\usepackage{graphics}
+\usepackage[dvipdf]{graphicx}
+%\usepackage{subfig}  % For subfloats
+\usepackage{subfigure}  % For subfloats
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{epsfig}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage{amsmath}
+\usepackage{footmisc}
+\usepackage{titlesec}
+%\usepackage{subfigure}
+\usepackage{hyperref}
+\usepackage{float}
+\newcommand{\footlabel}[2]{%
+    \addtocounter{footnote}{1}
+    \footnotetext[\thefootnote]{%
+        \addtocounter{footnote}{-1}%
+        \refstepcounter{footnote}\label{#1}%
+        #2%
+    }%
+    $^{\ref{#1}}$%
+}
+
+%\newcommand{\footref}[1]{%
+%    $^{\ref{#1}}$%
+%}
+\def \rarr {\rightarrow}
+\def \grinp {\includegraphics}
+\def \tw {\textwidth}
+\def\dfrac#1#2{\displaystyle{{#1}\over{#2}}}
+\def \dstl {\displaystyle}
+\definecolor{GREEN}{rgb}{0.,0.8,0}
+\definecolor{RED}{rgb}{1,0,0}
+\definecolor{ORANGE}{rgb}{1,0.5,0}
+%
+\newcommand{\red[1]}{{\color{red}{\bf #1}}}
+\newcommand{\justifyheading}{\raggedright}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\justifyheading}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\justifyheading}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\justifyheading}{\thesubsubsection}{1em}{}
+
+\renewcommand*{\thesection}{\arabic{section}}
+\renewcommand*{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand*{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+\begin{document}
+
+\title{\bf\large{Heavy Photon Search Experiment at Jefferson Laboratory: proposal for 2014-2015 run}}
+
+\input{author_list}
+\date{\today}
+
+\begin{abstract}
+%\vspace{2.cm}
+\clearpage
+
+The Heavy Photon Search (HPS) experiment will search for a new heavy vector boson, aka “heavy photon”, at Jefferson Laboratory. The HPS proposal was conditionally approved, C1, with "A" rating by the Jefferson Laboratory PAC39  on Jun of 2012. 
+
+\end{abstract}
+
+\maketitle
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\input{introduction}
+
+\input{physics_motivation}
+
+
+\clearpage
+
+
+\input{measurements}
+
+
+\clearpage
+
+
+
+\input{hps_setup}
+
+\input{beamline/beamline}
+\clearpage
+
+\input{svt/svt}
+\clearpage
+
+\input{ecal/ecal}
+\clearpage
+
+\input{muon/muon_system}
+\clearpage
+
+\subsection{Trigger and Data Acquisition {\it Sergey, Valery, Pelle, Chris, Ben, Sho}}
+\label{sec:daq}
+\input{daq/daq}
+
+\clearpage
+\section{May-2012 Test Run {\it John}}
+\label{sec:testrun2012}
+\input{test2012/testrun}
+
+\section{HPS Performance Studies {\it Takashi, Matt, Maurik, Pelle, Sho, Joey}}
+\label{sec:performance}
+
+ \subsection{Simulation of backgrounds and detector occupancies}
+\label{sec:backgrounds}
+\input{backgrounds/backgrounds}
+
+\subsection{Trigger rates: ECal and muon detector}
+
+\subsection{Track reconstruction}
+
+\subsection{Cluster reconstruction}
+
+\subsection{Muon identification}
+
+\section{Data analysis strategy {\it Maurik, Homer, Norman}}
+
+\subsection{Data transfer and storage}
+\subsection{Detector performance verification}
+\subsection{Blinding and unblinding the data}
+
+\clearpage
+
+
+\section{Run Plan and Beam Time Request {\it John, Stepan, Maurik}}
+
+\clearpage
+\section{Detector Construction Timeline and Budget {\it Marco, John, Stepan}}
+
+
+\clearpage
+\input{bibl}
+
+\end{document}
