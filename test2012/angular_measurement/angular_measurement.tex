@@ -107,13 +107,12 @@ normalization and background subtraction.} {\color{red} Need update.}}
 \label{fig:ang_distr_data}
 \end{figure*}
 
-{\bf {\color{red} It's not clear if the detailed description of what calculation is used where for egs5 vs Geant4. I should probably add details on the pair angle calculations here and refer the MCS to newt section?} }
-
-These measured angular distributions was compared to simulation. 
-While the bulk of multiple coulomb scattering and pair production angles 
-are well studies in the past {\color{red} (Need references or refer to next section?)} HPS 
+These measured angular distributions was compared to simulation and 
+while the bulk of multiple coulomb scattering and pair production angles 
+are well studies in the past {\color{red} (reference to appendix)} HPS 
 is sensitive only to the tails of these distributions that are less explored. Note that for HPS 
-we are only interested in validating our description of the multiple coulomb scattering. Since 
+we are only interested in validating our description of the multiple coulomb scattering as that 
+is our main background when running in an electron beam. Since 
 what we measure in ~\ref{fig:ang_distr_data} is a convolution of both we use a special event 
 generation procedure in the simulation to separate description of the multiple scattering and 
 pair production angle: We use EGS5~\cite{egs5} to generate the pair produced $e^+e^-$ pair 
@@ -139,9 +138,11 @@ distribution using {\sc EGS5} for a converter thickness of 1.6\% (left), 0.45\% 
 The total rate prediction for simulation and data are compared in Fig.~\ref{rate_vs_thickness} 
 and Tab.~\ref{tab:ang_distr_dataMC} summarizes the result. 
 \begin{figure*}[t]
-\includegraphics[ scale=0.65]{test2012/angular_measurement/pictures/rate_vs_thickness_dataMC.png}
+%\includegraphics[ scale=0.65]{test2012/angular_measurement/pictures/rate_vs_thickness_dataMC.png}
+\includegraphics[ scale=0.3]{test2012/angular_measurement/pictures/dataMC_geant4.png}
+\includegraphics[ scale=0.3]{test2012/angular_measurement/pictures/dataMC_egs.png}
 \caption{\small{The measured rate in the ECal as a function of target thickness comparing 
-the prediction from {\sc EGS5} and {\sc Geant4} multiple scattering models.} {\color{red} Obviously need update.}}
+to the multiple scattering models from {\sc Geant4} (left) and {\sc EGS5} (right)}.} 
 \label{fig:ang_distr_data}
 \end{figure*}
 A few systematic uncertainties was estimated which include; a 5\% uncertainty on the integrated 

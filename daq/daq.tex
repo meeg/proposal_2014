@@ -128,12 +128,14 @@ before and Y samples after the signal passed a predefined threshold. Transferrin
 the time it passed threshold and a channel sum as energy estimate greatly reduces the data rate. 
 
 
-The FADCs are an integral part of the HPS calorimeter trigger system. The output of each 
-FADC channel in the same VXS module is collected by a crate trigger processor which performs cluster finding. The result from each create trigger processor (i.e. each half of 
+The FADCs are an integral part of the HPS calorimeter trigger system. Pulse energies 
+and times from each FADC channel in the same VXS crate is collected by a crate trigger
+ processor which performs cluster finding. The result from each create trigger processor (i.e. each half of 
 the ECal) is combined in the sub-system processor module which applies further selections 
 based on single- and combination of clusters to form a trigger decision passed to the trigger 
-supervisor. The trigger process channel sum runs at 4~ns allowing to HPS to reach a 8~ns 
-time resolution of the trigger time. This is an important part of improving 
+supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow 
+coincidence window of 8~ns to be used when searching for clusters. 
+This is an important part of improving 
 the pattern recognition to reduce confusion in the tracker which has considerable longer 
 integration times. 
 
@@ -169,14 +171,15 @@ the 10~Gbit ethernet connections internally of the ATCA crate and also to the JL
 
 
 The data rate from the ECal and muon system is estimated from the same running 
-conditions as the SVT above. Each each calorimeter or muon hit consist of 4 bytes 
-with an 8 byte header for each FADC board. 
-The main limitation is of the order of 50Mbytes/s from each VXS crate. For a 
-10\% occupancy estimated in Sec.~\ref{sec:trig_rate} the ECal event size is approximately 0.4~kbytes which translates to a total data rate of approximately 18.9~Mbytes/s 
-(split between the two VXS crates) well within the DAQ system design. 
+conditions as the SVT above. 
+Each each calorimeter or muon hit consist of 8 bytes (4 byte energy, 4 byte time)
+ with a 12 byte header (4 byte trigger number, 8 byte trigger time) for each FADC board. 
+ The main limitation is of the order of 100Mbytes/s from each VXS crate. For a 
+ 10\% occupancy estimated in Sec.~\ref{sec:trig_rate} the ECal event size is approximately 0.7~kbytes which translates to a total data rate of approximately 31.5~Mbytes/s 
+(split between the two VXS crates), well within the DAQ system design. 
 
 The contribution from the muon system is small due to it's significantly lower number of channels. The system is readout by nine FADC boards in a single VXS crate. The event 
-size for a 10\% occupancy level is 0.1~kbytes which translates to a data rate of 6~Mbytes/s. 
+size for a 10\% occupancy level is 0.2~kbytes which translates to a data rate of 10~Mbytes/s. 
 
 Table~\ref{tab:data_rates} summarizes the event size and data rates for the different 
 sub-systems. 
@@ -186,10 +189,10 @@ sub-systems.
 Sub-system & Occupancy(\%) & Event size (kB) & Data Rate (MB/s) \\
 \hline
 SVT & 0.135 & 4.5 & 203 \\
-ECal & 10 & 0.4 & 19 \\
-Muon & 10 & 0.1 & 6 \\
+ECal & 10 & 0.7 & 32 \\
+Muon & 10 & 0.2 & 10 \\
 \hline
-Total & - & 4.2 & 179 \\
+Total & - & 5.4 & 245 \\
 \hline
 \end{tabular}
 \caption{{\small Occupancy, event size and data rate expected for beam energy of 2.2~GeV and a current of 200nA.} {\color{red}Need update}}
