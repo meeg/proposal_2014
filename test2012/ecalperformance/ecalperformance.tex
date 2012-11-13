@@ -1,6 +1,27 @@
 
 \vspace{1cm}{\bf ECal performance [Sho]}
 
+The ECal preamplifiers shape the APD signal into a CR-RC pulse of rise time $\approx 14$ ns; this is sampled every 4 ns and stored in a pipeline on the FADC readout board.
+On receiving a trigger, the FADC searches for rising threshold crossings in the pipeline, and integrates pulses by summing 5 samples before and 30 samples after each threshold crossing.
+
+The noise and pedestal of the readout chain are calibrated by running the
+
+Of 442 crystals/channels, 39 were disabled or disconnected and were not read out by the DAQ. 
+13 of these were not read out because of a shortage of FADC readout boards.
+The remainder either had no HV bias on the APD, or were disabled in the FADC software due to noise.
+
+In the data, we identified two types of abnormal channels. 
+One FADC was not sending trigger signals correctly, resulting in low efficiency. This affected the 13 channels read out by that FADC.
+5 channels were diagnosed as noisy because they had a high incidence of hits out of coincidence with the trigger.
+
+A large number of channels were originally misidentified as noisy because they had much higher hit occupancy than neighboring channels.
+Gain calibration (described in the next section) shows that these channels have high gain (and thus lower energy threshold) but are otherwise normal.
+
+The abnormal channels were ignored in analysis in order to simplify comparison with Monte Carlo. This leaves 385 useful channels---87\% of the ECal.
+
+We found that one quadrant of the ECal had been miswired in such a way as to flip the horizontal coordinate---the column of crystals nearest the center was connected to the readout channels for the rightmost column, and vice versa.
+
+
 Describe clustering, thresholds, occupancy, dead/noisy crystals, flip in readout?
 
 Plots: Occupancy map
@@ -27,7 +48,7 @@ Plots: E/p map before and after calibration, spread in gain, E/p data/MC
 %	\label{fig:trigtimes}
 %\end{figure}
 
-{\color{red} Can be merged into trigger algorithm description.} The trigger and DAQ integrate pulses differently to measure hit energy. The trigger integrates using a time-over-threshold window, and the DAQ readout integrates using a constant window (5 samples before and 30 samples after a threshold crossing). 
+As described in Section \ref{sec:tesrun_trigger}, the trigger and DAQ integrate pulses differently to measure hit energy. The trigger integrates using a time-over-threshold window, and the DAQ readout integrates using a constant window (5 samples before and 30 samples after a threshold crossing). 
 
 For every event, the trigger reports as a bitmask the trigger decision (top trigger, bottom trigger, or both) and the time the trigger fires.
 
@@ -52,7 +73,7 @@ The trigger threshold in terms of cluster energy is very uneven for two reasons:
 
 Overall the trigger appears to have functioned exactly as intended. Changes planned for the next run (constant integration window and per-crystal gain calibration constants for the trigger) will solve both of the issues that led to threshold variations in the test run.
 
-{\color{red} Describe trigger algorithm.} What were the rates, lessons learned?
+What were the rates, lessons learned?
 
 Plots: Compare observed and expected trigger time {\it Sho}, Tag\&probe {\it Sho}, rates vs time {\it Ben/Sho/Pelle}
 
