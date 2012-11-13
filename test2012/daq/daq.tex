@@ -1,0 +1,20 @@
+
+\subsubsection{Test Run Data Acquisition}
+\label{sec:testrun_daq}
+There are two front-end electronics systems, an Electromagnetic Calorimeter (ECal) system and a Silicon-Vertex Tracker (SVT) system. A level 1 hardware trigger selects events to be read out. Only the ECal provides inputs to the Level 1 trigger system. The triggered events from the two sub-systems are acquired and processed in the data acquisition and processing system. The generic scheme for the HPS DAQ system hardware is shown in Figure \ref{fig:daq}.
+
+ \begin{figure*}[h]
+\includegraphics[scale=0.35]{test2012/daq/daq_schem.pdf}
+\caption{\small{Readout and processing system block diagram.}}\label{fig:daq}
+\end{figure*}
+
+Readout Controllers (ROCs) are installed in every VME, VME64X, VXS and ATCA crate.  The ROCs are collecting data from the front-end boards, processing it and sending it to the Event Builder over the network. The Event Builder is a program running on a server assembling information from the calorimeter and the  tracker. Currently mvme6100 controllers with a prpmc880 or pmc280 co-processor modules are employed. That configuration is fast enough to meet the HPS requirements.  
+
+A Foundry Router is currently used as the backbone of the DAQ system, providing 1GBit and 10GBit connections between components and to the JLAB Computer Center.  The Event Builder, Event Recorder, and other critical DAQ components are running on 4-CPU Opteron-based servers, and that configuration is sufficient for HPS as well.  ROCs are linked to the Foundry Router through smaller 1GBit switches with 4GBit uplinks. The HPS data storage system (RAID5) is sufficient for up to a 100~MByte/sec data rate. 
+
+
+\input{test2012/daq/svt_daq}
+
+\input{test2012/daq/ecal_daq}
+
+
