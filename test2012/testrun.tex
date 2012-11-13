@@ -1,4 +1,4 @@
-Presented in the proposal the reach of the experiment rely on GEANT4 and EGS5 simulations. These are well tested codes, never the less we find it is important to back-up results of simulations with experimental measurements, especially at small scattering angles where results from these simulation codes were markedly different. These simulation codes have shown that the occupancy problems in the tracker and in the ECal occur only at the very smallest angles, and are due to multiply Coulomb scattered beam electrons. To the extent that we can demonstrate that we have accurately modeled both the scattering and the response of the detector to high energy electrons which hit in and around the detector elemnts, we demonstrated that our estimates of trigger rates in full HPS are accurate. 
+Presented in the proposal the reach of the experiment rely on GEANT4 and EGS5 simulations. These are well tested codes, never the less we find it is important to back-up results of simulations with experimental measurements, especially at small scattering angles where results from these simulation codes were markedly different. These simulation codes have shown that the occupancy problems in the tracker and in the ECal occur only at the very smallest angles, and are due to multiply Coulomb scattered beam electrons. To the extent that we can demonstrate that we have accurately modeled both the scattering and the response of the detector to high energy electrons which hit in and around the detector elements, we demonstrated that our estimates of trigger rates in full HPS are accurate. 
 
 Although we were restricted to photon beam running during May 2012 test run, we made a credible case for full HPS approval. Our photon running included conversions made in a thin target upstream of the HPS detector; the angular distribution of these electrons has been measured in the HPS test run, and is sensitive to this same multiple Coulomb scattering, and therefore  tests our understanding of occupancy in the tracker. In particular we validated our simulations, we showed that multiple Coulomb scattering is correctly defined in EGS5, while GEANT4 settings that have been used in our earlier simulations of the electromagnetic background, overestimates rates of the multiple Coulomb scattering electrons at the relevant scattering angles by $\times 2$. 
 
@@ -10,7 +10,7 @@ In addition to the important test of our simulation tools, the HPS parasitic tes
 \item gained experience with running the test apparatus, in particular running SVT in vacuum
 \end{enumerate}
 
-\subsection{HPS Test Run Apparatus {\it Tim, Stepan, Takashi}} 
+\subsection{HPS Test Run Apparatus } 
 
 In Fig.\ref{fig:hpstest}, layout of the parasitic run is shown. The silicon vertex tracker was installed inside the Hall-B pair spectrometer magnet vacuum chamber. The electromagnetic calorimeter was mounted downstream of it.
 Both the Si-tracker and the ECal were retracted off the beam plane to allow clean passage of the photon beam through the system, and also not to obscure converted (e$^+$e$^-$) pairs from being detected in the PS hodoscopes.
@@ -24,7 +24,7 @@ Both the Si-tracker and the ECal were retracted off the beam plane to allow clea
 For the portion of the dedicated HPS run the photon beam was generated in the interaction of the $5.5$ GeV electrons with a gold radiator of $10^{-4}$ r.l., located $\sim 8$ meters upstream of the PS pair converter. After collimation ($D=6.4$ mm), the photon beam passes through the pair converter and through the HPS system. Data were taken on different converters (empty, $1.8\times 10^{-3}$ r.l., $4.5\times 10^{-3}$ r.l., and $1.6\times 10^{-2}$ r.l.). These measurements were repeated for reverse field setting of the pair spectrometer dipole.
 
 
-\subsubsection{Test Run SVT , {\it Tim}}
+\subsubsection{Test Run SVT}
 
 The silicon tracking and vertexing detector for HPS Test, or SVT, operates in an existing vacuum chamber inside the pair spectrometer analyzing magnet in Hall B at JLab.  The design principles of the SVT are described in further detail in the HPS Test Run Proposal  \cite{HPS_tPROP}. There are five measurement stations, or ``layers'', placed immediately downstream of the target. Each layer comprises a pair of closely-spaced planes and each plane is responsible for measuring a single coordinate, or ``view''. Introduction of a stereo angle between the two planes of each layer provides three-dimensional tracking and vertexing throughout the acceptance of the detector with one redundant layer. 
 
@@ -69,7 +69,7 @@ Power is provided to each hybrid using CAEN power supplies provided by Fermilab.
 The linear shifts that define the opening of the SVT are controlled by a pair of stepper motors located in low field regions at the ends of the analyzing magnet.  For photon running, these are locked in the open position, but for electron running they will be connected and controlled through EPICS so that the distance between the beam and the sensors can be adjusted to balance detector occupancies and acceptance.
 
 
-\subsubsection{Test run ECal {\it Stepan}}
+\subsubsection{Test run ECal}
 
 The HPS Test Run electromagnetic calorimeter (ECal) consists of 442 lead-tungstate (PbWO$_4$) crystals with avalanche photodiode (APD) readout, \cite{HPS_PROP_UPD}. 
 Crystals in the ECal are arranged in two modules.  There are 5 layers in each module;  four layers have 46 crystals and one has 37.  The ECal is mounted downstream of the analyzing dipole magnet at the distance of $\sim 148$ cm from the upstream edge of the magnet. The two Ecal modules are positioned just above and below the beam plane such that the edge of the crystal closest to the beam is $3.7$ cm from it. As was described in Section \ref{setup} we did not use the vacuum chamber between the two ECal modules for the photon test run, instead 2'' beam pipe was used to transport photon beam from the pair spectrometer vacuum chamber to HDIce target.  
@@ -91,9 +91,23 @@ In Figure \ref{fig:ecal_mounted} ECal is shown in its installed position for the
 \end{figure*}
 
 
+\input{test2012/daq/daq}
+
+
+\input{test2012/trigger/trigger}
+
+
+
+
 
 
 \subsection{Test Run Apparatus Performance {\it Pelle}} 
+
+As noted above we only had the opportunity to tun the HPS test apparatus in the 
+photon beam mode using the Hall-B pair 
+spectrometer (PS) pair converter as a target, which is located $\sim 67$ cm from the first layer 
+of the tracker. This section will report on a few selected preliminary results that aims to demonstrate 
+our understanding of the main characteristics of the system. 
 
 \subsubsection{SVT Performance}
 \input{test2012/svtperformance/svtperformance}

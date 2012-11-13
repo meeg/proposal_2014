@@ -1,94 +1,120 @@
+A good alignment of the SVT is an important factor to reach our expected tracking performance 
+and thus the expected physics reach sensitivity. The SVT sensors has to be internally aligned but 
+also known with respect to the target and other beam line components for optimal performance. 
 
-{\color{red} Still to be added:
-\begin{itemize}
-\item {Alignment Strategy description?}
-\item Survey description and lessons learned?
-\item Updated figures
-\item Track based results (if there)
-\item Conclusions 
-\end{itemize}
-}
+The alignment of the test run apparatus is divided into several steps which aims to tie together 
+several different survey measurements on the SVT to the beam line survey at JLab and finally 
+starting from a pre-aligned SVT use track-based alignment. 
 
-The main handle on the internal alignment of the silicon sensors is the so-called track residual. It is defined as the difference of the measured hit position and the predicted track 
-position at that sensor. As described in Sec.~\ref{sec:svt_clustering} the individual hits on the 
-strip sensors are combined into a 3D space point. Figure~\ref{fig:res_top_nonbend} and~\ref{fig:res_top_bend} shows the 3D space point track residuals in the non-bend and bend plane, respectively, for tracks in the top half of the tracker.
-\begin{figure*}[t]
+Mechanical surveys using touch probes was performed on the two SVT tracker planes before 
+shipping to JLab. This survey measured reference points on the base plate, C-support and on the surface of the tracker support plates. These positions where then tied to very precise optical 
+survey of each sensor module, referencing the silicon sensor position w.r.t. to the cooling blocks. 
+An important aspect of the mechanical survey is the relatively large sag on 
+the 70~cm long support plate which is supported by the C-support hinge on one end and the 
+extension bar attached to the linear shaft at the other. The measured sag without all services 
+(cooling manifold and cables was not dressed at this point) was more than $250~\mu$m.  
+For HPS, only the first three layers are being supported from each end which will reduce this 
+sag with at least a factor of four. {\color{red} check this}. The goal of the mechanical surveys is to reach a relative alignment of the 
+silicon to about $100-200~\mu$m where alignment using tracks become feasible and the 
+improvements from mechanical surveys become harder. Finally at JLab with a fully assembled 
+tracker we used an optical and touch probe survey to locate 
+the SVT, using the measurements of the base plate, in the reference coordinate system of 
+the analyzing magnet. 
+
+The alignment after processing and using the survey measurements are studied using 
+reconstructed tracks in the SVT. The main observable of the internal alignment of the silicon sensors is the so-called track residual
+which is defined as the difference of the measured hit position and the predicted track 
+position at that sensor. Figure~\ref{fig:res_top_nonbend} and~\ref{fig:res_top_bend} 
+shows representable3D space point track residuals in the non-bend and bend plane, respectively, 
+for tracks reconstructed in the top half of the tracker.
+\begin{figure*}[]
 %\includegraphics[ scale=0.25]{test2012/ecal_mounted.JPG}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-1.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-2.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-3.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-4.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-5.png}
-\caption{\small{Residuals in the bend plane for tracks reconstructed in the 
-top half of the tracker. }}\label{fig:res_top_bend}
+\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-1.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-2.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-3.png}
+\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-4.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-5.png}
+\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-6.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-7.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-8.png}
+\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-9.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-10.png}
+\caption{\small{Residuals in the bend (top) and non-bend (bottom) plane 
+for tracks reconstructed in the top half of the tracker.  }}
+\label{fig:res_top_nonbend}
 \end{figure*}
-\begin{figure*}[t]
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-6.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-7.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-8.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-9.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-10.png}
-\caption{\small{Residuals in the bend non-plane for tracks reconstructed in the 
-top half of the tracker.  }}\label{fig:res_top_nonbend}
-\end{figure*}
-As can be seen from the simulation the ideal aligned tracker would have mean residuals 
-of zero. Figure~\ref{fig:res_top_summary} shows the mean of the residuals for 
-each layer of the tracker. 
+These are compared to the residuals from an ideally aligned tracker which are expected 
+to be centered on zero, Fig.~\ref{fig:res_top_summary} shows the mean of the residuals for 
+each layer of the tracker
 \begin{figure*}[t]
 \includegraphics[ scale=0.7]{test2012/alignment/pictures/res_top/res_top_summary-1.png}
 \includegraphics[ scale=0.7]{test2012/alignment/pictures/res_top/res_top_summary-2.png}\caption{\small{Mean of the track residuals for each detector layer in the top tracker half 
 in the bend (left) and non-bend (right) plane.}}\label{fig:res_top_summary}
 \end{figure*}
- Note also that larger width for the later layers which highlights the large 
-multiple scattering contribution in the previous layers. The estimation of the 
-uncertainty due to multiple scattering can also be seen in the track residual 
-pull which is defined as the track residual divided by the estimated hit position 
-uncertainty. These are shown in Fig.~\ref{fig:res_pull_top_nonbend} and~\ref{fig:res_pull_top_bend}.
-The intrinsic single hit resolution of $\approx 6~\mu$m is negligible 
-for layers beyond the second. Note that these pull distributions come from biased 
-residuals (the hit was used in the track fit) and are thus not expected to have a 
-width of one. 
-\begin{figure*}[t]
+Note the larger width for the later layers which highlights the large 
+multiple scattering contribution in the track reconstruction as expected for electrons and 
+positrons in this energy range. The intrinsic single hit resolution of $\approx 6~\mu$m is negligible 
+for layers beyond the second. 
+%Note that these pull distributions come from biased 
+%residuals (the hit was used in the track fit) and are thus not expected to have a 
+%width of one. 
+%\begin{figure*}[]
 %\includegraphics[ scale=0.25]{test2012/ecal_mounted.JPG}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-1.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-2.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-3.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-4.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-5.png}
-\caption{\small{Residuals in the bend plane for tracks reconstructed in the 
-top half of the tracker. }}\label{fig:res_pull_top_bend}
-\end{figure*}
-\begin{figure*}[t]
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-6.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-7.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-8.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-9.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-10.png}
-\caption{\small{Residuals in the non-bend plane for tracks reconstructed in the 
-top half of the tracker.  }}\label{fig:res_pull_top_nonbend}
-\end{figure*}
+%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_pull_top/res_pull_top-1.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-2.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-3.png}
+%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_pull_top/res_pull_top-4.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-5.png}
+%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_pull_top/res_pull_top-6.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-7.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-8.png}
+%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_pull_top/res_pull_top-9.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_pull_top/res_pull_top-10.png}
+%\caption{\small{Track residual pulls in the bend (top) and non-bend (bottom) plane 
+%for tracks reconstructed in the 
+%top half of the tracker.  }}
+%\label{fig:res_pull_top_nonbend}
+%\end{figure*}
 
-The residuals give information on the internal alignment of the tracker. It is important 
-to understand the tracker alignment w.r.t. to the other components in the beam line. 
-This can be achieved by using the fitted tracks and extrapolate them outside the tracking 
-volume. Figure~\ref{fig:test_harpscan} shows a HARP scan taken during the test run. 
-\begin{figure*}[t]
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/harp_scan_testrun.png}
-\caption{\small{Photon beam profile HARP scan close to the converter.}}\label{fig:testrun_harpscan}
-\end{figure*}
-The width of the beam can be described by a double Gaussian $0.71e^{\frac{x}{0.366}}\times 0.29e^{1.111}$ which is also used in the simulations. The beam envelope extends out to 
-about 7mm. By extrapolating the fitted tracks to the converter position along the beam 
-we get a feeling for our alignment of the tracker w.r.t. to the beam line. This is shown in 
-Fig.~\ref{fig:extrapol_converter_X}.
+To understand the tracker alignment w.r.t. to the other components in the beam line we 
+use the reconstructed tracks and extrapolate them outside the tracking volume. 
+By extrapolating the fitted tracks to the converter position we can get a alignment w.r.t. to the beam line. 
+Figure ~\ref{fig:extrapol_converter} shows a comparison of the track position at the 
+converter which enables us to get a better understanding of the tracker alignment with 
+respect to the beam line. 
 \begin{figure*}[t]
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_top.png}
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_bot.png}
-\caption{\small{Extrapolated track position in the bend plane direction.}}
-\label{fig:extrapol_converter_X:}
-\end{figure*}
-\begin{figure*}[t]
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_Y_converter_top.png}
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_Y_converter_bot.png}
-\caption{\small{Extrapolated track position in the non-bend plane direction.}}
-\label{fig:extrapol_converter_Y}
+\caption{\small{Extrapolated track position in the bend (top) and non-bend (bottom) 
+direction for tracks reconstructed in the top (left) and bottom (right) half of the SVT. 
+The extra bumps in the data at $\pm10$~mm comes from upstream backgrounds.}}
+\label{fig:extrapol_converter}
 \end{figure*}
+The luminous region at the converter can be inferred from the photon beam profile HARP 
+scans which showed a beam width of about 1~mm 
+%(best described by a double Gaussian: $0.71e^{\frac{x}{0.366}}\times 0.29e^{\frac{x}{1.111}}$)
+and a total beam envelope of around 7~mm. The small bumps in data at $\pm10$~mm 
+arise from tracks from particles upstream of the converter. The width and position of the tracks 
+are not too far of the expected distribution from an ideal geometry as shown by the simulated 
+tracks in the same figures. There is an apparent larger shift in the bend direction for bottom tracks 
+that is still under investigation. 
+
+The relatively good alignment with residuals below $\sim 500~\mu$m across the tracker 
+after mechanical survey gives confidence that our survey techniques are adequate. 
+It's also worth noting that the description of the luminous region is also reasonably close to what 
+is expected from simulation with an ideal geometry. 
+
+We are currently finishing writing a track-based alignment framework that will allow us to reach 
+the ultimate alignment achievable. This framework will also give us the possibility and 
+flexibility  to explore and understand important details such as weak modes and how dedicated alignment runs with magnetic field off or with different targets may play into our operational 
+procedure in HPS.
+
+%Fig.~\ref{fig:test_harpscan} shows a HARP scan taken during the test run. 
+%\begin{figure*}[t]
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/harp_scan_testrun.png}
+%\caption{\small{Photon beam profile HARP scan close to the converter.}}\label{fig:testrun_harpscan}
+%\end{figure*}
+%The width of the beam can be described by a double Gaussian $0.71e^{\frac{x}{0.366}}\times 0.29e^{1.111}$ which is also used in the simulations. The beam envelope extends out to 
+%about 7mm. 

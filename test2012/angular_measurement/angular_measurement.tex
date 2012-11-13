@@ -7,7 +7,8 @@ on the tail which has been less explored in past experiments. One of the main go
 test run in 2012 was to evaluate the description of the tails of the multiple scattering in order 
 to gain further confidence in our expected detector occupancy. As will be shown below, the 
 test run was sensitive to the multiple coulomb scattering description despite the fact that 
-the data was taken with a photon beam. The details of the test run conditions are described in Sec.~\ref{sec:testrun2012}. 
+the data was taken with a photon beam.
+
 
 Figure~\ref{fig:schematic_testrun_vs_erun} gives a schematic view of the main differences 
 between the photon and electron beam setup. 
@@ -24,15 +25,17 @@ schematically described in Fig.~\ref{fig:schematic_pair_prod}.
 \caption{\small{Schematic description of the relevant angles for pair production in the 
 test run.}}\label{fig:schematic_pair_prod}
 \end{figure*}
-The contribution from both sources to the final angular distribution are comparable. FigureX 
-shows the expected distribution of the vertical angle $\theta_y$ for the $e^+e^-$ pair  coming 
-out of the converter compared to the pair production angle. {\color{red} Need this figure from Takashi.} 
+The contribution from both sources to the final angular distribution are comparable. 
+%FigureX 
+%shows the expected distribution of the vertical angle $\theta_y$ for the $e^+e^-$ pair  coming 
+%out of the converter compared to the pair production angle. {\color{red} Need this figure from Takashi.} 
 
 
-{\bf Sample Composition}\newline
+%{\bf Sample Composition}\newline
+
 Since we are primarily interested in measuring the angular 
 distributions for the $e^+e^-$ pair we checked that the contribution from photons are negligible. Table~\ref{tab:sample_composition} shows the sample composition. The fraction 
-of photons that would deposit energy to reach threshold in the ECal crystals are much less than 2\% without any angular which will further reduce the fraction of photons. 
+of photons that would deposit energy to reach threshold in the ECal crystals are much less than 2\% without any angular selection which will further reduce the fraction of photons. 
 \begin{table}[]
 \centering
 \begin{tabular}{c|c|c|c}
@@ -52,20 +55,19 @@ or removed.}}
 The photon beam line during the test run presented a relatively large fraction of events 
 originating upstream of the converter. This contribution was measured during data taking by 
 removing the converter and thus taking data without any target but with all other conditions 
-the same. Figure~\ref{fig:tracks_at_converter} shows the vertical position of 
-reconstructed tracks in the SVT during data taking with the 1.6\% radiation length converter. 
-Note the small satellite peaks visible at about $\pm 8$~mm. 
-The same figure also overlays the same distribution for the empty converter 
-run which clearly shows that these satellite peaks are due to the upstream backgrounds.
-\begin{figure*}[t]
-\includegraphics[ scale=0.6]{test2012/angular_measurement/pictures/tracks_at_converter_Y_top.png}
-\includegraphics[ scale=0.6]{test2012/angular_measurement/pictures/tracks_at_converter_Y_bottom.png}
-\caption{\small{Vertical position of extrapolated tracks from the SVT to the converter position.} {\color{red}Need update.}}\label{fig:tracks_at_converter}
-\end{figure*}
+the same. Figure~\ref{fig:extrapol_converter} (bottom) shows the vertical position of 
+reconstructed tracks in the SVT during data taking with a converter thickness of 
+1.6\% radiation length, note the small satellite peaks visible at about $\pm 10$~mm which 
+can be identified as the upstream background when studying the same distribution from the 
+run without any converter. 
+%\begin{figure*}[t]
+%\includegraphics[ scale=0.6]{test2012/angular_measurement/pictures/tracks_at_converter_Y_top.png}
+%\includegraphics[ scale=0.6]{test2012/angular_measurement/pictures/tracks_at_converter_Y_bottom.png}
+%\caption{\small{Vertical position of extrapolated tracks from the SVT to the converter position.} {\color{red}Need update.}}\label{fig:tracks_at_converter}
+%\end{figure*}
 
 In order to properly normalize the rates the integrated current was measured for the different 
-runs. Typically the current was about 30~nA. Table.~\ref{tab:currents} shows the measured integrated currents. {\color{red} Describe how these where measured?}. The uncertainty 
-of the measurement is estimated to approximately 5\%. 
+runs. Typically the current was about 30~nA. Table.~\ref{tab:currents} shows the measured integrated currents.  The uncertainty of the measurement is estimated to be approximately 5\%. 
 \begin{table}
 \centering
 \begin{tabular}{l|c|c|c}
@@ -93,8 +95,9 @@ Run & Target thickness & Duration &  $e^-$ on converter \\
 \end{tabular}
 \caption{{\small Measured integrated currents for the runs used to measure the angular distributions.}}
 \end{table}
-Taking into account the luminosity the upstream background fraction was 16\%, 52\% and 71\% 
-for converter thickness of 1.6\%, 0.45\% and 0.18\%, respectively. 
+Taking into account the measured integrated current 
+the upstream background fraction was 16\%, 52\% and 71\% 
+for a converter thickness of 1.6\%, 0.45\% and 0.18\%, respectively. 
 
 The measured angular distribution in the ECal for the three target thicknesses are shown in 
 Fig.~\ref{fig:ang_distr_data} before and after normalization and subtraction of the upstream 
@@ -107,22 +110,23 @@ normalization and background subtraction.} {\color{red} Need update.}}
 \label{fig:ang_distr_data}
 \end{figure*}
 
-These measured angular distributions was compared to simulation and 
-while the bulk of multiple coulomb scattering and pair production angles 
-are well studies in the past {\color{red} (reference to appendix)} HPS 
-is sensitive only to the tails of these distributions that are less explored. Note that for HPS 
+These measured angular distributions was compared to simulation. 
+While the bulk of multiple coulomb scattering and pair production angles 
+are well studies in the past {\color{red} (references?)} HPS 
+is sensitive only to the large part of these distributions that are less explored. 
+Note that for HPS 
 we are only interested in validating our description of the multiple coulomb scattering as that 
 is our main background when running in an electron beam. Since 
 what we measure in ~\ref{fig:ang_distr_data} is a convolution of both we use a special event 
 generation procedure in the simulation to separate description of the multiple scattering and 
-pair production angle: We use EGS5~\cite{egs5} to generate the pair produced $e^+e^-$ pair 
+pair production angle: we use EGS5~\cite{egs5} to generate the pair produced $e^+e^-$ pair 
 and then pass these four vectors to either {\sc EGS5} or {\sc Geant4}~\cite{geant4} which 
 models the multiple Coulomb scattering in the target. Thus the {\sc EGS5} is used to normalize 
 the pair production angles and the remaining difference would be coming from the 
 multiple scattering description in the two different simulation programs. There exist an unlikely 
 scenario that the difference in multiple scattering between the two programs would cancel the difference in multiple scattering. To mitigate this possibility the angular distributions are 
-measured for each converter thickness. Since the pair production angle is independent of 
-the thickness the relative change between data and simulation for different converter thicknesses only depends on the multiple scattering contribution. 
+measured for different converter thickness. Since the pair production angle is independent of 
+the converter thickness the relative change between data and simulation for different converter thicknesses only depends on the multiple scattering contribution. 
 
 Figure~\ref{fig:ang_distr_dataMC} shows a comparison between data and the {\sc EGS5} 
 simulation where the rates have been normalized to 1~s of beam at a current of 90nA. 
@@ -183,14 +187,13 @@ between 10 and 18\%.
 
 In summary it's clear that the version of  
 {\sc Geant4} with the default physics lists overestimates the large angle multiple scattering tail. 
-This preliminary result further strengthens our confidence that {\sc EGS5} describes the multiple scattering in the target which is important to understand our expected occupancy and trigger 
-rates for HPS. As a side note, since {\sc EGS5} was used to generate the pair 
+Since {\sc EGS5} was used to generate the pair 
 angle distribution for both simulation described in the result it's interesting to see that the 
-ratio of data to that the prediction varied from 0.91 (0.40), 0.77 (0.53) and 0.98 (0.81) for {\sc EGS} ({\sc Geant4}) at 1.6\%, 0.45\% and 0.18\% converter thickness, respectively. If the pair angle distribution were responsible 
-for the difference between {\sc Geant4}  and {\sc EGS5} that would show up as a large shift in 
-this ratio since the multiple scattering contribution varies. 
+ratio of data to the prediction varied from 0.91 (0.40), 0.77 (0.53) and 0.98 (0.81) for {\sc EGS} 
+({\sc Geant4}) at 1.6\%, 0.45\% and 0.18\% converter thickness, respectively. If the pair angle 
+distribution were responsible for the difference between {\sc Geant4}  and {\sc EGS5} that would show up as a large shift in this ratio since the multiple scattering contribution varies. 
 
-There are many steps needed to go from this preliminary result to a real 
+There are more work needed to go from this preliminary result to a real 
 measurement. However, this preliminary result further strengthens our confidence that 
 {\sc EGS5} is able to properly describe the large angle multiple scattering events in the target 
 which is important to estimate our occupancy and trigger rates for HPS discussed in Sec.~\ref{sec:performance}.
