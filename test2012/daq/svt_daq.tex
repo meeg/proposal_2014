@@ -2,26 +2,47 @@
 
 
 
-The SVT DAQ is a SLAC built data acquisition system utilizing the Advanced Telecommunication Computing Architecture (ATCA) for high speed data transfer.  It is designed to readout data continuously at 40 MHz from the silicon detector modules, and transfer data to the JLab DAQ once a trigger signal is received. It can support a trigger rate of a few 10Õs of kHz.
+The SVT DAQ was a rapidly built DAQ  designed to readout data continuously at 40 MHz from the silicon detector modules, and transfer data to the JLab DAQ once a trigger signal is received. It is built using the same 
+basic architecture and layout as the HPS DAQ but without the optical readout components and 
+power distribution system inside the vacuum described in Sec.~\ref{sec:svt_daq}. 
 
-There are a total of 20 silicon strip sensors, each one connected to an onboard readout card called a hybrid which holds five 128-channel APV25 integrated circuits. The APV25s provide amplification, pipelining, and analog storage for trigger accepted events. There are 5 analog outputs for each 640-channel hybrid. Each hybrid will be connected via a multi-twisted-pair cable to a readout board.
+The test run had a total of 20 silicon strip sensors, each one connected to an onboard hybrid readout card 
+which is similar to the HPS hybrid, each one holding five 128-channel APV25 integrated circuits. The test 
+run hybrid readout card is shown in Fig.~\ref{fig:hybrid_and_apv25_testrun} 
+ \begin{figure*}[t]
+\includegraphics[ scale=0.3]{test2012/daq/hybrid.jpg}
+\includegraphics[ scale=0.3]{test2012/daq/apvs-on-hybrid.jpg}
+\caption{\small{Picture of a test run hybrid readout board holding five APV25 ASICs. The wire bonds to the 
+silicon sensors can be seen as well.}}
+\label{fig:hybrid_and_apv25_testrun}
+\end{figure*}
 
+Contrary to the HPS DAQ where opto-boards digitizes and converts the APV25 analog output signals to 
+optical signals inside the vacuum chamber, the hybrids here carry analog signal directly to the 
+Rear Transistion Module (RTM) via a multi-twisted-pair cable. The amplification and digitization of the 
+analog differential voltage output of the APV25 output are therefore carried out on the RTM board 
+which was designed specifically for the HPS test run. Figure~\ref{fig:svtdaq} shows an overall layout of 
+the SVT test run DAQ system (compare to Fig.~\ref{fig:svt_daq_overview}).
  \begin{figure}[t]
 \includegraphics[scale=0.9]{test2012/daq/svt_daq_diagram.png}
-\caption{\small{Schematic of the SVT DAQ showing input from the hybrids mounted on the silicon detector to the RTM, its connection to the COB, and the Ethernet switch used to transfer data a 1 Gbit/sec to the DAQ PC and ultimately to the JLAB DAQ. Details are given below.}}\label{fig:svtdaq}
+\caption{\small{Schematic of the SVT DAQ showing input from the hybrids mounted on the silicon detector to the RTM, its connection to the COB, and the Ethernet switch used to transfer data at 1 Gbps to the 
+DAQ PC and ultimately to the JLAB DAQ.}}
+\label{fig:svtdaq}
 \end{figure}
-
-
-The SVT readout system is shown in Figure \ref{fig:svtdaq}. The outputs of 12 hybrids are digitized on an ATCA (Advanced Telecommunication Computing
-Architecture) RTM (Rear Transition Module) board. A pre-amplifier converts the APV25 differential current output to a different voltage output scaled to the sensitive range of a 14-bit ADC. The RTM is organized into 4 sections with each section supporting 3 hybrids (15 channels). The ADC is operated at the system clock of 41.667 Mhz. The RTM also includes a 4-channel Fiber Optic module and supporting logic which can be used to interface to the JLAB trigger supervisor card.
-
-On the ATCA main board (also known as the Cluster On Board or COB), shown in Figure \ref{fig:svtdaqmodule}, there are 4 FPGAs each interfacing to a single section of the RTM. Each FPGA exists on a separate daughter card known as the Data Processing Module or DPM. The DPMs receive the digitized data from the RTM ADCs, apply thresholds for data reduction and organize the sample data into UDP datagrams. The DPMs also host an I2C controller used to configure and monitor the APV25 chips. One DPM in the system is configured to operate as a trigger interface module, receiving and distributing the system clock and trigger to the rest of the ATCA crate.
-The ATCA crate hosts 2 COB cards, one supporting 4 data processing DPMs and the other supporting 3 data processing DPMs and one trigger DPM. A total of 21 hybrids are supported, 1 more than the 20 required. The two ATCA COB cards and their DPMS are interconnected with a 10G switch card which also hosts two external 1Gbit Ethernet interfaces to a standard PC.
-
- \begin{figure}[t]
-\includegraphics[scale=0.9]{test2012/daq/svt_daq_module.png}
-\caption{\small{The Cluster on Board (COB) board, the main board of the SVT DAQ. The RTM is plugged into the COB in the back.}}\label{fig:svtdaqmodule}
-\end{figure}
-
-
+On the RTM, a pre-amplifier converts the APV25 differential current output to a different voltage output 
+scaled to the sensitive range of a 14-bit ADC. The RTM is organized into four sections with each section 
+supporting 3 hybrids (15 channels). 
+The ADC is operated at the system clock of 41.667 Mhz. 
+%The RTM also includes a 4-channel Fiber Optic module and supporting logic which can be used to interface to the JLAB trigger supervisor card.
+The ATCA main board (the Cluster On Board or COB) is similar to the HPS DAQ with the important exception that one of the DPM's functions as the trigger interface only and there is no RCE module. 
+Instead, the DPMs package and send the data from the hybrids to an external PC through a 1Gbps 
+ethernet connection which serve the same purpose as the RCE module in the HPS DAQ. 
+The ATCA crate hosts two COB cards, one supporting four data processing DPMs and the other supporting three data processing DPMs and one trigger DPM to support a total of 21 hybrids, one more than required. 
+The test run RTM and COB can be seen in Fig.~\ref{fig:rtm_testrun}. 
+\begin{figure*}[t]
+\includegraphics[ scale=0.25]{test2012/daq/rtm.png}
+\includegraphics[ scale=0.4]{test2012/daq/svt_daq_module_noted.png}
+\caption{\small{Picture of a RTM (top) and COB board (bottom) used in the HPS test run 2012.}}
+\label{fig:rtm_testrun}
+\end{figure*}
 The external PC supports three network interfaces, 2 standard 1G-bit Ethernet and one custom low latency data reception card. The first Ethernet interface is used for slow control and monitoring of the 8 DPM modules. The second Ethernet interface serves as the interface to the JLAB data acquisition system. The third custom low latency network interface is used to receive data from the SVT ATCA crate and supports a low latency, reliable TTL trigger acknowledge interface to the trigger DPM. This PC hosts the SVT control and monitoring software as well as the JLAB ROC (Read Out Controller) application.

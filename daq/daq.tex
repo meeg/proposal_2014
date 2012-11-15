@@ -13,7 +13,7 @@ are two front end electronic systems; the SVT is readout with 128-channel integr
 \label{fig:daq_hardware_overview}
 \end{figure*}
 The main software component is the Readout Controllers (ROCs) that collects information 
-from the front end electronics board, processes it and sends to through the network to the 
+from the front end electronics board, processes it and sends it through the network to the 
 Event Builder server. ROCs are installed in every crate holding front end boards. The 
 VME based crates runs ROCs on mvme6100 controller boards with prpmc880 or pmc280 
 coprocessor modules. {\color{red} Might need update?} The ROC for the SVT runs on 
@@ -74,7 +74,7 @@ Figure~\ref{fig:svt_daq_overview} gives an overview of the SVT readout system.
 \end{figure*}
 It is developed and built at SLAC using the Advanced Telecom 
 Communication Architecture (ATCA) system for high speed data transfer. The analog signals 
-from the 15,360 channels are digitized on the Rear Transition Module (RTM) boards. A 
+from the 23,040 channels are digitized on the Rear Transition Module (RTM) boards. A 
 pre-amplifier scales the APV25 differential current output to match the range of a 14-bit 
 Analog to Digital Converter (ADC). Each RTM board has three sections that each service 
 three hybrids. The ADC operates at the system clock frequency of 41.667~MHz. The RTM 
@@ -103,13 +103,13 @@ the 36 hybrids of the SVT.
 The RCE receives and buffers UDP datagrams from the data and trigger DPMs and
  assembles them into full event frames. The RCE also runs an implementation of the JLab ROC application that handles the integration of the SVT event frames into the JLab DAQ 
  system described above. The RCE node transfer data to the JLab DAQ  
- thorough a 10~Gbit Ethernet backend interface. 
+ through a 10~Gbit Ethernet backend interface. 
 
-
-The maximum readout rate of the SVT DAQ  is limited by the readout time 
-of the APV25 chip. Using overlapping trigger and readout functionality, where the 
-APV25 chip can buffer up to 5 triggers, the maximum average readout rate expected for 
-HPS is 45kHz {\color{red} need verification}.   
+The readout rate of the SVT is 43kHz, limited by the APV25 readout rate. 
+%The maximum readout rate of the SVT DAQ  is limited by the readout time 
+%of the APV25 chip. Using overlapping trigger and readout functionality, where the 
+%APV25 chip can buffer up to 5 triggers, the maximum average readout rate expected for 
+%HPS is 45kHz {\color{red} need verification}.   
 
 
 
@@ -118,7 +118,7 @@ HPS is 45kHz {\color{red} need verification}.
 
 
 \subsubsection{ECal and Muon Detector FADC Readout}
-\label{sec:ecal_daq}
+\label{sec:fadc_daq}
 The main part of the readout of the ECal and muon detector are identical. Signals from each 
 readout unit are sent to a signal splitter. For the ECal the charge signal from the APDs are 
 shaped and amplified as described in Sec.~\ref{sec:ecal_readout} before feed into the 
@@ -151,9 +151,12 @@ See Sec.~\ref{sec:triggerdaq} for more details on the operation of the trigger s
 
 \subsubsection{Trigger System}
 \label{sec:triggerdaq}
-
+Provided by Valery and Ben.
 
 \subsubsection{Event Size and Data Rates}
+
+{\color{red}This needs to be updated with the latest occupancy values.}
+
 The extreme radiation environment with tails of scattered beam imposing high occupancy
  puts strict requirements on high readout speed but consequently low noise readout to limit 
  the data rates. The event sizes and rates are based on estimates from detailed simulations 
