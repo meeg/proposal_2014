@@ -28,23 +28,36 @@ We found that one quadrant of the ECal had been miswired in such a way as to fli
 	\label{fig:x_flip}
 \end{figure}
 
-Describe clustering, thresholds, occupancy, dead/noisy crystals, flip in readout?
-
-Plots: Occupancy map
-
 \begin{figure}[ht]
 	\includegraphics[width=0.5\textwidth]{test2012/ecalperformance/hitrates}
-	\caption{\small{}}
+	\caption{\small{Hit rates (above an energy threshold, to cut out effect of gain variations) vary smoothly with position.}}
 	\label{fig:hitrates}
 \end{figure}
 
 \vspace{1cm}{\bf ECal Calibration [Sho]}
 
+We calibrate gain of the individual ECal channels using the SVT measurement of track momentum. 
+The ratio of cluster energy to track momentum is calculated both for Monte Carlo simulation and test run data at each point in the ECal, and we find the value of gain for each channel that brings the two into agreement.
 
-Description of the gain calibration. Relate to how good it needs to be which should be in the performance section. Discussion of sampling fraction. Relation to what calibration that is needed for the trigger in 2014?
+We use a formula to compute the ``weighted E/p'' for a crystal, representing the average E/p for clusters that include the crystal: $\frac{\sum_j w_{j,i}}{\sum_j\frac{P_j}{E_j}w_{j,i}}$.
+We disable all SVT and ECal channels in the simulation that were inoperable or noisy in the test run, so any efficiency or bias effects that affect the real data should be reflected in the simulation as well.
 
-Plots: E/p map before and after calibration, spread in gain, E/p data/MC
+The calibrated gains are corrected by the ratio between the weighted E/p values from Monte Carlo and real data.
+The E/p in Monte Carlo data is also affected by the gain because the trigger thresholds change, so both Monte Carlo and data reconstruction are rerun with each iteration of gain calibration.
+It takes up to 4 iterations for the gains to stabilize; the final values are shown in Figure \ref{fig:gains}.
 
+\begin{figure}[ht]
+	\includegraphics[width=0.45\textwidth]{test2012/ecalperformance/ecalgainplots_corr_sim}
+	\includegraphics[width=0.45\textwidth]{test2012/ecalperformance/gains}
+	\caption{\small{Weighted E/p from Monte Carlo simulation (left), calibrated values of gain in units of MeV per ADC count (right).}}
+	\label{fig:gains}
+\end{figure}
+
+These gains can then be used to convert from ADC counts in a channel to energy deposited into that ECal crystal.
+The other information needed to find the energy of an incident particle is the sampling fraction---the ratio of energy read out from crystals to energy of an incident particle.
+The conventional sampling fraction---the fraction of incident energy that is deposited in crystals---is approximately 0.9 for our ECal, and less at edges.
+For our readout, there is additional energy lost because crystals under the readout threshold are not read out.
+The weighted E/p used in calibration (see Figure \ref{fig:gains}) is an approximate measurement of sampling fraction, but the sampling fraction is energy-dependent because of the effect of readout threshold.
 
 \vspace{1cm}{\bf Trigger performance [Sho/Ben]}
 
