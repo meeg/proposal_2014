@@ -34,6 +34,8 @@ We found that one quadrant of the ECal had been miswired in such a way as to fli
 	\label{fig:hitrates}
 \end{figure}
 
+For ECal analysis, cluster reconstruction was done using the algorithm described in \cite{HPS_PROP}: build clusters around seed hits (hits above a ``seed'' energy threshold and with greater energy than any neighboring hits), and add all neighboring hits above an ``add'' energy threshold.
+
 \vspace{1cm}{\bf ECal Calibration [Sho]}
 
 We calibrate gain of the individual ECal channels using the SVT measurement of track momentum. 
@@ -73,7 +75,7 @@ For every event, the trigger reports as a bitmask the trigger decision (top trig
 
 We study trigger performance by simulating the trigger for each event and comparing actual To study trigger performance, we first convert from readout hits (constant integration window) to trigger hits (time-over-threshold integration). 
 This is done by converting from the readout hit to pulse amplitude, then applying the time-over-threshold algorithm to the simulated ECal pulse shape. 
-We then simulate the CTP clustering algorithm and the trigger decision, and compare the trigger decision and trigger time reported by the simulation to what was reported by the real trigger.
+We then simulate the CTP clustering algorithm and the trigger decision (described in Section \ref{sec:tesrun_trigger}), and compare the trigger decision and trigger time reported by the simulation to what was reported by the real trigger.
 
 To eliminate trigger bias in checking the trigger decision, we use a tag and probe method: to check trigger performance in one half of the ECal, we tag events where there was a trigger in the other half, and exactly one probe cluster in the ECal half under test. 
 We then measured trigger efficiency (proportion of tagged events where there was a trigger) as a function of ADC counts and energy of the probe cluster.
