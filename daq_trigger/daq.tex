@@ -8,7 +8,7 @@ are two front end electronic systems; the SVT is readout with 128-channel integr
  Fig.~\ref{fig:daq_hardware_overview}.
 \begin{figure*}[t]
 %\includegraphics[ scale=0.25]{test2012/ecal_mounted.JPG}
-\includegraphics[ scale=0.3]{daq/figures/daq_schem.pdf}
+\includegraphics[ scale=0.3]{trigger_daq/figures/daq_schem.pdf}
 \caption{\small{Schematic block diagram of the data acquisition system.}}
 \label{fig:daq_hardware_overview}
 \end{figure*}
@@ -56,8 +56,8 @@ hybrid board housing five 128-channel APV25~{\color{red}Reference needed} integr
  pipelining, and analog storage for trigger accepted events. For each 640-channel hybrid 
  board (shown in Fig.~\ref{fig:hybrid_and_apv25_testrun}
  \begin{figure*}[t]
-\includegraphics[ scale=0.3]{daq/figures/hybrid.jpg}
-\includegraphics[ scale=0.3]{daq/figures/apvs-on-hybrid.jpg}
+\includegraphics[ scale=0.3]{trigger_daq/figures/hybrid.jpg}
+\includegraphics[ scale=0.3]{trigger_daq/figures/apvs-on-hybrid.jpg}
 \caption{\small{Picture of a hybrid board from the test run in 2012 holding five 
 APV25 ASICs that are wire bonded to the silicon sensor.}}
 \label{fig:hybrid_and_apv25_testrun}
@@ -68,7 +68,7 @@ board.
 
 Figure~\ref{fig:svt_daq_overview} gives an overview of the SVT readout system. 
  \begin{figure*}[t]
-\includegraphics[ scale=0.6]{daq/figures/svt_daq_schem.png}
+\includegraphics[ scale=0.6]{trigger_daq/figures/svt_daq_schem.png}
 \caption{\small{Schematic block diagram of the SVT data acquisition system.}}
 \label{fig:svt_daq_overview}
 \end{figure*}
@@ -81,8 +81,8 @@ three hybrids. The ADC operates at the system clock frequency of 41.667~MHz. The
 also has a 4-channel fiber optic module to communicate with the JLab trigger supervisor. 
 A picture of a RTM board is shown in Fig.~\ref{fig:rtm_testrun}.
  \begin{figure*}[t]
-\includegraphics[ scale=0.25]{daq/figures/rtm.png}
-\includegraphics[ scale=0.4]{daq/figures/svt_daq_module_noted.png}
+\includegraphics[ scale=0.25]{trigger_daq/figures/rtm.png}
+\includegraphics[ scale=0.4]{trigger_daq/figures/svt_daq_module_noted.png}
 \caption{\small{Picture of a RTM (top) and COB board (bottom) 
 used in the HPS test run 2012.}}
 \label{fig:rtm_testrun}
@@ -151,7 +151,7 @@ See Sec.~\ref{sec:triggerdaq} for more details on the operation of the trigger s
 
 \subsubsection{Trigger System}
 \label{sec:triggerdaq}
-Provided by Valery and Ben.
+\input{daq_trigger/trigger}
 
 \subsubsection{Event Size and Data Rates}
 
