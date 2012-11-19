@@ -8,7 +8,7 @@ are two front end electronic systems; the SVT is readout with 128-channel integr
  Fig.~\ref{fig:daq_hardware_overview}.
 \begin{figure*}[t]
 %\includegraphics[ scale=0.25]{test2012/ecal_mounted.JPG}
-\includegraphics[ scale=0.3]{trigger_daq/figures/daq_schem.pdf}
+\includegraphics[ scale=0.3]{daq_trigger/figures/daq_schem.pdf}
 \caption{\small{Schematic block diagram of the data acquisition system.}}
 \label{fig:daq_hardware_overview}
 \end{figure*}
@@ -56,8 +56,8 @@ hybrid board housing five 128-channel APV25~{\color{red}Reference needed} integr
  pipelining, and analog storage for trigger accepted events. For each 640-channel hybrid 
  board (shown in Fig.~\ref{fig:hybrid_and_apv25_testrun}
  \begin{figure*}[t]
-\includegraphics[ scale=0.3]{trigger_daq/figures/hybrid.jpg}
-\includegraphics[ scale=0.3]{trigger_daq/figures/apvs-on-hybrid.jpg}
+\includegraphics[ scale=0.3]{daq_trigger/figures/hybrid.jpg}
+\includegraphics[ scale=0.3]{daq_trigger/figures/apvs-on-hybrid.jpg}
 \caption{\small{Picture of a hybrid board from the test run in 2012 holding five 
 APV25 ASICs that are wire bonded to the silicon sensor.}}
 \label{fig:hybrid_and_apv25_testrun}
@@ -68,7 +68,7 @@ board.
 
 Figure~\ref{fig:svt_daq_overview} gives an overview of the SVT readout system. 
  \begin{figure*}[t]
-\includegraphics[ scale=0.6]{trigger_daq/figures/svt_daq_schem.png}
+\includegraphics[ scale=0.6]{daq_trigger/figures/svt_daq_schem.png}
 \caption{\small{Schematic block diagram of the SVT data acquisition system.}}
 \label{fig:svt_daq_overview}
 \end{figure*}
@@ -81,8 +81,8 @@ three hybrids. The ADC operates at the system clock frequency of 41.667~MHz. The
 also has a 4-channel fiber optic module to communicate with the JLab trigger supervisor. 
 A picture of a RTM board is shown in Fig.~\ref{fig:rtm_testrun}.
  \begin{figure*}[t]
-\includegraphics[ scale=0.25]{trigger_daq/figures/rtm.png}
-\includegraphics[ scale=0.4]{trigger_daq/figures/svt_daq_module_noted.png}
+\includegraphics[ scale=0.25]{daq_trigger/figures/rtm.png}
+\includegraphics[ scale=0.4]{daq_trigger/figures/svt_daq_module_noted.png}
 \caption{\small{Picture of a RTM (top) and COB board (bottom) 
 used in the HPS test run 2012.}}
 \label{fig:rtm_testrun}
@@ -144,6 +144,70 @@ coincidence window of 8~ns to be used when searching for clusters.
 This is an important part of improving 
 the pattern recognition to reduce confusion in the tracker which has considerable longer 
 integration times. 
+
+
+
+
+
+The main characteristics of the Jefferson Lab Flash ADC are as follows:
+\begin{itemize}
+\item 12 bits digitizer with 250Msps
+\item 50$\Omega$ termination input
+\item Front-end input range  -0.5V, -1V or -2V.  Input range has to be above maximum pulse height to ensure no signal clipping
+\end{itemize}
+
+The FADC charge resolution as a function of the front-end input range is presented in Table~\ref{tab:charge_resolution}.
+\begin{table}[h]
+\centering
+\begin{tabular}{| l | l |}
+\hline
+Input Range & Nominal Charge Resolution\\\hline
+-0.5V & \ 9.76 fc per ADC count \\\hline
+-1.0V & 19.53 fc per ADC count \\\hline
+-2.0V & 39.06 fc per ADC count \\\hline
+\end{tabular}
+\caption{FADC charge resolution for different front-end input ranges.}
+\label{tab:charge_resolution}
+\end{table}
+
+FADC data paths for the readout and trigger operation  are presented in Fig.~\ref{fig:hps_trigger_data}.
+There are two FADC operation modes: the readout mode and trigger mode.
+
+ In readout mode FADC determines the energy of the one ECal channel that will be reported. 
+The channel integration occurs only if the input signal crosses the programmable threshold level.  Then a programmable number of samples around the threshold crossing are added together to form the reported integral.  The readout  mode has the following parameters for every FADC channel (see Fig.~\ref{fig:hps_trigger_data}, top panel):
+ \begin{itemize}
+ \item Number of samples integrated before the threshold crossing (NSB)
+ \item Number of samples integrated after the  threshold crossing (NSA)
+ \item Readout threshold, measured in ADC counts.
+ \end{itemize}
+ 
+The number of samples for a given channel integration  is the sum of NSB+NSA samples that will be stored in  
+ the 17-bit FADC register. It is a fixed gate width pulse integration and there is no pedestal subtraction in the sum (pedestal subtraction happens offline).
+ 
+
+ 
+
+\begin{figure}[t]
+\includegraphics[scale=0.4]{daq_trigger/figures/hps_trigger_data}
+\caption{\small{FADC data paths}}
+\label{fig:hps_trigger_data}
+\end{figure}
+
+A block diagram of the HPS  trigger processing is shown in Fig.~\ref{fig:hps_trigger_data}, bottom panel. 
+The trigger processing mode has the following parameters for every FADC channel:
+ \begin{itemize}
+ \item Number of samples integrated before the threshold crossing (NSB)
+ \item Number of samples integrated after the  threshold crossing (NSA)
+ \item Readout threshold, measured in ADC counts.
+ \item Pedestal
+ \item Conversion factor (gain) that converts  ADC channel to MeV, from 0 to 8191 MeV, 13 bits
+ \item Energy discriminator (minimum energy cutoff)
+ \end{itemize}
+The parameters NSB, NSA and readout threshold are the same as in the readout mode.
+The pedestal value is then subtracted from the integrated sum over NSB+NSA samples and this value is converted to MeV units using the gain conversion factor. The energy can be discriminated to cut off low energy pulses before reporting to the CTP. The value reported to the CTP is a 13bit pulse energy with a 4ns timing resolution where it crossed the readout threshold. Pulse data for every channel is sent to the CTP every 32ns (if there is no hit a 0 energy pulse is sent still). This sets a worst case double pulse resolution of 32ns per channel, but it can be as less than this if pulses occur in different 32ns windows, but close together).
+
+
+
 
 
 See Sec.~\ref{sec:triggerdaq} for more details on the operation of the trigger system.
