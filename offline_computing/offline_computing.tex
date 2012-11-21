@@ -5,20 +5,30 @@
 
 The following is an outline of the offline computing model envisioned for satisfying the analysis needs of the HPS experiment. The raw data collected over the three month running period must be processed through calibration passes, reconstructed into calibrated objects useful for analysis and separated into analysis streams. Corresponding Monte Carlo will also need to be produced and separated into the same analysis streams.
 
-\subsubsection{Data Taking}The primary elements of the HPS detector are an electromagnetic calorimeter (ECal), a silicon microstrip vertex tracker and a muon system. The ECal consists of 5 rows of 46 lead tungstate crystals and 3 rows of 16 lead glass colorimeter blocks on each side of the dead zone. The tracker consists of 6 Si microstrip layers with a total of 67840 readout channels. The muon system has 144 channels. Assuming 30 kHz raw trigger rate, reduction of the trigger rate by a factor of 8 at Level 3, and event size of 4950 bytes, we arrive at data rates of about 18 Mbytes/sec. With 95 days of data collection for each of two runs, the net raw data volume will be 290 Tbytes. The number of events out of the Level 3 trigger is 59 GEvents.
 
-\subsubsection{Reconstruction Passes}The raw data must be processed to produce physics data objects that can be analyzed. This reconstruction process will also include filters to select events of physics interest but the output events will be larger due to the size and quantity of the reconstructed objects. Space equivalent to twice that of the raw data volume will be needed. This implies that ~590 Tbytes for data reconstruction output will be needed. About 0.1 CPU seconds are needed to reconstruct an event on a 2.4GHz Xeon core. For such a core, 12 billion CPU seconds would be needed. A typical 2.4GHz Xeon core has a SPECint2000 of 2500. The required CPU hours expressed in SPECint2000 is then 8 G SPEC CINT2000 hrs per pass. A second reconstruction pass may be needed after improvements to the reconstruction used in the first pass are identified and implemented.
-\subsubsection{Monte Carlo}For modeling signals, estimating backgrounds and confirming the understanding of the detector performance, Monte Carlo simulation will be needed. The number of events needed is estimated to be 1/10th of the number of events passing the Level 3 trigger. If the simulated events are comparable in size to reconstructed events then this means that the required space for the simulation output is 43 Tbytes. About 5 CPU seconds are needed to simulate an event. For 5.9 billion events this yields 29 billion CPU seconds per pass or 2 G SPEC CINT2000 hrs. The main simulation will be done off?site.
+%\subsubsection{Data Taking}
+The primary elements of the HPS detector are an electromagnetic calorimeter (ECal), a silicon microstrip vertex tracker and a muon system. The ECal consists of 5 rows of 46 lead tungstate crystals and 3 rows of 16 lead glass colorimeter blocks on each side of the dead zone. The tracker consists of 6 Si microstrip layers with a total of 67840 readout channels. The muon system has 144 channels. Assuming 30 kHz raw trigger rate, reduction of the trigger rate by a factor of 8 at Level 3, and event size of 4950 bytes, we arrive at data rates of about 18 Mbytes/sec. With 95 days of data collection for each of two runs, the net raw data volume will be 290 Tbytes. The number of events out of the Level 3 trigger is 59 GEvents.
 
-\subsubsection{Analysis Streams}Each analysis will need access to a subset of events relevant to that specific analysis. To minimize the time (CPU and real) required to go through the dataset, streams of analysis specific data may be produced as part of the standard production and/or from users producing their own n?tuples. We estimate that these data will need 20\% extra storage space, compared to that needed by the reconstructed data and simulated data.
+%\subsubsection{Reconstruction Passes}
+The raw data must be processed to produce physics data objects that can be analyzed. This reconstruction process will also include filters to select events of physics interest but the output events will be larger due to the size and quantity of the reconstructed objects. Space equivalent to twice that of the raw data volume will be needed. This implies that ~590 Tbytes for data reconstruction output will be needed. About 0.1 CPU seconds are needed to reconstruct an event on a 2.4GHz Xeon core. For such a core, 12 billion CPU seconds would be needed. A typical 2.4GHz Xeon core has a SPECint2000 of 2500. The required CPU hours expressed in SPECint2000 is then 8 G SPEC CINT2000 hrs per pass. A second reconstruction pass may be needed after improvements to the reconstruction used in the first pass are identified and implemented.
 
-\subsubsection{Analysis CPU}Based on experience with previous experiments, it is reasonable to estimate that the net CPU needed for analysis work (batch and interactive) will be comparable to that needed for production. For CLAS about 30\% of physics analysis work was done at home institutions.
+%\subsubsection{Monte Carlo}
+For modeling signals, estimating backgrounds and confirming the understanding of the detector performance, Monte Carlo simulation will be needed. The number of events needed is estimated to be 1/10th of the number of events passing the Level 3 trigger. If the simulated events are comparable in size to reconstructed events then this means that the required space for the simulation output is 43 Tbytes. About 5 CPU seconds are needed to simulate an event. For 5.9 billion events this yields 29 billion CPU seconds per pass or 2 G SPEC CINT2000 hrs. The main simulation will be done off?site.
 
-\subsubsection{Disk Resources}Disk space will be needed for n?tuples, code releases, and scratch areas and approximately 10 percent of the processed data. To accommodate this, 80 Tbytes will be needed.?
-\subsubsection{Data Transfer to/from remote sites}
-If the option of having a backup of the HPS raw data at JLAB is not feasible then a copy at SLAC will be made. It is very likely that a copy of the reconstructed data will be needed at SLAC and remote sites will be used to assist in the Monte Carlo production. For CLAS about 30\% of the simulation production was done remotely.
+%\subsubsection{Analysis Streams}
+Each analysis will need access to a subset of events relevant to that specific analysis. To minimize the time (CPU and real) required to go through the dataset, streams of analysis specific data may be produced as part of the standard production and/or from users producing their own n?tuples. We estimate that these data will need 20\% extra storage space, compared to that needed by the reconstructed data and simulated data.
 
-\subsubsection{Summary of Offline Computing Requirements}
+%\subsubsection{Analysis CPU}
+Based on experience with previous experiments, it is reasonable to estimate that the net CPU needed for analysis work (batch and interactive) will be comparable to that needed for production. For CLAS about 30\% of physics analysis work was done at home institutions.
+
+%\subsubsection{Disk Resources}
+Disk space will be needed for n?tuples, code releases, and scratch areas and approximately 10 percent of the processed data. To accommodate this, 80 Tbytes will be needed.
+?
+%\subsubsection{Data Transfer to/from remote sites}
+
+If the option of having a backup of the HPS raw data at JLAB is not feasible then a copy at SLAC will be made. It is very likely that a copy of the reconstructed data will be needed at SLAC and remote sites will be used to assist in the Monte Carlo production. For CLAS about 30\% of the simulation production was done remotely.
+
+%\subsubsection{Summary of Offline Computing Requirements}
 
 The HPS storage and offline computing requirements are summarized in Tab.~\ref{tab:datastorage} 
 and~\ref{tab:computing}, respectively.
@@ -26,7 +36,10 @@ and~\ref{tab:computing}, respectively.
 \centering
 \begin{tabular}{|l|c|}
 \hline
-Silo/Mass Storage (Tape) & TB \\\hlineAmount of Simulated Data Expected & 43 \\\hline
+Silo/Mass Storage (Tape) & TB \\
+\hline
+Amount of Simulated Data Expected & 43 \\
+\hline
 Amount of Raw Data Expected & 290 \\
 \hline
 Amount of Processed Data Expected & 590 \\
