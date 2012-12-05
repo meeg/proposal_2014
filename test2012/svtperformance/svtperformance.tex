@@ -18,7 +18,7 @@ timing performance using the average of all cluster times in a track as the ``tr
  residual of the cluster time relative to that. The observed track time , shown in Figure \ref{fig:tracktime}, has the expected amount of trigger jitter due to the readout clock and trigger 
  system jitter. After correcting for offsets for each sensor (time-of-flight, clock phase) the RMS 
  of the final residual distribution is roughly 2.4~ns for each sensor. 
-\begin{figure}[ht]
+\begin{figure}[h]
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/track_time_top}
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres}
 	\caption{\small{Track time distribution (top) and cluster time residual (bottom). The 
@@ -47,7 +47,7 @@ Sec.~\ref{sec:performance}, but we believe this discrepancy is due to our fit fu
 shape fit assumes an ideal CR-RC pulse shape; since the actual pulse shape has a slower rise time, 
 there is a systematic pull on the hit time when a hit comes immediately before the APV clock time. 
 This is visible in Figure \ref{fig:timeres_2D} as a shift in the residual at certain values of track time.
-\begin{figure}[]
+\begin{figure}[h]
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres_2D}
 	\caption{\small{Plot of the time residual for a representative sensor vs. the track time. 
 		The kinks in the horizontal band are caused by the fitter; without them the 1-D histogram in Figure \ref{fig:timeres} (the projection of this histogram) would be narrower.} }
@@ -62,6 +62,7 @@ enough rejection due to pile-up hits in the HPS electron run.
 
 \vspace{1cm}{\bf Tracking algorithms [Matt/Omar]}
 
+\input{test2012/svtperformance/trk_performance/trk_performance}
 
 Pattern recognition/Stereo hit reconstruction and description of the tracking algorithm. 
 
