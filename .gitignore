@@ -3,3 +3,6 @@ hps_2014.log
 hps_2014.aux
 hps_2014.out
 hps_2014.toc
+*~
+*.bak
+*.swp
