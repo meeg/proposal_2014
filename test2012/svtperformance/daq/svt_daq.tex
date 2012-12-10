@@ -1,0 +1,57 @@
+
+%
+%   svt_daq.tex
+%       author: Omar Moreno <omoreno1@ucsc.edu>
+%               Santa Cruz Institute for Particle Physics
+%               University of California, Santa Cruz
+%      created: November 13, 2012
+%
+
+The expected data rates and event sizes for each of the dedicated photon runs
+were estimated using a full simulation of the SVT DAQ and compared to those
+observed.  As discussed in 
+section [], the digitized samples from three hybrids were received by a single
+DPM which, in turn, applied thresholds and other data reduction techniques to 
+each of the samples.  For the test run, at least three of the six samples
+were required to exceed a threshold of two times the noise level.  A 
+``pile-up'' cut requiring that samples two be greater than sample one or that
+sample three be greater than sample two was also applied.  This was meant
+to eliminate hits arising from shaper signal tails that were expected to occur 
+during electron running.  Signals from the photon run were unaffected by such
+a cut. 
+
+All hits which emerged from a DPM were encapsulated into their own container 
+or bank. Each of the banks contained the following information:
+\begin{itemize}
+    \item 32 bit header
+    \item 32 bit identifier
+    \item 32 bit event number
+    \item 32 bit tail bit
+    \item 6 hybrid temperatures each 32 bits
+    \item 16 bytes $\times$ \# number of hits 
+\end{itemize} 
+An additional 80 bits of overhead per bank due to ... also needs to be taken 
+into account.
+
+From simulation, it was found that a typical event contained on average 100
+hits per event with approximately 3 hits being due to noise.  The typical 
+event was then estimated to be [] bytes.  The expected data rates
+were then estimated using the trigger rates observed during the photon
+run and are listed on table [] along with the observed data rates.  
+\begin{table}
+    \scalebox{0.75}{
+    \begin{tabular}{ c | c | c | c | c | c | c }
+    \hline
+    Target & Mean Number of Sim Hits  & Sim Event Size & Trigger Rate & Data Rate & Mean Number Observed Hits & Mean Observed Rate \\ 
+    \hline 
+    \end{tabular} } 
+    \caption{...}
+    \label{table:rates}
+\end{table}
+
+As can be seen from the table, the data rates observed during the run were
+much higher than those expected.  This can be attributed to 1) a known
+noisy sensor and 2) noisy chips which would randomly appear during certain
+runs.  The cause of both these issues are now well understood and will be
+resolved in time for the full run.
+
