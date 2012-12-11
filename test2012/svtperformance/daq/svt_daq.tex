@@ -39,15 +39,36 @@ event was then estimated to be [] bytes.  The expected data rates
 were then estimated using the trigger rates observed during the photon
 run and are listed on table [] along with the observed data rates.  
 \begin{table}
-    \scalebox{0.75}{
-    \begin{tabular}{ c | c | c | c | c | c | c }
+    \scalebox{1.0}{
+    \begin{tabular}{ c | c | c | c | c }
     \hline
-    Target & Mean Number of Sim Hits  & Sim Event Size & Trigger Rate & Data Rate & Mean Number Observed Hits & Mean Observed Rate \\ 
+    %  Are the trigger rates going to be listed anywhere else? Otherwise, they should be listed here.
+    Converter Thickness (\%$X_0$) & Sim Occupancy (\%)  & Sim Event Size (kB) &   Sim Data Rate (Mb/s) \\      
     \hline 
+    1.6                           & .438                & 1.22                &   2.07                 \\
+    0.45                          & .293                & .93                 &   .53                  \\
+    0.18                          & .118                & .56                 &   .24                  \\ 
     \end{tabular} } 
-    \caption{...}
-    \label{table:rates}
+    \caption{Occupancy, event size and resulting data rate expected for each of the three 
+             converter thicknesses used in the test run.}
+    \label{table:sim_rates}
 \end{table}
+
+\begin{table}
+    \scalebox{1.0}{ 
+        \begin{tabular}{ c | c | c | c }
+            \hline
+            Converter Thickness (\%$X_0$)   & Obs. Occupancy (\%) & Obs. Event Size (kB) & Obs. Data Rate (Mb/s) \\
+            \hline
+            1.6                             & 1.03                & 2.43                 & 4.12                  \\
+            0.45                            & 1.22                & 2.82                 & 1.61                  \\
+            0.18                            & 1.23                & 2.84                 & 1.21                  \\
+        \end{tabular}
+    }
+    \caption{Occupancy, event size and resulting data rate observed for each of the three 
+             converter thicknesses used in the test run.}
+    \label{table:observed_rates}
+\end{table}    
 
 As can be seen from the table, the data rates observed during the run were
 much higher than those expected.  This can be attributed to 1) a known
