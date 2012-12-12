@@ -8,39 +8,38 @@
 %
 
 The expected data rates and event sizes for each of the dedicated photon runs
-were estimated using a full simulation of the SVT DAQ and compared to those
-observed.  As discussed in 
-section [], the digitized samples from three hybrids were received by a single
-DPM which, in turn, applied thresholds and other data reduction techniques to 
-each of the samples.  For the test run, at least three of the six samples
-were required to exceed a threshold of two times the noise level.  A 
-``pile-up'' cut requiring that samples two be greater than sample one or that
-sample three be greater than sample two was also applied.  This was meant
-to eliminate hits arising from shaper signal tails that were expected to occur 
-during electron running.  Signals from the photon run were unaffected by such
-a cut. 
+were estimated using a full simulation of the SVT DAQ and compared to observed
+values. As discussed in Section~\ref{sec:testrun_daq}, the digitized samples
+from three hybrids were received by a single DPM.  The DPM then required that
+at least three of the six samples exceeeded a threshold of two times the noise
+level for that channel.  An additional ``pile-up'' cut requiring that 
+(sample 2 $>$ sample 1) or (sample 3 $>$ sample 2) was also applied. This was
+meant to eliminate hits arising from shaper signal tails that were expected
+to occur when running in a high occupancy environment i.e. electron run.
+Signals from the photon run were unaffected by such a cut. 
 
-All hits which emerged from a DPM were encapsulated into their own container 
-or bank. Each of the banks contained the following information:
-\begin{itemize}
-    \item 32 bit header
-    \item 32 bit identifier
-    \item 32 bit event number
-    \item 32 bit tail bit
-    \item 6 hybrid temperatures each 32 bits
-    \item 16 bytes $\times$ \# number of hits 
-\end{itemize} 
-An additional 80 bits of overhead per bank due to ... also needs to be taken 
-into account.
+All samples were placed into their own container along with the 
+channel number, hybrid identifier, chip address and DPM identifier. An 
+additional layer of encapsulation or bank was used to store all samples 
+emerging from a single DPM along with the DPM identifier, the event number
+an error bit and hybrid temperatures. A diagram of the container along with
+the sizes of each of the elements is shown on Figure~\ref{fig:data_format}.
+\begin{figure}[h]
+    \begin{center}
+%    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/svt_calib/baseline_v_ch_fpga0_hybrid0.pdf}
+        \caption{
+                 } 
+	\label{fig:data_format}
+    \end{center}
+\end{figure}
+Overall, the container overhead will contribute a total of 326 bytes to an event
+with an additional 16 bytes per hit.
 
-From simulation, it was found that a typical event contained on average 100
-hits per event with approximately 3 hits being due to noise.  The typical 
-event was then estimated to be [] bytes.  The expected data rates
-were then estimated using the trigger rates observed during the photon
-run and are listed on table [] along with the observed data rates.  
-\begin{table}
-    \scalebox{1.0}{
-    \begin{tabular}{ c | c | c | c | c }
+The occupancy expected for each of the converter thicknesses along with the 
+corresponding event size and data rate are shown on Table~\ref{table:sim_rates}.
+\begin{table}[h]
+    \scalebox{0.9}{
+    \begin{tabular}{ c | c | c | c }
     \hline
     %  Are the trigger rates going to be listed anywhere else? Otherwise, they should be listed here.
     Converter Thickness (\%$X_0$) & Sim Occupancy (\%)  & Sim Event Size (kB) &   Sim Data Rate (Mb/s) \\      
@@ -53,9 +52,15 @@ run and are listed on table [] along with the observed data rates.
              converter thicknesses used in the test run.}
     \label{table:sim_rates}
 \end{table}
+The occupancies shown include an contribution of .02\% (3 hits) due to noise.  
+The data rates were estimated using the trigger rates observed during each
+of the dedicated photon runs. From the table, it can be seen that the 
+occupancies are as expected i.e. thicker targets correspond to higher 
+occupancies. 
 
-\begin{table}
-    \scalebox{1.0}{ 
+Table~\ref{table:observed_rates} list the observed occupancy, event sizes and 
+\begin{table}[h]
+    \scalebox{0.9}{ 
         \begin{tabular}{ c | c | c | c }
             \hline
             Converter Thickness (\%$X_0$)   & Obs. Occupancy (\%) & Obs. Event Size (kB) & Obs. Data Rate (Mb/s) \\
@@ -69,10 +74,13 @@ run and are listed on table [] along with the observed data rates.
              converter thicknesses used in the test run.}
     \label{table:observed_rates}
 \end{table}    
-
-As can be seen from the table, the data rates observed during the run were
+rates for each of the targets.  The data rates observed during the run were
 much higher than those expected.  This can be attributed to 1) a known
-noisy sensor and 2) noisy chips which would randomly appear during certain
-runs.  The cause of both these issues are now well understood and will be
-resolved in time for the full run.
+noisy sensor and 2) noisy chips which appeared during certain runs.  The cause
+of both these issues are now well understood and will be resolved in time 
+for the upcoming run.
 
+\begin{center}
+    \textbf{Need to add discussion of rates after all bad channels are masked
+            in order to get a better comparison to MC rates}
+\end{center}
