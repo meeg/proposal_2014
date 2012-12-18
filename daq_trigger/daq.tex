@@ -51,13 +51,13 @@ hybrid board housing five 128-channel APV25~{\color{red}Reference needed} integr
  tracker~{\color{red}Reference needed}  at the Large Hadron Collider at CERN, was 
  chosen based on their good match to the HPS requirements. They provide amplification, 
  pipelining, and analog storage for trigger accepted events. For each 640-channel hybrid 
- board (shown in Fig.~\ref{fig:hybrid_and_apv25_testrun}
+ board (shown in Fig.~\ref{fig:hybrid_and_apv25}
  \begin{figure*}[t]
 \includegraphics[ scale=0.3]{daq_trigger/figures/hybrid.jpg}
 \includegraphics[ scale=0.3]{daq_trigger/figures/apvs-on-hybrid.jpg}
 \caption{\small{Picture of a hybrid board from the test run in 2012 holding five 
 APV25 ASICs that are wire bonded to the silicon sensor.}}
-\label{fig:hybrid_and_apv25_testrun}
+\label{fig:hybrid_and_apv25}
 \end{figure*}
 Each hybrid board has five analog output lines where analog data from each APV25 are 
 sent using low power LVDS signals over about 3~m of multi-twisted-pair cable to a readout 
@@ -76,13 +76,13 @@ pre-amplifier scales the APV25 differential current output to match the range of
 Analog to Digital Converter (ADC). Each RTM board has three sections that each service 
 three hybrids. The ADC operates at the system clock frequency of 41.667~MHz. The RTM 
 also has a 4-channel fiber optic module to communicate with the JLab trigger supervisor. 
-A picture of a RTM board is shown in Fig.~\ref{fig:rtm_testrun}.
+A picture of a RTM board is shown in Fig.~\ref{fig:rtm}.
  \begin{figure*}[t]
 \includegraphics[ scale=0.25]{daq_trigger/figures/rtm.png}
 \includegraphics[ scale=0.4]{daq_trigger/figures/svt_daq_module_noted.png}
 \caption{\small{Picture of a RTM (top) and COB board (bottom) 
 used in the HPS test run 2012.}}
-\label{fig:rtm_testrun}
+\label{fig:rtm}
 \end{figure*}
 The main COB board has four FPGA units that each interfaces with a single section of the 
 the RTM.  Each FPGA is housed on a separate daughter board called 
