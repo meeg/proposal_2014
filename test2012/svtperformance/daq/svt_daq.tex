@@ -80,7 +80,21 @@ noisy sensor and 2) noisy chips which appeared during certain runs.  The cause
 of both these issues are now well understood and will be resolved in time 
 for the upcoming run.
 
-\begin{center}
-    \textbf{Need to add discussion of rates after all bad channels are masked
-            in order to get a better comparison to MC rates}
-\end{center}
+A better comparison between simulated and observed data rates can be obtained
+by masking out all known noisy channels found during the comissioning of the 
+SVT.  The resulting data rates are listed on Table~\ref{table:masked_rates}. 
+\begin{table}[h]
+    \scalebox{0.8}{ 
+        \begin{tabular}{ c | c | c | c }
+            \hline
+            Converter Thickness (\%$X_0$)   & Obs. (Sim) Occupancy (\%) & Obs. (Sim) Event Size (kB) & Obs. (Sim) Data Rate (Mb/s) \\
+            \hline
+            1.6                             &  ()               &  ()                &   ()                \\
+            0.45                            &  ()               &  ()                &   ()                \\
+            0.18                            &  ()               &  ()                &   ()                \\
+        \end{tabular}
+    }
+    \caption{Comparison of cccupancy, event size and resulting data rate for each of the three 
+             converter thicknesses used in the test run after all bad channels are masked.}
+    \label{table:masked_rates}
+\end{table}    
