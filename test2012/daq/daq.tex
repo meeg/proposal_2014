@@ -1,33 +1,30 @@
 
 \subsubsection{Test Run Data Acquisition}
 \label{sec:testrun_daq}
-The test run served as a proof of principle for the proposed DAQ and the system was very 
-close to that proposed for HPS. Since the systems are similar only the main differences will be highlighted here,  with more details in Section~\ref{sec:daq} and with results and experiences discussed below in Section~\ref{sec:testrun_performance}. 
+The test run served as a  served as a proof of principle for the proposed DAQ and the system was very 
+close to they proposed for HPS. Since the systems are similar only the main differences will be highlighted here,  with more details in Sec.~\ref{sec:daq} and with results and experiences discussed below in Sec.~\ref{sec:testrun_performance}. 
 
 
-A generic layout of the hardware from the test run DAQ is laid out in Figure~\ref{fig:daq}.
+A generic layout of the hardware from the test run DAQ is layer out in Fig.~\ref{fig:daq}.
  \begin{figure*}[h]
 \includegraphics[scale=0.35]{test2012/daq/daq_schem.pdf}
 \caption{\small{Readout and processing system block diagram.}}\label{fig:daq}
 \end{figure*}
-The front-end systems of the ECal and SVT are similar. 
-The differences of the DAQ and trigger w.r.t. to the HPS are fleshed out in greater detail below but 
+The front-end systems of the ECal and SVT will be similar 
+The differences of the DAQ and trigger w.r.t. to the HPS are flashed out in greater detail below but 
 are all related to the following areas:
-\begin{enumerate}
-\item a lower ECal cluster resolution and no calibration available at the trigger level together with simpler trigger logic, 
-\item a smaller SVT without the need for optical readout and power distribution inside the vacuum,
-and
-\item lower bandwidth links.
-\end{enumerate}
+1) a lower ECal cluster resolution and no calibration available at the trigger level together with simpler trigger logic, 
+2) a smaller SVT without the need for optical readout and power distribution inside the vacuum,
+and 3) lower bandwidth links.
 
 The two front-end electronics systems for the ECal and SVT are essentially unchanged. The ECal provides 
-input to the Level~1 trigger system after which an accepted event is acquired from the two sub-systems 
-and are processed in the data acquisition and processing system. The Readout Crate Controllers (ROCs)
+input to the Level~1 trigger system after which an accepted event is acquired from the two sub-systems are
+and processed in the data acquisition and processing system. The Readout Crate Controllers (ROCs)
  described for HPS are unchanged and installed in every VME, VME64X, VXS crates running 
  mvme6100 controllers with a prpmc880 or pmc280 co-processor modules. A hybrid approach was 
  used for the SVT DAQ in the test run where the ROC ran on a external PC connected to the ATCA crate. 
  Similar to HPS, a Foundry Router was used as the backbone of the DAQ system, providing 1Gbps and 
- 10Gbps connections between components and to the JLAB Computer Center.
+ 10Gpbs connections between components and to the JLAB Computer Center.
 
 The Event Builder, Event Recorder, and other critical DAQ components ran on 
 4-CPU Opteron-based servers, which was sufficient for the test run. The RAID5 test run storage system 

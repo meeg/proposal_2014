@@ -2,10 +2,11 @@
  
  \subsubsection{Layout} 
  
-The HPS experiment will use the same three magnet chicane that was used for the CLAS Two Photon Exchange experiment (TPE). The layout of the beam line and the chicane is shown in Figure \ref{fig:ebeam}. The Hall B pair spectrometer magnet, 18D36 (pole length $91.44$ cm, gap $45.72\times 15.24$ cm$^2$, max-field $1.5$ T), will serve as the analyzing magnet. The dipole field direction (Y) is perpendicular to the horizontal (XZ) plane. A Hall B “Frascati” H magnets (pole length $50$ cm, gap $21\times 8.25$ cm$^2$, max-field $1.2$ T) will be used as the first and the last dipoles of the chicane. The analyzing magnet will be operated at a $0.25$ T-m field for $1.1$ GeV, a $0.5$ T-m field for $2.2$ GeV, and a $1.5$ T-m field for $6.6$ GeV running. The two bending magnets will be set to  $0.125$ T-m, $0.25$ T-m, and $0.75$ T-m fields, respectively. The distance between the centers of the magnets will be about $50$ cm bigger than it for the TPE run. The location of the analyzing along the beam will be exactly at the same place as for the TPE run. In transverse direction it will be displaced ito beam left by $\sim 11$ cm in order to optimize the detector acceptance for e$^+$ and e$^-$, see Figure \ref{fig:ebeamt}.
+The HPS experiment will use the same three magnet chicane that was used for the CLAS Two Photon Exchange experiment (TPE). The layout of the beam line and the chicane is shown in Figure \ref{fig:ebeam}. The Hall B pair spectrometer magnet, 18D36 (pole length $91.44$ cm, gap $45.72\times 15.24$ cm$^2$, max-field $1.5$ T), will serve as the analyzing magnet. The dipole field direction (Y) is perpendicular to the horizontal (XZ) plane. A Hall B “Frascati” H magnets (pole length $50$ cm, gap $21\times 8.25$ cm$^2$, max-field $1.2$ T) will be used as the first and the last dipoles of the chicane. The analyzing magnet will be operated at a $0.25$ T-m field for $1.1$ GeV, a $0.5$ T-m field for $2.2$ GeV, and a $1.5$ T-m field for $6.6$ GeV running. The two bending magnets will be set to  $0.125$ T-m, $0.25$ T-m, and $0.75$ T-m fields, respectively. The distance between the centers of the magnets will be about $50$ cm bigger than it was for the TPE run. The location of the analyzing along the beam will be exactly at the same place as for the TPE run. In transverse direction it will be displaced to beam left by $\sim 11$ cm in order to optimize the detector acceptance for e$^+$ and e$^-$, see Figure \ref{fig:ebeamt}.
  
  \begin{figure*}[!ht]
-\includegraphics[angle=90., scale=0.18]{beamline/05055-01_NT.pdf}
+%\includegraphics[angle=90., scale=0.18]{beamline/05055-01_NT.pdf}
+\includegraphics[angle=90., width=\textwidth]{beamline/HPS_051XX_elev_zoom.pdf}
 \caption{\small{Beam line configuration for the HPS test run with electron beams. Chicane configuration is similar to previously run CLAS experiment.}}\label{fig:ebeam}
 \end{figure*}
 
@@ -23,34 +24,36 @@ The SVT vacuum box is mounted on the upstream end of the analyzing magnet vacuum
  
 The HPS will use $\sim 1.1$ GeV, $\sim 2.2$ GeV, and $\sim 6.6$ GeV electron beams of up to $500$ nA incident on a tungsten (W) target. Operational experience (with 6 GeV) showed that the CEBAF beam is very clean, and is contained within $\pm 0.5$ mm with halo at the level of less than $10^{-5}$. It is expected that behavior of the 12 GeV machine will be understood at the same level, at least for up to 3-pass beams (up $\sim 6.6$ GeV), so there should not be any issue of primary electron beam passing through the “dead zone” gap of the HPS setup. 
  
-For checking the vertexing performance and acquiring physics data, an asymmetric beam profile is desirable. Since the vertex resolution in the non-bend plane will be high, beam sizes of $20-30 ~\mu$m in the Y direction are preferable. The momentum measurement will not benefit from small beam sizes in the X direction, and small beam sizes in both dimensions will overheat the target foil. For these reasons the required beam sizes for HPS will be $\sigma_X \sim 250 \mu m$ and $\sigma_Y \sim 30 \mu m$.
+For checking the vertexing performance and acquiring physics data, an asymmetric beam profile is desirable. Since the vertex resolution in the non-bend plane will be high, beam sizes of $20-30 ~\mu$m in the Y direction are preferable. The momentum measurement will not benefit from small beam sizes in the X direction, and small beam sizes in both dimensions will overheat the target foil. For these reasons the required beam sizes for HPS will be $\sigma_X \sim 250 \mu$m and $\sigma_Y \sim 30 \mu$m.
  
  The HPS beam parameter requirements are presented in Table \ref{tb:beam}. 
  
  \begin{table}[!htb]
  \centering
- \begin{tabular}{|c|c|c|}
+ \begin{tabular}{|c|c|c|c|c|}
 \hline
-Parameter & Requirement/Expectation &Unit \\ \hline 
-E & $1100$ to $6600$& MeV \\ \hline
-$\delta$p/p & $< 10^{-4}$ & \\ \hline 
-Current & $< 200$ & nA \\ \hline
-Current Instability & $< 5$ &\% \\ \hline 
-$\sigma_x $&$< 300$& $\mu m$ \\ \hline 
-$\sigma_y$&$ < 40$& $\mu m$ \\ \hline
-Position Stability &$< 30$ &$\mu m$ \\ \hline
-Divergence& $< 100$& $\mu rad$ \\ \hline 
-Beam Halo ($> 5\sigma$) &$< 10^{-5}$& \\ \hline
+%Parameter & \multicolumn{3}{c|}{Requirement/Expectation} &Unit \\ \hline 
+Parameter & \multicolumn{3}{c|}{Requirement} &Unit \\ \hline 
+E & $1100$ & $2200$ & $6600$ & MeV \\ \hline
+$\delta$p/p & \multicolumn{3}{c|}{$< 10^{-4}$} & \\ \hline 
+Current & $< 200$ & $< 400$ & $< 500$ & nA \\ \hline
+Current Instability & \multicolumn{3}{c|}{$< 5$} &\% \\ \hline 
+$\sigma_x $& \multicolumn{3}{c|}{$< 300$ } & $\mu$m \\ \hline 
+$\sigma_y$&$ < 50$& $ <60$ & $<80$ & $\mu$m \\ \hline
+Position Stability & \multicolumn{3}{c|}{$< 30$} &$\mu$m \\ \hline
+Divergence& \multicolumn{3}{c|}{$< 100$} & $\mu$rad \\ \hline 
+Beam Halo ($> 5\sigma$) & \multicolumn{3}{c|}{$< 10^{-5}$} & \\ \hline
  \end{tabular}
 \caption{ Required beam parameters.} 
 \label{tb:beam}
 \end{table}
 
-The B-line optics in $6$ GeV era was checked using simulation and beam test of the system. The optics program ELEGANT \cite{elegant} was used to determine the optimized B-line parameters needed to achieve an asymmetric beam size at the HPS test run target location. Results of this optimization are presented in Figure \ref{fig:hpstest}. An asymmetric beam profile with $\sigma_X \approx 250 \mu m$ and $\sigma_Y\approx 20 \mu m$ is achievable. 
+The B-line optics in $6$ GeV era was checked using simulation and beam test of the system. The optics program ELEGANT \cite{elegant} was used to determine the optimized B-line parameters needed to achieve an asymmetric beam size at the HPS test run target location. Results of this optimization are presented in Figure \ref{fig:hpstest}. An asymmetric beam profile with $\sigma_X \approx 250 \mu$m and $\sigma_Y\approx 20 \mu$m is achievable. 
  
   \begin{figure*}[t]
-\includegraphics[scale=0.35]{beamline/hps_test_300_by_15.jpg}
-\caption{\small{Beam sizes in X and Y along the B-line in the upstream tunnel and in the region of the HPS test run setup. At the HPS target asymmetric beam profile $\sigma_X=300 \mu m$ and $\sigma_Y=20 \mu m$ can be achieved with existing B-line optics.}}\label{fig:hpstest}
+%\includegraphics[scale=0.35]{beamline/hps_test_300_by_15.jpg}
+\includegraphics[scale=0.35]{beamline/hps2014_beamsize.jpg}
+\caption{\small{Beam sizes in X and Y along the B-line in the upstream tunnel and in the region of the HPS test run setup. At the HPS target asymmetric beam profile $\sigma_X=300 \mu$m and $\sigma_Y=20 \mu$m can be achieved with existing B-line optics.}}\label{fig:hpstest}
 \end{figure*}
 
 Beam tests were conducted in Hall B to validate these optics simulations during the Two Photon Exchange experiment when $2.2$ GeV beam was available (February of 2011). Parameters were set for a beam profile of $\sigma_X \approx 300 ~\mu$m and $\sigma_Y\approx 10 \mu$m at the Hall B ”tagger” beam profiler ($\sim 8$ meters upstream of the proposed HPS target location). Several beam profile scans with different scanner speeds and data readout were performed to check for systematics. 
@@ -61,16 +64,16 @@ One of the scans is shown in Figure \ref{fig:profile_test}. As can be seen from 
 \caption{\small{Wire harp scan after loading optics parameters from optimization using ELEGANT program. The wire scan speed was 0.1mm/s, readout speed is 15Hz. Based on the width of the Y-profile, beam position stability is  $< 20 \mu$m. Note: any beam motion with more than 10 $\mu$m amplitude and faster than 1Hz is included in the scan.}}\label{fig:profile_test}
 \end{figure*}
  
- {\bf {\it ELEGANT for 12 GeV machine} from Arne}
+% {\bf {\it ELEGANT for 12 GeV machine} from Arne}
  
  \subsubsection{Beam Diagnostics}
  
-The HPS run uses the Hall-B beam line as is (after slight modifications for 12 GeV). Beam position and current will be controlled by two sets of cavity beam position monitors (BPMs), that are located in the upstream tunnel. Sets of corrector dipoles and quadrupoles are routinely used to tune the beam for Hall B (2C21 to 2C24). A pair of BPMs, 2C21 and 2C24, will define the incoming trajectory of the beam and are included in the fast feedback loop. Readings from these BPMs will be used to maintain stable beam positions and currents.
+The HPS run uses the Hall-B beam line as is (after slight modifications for 12 GeV). Beam position and current will be controlled by two sets of cavity beam position monitors (BPMs), that are located in the upstream tunnel. Sets of corrector dipoles and quadrupoles are routinely used to tune the beam for Hall B (2C21 to 2C24). A pair of BPMs, 2C21 and 2C24, will define the incoming trajectory of the beam and are included in the fast feedback loop. Readings from these BPMs will be used to maintain stable beam positions and currents. The stability of beam positions at two different locations also ensures the stability of the beam inclination.
  
-The beam profile will be measured using three wire scanners, two installed in the tunnel, first one at 2C23, the second one before the Hall-B tagger magnet, (2c24 harp, called "tagger harp"), about 8 meters upstream of the HPS target. The last wire harp, 2H00 harp, will be located just before the first chicane dipole . First two profilers will be used to establish the required beam parameters during the initial setup. The Hall-B tagger magnet will be energized when beam tune is in progress. After acceptable beam profile is achieved, beam will be put through the HPS system (tagger magnet will be degaussed and turned off) and beam profile will be checked using 2H00 wire harp. 
+The beam profile will be measured using three wire scanners, two installed in the tunnel, first one at 2C23, the second one before the Hall-B tagger magnet, (2c24 harp, called "tagger harp"), about 8 meters upstream of the HPS target. The last wire harp, 2H00 harp, will be located just before the first chicane dipole . First two profilers will be used to establish the required beam parameters during the initial setup. The Hall-B tagger magnet will be energized when beam tune is in progress. After acceptable beam profile is achieved, beam will be put through the HPS system (tagger magnet will be degaussed and turned off) and beam profile will be checked using 2H00 wire harp. The backgrounds in the HPS silicon tracker from beam profiling in the 2H00 harp tungsten wires has been simulated. At 5 nA beam current, the radiation dammage is equivalent to about 10 s of production beam current on target.
 
-There will be beam viewer installed in the downstream alcove of Hall-B, before Faraday cap, $\sim 40$ meters downstream of the HPS target. Beam position and beam profile will be used to setup the chicane magnets and to monitor beam quality during the run. A set of beam halo counters mounted along the beam line provides fast monitoring of the beam conditions. These counters are like those used for beam profile measurements. Excess noise in the beam halo counters triggers the machine fast
-shutdown system (FSD) in order to terminate beam in the event of beam excursions which could damage the HPS detectors. In addition to halo counters, a beam offset monitor (BOM) will be installed upstream of the 2H00 wire harp. It is similar to BOM used in CLAS. A short quartz cylinder, about $1$ cm in diameter, with optical fibers attached around the edge will be centered on the beam. Few electrons on the beam tail will generate light in the cylinder that will be detected in a multi-anode PMT attached to readout fibers. Any beam motion towards the cylinder will generate more light and increase counts in the PMT scalers. BOM will be wired to FSD as part of the equipment protection system. 
+An insertable YAG screen beam viewer will be installed in the downstream alcove of Hall-B, before the Faraday cup, $\sim 40$ meters downstream of the HPS target. Both position and profile of the beam will be used to setup the chicane magnets and to monitor beam quality during the run. A set of beam halo counters mounted along the beam line provides continuous and fast monitoring of the beam conditions. These counters are like those used for beam profile measurements. Excess noise in the beam halo counters triggers the machine fast
+shutdown system (FSD) in order to terminate beam in the event of beam excursions which could damage the HPS detectors. The FSD will occur in less than 50 $\mu$s. In addition to halo counters, a beam offset monitor (BOM) will be installed upstream of the 2H00 wire harp. It is similar to BOM used in CLAS. A short quartz cylinder, about $1$ cm in diameter, with optical fibers attached around the edge will be centered on the beam. Few electrons on the beam tail will generate light in the cylinder that will be detected in a multi-anode PMT attached to readout fibers. Any beam motion towards the cylinder will generate more light and increase counts in the PMT scalers. BOM will be wired to FSD as part of the equipment protection system. 
  
 \subsubsection{Vacuum chambers} 
 \label{vacchamb}
@@ -80,7 +83,7 @@ are used to position the SVT upper and lower modules with a precision of $1.25 ~
 An existing stepper motor driver and  EPICS-based control software will be used. Two $2-3/4$" flanges separately accommodate the cooling line feedthroughs for the SVT upper and lower modules. The cooling line has a flow switch which is interlocked with the SVT power supply crate such that the power supply can be enabled only when cooling flow is present. The cooling line inlet and outlet temperatures are monitored and recorded.   
  
 \begin{figure*}[t]
-\includegraphics[scale=1.75]{beamline/svt_in.png}
+\includegraphics[scale=0.75]{beamline/svt_in.pdf}
 \caption{\small{Rendering of the SVT inside the Hall-B pair spectrometer vacuum chamber and the upstream vacuum box with SVT and target connections.}}\label{fig:svtvbox}
 \end{figure*}
 
@@ -97,19 +100,57 @@ The ECal vacuum chamber will be continued with a scattering chamber between two 
 
 \subsubsection{Targets} 
 \label{target}
- 
-A thin tungsten foil is used as the target. High Z material is chosen for its short radiation length, to minimize the hadronic production relative to the electromagnetic trident and $A'$ production.  The target is located 10 cm in front of the first plane of silicon strip detectors. The primary target, 10 mm square, is 0.00125 radiation lengths (approximately 4 microns tungsten). Mounted immediately above it is a similar area of 0.0025 radiation lengths, available for some of the data taking, adjusting the beam current as appropriate. 
 
-The foil can be fully retracted from the beam, and is inserted on to the beam line from above, using a stepping motor linear actuator. The bottom edge of the foil is free-standing so there is no thick support frame to trip the beam when the target is inserted. Its position is adjustable vertically, allowing either thickness to be selected, and different sections of the tungsten can be used in the event of damage.
+A thin tungsten foil is used as the target. High Z material is
+chosen for its short radiation length, to minimize the hadronic
+production relative to the electromagnetic trident and A'
+production. The target is located 10 cm in front of the first
+plane of silicon strip detectors.
 
-The target is designed to operate with beam currents up to 200 nA, which produce strong local heating. The strength of tungsten drops by an order of magnitude with temperature increases in the range of 1000 C. In addition, the material re-crystallizes above this range, which increases the tendency for cracking where thermal expansion has caused  temporary dimpling. For these reasons, it was decided to keep the temperature rise below about 1000 degrees, which is accomplished by keeping the rms beam radius above 70 microns (for a round beam spot). However, a strongly elliptical beam spot is advantageous for constraining the vertex position during data analysis. A spot of, for example, 20 by 250 microns will also have an acceptable temperature rise.
+The primary target, 10 mm square, is 0.00125 radiation lengths
+(approximately 4 $\mu$m tungsten). Mounted immediately above it
+is a similar area of 0.0025 radiation lengths, available for some
+of the data taking, adjusting the beam current as appropriate.
+The foil can be fully retracted from the beam, and is inserted on
+to the beam line from above, using a stepping motor linear
+actuator. The bottom edge of the foil is free-standing so there
+is no thick support frame to trip the beam when the target is
+inserted. Its position is adjustable vertically allowing either
+thickness to be selected, and different sections of the
+tungsten can be used in the event of beam damage. The support
+frame on the beam-right side of the target is made thin enough to
+prevent radiation damage to the silicon in the event of an errant
+beam caused, for example, by an upstream chicane magnet trip.
+               
+The target is intended to operate with beam currents up to 450
+nA, which produce strong local heating. The strength of tungsten
+drops by an order of magnitude with temperature increases in the
+range of 1000 C. In addition, the material re-crystallizes above
+this range, which increases the tendency for cracking where
+thermal expansion has caused temporary dimpling. For these
+reasons, it was decided to keep the temperature rise less than
+about 1000 degrees, which is accomplished by selecting an
+adequately large beam spot area. For example at 200 nA the rms
+beam radii will be held above 20 by 250 $\mu$m, or 40 by 250
+$\mu$m for 400 nA. Simulations have shown that these beam spot
+sizes do not diminish the pair reconstruction resolution of the
+experiment.
 
-In addition to the target, a set of tungsten beam-fiducial wires has been installed immediately in front of the silicon detectors. One horizontal wire, 20 micron diameter, and one 30 micron wire at 9 degrees to the horizontal, are mounted on a frame attached to the upper silicon support plate, and similarly for the bottom plate. The frames for the wires are wide enough that they do not occlude the silicon active area. The wires can be used to locate the position of the beam relative to the silicon. To accomplish this safely, the vertical separation between the front silicon sensor and its nearest wire is 8 mm. This separation, and their small diameters, also means that, when the sensors are positioned for data taking, the wires have a negligible effect on acceptance.
+In addition to the target, a set of tungsten beam-fiducial wires
+will be installed immediately in front of the silicon detectors.
+One horizontal wire, 20 $\mu$m diameter, and one 30 $\mu$m wire
+at 9 degrees to the horizontal, will be mounted on a frame
+attached to the upper movable silicon support plate, and
+similarly for the bottom plate. The frames for the wires are wide
+enough that they do not occlude the silicon active area. The
+wires can be used to locate the position of the beam relative to
+the silicon. To accomplish this safely, the vertical separation
+between the front silicon sensor and its nearest wire is 8 mm.
+This separation, and their small diameters, also means that, when
+the sensors are positioned for data taking, the wires have a
+negligible effect on acceptance. The wires are also available for
+use as a fairly conventional wire scanner. In particular
+they can provide information about the minor and major axes, and
+the tip angle (roll), of a strongly elliptical beam.
 
-The wires are also available for use as a fairly conventional wire scanner. In particular they can provide information about the minor and major axes, and the tip angle (roll), of a strongly elliptical beam
-  
- 
- 
-
- 
  

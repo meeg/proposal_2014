@@ -3,7 +3,7 @@ distribution of triggers for three sub-detectors; the SVT, ECal and the muon det
 are two front end electronic systems; the SVT is readout with 128-channel integrated circuits
  supported by Advanced Telecom Communications Architecture~\cite{atca} (ATCA) hardware
  while the ECal and muon detectors signals are processed by VXS based hardware. The 
-Level 1 trigger receives input from the ECal and muon detectors only to form a decision 
+ the Level 1 trigger receives input from the ECal and muon detectors only to form a decision 
  on which events to be read out.  The triggered events are acquired from the three subsystems and are processed in the data acquisition system outlined in 
  Fig.~\ref{fig:daq_hardware_overview}.
 \begin{figure*}[t]
@@ -12,19 +12,22 @@ Level 1 trigger receives input from the ECal and muon detectors only to form a d
 \caption{\small{Schematic block diagram of the data acquisition system.}}
 \label{fig:daq_hardware_overview}
 \end{figure*}
-Every VXS and VME crate contains the Readout Controller (ROC) that collects information 
-from the front end electronics boards, processes it and sends it through the network to the 
-Event Builder. ROC is the single blade Intel-based CPU module running DAQ software under CentOS Linux OS. The ROC for the SVT runs on 
+The main software component is the Readout Controllers (ROCs) that collects information 
+from the front end electronics board, processes it and sends it through the network to the 
+Event Builder server. ROCs are installed in every crate holding front end boards. The 
+VME based crates runs ROCs on mvme6100 controller boards with prpmc880 or pmc280 
+coprocessor modules. {\color{red} Might need update?} The ROC for the SVT runs on 
 a processor blade in the ATCA crate which handles the SVT part of the DAQ system. 
 The Event Builder assembles 
 information from the SVT, ECal and muon detector ROCs and assembles it into a single 
-event which is passed to the Event Recorder which writes it to the data storage system capable of handling up to 100MBytes/s. The Event Builder and other 
-critical components run on multicore Intel-based multi-CPU servers which is a 
+event which is passed to the (RAID5) data storage system capable of handling up to 
+100MBytes/s. The Event Builder and other 
+critical components run on multicore Opteron-based multi-CPU servers which is a 
 sufficient configuration to handle HPS. The backbone of the DAQ network system is a 
 Foundry router providing 1Gbit and 10Gbit connections between DAQ components and 
 the JLab computing facility. The SVT ROC has a 10Gbit link to the Foundry router while the 
 ROCs for the ECal and muon detector connect through a 1Gbit network switch. The long 
-term data storage is handled by a 10Gbit uplink to the JLab computing facility. 
+term data storage is handled by a 1Gbit uplink to the JLab computing facility. 
 
 Section~\ref{sec:svt_daq} describes the SVT DAQ in more detail. The VXS based readout for 
 the ECal and muon detector is described in Sec.~\ref{sec:fadc_daq} and the trigger 
@@ -51,13 +54,13 @@ hybrid board housing five 128-channel APV25~{\color{red}Reference needed} integr
  tracker~{\color{red}Reference needed}  at the Large Hadron Collider at CERN, was 
  chosen based on their good match to the HPS requirements. They provide amplification, 
  pipelining, and analog storage for trigger accepted events. For each 640-channel hybrid 
- board (shown in Fig.~\ref{fig:hybrid_and_apv25}
+ board (shown in Fig.~\ref{fig:hybrid_and_apv25_testrun}
  \begin{figure*}[t]
 \includegraphics[ scale=0.3]{daq_trigger/figures/hybrid.jpg}
 \includegraphics[ scale=0.3]{daq_trigger/figures/apvs-on-hybrid.jpg}
 \caption{\small{Picture of a hybrid board from the test run in 2012 holding five 
 APV25 ASICs that are wire bonded to the silicon sensor.}}
-\label{fig:hybrid_and_apv25}
+\label{fig:hybrid_and_apv25_testrun}
 \end{figure*}
 Each hybrid board has five analog output lines where analog data from each APV25 are 
 sent using low power LVDS signals over about 3~m of multi-twisted-pair cable to a readout 
@@ -76,13 +79,13 @@ pre-amplifier scales the APV25 differential current output to match the range of
 Analog to Digital Converter (ADC). Each RTM board has three sections that each service 
 three hybrids. The ADC operates at the system clock frequency of 41.667~MHz. The RTM 
 also has a 4-channel fiber optic module to communicate with the JLab trigger supervisor. 
-A picture of a RTM board is shown in Fig.~\ref{fig:rtm}.
+A picture of a RTM board is shown in Fig.~\ref{fig:rtm_testrun}.
  \begin{figure*}[t]
 \includegraphics[ scale=0.25]{daq_trigger/figures/rtm.png}
 \includegraphics[ scale=0.4]{daq_trigger/figures/svt_daq_module_noted.png}
 \caption{\small{Picture of a RTM (top) and COB board (bottom) 
 used in the HPS test run 2012.}}
-\label{fig:rtm}
+\label{fig:rtm_testrun}
 \end{figure*}
 The main COB board has four FPGA units that each interfaces with a single section of the 
 the RTM.  Each FPGA is housed on a separate daughter board called 
@@ -121,20 +124,20 @@ readout unit are sent to a signal splitter. For the ECal the charge signal from 
 shaped and amplified as described in Sec.~\ref{sec:ecal_readout} before feed into the 
 splitter. One of the outputs of every splitter (for both the ECal and muon detector channels) 
 feeds a separate channel on Flash ADC (FADC) readout boards that are packaged in 
-16-channel VXS modules. Two 20-slot VXS crates are used to accommodate the two ECal 
-halves, each one with 221 channels, and one 20-slot VXS crate is used to readout the muon 
+16-channel VXS modules. Two VXS modules are used to accommodate the two ECal 
+halves, each one with 221 channels, and a single VXS module is used to readout the muon 
 detector. 
 
 The FADCs stores the 12-but digitized samples of each channel in 8~$\mu$s deep pipelines. 
-After a trigger is received a corresponding part of the pipeline is processed (usually few hundreds of nanoseconds). 
-If the signal passes a predefined threshold, X number of samples before and Y samples after are summed. Transferring only 
+After a trigger is received a part of the pipeline corresponding to X number of samples 
+before and Y samples after the signal passed a predefined threshold. Transferring only 
 the time it passed threshold and a channel sum as energy estimate greatly reduces the data rate. 
-During data analysis value '(X+Y)*pedestal' will be subtracted to obtain actual pulse integral.
+
 
 The FADCs are an integral part of the HPS calorimeter trigger system. Pulse energies 
 and times from each FADC channel in the same VXS crate is collected by a crate trigger
- processor board (CTP) which performs cluster finding. The result from each create trigger processor (i.e. each half of 
-the ECal) is combined in the sub-system processor module (SSP) which applies further selections 
+ processor which performs cluster finding. The result from each create trigger processor (i.e. each half of 
+the ECal) is combined in the sub-system processor module which applies further selections 
 based on single- and combination of clusters to form a trigger decision passed to the trigger 
 supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow 
 coincidence window of 8~ns to be used when searching for clusters. 
@@ -242,7 +245,7 @@ the 10~Gbit ethernet connections internally of the ATCA crate and also to the JL
 
 The data rate from the ECal and muon system is estimated from the same running 
 conditions as the SVT above. 
-Each calorimeter or muon hit consist of 8 bytes (4 byte energy, 4 byte time)
+Each each calorimeter or muon hit consist of 8 bytes (4 byte energy, 4 byte time)
  with a 12 byte header (4 byte trigger number, 8 byte trigger time) for each FADC board. 
  The main limitation is of the order of 100Mbytes/s from each VXS crate. For a 
  10\% occupancy estimated in Sec.~\ref{sec:trig_rate} the ECal event size is approximately 0.7~kbytes which translates to a total data rate of approximately 31.5~Mbytes/s 
@@ -268,7 +271,7 @@ Total & - & 5.4 & 245 \\
 \caption{{\small Occupancy, event size and data rate expected for beam energy of 2.2~GeV and a current of 200nA.} {\color{red}Need update}}
 \label{tab:data_rates}
 \end{table}
-The dominant contribution comes from the SVT where irreducible real hits from the high occupancy is dominating the rates. Using high-speed data links it's still within the DAQ system and high performance file servers it's within the the system design. 
+The dominant contribution comes from the SVT where irreducible real hits from the high occupancy is dominating the rates. Using high-speed data links it's still within the DAQ system and high performance RAID file servers it's within the the system design. 
 
 The total data volume for a 2 week long production run is expected to be around 83Tb 
 assuming a duty factor of 30\%.  For a longer run a Level~3 fast track trigger can 

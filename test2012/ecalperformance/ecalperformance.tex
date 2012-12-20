@@ -4,7 +4,7 @@
 The ECal preamplifiers shape the APD signal into a CR-RC pulse of rise time $\approx 14$ ns; this is sampled every 4 ns and stored in a pipeline on the FADC readout board.
 On receiving a trigger, the FADC searches for rising threshold crossings in the pipeline, and integrates pulses by summing 5 samples before and 30 samples after each threshold crossing.
 
-The noise and pedestal of the readout chain are calibrated by running the ECal readout in a mode where the preamplifier output is sampled every 4 ns in a time window of 100 samples; by looking at a part of the window before the hit, we calibrate the readout channel.
+The noise and pedestal of the readout chain are calibrated by running the
 
 Of 442 crystals/channels, 39 were disabled or disconnected and were not read out by the DAQ. 
 13 of these were not read out because of a shortage of FADC readout boards.
@@ -96,6 +96,6 @@ Overall the trigger appears to have functioned exactly as intended. Changes plan
 
 What were the rates, lessons learned?
 
-Plots: rates vs time {\it Ben/Sho/Pelle}
+Plots: Compare observed and expected trigger time {\it Sho}, Tag\&probe {\it Sho}, rates vs time {\it Ben/Sho/Pelle}
 
 
