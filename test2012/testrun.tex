@@ -1,6 +1,26 @@
-Presented in the proposal the reach of the experiment rely on GEANT4 and EGS5 simulations. These are well tested codes, never the less we find it is important to back-up results of simulations with experimental measurements, especially at small scattering angles where results from these simulation codes were markedly different. These simulation codes have shown that the occupancy problems in the tracker and in the ECal occur only at the very smallest angles, and are due to multiply Coulomb scattered beam electrons. To the extent that we can demonstrate that we have accurately modeled both the scattering and the response of the detector to high energy electrons which hit in and around the detector elements, we demonstrated that our estimates of trigger rates in full HPS are accurate. 
+The HPS Test Run was proposed to DOE early in 2011 as the first stage of the HPS experiment. Its
+purposes included demonstrating that the apparatus and data acquisition systems would work well,
+that the trigger rates and occupancies to be encountered in electron-beam running were as simulated,
+and that the apparatus would performed as needed to conduct the HPS experiment. It would also
+provide valuable experience to the HPS Collaboration in all aspects of designing, building, installing,
+and running the experiment at JAB. It was hoped that the experiment would get dedicated run time
+in an electron beam and even, if things performed as expected, that HPS could begin its search for
+heavy photons. The HPS Test Run was installed on April 19, 2012, and ran parasitically with the HDice
+experiment, using a photon beam, until May 18. The JLAB run schedule precluded any dedicated
+electron beam running, but the HPS Test Run did get some valuable dedicated photon beam running.
 
-Although we were restricted to photon beam running during May 2012 test run, we made a credible case for full HPS approval. Our photon running included conversions made in a thin target upstream of the HPS detector; the angular distribution of these electrons has been measured in the HPS test run, and is sensitive to this same multiple Coulomb scattering, and therefore  tests our understanding of occupancy in the tracker. In particular we validated our simulations, we showed that multiple Coulomb scattering is correctly defined in EGS5, while GEANT4 settings that have been used in our earlier simulations of the electromagnetic background, overestimates rates of the multiple Coulomb scattering electrons at the relevant scattering angles by $\times 2$. 
+This section briefly reviews the HPS Test Run apparatus, which is a simplified version of the apparatus
+described above for the full HPS experiment, and demonstrates the feasibility of the detector
+technologies proposed for silicon tracker, ECal, and data acquisition systems. It documents the
+performance of the trigger, data acquisition, silicon vertex tracker, and electromagnetic calorimeter
+and shows that the performance assumed in calculating the physics reach of the experiment is realistic.
+Of particular importance, data from the dedicated photon beam running has been used to compare
+the observed trigger rates with that expected in simulation. The trigger rate is almost entirely due to
+photons which have converted to e$^+$e$^-$ upstream of the HPS trackers, and is sensitive to the multiple
+Coulomb scattering of the electrons in the conversion target. Good agreement between data and
+simulation confirm the EGS5 simulation and its description of multiple Coulomb scattering. Since
+multiple Coulomb scattering of the electron beam dominates the SVT occupancies and ECal trigger rates
+in HPS, confirming the simulation has demonstrated that backgrounds in HPS are understood.
 
 In addition to the important test of our simulation tools, the HPS parasitic tests, staged over the Hall-B HDice run (g14), accomplished the following: 
 \begin{enumerate}
@@ -12,25 +32,25 @@ In addition to the important test of our simulation tools, the HPS parasitic tes
 
 \subsection{HPS Test Run Apparatus } 
 
-In Fig.\ref{fig:hpstest}, layout of the parasitic run is shown. The silicon vertex tracker was installed inside the Hall-B pair spectrometer magnet vacuum chamber. The electromagnetic calorimeter was mounted downstream of it.
+In Figure \ref{fig:hpstest_layout}, the layout of the parasitic run is shown. The silicon vertex tracker was installed inside the Hall B pair spectrometer magnet vacuum chamber. The electromagnetic calorimeter was mounted downstream of it.
 Both the Si-tracker and the ECal were retracted off the beam plane to allow clean passage of the photon beam through the system, and also not to obscure converted (e$^+$e$^-$) pairs from being detected in the PS hodoscopes.
  
 \begin{figure}[ht]
     \includegraphics[width=\textwidth]{test2012/HPS_dimensions}
 \caption{\small{Layout of the HPS parasitic run.} }
-\label{fig:hpstest}
+\label{fig:hpstest_layout}
 \end{figure}
 
-For the portion of the dedicated HPS run the photon beam was generated in the interaction of the $5.5$ GeV electrons with a gold radiator of $10^{-4}$ r.l., located $\sim 8$ meters upstream of the PS pair converter. After collimation ($D=6.4$ mm), the photon beam passes through the pair converter and through the HPS system. Data were taken on different converters (empty, $1.8\times 10^{-3}$ r.l., $4.5\times 10^{-3}$ r.l., and $1.6\times 10^{-2}$ r.l.). These measurements were repeated for reverse field setting of the pair spectrometer dipole.
+For the portion of the dedicated HPS run the photon beam was generated in the interaction of the $5.5$ GeV electrons with a gold radiator of $10^{-4}$ r.l., located $\approx 8$ meters upstream of the PS pair converter. After collimation ($D=6.4$ mm), the photon beam passes through the pair converter and through the HPS system. Data were taken on different converters (empty, $1.8\times 10^{-3}$ r.l., $4.5\times 10^{-3}$ r.l., and $1.6\times 10^{-2}$ r.l.). These measurements were repeated for reverse field setting of the pair spectrometer dipole.
 
 
 \subsubsection{Test Run SVT}
 
-The silicon tracking and vertexing detector for HPS Test, or SVT, operates in an existing vacuum chamber inside the pair spectrometer analyzing magnet in Hall B at JLab.  The design principles of the SVT are described in further detail in the HPS Test Run Proposal  \cite{HPS_tPROP}. There are five measurement stations, or ``layers'', placed immediately downstream of the target. Each layer comprises a pair of closely-spaced planes and each plane is responsible for measuring a single coordinate, or ``view''. Introduction of a stereo angle between the two planes of each layer provides three-dimensional tracking and vertexing throughout the acceptance of the detector with one redundant layer. 
+The silicon tracking and vertexing detector for HPS Test, or SVT, operates in an existing vacuum chamber inside the pair spectrometer analyzing magnet in Hall B at JLab.  The design principles of the SVT are described in further detail in the HPS Test Run Proposal  \cite{HPS_tPROP}. There are five measurement stations, or ``layers,'' placed immediately downstream of the target. Each layer comprises a pair of closely-spaced planes and each plane is responsible for measuring a single coordinate, or ``view.'' Introduction of a stereo angle between the two planes of each layer provides three-dimensional tracking and vertexing throughout the acceptance of the detector with one redundant layer. 
 
 In order to accommodate the dead zone, the SVT is built in two halves that are mirror reflections of one another about the plane of the nominal electron beam.  Each half consists of five double-sided modules mounted on a support plate that provides services to the modules and allows them to be moved as a group relative to the dead zone. Each module places a pair of silicon microstrip sensors back-to-back at a specified stereo angle with independent cooling and support.
 
-The vacuum chamber being used for HPS Test cannot accommodate the 90-degree stereo layers planned for the full experiment to optimize the vertex resolution \cite{HPS_PROP}. Instead, 100 milliradian stereo is used in the first three layers to provide higher-resolution 3-d space points for vertexing. The 50 milliradian stereo of the last two layers breaks the tracking degeneracy of having five identical layers and minimizes fakes from ghost hits, improving pattern recognition while still providing sufficient pointing resolution into Layer 3 for robust hit association in the denser environment there. The details of the five layers are shown in Table \ref{tab:trk} and a solid model of the detector layout is shown in Figure \ref{fig:tracker_model}.  Figure \ref{fig:tracker_halves} shows a photograph of both completed detector halves prior to final assembly.  Altogether, this layout comprises 20 sensors and hybrids and 100 APV25 chips for a total of 12780 readout channels. 
+100 milliradian stereo is used in the first three layers to provide higher-resolution 3-d space points for vertexing. The 50 milliradian stereo of the last two layers breaks the tracking degeneracy of having five identical layers and minimizes fakes from ghost hits, improving pattern recognition while still providing sufficient pointing resolution into Layer 3 for robust hit association in the denser environment there. These stereo angles are the same as those proposed in Section \ref{sec:svtt} for the new SVT. The details of the five layers are shown in Table \ref{tab:trk} and a solid model of the detector layout is shown in Figure \ref{fig:tracker_model}.  Figure \ref{fig:tracker_halves} shows a photograph of both completed detector halves prior to final assembly.  Altogether, this layout comprises 20 sensors and hybrids and 100 APV25 chips for a total of 12780 readout channels. 
 
 \begin{table}[h]
 \begin{center}
@@ -72,7 +92,7 @@ The linear shifts that define the opening of the SVT are controlled by a pair of
 \subsubsection{Test run ECal}
 
 The HPS Test Run electromagnetic calorimeter (ECal) consists of 442 lead-tungstate (PbWO$_4$) crystals with avalanche photodiode (APD) readout, \cite{HPS_PROP_UPD}. 
-Crystals in the ECal are arranged in two modules.  There are 5 layers in each module;  four layers have 46 crystals and one has 37.  The ECal is mounted downstream of the analyzing dipole magnet at the distance of $\sim 148$ cm from the upstream edge of the magnet. The two Ecal modules are positioned just above and below the beam plane such that the edge of the crystal closest to the beam is $3.7$ cm from it. As was described in Section \ref{setup} we did not use the vacuum chamber between the two ECal modules for the photon test run, instead 2'' beam pipe was used to transport photon beam from the pair spectrometer vacuum chamber to HDIce target.  
+Crystals in the ECal are arranged in two modules.  There are 5 layers in each module;  four layers have 46 crystals and one has 37.  The ECal is mounted downstream of the analyzing dipole magnet at the distance of $\sim 148$ cm from the upstream edge of the magnet. The two ECal modules are positioned just above and below the beam plane such that the edge of the crystal closest to the beam is $3.7$ cm from it. As was described in Section \ref{setup} we did not use the vacuum chamber between the two ECal modules for the photon test run, instead 2'' beam pipe was used to transport photon beam from the pair spectrometer vacuum chamber to HDIce target.  
 
 \begin{figure*}[t]
 \includegraphics[ scale=0.25]{test2012/ecal_assembly.jpg}
@@ -86,7 +106,7 @@ For this run the ECal made use of the existing low and high voltage systems from
 In Figure \ref{fig:ecal_mounted} ECal is shown in its installed position for the parasitic run with photon beams. It centered relative to the beam that passes in between two parts of ECal through $3$ inch beam pipe. Cooling lines, as well as signal, HV and LV cables are visible. 
  
 \begin{figure*}[t]
-\includegraphics[ scale=0.25]{test2012/ecal_mounted.JPG}
+\includegraphics[ scale=0.25]{test2012/ecal_mounted}
 \caption{\small{ECal mounted downstream of the Hall-B pair spectrometer for the parasitic run with photon beams. Hoses for the cooling system, and the power and signal cables for beam-right side of both modules are visible.}}\label{fig:ecal_mounted}
 \end{figure*}
 
@@ -120,6 +140,7 @@ our understanding of the main characteristics of the system.
 \label{sec:ecalperformance}
 
 \subsubsection{Multiple Coulomb Scattering Measurement}
+\label{sec:angular_measurement}
 \input{test2012/angular_measurement/angular_measurement}
 
 

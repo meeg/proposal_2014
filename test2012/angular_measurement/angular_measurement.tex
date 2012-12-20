@@ -3,12 +3,17 @@ One of the main parameters that has the
 largest impact on the main design of the HPS experiment is the occupancies expected 
 close to the beam.  The largest contribution comes from electrons scattered to large angles 
 in the target. It is worth remembering that HPS is sensitive to scattering angles very far out 
-on the tail which has been less explored in past experiments. One of the main goals of the 
+on the tail which has been less explored in past experiments; at angles greater than 10 mrad, 
+Geant4 overestimates the multiple scattering rate by a factor of 2 (see Figure \ref{fig:egs_geant}). One of the main goals of the 
 test run in 2012 was to evaluate the description of the tails of the multiple scattering in order 
 to gain further confidence in our expected detector occupancy. As will be shown below, the 
 test run was sensitive to the multiple coulomb scattering description despite the fact that 
 the data was taken with a photon beam.
 
+\begin{figure*}[t]
+\includegraphics[ scale=0.7]{test2012/angular_measurement/pictures/egs_geant}
+\caption{\small{Comparison of EGS5 and Geant4 multiple scattering cross-sections.}}\label{fig:egs_geant}
+\end{figure*}
 
 Figure~\ref{fig:schematic_testrun_vs_erun} gives a schematic view of the main differences 
 between the photon and electron beam setup. 
@@ -147,7 +152,7 @@ and Tab.~\ref{tab:ang_distr_dataMC} summarizes the result.
 \includegraphics[ scale=0.3]{test2012/angular_measurement/pictures/dataMC_egs.png}
 \caption{\small{The measured rate in the ECal as a function of target thickness comparing 
 to the multiple scattering models from {\sc Geant4} (left) and {\sc EGS5} (right)}.} 
-\label{fig:ang_distr_data}
+\label{fig:rate_vs_thickness}
 \end{figure*}
 A few systematic uncertainties was estimated which include; a 5\% uncertainty on the integrated 
 current normalization, limited Monte Carlo statistics, alignment of the ECal and uncertainty 
