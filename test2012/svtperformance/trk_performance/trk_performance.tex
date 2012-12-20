@@ -5,13 +5,16 @@
 %      created: December 4, 2012
 %
  
-Reconstructed clusters which are in adjacent Si planes (See ...) are combined to 
-form 2-dimensional ``stereo hits''.  A tracking strategy is then used by the 
-tracking algorithm to form tracks using the stereo hits.  A more complete
-description of the tracking algorithm can be found here [].  
+A charged particle traversing the sensitive volume of the SVT is expected to
+deposit enough charge to produce hits which, in turn, are used to form 
+clusters. Clusters which are in adjacent Si planes are then combined to form
+2-dimensional ``stereo hits'' which are used by the tracking algorithm to 
+form tracks.  The determination of the probability that a stereo hit is 
+formed, or hit efficiency, provides insight as to the performance of each of 
+the SVT layers.
 
-The hit efficiencies were calculated for every layer using each of the available
-runs. Tracks were fit using only 4 out of the 5 SVT layers and where then 
+In order to obtained the hit efficiencies, tracks were fit using only 4 of 
+SVT layers. The resulting track was then extrapolated to the layer omitted
 \begin{figure}[h]
     \begin{center}
         % TODO: Need to update the plot so that Layer 2 on the bottom doesn't 
@@ -21,14 +24,28 @@ runs. Tracks were fit using only 4 out of the 5 SVT layers and where then
 	\label{fig:hit_efficiency}
     \end{center}
 \end{figure}
-extrapolated to the layer which was not used in the fit. If the track was 
-found to lie within within the layer acceptance, a stereo hit was searched
-for within a window of 3 $\sigma_{\mbox{residual}}$.  The hit efficiency is
-then defined as
+from the fit. If the track was found to lie within the sensitive volume
+of the layer, a search for a stereo hit within the layer acceptance was 
+conducted.  The hit efficiency was then determined as
 \[
     \varepsilon_{\mbox{hit efficiency}} = \frac{\mbox{Tracks with hit on missing layer}}
-                                            {\mbox{Tracks within layer acceptance}}
+                                            {\mbox{Tracks within layer acceptance}} \times 100 \%
 \]
-The efficiencies of all layers, excluding all known bad modules,  was found to 
-be greater then 90\%.
- 
+The hit efficiencies per layer were calculated using all dedicated runs. As 
+can be seen from Figure~\ref{fig:hit_efficiency}, the average hit efficiency
+per layer, excluding all known bad Si sensors, was found to be greater than
+90\%.
+% The single hit efficiencies need to be updated to reflect changes that were 
+% made to the tracking code
+
+The efficiency of the tracking algorithm was also studied and is shown on 
+Figure~\ref{fig:trk_efficiency}.
+\begin{figure}[h]
+    \begin{center}
+        % TODO: Need to update the plot so that Layer 2 on the bottom doesn't 
+        % look terrible
+    	\includegraphics[width=0.98\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
+        \caption{} 
+	\label{fig:trk_efficiency}
+    \end{center}
+\end{figure}
