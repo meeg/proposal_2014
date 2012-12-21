@@ -255,21 +255,23 @@ Table~\ref{tab:data_rates} summarizes the event size and data rates for the diff
 sub-systems. 
 \begin{table}[]
 \centering
-\begin{tabular}{l|c|c|c}
-Sub-system & Occupancy(\%) & Event size (kB) & Data Rate (MB/s) \\
+\begin{tabular}{|l|ccc|ccc|ccc|}
 \hline
-SVT & 0.135 & 4.5 & 203 \\
-ECal & 10 & 0.7 & 32 \\
-Muon & 10 & 0.2 & 10 \\
+ & \multicolumn{3}{|c|}{Occupancy(\%)} &  \multicolumn{3}{|c|}{Event size (kB)} &  \multicolumn{3}{|c|}{Data Rate (MB/s)} \\
 \hline
-Total & - & 5.4 & 245 \\
+Beam energy (GeV) & 1.1 & 2.2 & 6.6 & 1.1 & 2.2 & 6.6 & 1.1 & 2.2 & 6.6 \\
+\hline
+SVT & 1.00 &  &  & 4.3 &  &  & 182.9 & & \\
+ECal & 3.0 & 4.2  & 4.7 & 0.28 & 0.30  & 0.31 & 12.1 & 13.0  & 13.4 \\
+Muon & 10 &  &  & 0.31 &  &  & 13.5 & & \\
+\hline
+Total& \multicolumn{3}{|c|}{-} & 4.8 & 4.9 & 4.9 & 208.4 & 209.3 & 209.7 \\
 \hline
 \end{tabular}
-\caption{{\small Occupancy, event size and data rate expected for beam energy of 2.2~GeV and a current of 200nA.} {\color{red}Need update}}
+\caption{{\small Summary of the occupancy, event size and data rate expected for runs at the three beam 
+energies in the run plan. }}
 \label{tab:data_rates}
 \end{table}
-The dominant contribution comes from the SVT where irreducible real hits from the high occupancy is dominating the rates. Using high-speed data links it's still within the DAQ system and high performance file servers it's within the the system design. 
-
-The total data volume for a 2 week long production run is expected to be around 83Tb 
-assuming a duty factor of 30\%.  For a longer run a Level~3 fast track trigger can 
-be deployed to lower the data rates and total volume to be written to disk. 
+The dominant contribution comes from the SVT where irreducible real hits from the high occupancy is 
+dominating the rates. Using high-speed data links it's still within the DAQ system and high performance file 
+servers it's within the the system design. 
