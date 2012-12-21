@@ -19,7 +19,8 @@ SVT layers. The resulting track was then extrapolated to the layer omitted
     \begin{center}
         % TODO: Need to update the plot so that Layer 2 on the bottom doesn't 
         % look terrible
-    	\includegraphics[width=0.98\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_rn.pdf}
+    	%\includegraphics[width=0.98\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_rn.pdf}
+    	\includegraphics[width=0.98\textwidth]{test2012/svtperformance/trk_performance/mean_hit_efficiency_vs_layer.pdf}
         \caption{} 
 	\label{fig:hit_efficiency}
     \end{center}
@@ -29,7 +30,7 @@ of the layer, a search for a stereo hit within the layer acceptance was
 conducted.  The hit efficiency was then determined as
 \[
     \varepsilon_{\mbox{hit efficiency}} = \frac{\mbox{Tracks with hit on missing layer}}
-                                            {\mbox{Tracks within layer acceptance}} \times 100 \%
+                                            {\mbox{Tracks within layer acceptance}} \times 100 \%.
 \]
 The hit efficiencies per layer were calculated using all dedicated runs. As 
 can be seen from Figure~\ref{fig:hit_efficiency}, the average hit efficiency
@@ -38,8 +39,28 @@ per layer, excluding all known bad Si sensors, was found to be greater than
 % The single hit efficiencies need to be updated to reflect changes that were 
 % made to the tracking code
 
-The efficiency of the tracking algorithm was also studied and is shown on 
-Figure~\ref{fig:trk_efficiency}.
+As mentioned above, the standard pattern recognition algorithm is designed to 
+find tracks using the reconstructed stereo hits.  A set of tracking strategies
+outline which layers should be used by the track finding algorithm along
+with their role (seeding, extend, confirm), and the $\chi^2$ cut imposed 
+on the fit. Any kinematic constraints are also specified within the strategy.
+A detailed account of the tracking algorithm can be found  here~\ref{}.
+
+In order to determine the efficiency of the track finding algorithm, a Monte
+Carlo sample containing pair produced electrons from photons incident on 
+a 1.6\% $X_0$ gold target was used.  The energy of the pair produced electrons
+ranged from .5 GeV to 5.5 GeV. An electron falling within the detector 
+acceptance was considered findable by the tracking algorithm if it 
+traversed through at least 4 of the SVT layers. The track reconstruction
+efficiency was then determined as
+\[
+    \varepsilon_{\mbox{track reco efficiency}} = \frac{\mbox{Tracks found}}
+                                            {\mbox{Tracks found to be findable}} \times 100 \%.
+\]
+The resulting efficiency to find an electron which passes through the detector
+acceptance is show on Figure~\ref{fig:trk_efficiency}. The average track
+reconstruction efficiency was found to be \% with the bulk of the inefficiency
+coming from the $\chi^2$ cut imposed on the fit to the six samples during
 \begin{figure}[h]
     \begin{center}
         % TODO: Need to update the plot so that Layer 2 on the bottom doesn't 
@@ -49,3 +70,5 @@ Figure~\ref{fig:trk_efficiency}.
 	\label{fig:trk_efficiency}
     \end{center}
 \end{figure}
+the clustering stage.
+
