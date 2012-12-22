@@ -12,24 +12,26 @@ This is a faithful simulation of the detector, DAQ and trigger and has been test
 The trigger parameters described in Section \ref{sec:triggerdaq} are chosen by running the simulation and plotting the relevant variables for beam background and A' events. 
 This is done for each beam energy and a set of A' masses for each beam energy. Examples of these comparisons are shown in Figures \ref{fig:coplanarity}, \ref{fig:energy-distance} and \ref{fig:ediff}.
 
+These cuts are chosen to lie between the loosest reasonable values (accept as many A' events as possible) and the tightest (reject as many background events as possible). 
+
 \begin{figure}[ht]
 	\includegraphics[width=0.4\textwidth]{performance/trigger/coplanarity_22}
 	\includegraphics[width=0.4\textwidth]{performance/trigger/coplanarity_22_075mev}
-	\caption{\small{Deviation of cluster pairs from coplanarity (units of degrees) for 2.2 GeV beam; background and 75 MeV A' tridents are shown.}}
+	\caption{\small{Deviation of cluster pairs from coplanarity (units of degrees) for 2.2 GeV beam; background and 75 MeV A' tridents are shown. The X-axis is the azimuth around the beam axis ($\phi_1$) of the lower-energy cluster, such that 0 degrees is the positron side of the detector and 180 degrees is the electron side; the Y-axis is the difference between the azimuth angles ($\phi_1-\phi_2 - 180$) of the two clusters. The coplanarity cut's acceptance region is the space between the red lines.}}
 	\label{fig:coplanarity}
 \end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[width=0.4\textwidth]{performance/trigger/energy-distance_22}
 	\includegraphics[width=0.4\textwidth]{performance/trigger/energy-distance_22_075mev}
-	\caption{\small{Energy and distance from beam axis of the lower-energy cluster, for 2.2 GeV beam; background and 75 MeV A' tridents are shown.}}
+	\caption{\small{Energy and distance from beam axis of the lower-energy cluster, for 2.2 GeV beam; background and 75 MeV A' tridents are shown. The energy-distance cut's acceptance region is above the red line.}}
 	\label{fig:energy-distance}
 \end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[width=0.4\textwidth]{performance/trigger/ediff_22}
 	\includegraphics[width=0.4\textwidth]{performance/trigger/ediff_22_075mev}
-	\caption{\small{Energy sum and difference of cluster pairs, for 2.2 GeV beam; background and 75 MeV A' tridents are shown.}}
+	\caption{\small{Energy sum and difference of cluster pairs, for 2.2 GeV beam; background and 75 MeV A' tridents are shown. The energy difference cut's acceptance region is left of the red line.}}
 	\label{fig:ediff}
 \end{figure}
 
@@ -40,7 +42,7 @@ The following trigger parameters were determined to be independent of beam energ
 	\item Energy-distance energy ($E_{edist}$): $0.5\times E_{beam}$
 \end{itemize}
 
-The remaining trigger parameters given in Section \ref{sec:triggerdaq} do not have a significant effect on specificity of the trigger.
+The remaining trigger parameters available in Section \ref{sec:triggerdaq} do not have a significant effect on specificity of the trigger.
 
 \begin{table}
 	\begin{tabular}{|l|r|r|r|}
@@ -58,8 +60,9 @@ The remaining trigger parameters given in Section \ref{sec:triggerdaq} do not ha
 
 Trigger efficiency for A' events is defined as the fraction of A' tridents (generated without fiducial cuts) that produce a trigger.
 
-Trigger rates are shown in Table \ref{tab:trigrates}. These rates are safely under the maximum readout rate of 43 kHz set by the SVT. 
-The addition of pions to the 6.6 GeV background sample does not have a significant effect on the trigger rate.
+Trigger rates are shown in Table \ref{tab:trigrates}. These rates are safely (by a factor of 2 or more) under the maximum readout rate of 43 kHz set by the SVT. 
+Furthermore, tightening the coplanarity and energy-distance cuts lowers trigger rates to $\approx 10$ kHz at 1.1 and 2.2 GeV and $\approx 5$ kHz at 6.6 GeV, while reducing the A' efficiency by no more than 2 percentage points; this provides further safety margin in case trigger or data rates are higher than expected.
+The addition of pions to the 6.6 GeV background sample has only a small effect on the trigger rate.
 
 \begin{table}
 	\begin{tabular}{|l|r|}
@@ -67,16 +70,16 @@ The addition of pions to the 6.6 GeV background sample does not have a significa
 		Sample &  Rate (kHz)\\
 		\hline
 		1.1 GeV	EGS5 				& 15.7 $\pm$ 0.4	\\
-		1.1 GeV EGS5+tridents			& 17.6 $\pm$ 0.6	\\
+		1.1 GeV EGS5+tridents			& 18.3 $\pm$ 0.4	\\
 		2.2 GeV	EGS5 				& 11.2 $\pm$ 0.3	\\
 		2.2 GeV EGS5+tridents			& 15.8 $\pm$ 0.4	\\
 		6.6 GeV	EGS5 				& 10.2 $\pm$ 0.3	\\
 		6.6 GeV EGS5+tridents			& 12.6 $\pm$ 0.4	\\
-		%6.6 GeV EGS5+tridents+pions (FLUKA)	& 7.3 $\pm$ 0.3	\\
-		%6.6 GeV EGS5+tridents+pions (G4)	& 7.0 $\pm$ 0.3	\\
+		6.6 GeV EGS5+tridents+pions (FLUKA)	& 13.4 $\pm$ 0.4	\\
+		6.6 GeV EGS5+tridents+pions (G4)	& 13.5 $\pm$ 0.4	\\
 		\hline
 	\end{tabular}
-	\caption{ {\small Trigger rates using various background samples. }
+	\caption{ {\small Trigger rates using various background samples, with statistical uncertainties. }
 	\label{tab:trigrates}}
 \end{table}
 
