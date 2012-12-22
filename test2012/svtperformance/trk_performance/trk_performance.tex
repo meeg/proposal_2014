@@ -18,11 +18,19 @@ SVT layers. The resulting track was then extrapolated to the layer omitted
 \begin{figure}[h]
     \begin{center}
         % TODO: Need to update the plot so that Layer 2 on the bottom doesn't 
-        % look terrible
-    	%\includegraphics[width=0.98\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_rn.pdf}
-    	\includegraphics[width=0.98\textwidth]{test2012/svtperformance/trk_performance/mean_hit_efficiency_vs_layer.pdf}
-        \caption{} 
-	\label{fig:hit_efficiency}
+        % look terrible. It's probably easiest to just remove the point altogether.
+    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/mean_hit_efficiency_vs_layer.pdf}
+    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
+        \caption{
+                    The plot on the left shows the average hit efficiency
+                    from all dedicated photon runs as a function of layer
+                    number.  Excluding known bad layers, the hit efficiency
+                    is greater than 90\%. The track reconstruction efficiency
+                    as a function of momentum (blue) along with the 
+                    distribution of momenta for all tracks (green) is shown
+                    on the right.
+                } 
+	\label{fig:hit_track_efficiency}
     \end{center}
 \end{figure}
 from the fit. If the track was found to lie within the sensitive volume
@@ -33,7 +41,7 @@ conducted.  The hit efficiency was then determined as
                                             {\mbox{Tracks within layer acceptance}} \times 100 \%.
 \]
 The hit efficiencies per layer were calculated using all dedicated runs. As 
-can be seen from Figure~\ref{fig:hit_efficiency}, the average hit efficiency
+can be seen from Figure~\ref{fig:hit_track_efficiency}, the average hit efficiency
 per layer, excluding all known bad Si sensors, was found to be greater than
 90\%.
 % The single hit efficiencies need to be updated to reflect changes that were 
@@ -58,17 +66,28 @@ efficiency was then determined as
                                             {\mbox{Tracks found to be findable}} \times 100 \%.
 \]
 The resulting efficiency to find an electron which passes through the detector
-acceptance is show on Figure~\ref{fig:trk_efficiency}. The average track
+acceptance is show on Figure~\ref{fig:hit_track_efficiency}. The average track
 reconstruction efficiency was found to be \% with the bulk of the inefficiency
 coming from the $\chi^2$ cut imposed on the fit to the six samples during
+the clustering stage.
+
+All events which contained pairs of oppositely charged tracks were fit to a
+common vertex using a simple vertexing algorithm which searches for the distance
+of closest approach between the two tracks.  The reconstructed vertex position
+along the beam axis for both data and Monte Carlo is shown on 
+Figure~\ref{fig:vz_position}.
 \begin{figure}[h]
     \begin{center}
-        % TODO: Need to update the plot so that Layer 2 on the bottom doesn't 
-        % look terrible
-    	\includegraphics[width=0.98\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
-        \caption{} 
-	\label{fig:trk_efficiency}
+    	\includegraphics[width=0.60\textwidth]{test2012/svtperformance/trk_performance/zvertex.pdf}
+        \caption{  
+                    The reconstructed vertex position along the beam axis for
+                    both data (blue) and Monte Carlo (red).
+                } 
+	\label{fig:vz_position}
     \end{center}
 \end{figure}
-the clustering stage.
+Because of the geometric setup of the SVT, observation of pairs produced by
+the incident photon required both electrons to multiple scatter a significant 
+amount within the target.  This results in a broadening of the Gaussian 
+distributed reconstructed vertex position as seen in the Figure. 
 
