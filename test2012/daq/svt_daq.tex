@@ -4,25 +4,22 @@
 
 The SVT DAQ was a rapidly built DAQ  designed to readout data continuously at 40 MHz from the silicon detector modules, and transfer data to the JLab DAQ once a trigger signal is received. It is built using the same 
 basic architecture and layout as the HPS DAQ but without the optical readout components and 
-power distribution system inside the vacuum described in Sec.~\ref{sec:svt_daq}. 
-
-The test run had a total of 20 silicon strip sensors, each one connected to an onboard hybrid readout card 
-which is similar to the HPS hybrid, each one holding five 128-channel APV25 integrated circuits. The test 
-run hybrid readout card is shown in Fig.~\ref{fig:hybrid_and_apv25_testrun} 
+power distribution system inside the vacuum described in Sec.~\ref{sec:svt_daq}.  The test run had a total of 20 silicon strip sensors, each one connected to an onboard hybrid readout card 
+which is similar to the HPS hybrid, each one holding five 128-channel APV25 integrated circuits, 
+see Fig.~\ref{fig:hybrid_and_apv25_testrun} 
  \begin{figure*}[t]
 \includegraphics[ scale=0.3]{test2012/daq/hybrid.jpg}
 \includegraphics[ scale=0.3]{test2012/daq/apvs-on-hybrid.jpg}
-\caption{\small{Picture of a test run hybrid readout board holding five APV25 ASICs. The wire bonds to the 
-silicon sensors can be seen as well.}}
+\caption{\small{Test run hybrid readout board with five APV25 ASICs showing the encapsulated wire bonds 
+between the ASICs and the silicon sensor.}}
 \label{fig:hybrid_and_apv25_testrun}
 \end{figure*}
-
-Contrary to the HPS DAQ where opto-boards digitize and converts the APV25 analog output signals to 
-optical signals inside the vacuum chamber, the hybrids here carry analog signal directly to the 
+Contrary to the HPS DAQ where front end boards digitize the APV25 analog output signals 
+inside the vacuum chamber, the hybrids carry analog signal directly to the 
 Rear Transition Module (RTM) via a multi-twisted-pair cable. The amplification and digitization of the 
-analog differential voltage output of the APV25 output are therefore carried out on the RTM board 
-which was designed specifically for the HPS test run. Figure~\ref{fig:svtdaq} shows an overall layout of 
-the SVT test run DAQ system (compare to Fig.~\ref{fig:svt_daq_overview}).
+analog differential voltage output of the APV25 is carried out on the RTM board 
+designed specifically for the HPS test run. Figure~\ref{fig:svtdaq} shows an overall layout of 
+the SVT test run DAQ system (compare to the HPS layout in Fig.~\ref{fig:svt_daq_overview}).
  \begin{figure}[t]
 \includegraphics[scale=0.9]{test2012/daq/svt_daq_diagram.png}
 \caption{\small{Schematic of the SVT DAQ showing input from the hybrids mounted on the silicon detector to the RTM, its connection to the COB, and the Ethernet switch used to transfer data at 1 Gbps to the 
