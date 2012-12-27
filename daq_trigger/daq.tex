@@ -218,10 +218,10 @@ See Sec.~\ref{sec:triggerdaq} for more details on the operation of the trigger s
 
 The high occupancies in the detector requires a high readout bandwidth to be able to transfer hits from the 
 detectors to disk. The event sizes and rates are based on estimates from full Geant4-based simulations 
-including all known backgrounds. 
-To keep the number of noise hits to a minimum and still retaining a high efficiency, 
-the SVT requires that three if the six samples are above an effective threshold of three times the noise 
-level. The dominant contribution to the occupancy are the high rate of beam background hits estimated 
+including all known backgrounds. As expected the SVT dominate the expected rates. 
+The noise hit occupancy in the SVT is kept low by requiring that three of the six samples are above an
+effective threshold of three times the noise level. The dominant contribution to the occupancy is instead 
+the high rate of beam background hits estimated. This is estimated 
 from detailed full simulation resulting in an occupancy of around 0.3\% or an average of 61 channels above threshold.  
 %Background studies (see Sec.~\ref{sec:hps_perf}) show that 
 %there are on average 10 tracks per event at a beam energy of 2.2~GeV and current of 
@@ -231,8 +231,10 @@ from detailed full simulation resulting in an occupancy of around 0.3\% or an av
 Each SVT channel has, in addition to the six digitized samples,  header information that identifies the 
 the channel number and it's chip address. The complete SVT event size also 
 include the overhead from each FPGA and the JLab data stream bank header.  
-The maximum average event size is approximately 1.7~kBytes with a maximum event rate 
-of 30.3~kBytes/s, well within the SVT DAQ capabilities. 
+The maximum average event size increased with decreasing beam energy since a larger 
+fraction of backgrounds get larger opening angles and thus potentially higher than the 15~mrad 
+vertical dead zone angle. For a beam energy of 1.1~GeV, the average SVT event size is 2.5~kBytes and 
+the rate is 43Mbytes/s, well within the SVT DAQ capabilities. 
 The ECal and muon detectors, with occupancies between 3-10\%, each contribute with an event size of 
 approximately 0.3kBytes and maximum rates of about 12~MBytes/s for the 1.1~GeV run. 
 %Each calorimeter or muon hit consist of 8 bytes (4 byte energy, 4 byte time)
@@ -244,7 +246,8 @@ DAQ system.
 %(split between the two VXS crates), well within the DAQ system design. 
 %The contribution from the muon system is small due to it's significantly lower number of channels. The system is readout by nine FADC boards in a single VXS crate. The event 
 %size for a 10\% occupancy level is 0.2~kbytes which translates to a data rate of 10~Mbytes/s. 
-Table~\ref{tab:data_rates} summarizes the event size and data rates for the different sub-systems. 
+Table~\ref{tab:data_rates} summarizes the event size and data rates. The highest overall rate, for a 1.1~GeV run, and that needs to be written to disk is 56~MBytes/s which is within the current 
+DAQ system design limit of 100~MBytes/s. 
 \begin{table}[]
 \centering
 \begin{tabular}{|l|ccc|ccc|ccc|}
@@ -253,16 +256,14 @@ Table~\ref{tab:data_rates} summarizes the event size and data rates for the diff
 \hline
 Beam energy (GeV) & 1.1 & 2.2 & 6.6 & 1.1 & 2.2 & 6.6 & 1.1 & 2.2 & 6.6 \\
 \hline
-SVT & 0.3 & 0.3  & 0.3  & 1.7 & 1.7 & 1.5 & 30.3 & 27.2 & 18.9\\
+SVT & 0.5 & 0.3  & 0.3  & 2.5 & 1.7 & 1.5 & 43.1 & 27.2 & 18.9\\
 ECal & 3.0 & 4.2  & 4.7 & 0.3 & 0.3  & 0.3 & 12.1 & 4.8  & 3.9 \\
 Muon & 10 &  10 & 10  & 0.3 & 0.3 & 0.3 & 5.5 & 4.9 & 3.9 \\
 \hline
-Total& \multicolumn{3}{|c|}{-} & 2.3 & 2.3 & 2.1 & 40.7 & 36.9 & 26.8 \\
+Total& \multicolumn{3}{|c|}{-} & 3.0 & 2.3 & 2.1 & 53.6 & 36.9 & 26.8 \\
 \hline
 \end{tabular}
 \caption{{\small Summary of the occupancy, event size and data rate expected for the runs at  runs at the three beam 
 energies in the run plan. }}
 \label{tab:data_rates}
 \end{table}
-As expected, the SVT dominates the event size and rate due to the high average number of background 
-hits from beam background. The 40~MBytes/s overall rate is within the DAQ system design limit of 100~MBytes/s. 
