@@ -32,63 +32,77 @@ system is explained in more detail in Sec.~\ref{sec:triggerdaq}.
 
 \subsubsection{SVT Data Acquisition}
 \label{sec:svt_daq}
-
-\begin{verbatim}
-This section needs update including optical readout and power distribution.
-\end{verbatim}
-
-
-The goal of the SVT DAQ is to support the continuous 40MHz readout and processing of signals from 
-the 24 silicon strip sensors of the SVT and select those events that were identified by the 
+The goal of the SVT DAQ is to support the continuous 40~MHz readout and processing of signals from 
+the 32 silicon strip sensors of the SVT and select those events that were identified by the 
 Level 1 trigger system for transfer to the JLab DAQ for further event processing at rates 
-close to 50kHz. 
-Due to the difficult environment of the SVT with extreme occupancy and pile-up from multiple bunches  the number of noise hits has to be low to keep total data rates under control and 
+close to 50~kHz. 
+Due to the difficult environment of the SVT with extreme occupancy and pile-up from multiple bunches the number of noise hits has to be low to keep total data rates under control and 
 each pulse from an energy deposition in the silicon needs to be sampled in order to facilitate 
 reconstruction of the hit time to high accuracy. 
 
-To meet these demanding requirements each of the 24 silicon strip sensors is connected to a 
-hybrid board housing five 128-channel APV25~{\color{red}Reference needed} integrated circuits. The APV25, initially developed for the Compact Muon Solenoid silicon
- tracker~{\color{red}Reference needed}  at the Large Hadron Collider at CERN, was 
+To meet these demanding requirements each of the 32 silicon strip sensors is connected to a 
+hybrid board housing five 128-channel APV125 front-end ASICs~\ref{Jones:1069892,Raymond:2002yr}, 
+see Fig.~\ref{fig:hybrid_and_apv25}.
+The APV25 ASIC, initially developed for the Compact Muon Solenoid silicon
+ tracker  at the Large Hadron Collider at CERN, was 
  chosen based on their good match to the HPS requirements. They provide amplification, 
- pipelining, and analog storage for trigger accepted events. For each 640-channel hybrid 
- board (shown in Fig.~\ref{fig:hybrid_and_apv25}
- \begin{figure*}[t]
+ pipelining, and analog storage for trigger accepted events. 
+  \begin{figure*}[t]
 \includegraphics[ scale=0.3]{daq_trigger/figures/hybrid.jpg}
 \includegraphics[ scale=0.3]{daq_trigger/figures/apvs-on-hybrid.jpg}
 \caption{\small{Picture of a hybrid board from the test run in 2012 holding five 
 APV25 ASICs that are wire bonded to the silicon sensor.}}
 \label{fig:hybrid_and_apv25}
 \end{figure*}
-Each hybrid board has five analog output lines where analog data from each APV25 are 
-sent using low power LVDS signals over about 3~m of multi-twisted-pair cable to a readout 
-board. 
-
-Figure~\ref{fig:svt_daq_overview} gives an overview of the SVT readout system. 
+Each hybrid board has five analog output lines where analog data from each APV25 ASIC are 
+sent using low power LVDS differential current signals over about 1~m of flex cable to a 
+front-end readout board. A pre-amplifier scales the APV25 differential current output to match 
+the range of a 14-bit Analog to Digital Converter (ADC). Each front-end board has four sections 
+that each service four hybrids. The ADC operates at the system clock frequency of 41.667~MHz.
+The digitized output from the front-end board is sent through compact 8-pair mini-SAS cables to 
+the vacuum flanges to connect to the upstream DAQ outside the vacuum chamber. 
+The front-end readout board houses a radiation resistant FPGA and buffers to allow for the control of the 
+distribution of clock, trigger and I$^{2}$C communication with the APV25 ASICs. To further simplify the services, and minimize cabling, that enter through the vacuum flanges it contains 
+linear regulators to distribute and regulate three low voltage power lines to the APV25 ASICs in addition 
+to the high voltage bias. Figure~\ref{fig:svt_daq_flange_fe_boards} shows a schematics layout of the 
+downstream readout chain of the SVT.
+The digitized signals from the 20,480 channels are converted to optical signals at the custom built 
+flange boards. Each flange board houses optical drivers to handle the electrical-optical 
+conversion and transmit the optical signals over 10~m fibers to the upstream SVT DAQ. 
+It also interfaces the low- and high voltage power transmission from the CAEN power supplies 
+to the vacuum chamber.  
  \begin{figure*}[t]
-\includegraphics[ scale=0.6]{daq_trigger/figures/svt_daq_schem.png}
-\caption{\small{Schematic block diagram of the SVT data acquisition system.}}
+\includegraphics[ scale=0.6]{daq_trigger/figures/daq_hps_2014_schematics_fe_flange_boards.pdf} 
+\caption{\small{Schematic overview of the front end and flange boards of the downstream part of 
+SVT DAQ.}}
 \label{fig:svt_daq_overview}
 \end{figure*}
-It is developed and built at SLAC using the Advanced Telecom 
-Communication Architecture (ATCA) system for high speed data transfer. The analog signals 
-from the 23,040 channels are digitized on the Rear Transition Module (RTM) boards. A 
-pre-amplifier scales the APV25 differential current output to match the range of a 14-bit 
-Analog to Digital Converter (ADC). Each RTM board has three sections that each service 
-three hybrids. The ADC operates at the system clock frequency of 41.667~MHz. The RTM 
-also has a 4-channel fiber optic module to communicate with the JLab trigger supervisor. 
-A picture of a RTM board is shown in Fig.~\ref{fig:rtm}.
- \begin{figure*}[t]
-\includegraphics[ scale=0.25]{daq_trigger/figures/rtm.png}
-\includegraphics[ scale=0.4]{daq_trigger/figures/svt_daq_module_noted.png}
-\caption{\small{Picture of a RTM (top) and COB board (bottom) 
-used in the HPS test run 2012.}}
-\label{fig:rtm}
+
+The main SVT DAQ crate is developed and built at SLAC using 
+the Advanced Telecom Communication Architecture (ATCA) system for high speed data transfer.
+The optical signals from four hybrids, one half flange board, are received 
+at one of four sections of the Rear Transition Module (RTM) boards of the ATCA crate, see Fig.~\ref{fig:svt_daq_overview}.
+\begin{figure*}[]
+\includegraphics[ scale=0.6]{daq_trigger/figures/daq_hps_2014_schematics_atca.pdf} 
+\caption{\small{Schematic block diagrams of the SVT data acquisition system.}}
+\label{fig:svt_daq_overview}
 \end{figure*}
 The main COB board has four FPGA units that each interfaces with a single section of the 
 the RTM.  Each FPGA is housed on a separate daughter board called 
-Data Processing Module (DPM). Each DPM receives the digitized signals from the hybrids 
+Data Processing Module (DPM). The modular ATCA design allows to re-use architecture and functionality 
+from other DAQ system. Figure~\ref{fig:rtm} shows a RTM- and COB board designed and used for 
+the ATLAS muon system which components are similar to that used by HPS.{\color{red} Need to be checked.} 
+\begin{figure*}[]
+\includegraphics[ scale=0.25]{daq_trigger/figures/rtm.png}
+\includegraphics[ scale=0.4]{daq_trigger/figures/svt_daq_module_noted.png}
+\caption{\small{Picture of a RTM (top) and COB board (bottom) used in the HPS test run 2012. {\color{red}Can we use a picture from ATLAS DAQ here?}}}
+\label{fig:rtm}
+\end{figure*}
+In order to minimize complexity of the system inside the vacuum chamber, the signal processing is 
+solely done at the DPM and not at the front end board which simply digitizes the signal. 
+Each DPM receives the digitized signals from the hybrids 
 from the RTM, applies thresholds for data reduction and organizes the sample data 
-into UDP datagrams. Each DPM also includes an I2C controller to configure and monitor the 
+into UDP datagrams. Each DPM also includes an I$^{2}$C controller to configure and monitor the 
 APV25 chips. One of the DPMs functions as the trigger interface which receives trigger 
 signals from the optical fiber module on the RTM, handles distribution of clock and trigger 
 and handles communication with the JLab trigger supervisor and the RCE. The 
@@ -100,9 +114,8 @@ the 36 hybrids of the SVT.
 The RCE receives and buffers UDP datagrams from the data and trigger DPMs and
  assembles them into full event frames. The RCE also runs an implementation of the JLab ROC application that handles the integration of the SVT event frames into the JLab DAQ 
  system described above. The RCE node transfer data to the JLab DAQ  
- through a 10~Gbit Ethernet backend interface. 
-
-The readout rate of the SVT is 43kHz, limited by the APV25 readout rate. 
+ through a 10~Gbit Ethernet backend interface. The maximum readout rate of the SVT is approximately 
+ 43~kHz, limited by the APV25 readout rate. 
 %The maximum readout rate of the SVT DAQ  is limited by the readout time 
 %of the APV25 chip. Using overlapping trigger and readout functionality, where the 
 %APV25 chip can buffer up to 5 triggers, the maximum average readout rate expected for 
