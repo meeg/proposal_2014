@@ -1,5 +1,10 @@
 hps_2014.pdf
-hps_2014.log
-hps_2014.aux
-hps_2014.out
+*.log
+*.aux
+*.out
 hps_2014.toc
+hps_2014.synctex.gz
+*~
+*.bak
+*.swp
+*.DS_Store
