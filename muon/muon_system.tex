@@ -3,23 +3,54 @@
 \label{sec:muon}
 
 
-Searching for the A$^\prime$ in its di-muon decay mode has the advantage of having greatly reduced electromagnetic backgrounds for triggering.  The only physics background will arise from photoproduction of $\pi^+$ and $\pi^-$ pairs in the target, which aren’t fully absorbed in the ECal or absorber. The muon detector will be about 1 meter long and will consist of layers of scintillator hodoscopes sandwiched between iron absorbers. The number of layers and the thickness of absorbers is defined by the $\pi/\mu$ rejection factor. Detector was optimized using the GEANT-3 model of ECal, continued with layers of iron and scintillators. Muons in the momentum range from $1$ GeV to $4$ GeV has been studied, see \cite{HPS_PROP} for details.
+The di-muon decay channel of the A$^\prime$ has the advantage of a greatly reduced electromagnetic background.  In this case, the only particle background in a muon counter would come from upstream photoproduction of $\pi^+$ and $\pi^-$ pairs that are not fully stopped in the ECal or absorber.  A muon detector that matches the tracking acceptance of HPS only needs to be about a cubic meter in size. It can easily be constructed with layers of scintillator hodoscopes sandwiched between iron absorbers, and can be added downstream from the rest of the HPS apparatus.
 
-In Figure \ref{fig:pmrej}, the rejection factor for charged pions is presented. As can be seen from the figure, for particles from $1$ GeV to $4$ GeV, the optimal thickness of the iron absorber for pion rejection is $\sim 75$ cm (after ECal, a $16$ cm of lead-tungstate). In the efficiency calculation for low energy particles ($< 1.7$ GeV) detection in in all four layers of scintillator hodoscopes were not considered. Depending on the momentum, particles were not traced behind the third, fourth or fifth absorber.  
+The number of layers and the thickness of absorbers is defined by the $\pi/\mu$ rejection factor. The schematic design of the muon detector was optimized using the GEANT-3 model for the ECal with added layers of iron and scintillators.  In the simulation, muons and pions in the momentum range of $1$ to $4$ GeV/c first passed through the 16 cm of lead tungstate in the ECal and then entered a muon counter with various total absorber thicknesses (see \cite{HPS_PROP} for details).  Detection efficiencies for pions ($\epsilon_\pi$) and muons ($\epsilon_\mu$) were then calculated as a function of absorber thickness and particle momentum.  For low-energy particles ($< 1.7$ GeV) detection in all four layers of scintillator hodoscopes was not considered. Depending on the momentum, particles were not traced behind the third, fourth or fifth absorber.  
+Figure \ref{fig:pmrej} shows the resulting rejection factor $\epsilon_\pi/\epsilon_\mu$.  The right-hand plot shows the dependence of  $\epsilon_\pi/\epsilon_\mu$ on the total thickness of the iron absorber, with the best rejection at about 75 cm.  The right-hand plot shows $\epsilon_\pi/\epsilon_\mu$ for a 75 cm absorber as a function of muon momentum.  The suppression of individual pions by two orders of magnitude will suppress pion pairs by 4 orders of magnitude.  This is more than sufficient for HPS.
 
 \begin{figure*}[!ht]
-\includegraphics[scale=0.8]{muon/pmrej.pdf}
-\caption{\small{Pion-muon rejection factor as a function of the iron absorber thickness.}}\label{fig:pmrej}
+\includegraphics[scale=0.44]{muon/pmrej.pdf}
+\includegraphics[scale=0.44]{muon/pmrej4.pdf}
+\caption{\small{Pion-muon rejection factor $\epsilon_\pi/\epsilon_\mu$ versus total iron absorber thickness
+(left) and versus particle momentum for a 75 cm absorber (right).}}\label{fig:pmrej}
 \end{figure*}
 
 
-\subsubsection{Detector concept}
+\subsubsection{Conceptual Design}
 
-Based on simulations, a muon detector composed of a four iron absorbers (total length of $30+15+15+15=75$ cm) and four double-layer scintillator planes, positioned after each absorber layer is proposed. The muon detector will be mounted behind the ECal, see Figure 4.5.2.1. The pion rejection ($\pi/\mu$) of the proposed system as a function of particle momentum is shown in Figure \ref{fig:pmrejp}. For the determination of particle detection efficiencies, only signals in the first three layers of the hodoscope were used for momenta $< 1.7$ GeV/c. In the full momentum range from $1$ to $4$ GeV/c, $\pi/\mu$ varies from $10^{-2}$ to $2\times 10^{-2}$ and therefore the pion pair suppression factor of the system will be $< 4\times10^{-4}$. Similar to the Ecal, the muon detector will consist of two halves, one above and one below the beam. The vertical gap between the first hodoscope layers of the two halves is about 3 cm. The cross section of each half of the first hodoscope is $63\times 39$ cm$^2$. Each half of the last hodoscope layer is $74\times 46$ cm$^2$.  
+On the basis of these simulations, we have designed a muon detector composed of four iron absorbers (total length of $30+15+15+15=75$ cm) a double-layer scintillator hodoscope positioned after each absorber. The muon detector will be mounted behind the ECal.  Similar to the Ecal, the muon detector will consist of two halves, one above and one below the beam.  This 
+segmentation is necessary in order to
+minimize the effects of the ``sheet-of-flame," that multitude of low-energy particles in the horizontal plane, swept into the detector acceptance by the dipole analyzing magnet.
+The vertical gap between the first hodoscope layers of the two halves is about 3 cm. The cross section of each half of the first hodoscope is $63\times 39$ cm$^2$. Each half of the last hodoscope layer is $74\times 46$ cm$^2$.    Figure \ref{fig:HPS_view2} shows a CAD
+drawing of the HPS system, with the muon counter on the right, which includes the 4 absorbers (gray), the vacuum box (light gray) between the upper and lower sections, and the final set of scintillator paddles (red, in two shades). The ECal is directly upstream from the muon detector, with its crystals shown in yellow.  In front of the ECal is a large gray shielding plate.  The silicon tracker is represented by red and gray rectangles and  the red point on the left is the target position.  
 
 \begin{figure*}[!ht]
-\includegraphics[scale=0.8]{muon/pmrej4.pdf}
-\caption{\small{Pion-muon rejection factor as a function of the iron absorber thickness.}}\label{fig:pmrejp}
+\includegraphics[scale=0.22]{muon/HPS_view2.png}
+\caption{\small{CAD drawing of the HPS detector setup.  From left to right this consists of the target (red dot), the silicon tracker
+(gray and red rectangles), the large shielding wall (gray), the ECal lead tungstate crystals (yellow, two shades), the muon counter absorbers
+(gray), and the final muon counter scintillators (red, two shades).}}
+\label{fig:HPS_view2}
 \end{figure*}
 
-The simplest, most economical solution for the hodoscopes is to use layers of extruded scintillator strips with embedded wave-shifting fiber readout. The scintillator strips will be oriented horizontally. The light will be detected from both ends of the strip using multi-anode photomultipliers. With 5 cm vertical segmentation, a total of 144 readout channels are needed (9x16 channels multi-anode PMTs).  Signals from each channel will be sent to a TDC and to a FADC. The FADC information will be used to construct the muon trigger. The TDC information together with information from FADC will be used in offline analysis to measure the hit position along the strip. 
+%\begin{figure*}[!ht]
+%\includegraphics[scale=0.8]{muon/pmrej4.pdf}
+%\caption{\small{Pion-muon rejection factor as a function of the iron absorber thickness.}}\label{fig:pmrejp}
+%\end{figure*}
+
+\begin{figure*}[!ht]
+\includegraphics[scale=0.22]{muon/Muon2b.png}
+\caption{\small{Horizontal scintillator configuration for the muon counter. Scintillators are
+shown in red and yellow/brown.  The white/gray structure is the vacuum box.  Each hodoscope layer (top
+and bottom) contains three long strips, read out on both ends.
+}}
+\label{fig:Muon2p}
+\end{figure*}
+
+For the hodoscopes we plan to use the same extruded scintillator strips with embedded wavelength-shifting fiber and multi-anode phototube readout as was developed for the CLAS Preshower Calorimeter. These scintillator strips are 45 mm x 10 mm in cross section, and can be cut to any lengths needed for the muon counter.  Each strip contains two, long tunnels, created in the original extrusion process, into which scintillating fibers can be inserted.  Each hodoscope will consist of one x and one y plane.  The horizontally aligned strip will extend over the length of the detector and will be read out on each end.  The upper and lower hodoscopes in each plane will have their own vertically aligned strips, which will be read out on only the outer end.  The inner end is inaccessible because of the vacuum box, but there is no particular advantage to having a double readout on these short (135 mm) strips.  
+
+The system can be instrumented with 256 readout channels, in which case the requisite electronics will 
+fit into a single VME crate.  Each channel
+will be sent to both a TDC and an FADC.  We intend to borrow the CLAS Preshower Calorimeter electronics for this purpose.  Both signals will be used to construct a muon trigger for the experiment.  In the current design there will be 3 horizontal strips in each of 8 hodoscope planes (24 total) and a total of 208 vertical strips in 8 hodoscope planes.  The number of vertical strips per plane increases slightly with distance from the target to keep a constant angular coverage.  The maximum is 33 per hodoscope in the back plane.
+
+Full Monte Carlo simulations with realistic event rates are currently underway in order to finalize design details of the muon counter.  The crucial issues are the event rates in the scintillators near the beamline (which already has initiated a redesign of the vacuum chamber to reduce background), the target-to-muon-counter tracking resolution and the detection efficiency.  Any changes to the detector as a result are expected to be minor and will not alter the conceptual design presented here.
+
