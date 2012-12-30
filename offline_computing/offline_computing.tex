@@ -1,68 +1,161 @@
 
+The following is an outline of the offline computing model envisioned for satisfying the analysis needs of the HPS experiment. The raw data collected over the running periods must be processed through calibration passes, reconstructed into calibrated objects useful for analysis and separated into analysis streams. Corresponding Monte Carlo will also need to be produced and separated into the same analysis streams.
 
-{\color{red} THIS SECTION NEEDS UPDATE}
-
-
-The following is an outline of the offline computing model envisioned for satisfying the analysis needs of the HPS experiment. The raw data collected over the three month running period must be processed through calibration passes, reconstructed into calibrated objects useful for analysis and separated into analysis streams. Corresponding Monte Carlo will also need to be produced and separated into the same analysis streams.
-
-
-%\subsubsection{Data Taking}
-The primary elements of the HPS detector are an electromagnetic calorimeter (ECal), a silicon microstrip vertex tracker and a muon system. The ECal consists of 5 rows of 46 lead tungstate crystals and 3 rows of 16 lead glass colorimeter blocks on each side of the dead zone. The tracker consists of 6 Si microstrip layers with a total of 67840 readout channels. The muon system has 144 channels. Assuming 30 kHz raw trigger rate, reduction of the trigger rate by a factor of 8 at Level 3, and event size of 4950 bytes, we arrive at data rates of about 18 Mbytes/sec. With 95 days of data collection for each of two runs, the net raw data volume will be 290 Tbytes. The number of events out of the Level 3 trigger is 59 GEvents.
-
-%\subsubsection{Reconstruction Passes}
-The raw data must be processed to produce physics data objects that can be analyzed. This reconstruction process will also include filters to select events of physics interest but the output events will be larger due to the size and quantity of the reconstructed objects. Space equivalent to twice that of the raw data volume will be needed. This implies that ~590 Tbytes for data reconstruction output will be needed. About 0.1 CPU seconds are needed to reconstruct an event on a 2.4GHz Xeon core. For such a core, 12 billion CPU seconds would be needed. A typical 2.4GHz Xeon core has a SPECint2000 of 2500. The required CPU hours expressed in SPECint2000 is then 8 G SPEC CINT2000 hrs per pass. A second reconstruction pass may be needed after improvements to the reconstruction used in the first pass are identified and implemented.
-
-%\subsubsection{Monte Carlo}
-For modeling signals, estimating backgrounds and confirming the understanding of the detector performance, Monte Carlo simulation will be needed. The number of events needed is estimated to be 1/10th of the number of events passing the Level 3 trigger. If the simulated events are comparable in size to reconstructed events then this means that the required space for the simulation output is 43 Tbytes. About 5 CPU seconds are needed to simulate an event. For 5.9 billion events this yields 29 billion CPU seconds per pass or 2 G SPEC CINT2000 hrs. The main simulation will be done off?site.
-
-%\subsubsection{Analysis Streams}
-Each analysis will need access to a subset of events relevant to that specific analysis. To minimize the time (CPU and real) required to go through the dataset, streams of analysis specific data may be produced as part of the standard production and/or from users producing their own n?tuples. We estimate that these data will need 20\% extra storage space, compared to that needed by the reconstructed data and simulated data.
-
-%\subsubsection{Analysis CPU}
-Based on experience with previous experiments, it is reasonable to estimate that the net CPU needed for analysis work (batch and interactive) will be comparable to that needed for production. For CLAS about 30\% of physics analysis work was done at home institutions.
-
-%\subsubsection{Disk Resources}
-Disk space will be needed for n?tuples, code releases, and scratch areas and approximately 10 percent of the processed data. To accommodate this, 80 Tbytes will be needed.
-?
-%\subsubsection{Data Transfer to/from remote sites}
-
-If the option of having a backup of the HPS raw data at JLAB is not feasible then a copy at SLAC will be made. It is very likely that a copy of the reconstructed data will be needed at SLAC and remote sites will be used to assist in the Monte Carlo production. For CLAS about 30\% of the simulation production was done remotely.
-
-%\subsubsection{Summary of Offline Computing Requirements}
-
-The HPS storage and offline computing requirements are summarized in Tab.~\ref{tab:datastorage} 
-and~\ref{tab:computing}, respectively.
-\begin{table}[tbp]
+Table~\ref{tab:data_rates} shows 
+%the average trigger rate and 
+the total amount of data expected over the 
+different runs. For the six weeks long run in 2014 we expect to collect approximately 126~Tb of raw data.
+\begin{table}[]
+\centering
+\begin{tabular}{|l|c|c|c|c|c|}
+\hline
+Run & Beam energy (GeV) & Time (days) & Raw data (Tb) & Processed data (Tb)\\
+\hline
+2014 & 1.1 & 14 & 49 & 190 \\
+2014 & 2.2 & 14 & 45 & 175  \\
+2014 & 6.6 & 14 & 32 & 122  \\
+\hline
+Total & - & 42 &  126  & 487 \\
+\hline
+2015 & 1.1 & 30 & 106 & 410 \\
+2015 & 2.2 & 30 & 96 & 365 \\
+2015 & 6.6 & 30 & 69 & 265 \\
+\hline
+Total & - & 90 & 271& 1040 \\
+\hline
+\end{tabular}
+\caption{{\small Summary of the raw and processed data expected from the HPS runs. }}
+\label{tab:data_rates}
+\end{table}
+The raw data must be processed to produce physics data objects that can be analyzed. This reconstruction process will also include filters to select events of physics interest. The event size on disk is summarized 
+in Table~\ref{tab:raw_data_size}. 
+\begin{table}[]
 \centering
 \begin{tabular}{|l|c|}
 \hline
-Silo/Mass Storage (Tape) & TB \\
+Type & Event size (kB) \\ 
 \hline
-Amount of Simulated Data Expected & 43 \\
+Raw (EVIO)  &  3.6 \\
 \hline
-Amount of Raw Data Expected & 290 \\
+Reconstructed LCIO & 13.7 \\
 \hline
-Amount of Processed Data Expected & 590 \\
+\end{tabular}
+\caption{{\small Data event sizes. }}
+\label{tab:raw_data_size}
+\end{table}
+
+For modeling signals, estimating backgrounds and confirming the understanding of the detector 
+performance, extensive Monte Carlo simulation is needed. Table~\ref{tab:mc_event_size} summarizes 
+the typical event size at the various stages of the simulation. 
+\begin{table}[]
+\centering
+\begin{tabular}{|lccc|}
 \hline
-Online Storage (Disk) Required & 80 \\
+Event type & Sim. stage & Size/500k bunches (Mb) & Mass points  \\
+\hline 
+A' signal & evgen & 22 & 10  \\
+Beam bkg. (incl. brems. events) & evgen & 331 & -\\ 
+Trident bkg. & evgen & 139 & - \\
 \hline
-Imported Data Expected from Offsite Locations & 60 \\
+Total & evgen & 431 & -\\
 \hline
-Exported Data Expected to Offsite Locations&590 \\
+A' signal & Merged evgen & 134 & 10 \\
+Beam bkg. & Merged evgen & 141 & - \\ 
+Trident bkg. & Merged evgen & 134 & - \\
+Beam+trident bkg. overlay & Merged evgen & 187 & - \\ 
+A'+Beam+trident bkg. overlay & Merged evgen & 233 & 10 \\ 
+\hline
+Total & Merged evgen & 829 & - \\
+\hline
+A' signal & Reco. LCIO  & 284 & 10 \\
+Beam bkg. & Reco. LCIO  & 366 & - \\ 
+Trident bkg. & Reco. LCIO  & ???284??? & - \\
+Beam+trident bkg. overlay & Reco. LCIO  & 379 & - \\ 
+A'+Beam+trident bkg. overlay & Reco. LCIO  & 383 & 10 \\ 
+\hline
+Total & Reco. LCIO  & ??? & - \\
+\hline
+\end{tabular}
+\caption{{\small Event sizes in Mb per 500k simulated bunches. {\color{red} Very detailed table, collapsed of removed?.}}}
+\label{tab:mc_event_size}
+\end{table}
+%LCIO
+%Beam bkg plus trident: 379 Mb per 500,000 bunches
+%Beam: 366 Mb per 500,000 bunches
+%AP/Beam/Trident: 383 Mb per 500,000 bunches at 7 different masses
+%Ap: 284 Mb per 500,000
+%
+%Merged StdHep:
+%Beam bkg plus trident: 187 Mb per 500,000 bunches
+%Beam: 141 Mb per 500,000 bunches
+%AP/Beam/Trident: 233 Mb per 500,000 bunches at 10 different masses
+%Ap: 134 Mb per 500,000 bunches at 10 different ap masses
+%Trident: 134 Mb per 500,000 bunches
+%
+%Raw StdHep: 
+%Ap: 22 Mb per 500,000 bunches at 10 different ap masses
+%Beam: 270 Mb per 500,000 bunches + an additional 61 Mb for brem events (500,000?)
+%Trident: 139 Mb per 500,000 bunches
+In total approximately 1/10th of the number of data events collected need to be simulated. 
+
+% storage description
+In total 613 (1311)~Tb of storage for data is needed for the 2014 (2015) run. For simulation, taking 
+into account 10 mass points for signal, this amounts to 55.6 million events and approximately 43~Tb.
+%(17600+15800+12600)*86400*14/500000*383*1e6/1e12=42,6215
+%                     #events/bunches*size in Mb*1M/1T= 
+
+Tape is currently the only economical storage
+solution for storing all of the raw, simulated and processed data.
+The processing of the raw data is foreseen to occur at JLAB. Given a
+typical bandwidth between sites of 3 to 4 Tb/day, analyses needing
+access to the hit level information will need to be run at JLAB or run
+on small samples of exported data unless they can take advantage of the
+analysis streams. Analysis streams of events satisfying
+pre-selections criteria for targeted analyses will be exported to remote
+sites. Likewise, the simulated data is foreseen to be processed at the
+remote sites and the equivalent analysis streams for the simulated data
+will be used for sharing among the sites. In addition, disk space will be 
+needed for ntuples, code releases, and scratch areas and approximately 10\% of the 
+processed data. To accommodate this, 80(171) Tbytes will be needed for the 2014 (2015) run. 
+The HPS storage requirements are summarized in Tab.~\ref{tab:datastorage}.
+\begin{table}[tbp]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Storage category & 2014 (Tb) & 2015 (Tb) \\
+\hline
+Raw data & 126 & 271 \\
+Processed raw data & 487 & 1040 \\
+Simulated data & 43 & 92 \\
+%90days/42days*43Tb = 92Tb
+Disk space  & 80  & 171 \\
 \hline
 \end{tabular}
 \caption{{\small Data storage summary.}}
 \label{tab:datastorage}
 \end{table}
+%(17600+15800+12600)*86400*14=55641600000 events
+%(17600+15800+12600)*86400*14*0.1/3600}=1545600 cpu hours
+
+
+%cpu requirements
+Approximately 0.1~CPU seconds are needed to reconstruct a data event on 
+a typical 2.4~GHz core. This would require a total of 1.5 million CPU hours of processing for the 
+entire dataset at the JLab processing center.  To simulate events, approximately 5 CPU seconds 
+are needed for each event. In total 0.8 million CPU hours is needed for Monte Carlo 
+simulation which will be shared between SLAC and JLab. 
+Based on experience with previous experiments, it is reasonable to estimate that the net CPU needed for 
+analysis work (batch and interactive) will be comparable to that needed for production. We expect 
+that this will be shared relatively evenly between JLab and SLAC. The HPS offline computing requirements 
+are summarized in Tab.~\ref{tab:computing}.
 \begin{table}[tbp]
 \centering
-\begin{tabular}{|l|c|}
+\begin{tabular}{|l|c|c|}
 \hline
-Computing & SPECC INT2000 (hrs) \\
+Computing category & 2014& 2015 \\
 \hline
-Simulation Requirements (offsite mostly)&8G$\times$2passes\\
-\hline
-Production (Replay, Analysis, Cooking) Requirements & 2G$\times$2passes\\
+Raw data processing ($\times 10^{6}$~CPUh)  & 1.5 & 3.2 \\
+Simulation production ($\times 10^{6}$~CPUh) & 0.8 & 1.6 \\
 \hline
 \end{tabular}
 \caption{{\small Computing needs summary.}}

@@ -1,6 +1,5 @@
 \def\etal{{\it et al.\/}}
 
-\section{HPS Performance Studies}
 
 We use the HPS detector simulation system based on SLAC's org.lcsim infrastructure for full GEANT4
 simulation of the passage and interaction of charged and neutral particles through the SVT 
@@ -27,6 +26,7 @@ Figure  \ref{fig:lcsim} shows a lcsim rendering of the HPS detector.
 \subsection{Simulation of backgrounds and detector occupancies}
 
 \subsubsection{Simulation of backgrounds}
+\label{sec:backgrounds}
 
 The multiple Coulomb scattering and bremsstrahlung processes in the target will generate high 
 intensity fluxes of electrons and photons in the very forward direction, while the large
@@ -220,7 +220,7 @@ in SVT Layer 1 does not exceed 1\%. Table \ref{tab:runc} summarizes the target t
 \label{tab:runc}
 \end{table}
 
-\subsubsection{Simulated ECal Occupancies}
+\subsubsection{Simulated ECal occupancies}
 
 There are two factors limiting the allowable ECal occupancy. First, the ECal 
 readout algorithm uses a window of fixed size to integrate hit energy. This 
@@ -251,125 +251,12 @@ with a threshold of 75 MeV for each crystal.}}
 	\label{fig:ecal_deadtime}
 \end{figure}
 
-\subsection{ECal Trigger Performance}
+\subsubsection{Tracker occupancies}
 
-The proposed ECal trigger was simulated to test trigger cuts, verify
-that the trigger has acceptable efficiency for A' events, and verify 
-that the trigger rate is compatible with the HPS DAQ in all running conditions. 
+\subsection{Trigger rates: ECal and muon detector}
 
-The complete chain of signal evolution in the ECal crystals and 
-signal processing through the trigger system was simulated
-by following closely the ECal trigger description in Section xx. 
-Starting from the energy deposits in the ECal crystals, signals were 
-generated using the CR-RC shaper function with a time constant of 15 ns
-measured with the ECal crystals, amplitudes were sampled every 4 ns
-and pulse data evaluated every 32 ns (simulating FADC), and the cluster 
-finding algorithm and trigger logic were applied (simulating CTP and SSP). 
-
-The CEBAF beam bunch structure was simulated by sending one bunch 
-equivalent of electrons, 
-625 (1.1 GeV), 2,500 (2.2 GeV) and 5,625 $e^-$'s (6.6 GeV), through 
-the target, and total 50 million bunches of beam backgrounds were 
-generated at each beam energy. Since the trident production process 
-was not in EGS5, trident events were generated with MadGraph/MadEvent 
-and overlaid on the beam background bunches with a proper bunch separation 
-expected from the trident cross section.
-For the trigger acceptance studies, A' events were generated with 
-MadGraph/MadEvent at 1.1, 2.2, and 6.6 GeV.
-
-The trigger parameters described in Section \ref{sec:triggerdaq} are 
-chosen by running the simulation and plotting the relevant variables 
-for beam background and A' events. This is done for each beam energy 
-and a set of A' masses for each beam energy. 
-Figure \ref{fig:coplanarity} shows the coplanarity angle vs. the azimuthal 
-angle of the lower-energy cluster, indicating that A' events 
-tend to have small coplanarity angles. Figure \ref{fig:energy-distance} shows
-the distance from beam axis vs. energy of the lower-energy cluster,
-indicating that the energy-distant cut can reduce the beam background effectively.
-Figure \ref{fig:ediff} shows the cluster energy difference vs. energy sum,
-indicating that the energy sum cut can retain A' events effectively.       
-
-\begin{figure}[ht]
-	\includegraphics[width=0.4\textwidth]{performance/coplanarity_22}
-	\includegraphics[width=0.4\textwidth]{performance/coplanarity_22_075mev}
-	\caption{\small{Deviation of cluster pairs from coplanarity (units of degrees) for 2.2 GeV beam; background and 75 MeV A' tridents are shown.}}
-	\label{fig:coplanarity}
-\end{figure}
-
-\begin{figure}[ht]
-	\includegraphics[width=0.4\textwidth]{performance/energy-distance_22}
-	\includegraphics[width=0.4\textwidth]{performance/energy-distance_22_075mev}
-	\caption{\small{Energy and distance from beam axis of the lower-energy cluster, for 2.2 GeV beam; background and 75 MeV A' tridents are shown.}}
-	\label{fig:energy-distance}
-\end{figure}
-
-\begin{figure}[ht]
-	\includegraphics[width=0.4\textwidth]{performance/ediff_22}
-	\includegraphics[width=0.4\textwidth]{performance/ediff_22_075mev}
-	\caption{\small{Energy sum and difference of cluster pairs, for 2.2 GeV beam; background and 75 MeV A' tridents are shown.}}
-	\label{fig:ediff}
-\end{figure}
-
-The following trigger parameters were determined to be independent of beam energy:
-\begin{itemize}
-	\item Minimum cluster energy ($E_{min}$): 0.1 GeV
-	\item Distance ($r_{edist}$) in the energy-distance cut: 200 mm
-	\item Energy ($E_{edist}$) in the energy-distance cut: $0.5\times E_{beam}$
-\end{itemize}
-
-Table \ref{tab:trigcuts} summarizes the trigger parameters that were found dependent on the beam energy. 
-The remaining trigger parameters given in Section \ref{sec:triggerdaq} did not have a significant 
-effect on specificity of the trigger.
-
-\begin{table}
-	\begin{tabular}{|l|r|r|r|}
-		\hline
-		Beam energy [GeV] & $E_{max}$ [GeV] & $Esum_{max}$ [GeV] & $\Delta\phi_{max}$ [$^\circ$] \\
-		\hline
-		1.1	&	0.7	&	0.8	&	90\\
-		2.2	&	1.6	&	1.7	&	45\\
-		6.6	&	5.0	&	5.5	&	60\\
-		\hline
-	\end{tabular}
-	\caption{ {\small Trigger parameters optimized for different beam energies.}
-	\label{tab:trigcuts}}
-\end{table}
-
-Trigger rates are shown in Table \ref{tab:trigrates}. These rates are safely under the maximum readout rate of 43 kHz set by the SVT DAQ. The uncertainties on the rates are due to the beam background statistics. 
-The addition of pions to the 6.6 GeV background sample does not have a significant effect on the trigger rate.
-
-\begin{table}
-	\begin{tabular}{|l|r|}
-		\hline
-		Sample &  Rate (kHz)\\
-		\hline
-		1.1 GeV	Beam Background 		& 15.7 $\pm$ 0.4	\\
-		1.1 GeV Beam Background+tridents	& 17.6 $\pm$ 0.6	\\
-		2.2 GeV	Beam Background			& 11.2 $\pm$ 0.3	\\
-		2.2 GeV Beam Background+tridents	& 15.8 $\pm$ 0.4	\\
-		6.6 GeV	Beam Background			& 10.2 $\pm$ 0.3	\\
-		6.6 GeV Beam Background+tridents	& 12.6 $\pm$ 0.4	\\
-		%6.6 GeV EGS5+tridents+pions (FLUKA)	& 7.3 $\pm$ 0.3	\\
-		%6.6 GeV EGS5+tridents+pions (G4)	& 7.0 $\pm$ 0.3	\\
-		\hline
-	\end{tabular}
-	\caption{ {\small Trigger rates using various background samples. }
-	\label{tab:trigrates}}
-\end{table}
-
-Trigger efficiency for A' events is defined as the fraction of A' tridents (generated without fiducial cuts) that produce a trigger.
-For the performance of the experiment, we are interested in the combined efficiency of the trigger and tracker: the fraction of A' tridents that produce a trigger and leave enough hits in the tracker for a pair of tracks to be reconstructed.
-We simulate charge deposition and readout of the tracker (turning off the generation of noise hits), and check each sensor for hits. 
-If the DAQ reads out hits in four stereo pairs in each half of the tracker, the event is in the combined acceptance. 
-Figure \ref{fig:trigeff} shows the ECal trigger efficiency and the ECal/SVT-combined efficiencies for A' events at 1.1, 2.2, and 6.6 GeV. 
-Both trigger and tracker acceptances are dominated by the geometric acceptances of the ECal and tracker.
-A' prompt decays are assumed.
-
-\begin{figure}[ht]
-	\includegraphics[width=\textwidth]{performance/ap_eff}
-	\caption{\small{Trigger efficiency (solid lines) and combined efficiency (dashed lines) as a function of A' mass, at beam energies of 1.1, 2.2 and 6.6 GeV (red, green and blue respectively). A' prompt decays are assumed}}
-	\label{fig:trigeff}
-\end{figure}
+\subsubsection{ECal trigger performance}
+\input{performance/trigger/ecal_trigger}
 
 
 \bibliographystyle{unsrt}
@@ -386,4 +273,12 @@ J.H. Hubbell \etal, J. Phys. Chem. Ref. Data, Vol. {\bf 23}, 339 (1994)
 
 \end{thebibliography}
 
+
+\subsubsection{Muon trigger performance}
+
+\subsection{Track reconstruction}
+
+\subsection{Cluster reconstruction}
+
+\subsection{Muon identification}
 
