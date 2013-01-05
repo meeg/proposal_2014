@@ -81,7 +81,11 @@ function of time.
 The figure also demonstrates that  the trigger system, described below, was well 
 timed in with the tracker. Figure~\ref{fig:cluster_pulse} also shows the MIP 
 % The MIP value seems small ... going to look at the gains again at some point
-response to be 14,128 electrons. This yields a signal to noise ratio
+% Update: Turns out the problem is with the scale i.e. 25,000 electrons is actually
+% 31,875 electrons. This doesn't affect the gains but it does cause the offsets
+% to change considerably.  I have wrote a quick hack in order to aleviate the issue
+% temporarily but everything needs to be recalculated. -- OM
+response to be 26,320 electrons. This yields a signal to noise ratio
 of 25.5 which is well matched to the value expected from first principles.
 
 \bibliography{svt_calib}
