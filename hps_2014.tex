@@ -25,11 +25,10 @@
     }%
     $^{\ref{#1}}$%
 }
-
-%\newcommand{\footref}[1]{%
-%    $^{\ref{#1}}$%
-%}
-\def \rarr {\rightarrow}
+\usepackage[center]{background} 
+\SetBgContents{DRAFT}
+\SetBgPosition{8.5cm,-11.5cm}
+%\backgroundsetup{contents=Confidential,color=blue!30}\def \rarr {\rightarrow}
 \def \grinp {\includegraphics}
 \def \tw {\textwidth}
 \def\dfrac#1#2{\displaystyle{{#1}\over{#2}}}
@@ -81,7 +80,7 @@ The Heavy Photon Search (HPS) experiment will search for a new heavy vector boso
 \clearpage
 
 
-\input{measurements}
+\input{measurements/measurements}
 
 
 \clearpage
@@ -113,17 +112,10 @@ The Heavy Photon Search (HPS) experiment will search for a new heavy vector boso
 \label{sec:testrun2012}
 \input{test2012/testrun}
 
-\section{HPS Performance Studies {\it Takashi}}
+\input{performance/performance}
 
-\subsection{Simulation of backgrounds and detector occupancies}
-\label{sec:backgrounds}
-\input{backgrounds/backgrounds}
-
-\subsection{Trigger rates: ECal and muon detector}
-
-\subsection{Track reconstruction}
-
-\subsection{Cluster reconstruction}
+\input{TrackingPerformance/tracking_performance}
+\clearpage
 
 \subsection{Muon identification}
 
@@ -135,7 +127,10 @@ The Heavy Photon Search (HPS) experiment will search for a new heavy vector boso
 \section{Detector Construction Timeline and Budget {\it Marco}}
 
 
-%\clearpage
+\clearpage
+
+\input{appendix/appendix}
+
 \input{bibl}
 
 \end{document}
