@@ -25,11 +25,10 @@
     }%
     $^{\ref{#1}}$%
 }
-
-%\newcommand{\footref}[1]{%
-%    $^{\ref{#1}}$%
-%}
-\def \rarr {\rightarrow}
+\usepackage[center]{background} 
+\SetBgContents{DRAFT}
+\SetBgPosition{8.5cm,-11.5cm}
+%\backgroundsetup{contents=Confidential,color=blue!30}\def \rarr {\rightarrow}
 \def \grinp {\includegraphics}
 \def \tw {\textwidth}
 \def\dfrac#1#2{\displaystyle{{#1}\over{#2}}}
@@ -59,7 +58,7 @@
 
 \begin{document}
 
-{\color{red} Sun Dec 30 15:17:03 PST 2012 } %GIT_REVISION_TIME
+{\color{red} Sat Jan  5 09:31:10 PST 2013 } %GIT_REVISION_TIME
 
 \title{\bf\large{Heavy Photon Search Experiment at Jefferson Laboratory: proposal for 2014-2015 run}}
 
@@ -124,6 +123,9 @@ The Heavy Photon Search (HPS) experiment will search for a new heavy vector boso
 \section{HPS Performance Studies}
 \label{sec:performance}
 \input{performance/performance}
+
+\clearpage
+
 
 %\clearpage
 
