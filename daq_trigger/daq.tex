@@ -1,7 +1,7 @@
 \label{sec:daq}
-The HPS experiment data acquisition and trigger system handles the acquisition of data and 
+The HPS experiment data acquisition (DAQ) and trigger system handles the acquisition of data and 
 generation and distribution of triggers for the three sub-detectors: the SVT, ECal and the Muon System. 
-HPS employs two data acquisition (DAQ) architectures: the SVT is readout with 
+HPS employs two DAQ architectures: the SVT is readout with 
 Advanced Telecom Communications Architecture~\cite{atca} (ATCA) hardware
 while the ECal and Muon System use VXS based hardware. The Level~1 trigger receives input from the 
 ECal and Muon system, and is distributed to all the detector systems to signal event 
@@ -55,7 +55,7 @@ this change lets HPS optimally piggyback on SLAC's ATCA system development.
 
 Each of the 36 silicon strip sensors is connected to a 
 hybrid board incorporating five 128-channel APV125 front-end 
-ASICs~\ref{Jones:1069892,Raymond:2002yr}, see Fig.~\ref{fig:hybrid_and_apv25_testrun}.
+ASICs~\cite{Jones:1069892,Raymond:2002yr}, see Fig.~\ref{fig:hybrid_and_apv25_testrun}.
 The APV25 ASIC, initially developed for the Compact Muon Solenoid silicon tracker  at the Large Hadron 
 Collider at CERN, was chosen because it provides excellent signal to noise, analogue output for optimal 
 spatial resolution, and multi-bucket output for good time resolution. 
@@ -132,10 +132,18 @@ that integrates the SVT event frames into the JLab DAQ
 \label{sec:fadc_daq}
 The readout of the ECal and Muon System are essentially identical. Signals from each 
 readout channel are sent to a signal splitter. For the ECal the signals from the APDs are 
-shaped and amplified as described in Sec.~\ref{sec:ecal_readout}, then fed into the 
+shaped and amplified as described in Sec.~\ref{sec:ecal}, then fed into the 
 splitter. For the Muon System, signals arise from phototubes recording scintillation light.
 One of the outputs of the splitter is input to a 
-Flash ADC (FADC) channel, one of 16 in a JLAB FADC250 VXS module. Two 20-slot VXS crates are used to accommodate the two ECal 
+JLab Flash ADC250 (FADC) channel, one of 16 in a FADC VXS module (see Fig.~\ref{fig:fadc}).
+\begin{figure}[]
+\includegraphics[scale=0.5]{daq_trigger/figures/FADC250_Photo_001.jpg}
+\caption{\small{Jefferson Lab FADC250 VXS module.}}
+\label{fig:fadc}
+\end{figure}
+
+
+Two 20-slot VXS crates are used to accommodate the two ECal 
 halves, each one with 221 channels, and one 20-slot VXS crate is used to readout the muon 
 detector. 
 
@@ -150,21 +158,17 @@ The FADCs are an integral part of the HPS calorimeter trigger system. Energies
 and times from each FADC channel in the same VXS crate are input to the crate trigger
 processor board (CTP)which groups adjacent channels with energy deposited into "clusters", identifies the associated channels, and
 assigns an overall cluster energy. Clusters  
-from each CTP (one for the top Ecal, one for the bottom) are combined in the sub-system processor module (SSP) 
+from each CTP (one for the top ECal, one for the bottom) are combined in the sub-system processor module (SSP) 
 which applies further selection criteria. Events with cluster combinations which pass the criteria are
 passed to the trigger supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow 
-coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the Ecal
+coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the ECal 
 and the other systems. 
 
-
-
-
-
-The main characteristics of the Jefferson Lab Flash ADC are:
+The main characteristics of the FADC are:
 \begin{itemize}
-\item 12 bits digitizer with 250~Mbit/s, 
+\item 12-bit digitizer operating at 250~MHz, 
 \item 50$\Omega$ termination input, 
-\item front-end input range:  -0.5V, -1V or -2V (the input range must be above the maximum pulse height to 
+\item front-end input range:  -0.5~V, -1~V or -2~V (the input range must be above the maximum pulse height to 
 ensure no signal clipping).
 \end{itemize}
 The FADC charge resolution as a function of the front-end input range is presented in 
