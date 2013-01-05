@@ -25,11 +25,10 @@
     }%
     $^{\ref{#1}}$%
 }
-
-%\newcommand{\footref}[1]{%
-%    $^{\ref{#1}}$%
-%}
-\def \rarr {\rightarrow}
+\usepackage[center]{background} 
+\SetBgContents{DRAFT}
+\SetBgPosition{8.5cm,-11.5cm}
+%\backgroundsetup{contents=Confidential,color=blue!30}\def \rarr {\rightarrow}
 \def \grinp {\includegraphics}
 \def \tw {\textwidth}
 \def\dfrac#1#2{\displaystyle{{#1}\over{#2}}}
@@ -124,6 +123,10 @@ The Heavy Photon Search (HPS) experiment will search for a new heavy vector boso
 \section{HPS Performance Studies}
 \label{sec:performance}
 \input{performance/performance}
+\input{TrackingPerformance/tracking_performance}
+
+\clearpage
+
 
 %\clearpage
 

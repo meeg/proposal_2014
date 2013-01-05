@@ -4,12 +4,12 @@ The following is an outline of the offline computing model envisioned for satisf
 Table~\ref{tab:data_rates} shows 
 %the average trigger rate and 
 the total amount of data expected over the 
-different runs. For the six weeks long run in 2014 we expect to collect approximately 126~Tb of raw data.
+different runs. For the six weeks long run in 2014 we expect to collect approximately 126~TB of raw data.
 \begin{table}[]
 \centering
 \begin{tabular}{|l|c|c|c|c|c|}
 \hline
-Run & Beam energy (GeV) & Time (days) & Raw data (Tb) & Processed data (Tb)\\
+Run & Beam energy (GeV) & Time (days) & Raw data (TB) & Processed data (TB)\\
 \hline
 2014 & 1.1 & 14 & 49 & 190 \\
 2014 & 2.2 & 14 & 45 & 175  \\
@@ -51,7 +51,7 @@ the typical event size at the various stages of the simulation.
 \centering
 \begin{tabular}{|lccc|}
 \hline
-Event type & Sim. stage & Size/500k bunches (Mb) & Mass points  \\
+Event type & Sim. stage & Size/500k bunches (MB) & Mass points  \\
 \hline 
 A' signal & evgen & 22 & 10  \\
 Beam bkg. (incl. brems. events) & evgen & 331 & -\\ 
@@ -76,7 +76,7 @@ A'+Beam+trident bkg. overlay & Reco. LCIO  & 383 & 10 \\
 Total & Reco. LCIO  & ??? & - \\
 \hline
 \end{tabular}
-\caption{{\small Event sizes in Mb per 500k simulated bunches. {\color{red} Very detailed table, collapsed of removed?.}}}
+\caption{{\small Event sizes in MB per 500k simulated bunches. }}
 \label{tab:mc_event_size}
 \end{table}
 %LCIO
@@ -116,13 +116,13 @@ sites. Likewise, the simulated data is foreseen to be processed at the
 remote sites and the equivalent analysis streams for the simulated data
 will be used for sharing among the sites. In addition, disk space will be 
 needed for ntuples, code releases, and scratch areas and approximately 10\% of the 
-processed data. To accommodate this, 80(171) Tbytes will be needed for the 2014 (2015) run. 
+processed data. To accommodate this, 80(171)~TB will be needed for the 2014 (2015) run. 
 The HPS storage requirements are summarized in Tab.~\ref{tab:datastorage}.
 \begin{table}[tbp]
 \centering
 \begin{tabular}{|l|c|c|}
 \hline
-Storage category & 2014 (Tb) & 2015 (Tb) \\
+Storage category & 2014 (TB) & 2015 (TB) \\
 \hline
 Raw data & 126 & 271 \\
 Processed raw data & 487 & 1040 \\
