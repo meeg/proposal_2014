@@ -5,15 +5,13 @@
 %      created: December 4, 2012
 %
  
-A charged particle traversing the sensitive volume of the SVT is expected to
-deposit enough charge to produce hits which, in turn, are used to form 
-clusters. Clusters which are in adjacent Si planes are then combined to form
+Clustered hits in Si planes within each layer are combined to form
 2-dimensional ``stereo hits'' which are used by the tracking algorithm to 
 form tracks.  The determination of the probability that a stereo hit is 
 formed, or hit efficiency, provides insight as to the performance of each of 
 the SVT layers.
 
-In order to obtained the hit efficiencies, tracks were fit using only 4 of 
+In order to obtained the hit efficiencies, tracks were fitted using only 4 of 
 SVT layers. The resulting track was then extrapolated to the layer omitted
 \begin{figure}[h]
     \begin{center}
@@ -38,23 +36,23 @@ of the layer, a search for a stereo hit within the layer acceptance was
 conducted.  The hit efficiency was then determined as
 \[
     \varepsilon_{\mbox{hit efficiency}} = \frac{\mbox{Tracks with hit on missing layer}}
-                                            {\mbox{Tracks within layer acceptance}} \times 100 \%.
+                                            {\mbox{Tracks within layer acceptance}}.
 \]
 The hit efficiencies per layer were calculated using all dedicated runs. As 
 can be seen from Figure~\ref{fig:hit_track_efficiency}, the average hit efficiency
-per layer, excluding all known bad Si sensors, was found to be greater than
+per layer, excluding a small number of known bad readout chips, was found to be greater than
 95\% for the top SVT volume and greater than 92\% for the bottom volume.  The 
 larger hit inefficiencies observed for some layers was simply due to the 
-sensors composing the layer having a greater number of noisier channels.
+sensors composing the layer having a greater number of noisy channels.
 % The single hit efficiencies need to be updated to reflect changes that were 
 % made to the tracking code
 
-As mentioned above, the standard pattern recognition algorithm is designed to 
-find tracks using the reconstructed stereo hits.  A set of tracking strategies
-outline which layers should be used by the track finding algorithm along
-with their role (seeding, extend, confirm), and the $\chi^2$ cut imposed 
-on the fit. Any kinematic constraints are also specified within the strategy.
-A detailed account of the tracking algorithm can be found  here~\ref{}.
+%As mentioned above, the standard pattern recognition algorithm is designed to 
+%find tracks using the reconstructed stereo hits.  A set of tracking strategies
+%outline which layers should be used by the track finding algorithm along
+%with their role (seeding, extend, confirm), and the $\chi^2$ cut imposed 
+%on the fit. Any kinematic constraints are also specified within the strategy.
+%A detailed account of the tracking algorithm can be found  here~\ref{}.
 
 In order to determine the efficiency of the track finding algorithm, a Monte
 Carlo sample containing pair produced electrons from photons incident on 
@@ -65,15 +63,15 @@ traversed through at least 4 of the SVT layers. The track reconstruction
 efficiency was then determined as
 \[
     \varepsilon_{\mbox{track reco efficiency}} = \frac{\mbox{Tracks found}}
-                                            {\mbox{Tracks found to be findable}} \times 100 \%.
+                                            {\mbox{Tracks found to be findable}}.
 \]
 The resulting efficiency to find an electron which passes through the detector
-acceptance is show on Figure~\ref{fig:hit_track_efficiency}. The average track
+acceptance is shown in Figure~\ref{fig:hit_track_efficiency}. The average track
 reconstruction efficiency was found to be \% with the bulk of the inefficiency
 coming from the $\chi^2$ cut imposed on the fit to the six samples during
 the clustering stage.
 
-All events which contained pairs of oppositely charged tracks were fit to a
+All events containing pairs of oppositely charged tracks were fit to a
 common vertex using a simple vertexing algorithm which searches for the distance
 of closest approach between the two tracks.  The reconstructed vertex position
 along the beam axis for both data and Monte Carlo is shown on 
@@ -89,7 +87,7 @@ Figure~\ref{fig:vz_position}.
     \end{center}
 \end{figure}
 Because of the geometric setup of the SVT, observation of pairs produced by
-the incident photon required both electrons to multiple scatter a significant 
-amount within the target.  This results in a broadening of the Gaussian 
-distributed reconstructed vertex position as seen in the Figure. 
+the incident photon required both electrons to experience a hard scatter
+within the target.  This results in a broadening of the Gaussian 
+distributed reconstructed vertex position. 
 

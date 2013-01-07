@@ -1,14 +1,14 @@
-
-One of the main parameters that has the 
-largest impact on the main design of the HPS experiment is the occupancies expected 
-close to the beam.  The largest contribution comes from electrons scattered to large angles 
-in the target. It is worth remembering that HPS is sensitive to scattering angles very far out 
-on the tail which has been less explored in past experiments; at angles greater than 10 mrad, 
-Geant4 overestimates the multiple scattering rate by a factor of 2 (see Figure \ref{fig:egs_geant}). One of the main goals of the 
-test run in 2012 was to evaluate the description of the tails of the multiple scattering in order 
-to gain further confidence in our expected detector occupancy. As will be shown below, the 
-test run was sensitive to the multiple coulomb scattering description despite the fact that 
-the data was taken with a photon beam.
+Occupancies close to the beam create many of the key challenges in the HPS experiment
+and determine the limits of sensitivity a low A$^\prime$ masses.
+These occupancies are dominated by electrons scattered to large angles 
+in the target. Because HPS is sensitive to scattering angles very far out 
+on the tail, beyond angles important in other experiments, care must be taken
+to ensure our simulations are correct in this regime.  In particular,
+Geant4 overestimates the multiple scattering rate by a factor of 2 (see Figure \ref{fig:egs_geant}) at large angles. 
+One of the main goals of the test run in 2012 was to evaluate the description of the tails of the multiple scattering in order 
+to gain further confidence in our expected detector occupancy. As will be shown below, data from the 
+test run can be used to confirm our model of multiple coulomb scattering despite the fact that 
+all data was taken with a photon beam.
 
 \begin{figure*}[t]
 \includegraphics[ scale=0.7]{test2012/angular_measurement/pictures/egs_geant}
@@ -39,8 +39,7 @@ The contribution from both sources to the final angular distribution are compara
 %{\bf Sample Composition}\newline
 
 Since we are primarily interested in measuring the angular 
-distributions for the $e^+e^-$ pair we checked that the contribution from photons are negligible. Table~\ref{tab:sample_composition} shows the sample composition. The fraction 
-of photons that would deposit energy to reach threshold in the ECal crystals are much less than 2\% without any angular selection which will further reduce the fraction of photons. 
+distributions for the $e^+e^-$ pair we checked that the contribution from photons in our triggered sample are negligible. Table~\ref{tab:sample_composition} shows the sample composition. The fraction of photons that would deposit energy to reach threshold in the ECal crystals are much less than 2\% without any angular selection which will further reduce the fraction of photons. 
 \begin{table}[]
 \centering
 \begin{tabular}{c|c|c|c}
@@ -57,12 +56,12 @@ or removed.}}
 \label{tab:sample_composition}
 \end{table}
 
-The photon beam line during the test run presented a relatively large fraction of events 
+The photon beam line during the test run produced a relatively large fraction of pairs 
 originating upstream of the converter. This contribution was measured during data taking by 
 removing the converter and thus taking data without any target but with all other conditions 
 the same. Figure~\ref{fig:extrapol_converter} (bottom) shows the vertical position of 
 reconstructed tracks in the SVT during data taking with a converter thickness of 
-1.6\% radiation length, note the small satellite peaks visible at about $\pm 10$~mm which 
+1.6\% radiation length. Note the small satellite peaks visible at about $\pm 10$~mm which 
 can be identified as the upstream background when studying the same distribution from the 
 run without any converter. 
 %\begin{figure*}[t]
@@ -102,7 +101,7 @@ Run & Target thickness & Duration &  $e^-$ on converter \\
 \end{table}
 Taking into account the measured integrated current 
 the upstream background fraction was 16\%, 52\% and 71\% 
-for a converter thickness of 1.6\%, 0.45\% and 0.18\%, respectively. 
+for converter thicknesses of 1.6\%, 0.45\% and 0.18\%, respectively. 
 
 The measured angular distribution in the ECal for the three target thicknesses are shown in 
 Fig.~\ref{fig:ang_distr_data} before and after normalization and subtraction of the upstream 
@@ -115,12 +114,11 @@ normalization and background subtraction.} {\color{red} Need update.}}
 \label{fig:ang_distr_data}
 \end{figure*}
 
-These measured angular distributions was compared to simulation. 
+These measured angular distributions are then compared to simulation. 
 While the bulk of multiple coulomb scattering and pair production angles 
-are well studies in the past {\color{red} (references?)} HPS 
+are well studied in the past {\color{red} (references?)} HPS 
 is sensitive only to the large part of these distributions that are less explored. 
-Note that for HPS 
-we are only interested in validating our description of the multiple coulomb scattering as that 
+Note that for HPS we are only interested in validating our description of the multiple coulomb scattering, as that 
 is our main background when running in an electron beam. Since 
 what we measure in ~\ref{fig:ang_distr_data} is a convolution of both we use a special event 
 generation procedure in the simulation to separate description of the multiple scattering and 
