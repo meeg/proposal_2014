@@ -14,7 +14,7 @@ selection. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagra
 \end{figure*}
 
 For the ECal and Muon System, every VXS or VME crate contains a Readout Controller (ROC) that collects digitized information, 
-processes it, and sends it  on to the
+processes it, and sends it on to the
 Event Builder. The ROC is the single blade Intel-based CPU module running DAQ software under CentOS Linux OS. 
 For the SVT ATCA system the ROC application runs on an embedded 
 processor contained on the ATCA COB.
@@ -54,10 +54,10 @@ outside of the vacuum and adopting an optical link. The ATCA system has evolved 
 this change lets HPS optimally piggyback on SLAC's ATCA system development.  
 
 Each of the 36 silicon strip sensors is connected to a 
-hybrid board incorporating five 128-channel APV125 front-end 
+hybrid board incorporating five 128-channel APV25 front-end 
 ASICs~\cite{Jones:1069892,Raymond:2002yr}, see Fig.~\ref{fig:hybrid_and_apv25_testrun}.
 The APV25 ASIC, initially developed for the Compact Muon Solenoid silicon tracker  at the Large Hadron 
-Collider at CERN, was chosen because it provides excellent signal to noise, analogue output for optimal 
+Collider at CERN, was chosen because it provides excellent signal to noise, analog output for optimal 
 spatial resolution, and multi-bucket output for good time resolution. 
 Each hybrid board has five analog output lines (one for each of the APV25 ASICs) which are sent to the  
 front-end readout board using low power LVDS differential current signals over about 1~m of flex cable.
@@ -155,7 +155,7 @@ input FADC data. During data analysis, a pedestal value is subtracted to obtain 
 
 The FADCs are an integral part of the HPS calorimeter trigger system. Energies  
 and times from each FADC channel in the same VXS crate are input to the crate trigger
-processor board (CTP)which groups adjacent channels with energy deposited into "clusters", identifies the associated channels, and
+processor board (CTP) which groups adjacent channels with energy deposited into ``clusters,'' identifies the associated channels, and
 assigns an overall cluster energy. Clusters  
 from each CTP (one for the top ECal, one for the bottom) are combined in the sub-system processor module (SSP) 
 which applies further selection criteria. Events with cluster combinations which pass the criteria are
@@ -260,9 +260,9 @@ include the overhead from each FPGA and the JLab data stream bank header.
 The maximum average event size increased with decreasing beam energy since a larger 
 fraction of backgrounds get larger opening angles and thus potentially higher than the 15~mrad 
 vertical dead zone angle. For a beam energy of 1.1~GeV, the average SVT event size is 2.5~kB and 
-the rate is 43MB/s, well within the SVT DAQ capabilities. 
+the rate is 43~MB/s, well within the SVT DAQ capabilities. 
 The ECal and muon detectors, with occupancies between 3-10\%, each contribute with an event size of 
-approximately 0.3kB and maximum rates of about 12~MB/s for the 1.1~GeV run. 
+approximately 0.3i~kB and maximum rates of about 12~MB/s for the 1.1~GeV run. 
 %Each calorimeter or muon hit consist of 8 bytes (4 byte energy, 4 byte time)
  %with a 12 byte header (4 byte trigger number, 8 byte trigger time) for each FADC board. 
  Such rates are well within the 100~MB/s limit for each VXS crate used in the ECal and muon 
