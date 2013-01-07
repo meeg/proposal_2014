@@ -1,10 +1,12 @@
 \subsection{Silicon vertex tracker {\it Tim}}
 \label{sec:svt}
 
-The key requirements and design principles of the HPS Silicon Vertex Tracker (SVT) are discussed at length in the initial proposal to the JLab PAC~\cite{HPS_PAC37proposal}.  Achieving the best possible acceptance at low A$^\prime$ mass requires positioning the silicon as close as possible above and below the primary beam, where radiation and occupancy are both limiting factors.  As a result, the silicon must be actively cooled to retard radiation damage, hits must be read out quickly and tagged with the best possible time resolution to reduce effective occupancies, and the tracker must operate in a vacuum to eliminate beam-gas secondaries.  At the limit of feasibility from these considerations, the silicon in the first layer is only 0.5 mm from the center of the beam, so prudence dictates that the tracker be retractable from the beam. Meanwhile, achieving the best possible acceptance at high mass means that the active volume of the tracker fill as much of the vacuum bore as possible.  Finally, both the mass and vertex resolution that determine the experimental sensitivity are dominated by multiple scattering effects, so minimizing material in the tracker is the principle design goal.
+Achieving the best possible acceptance at low A$^\prime$ mass requires positioning the silicon as close as possible above and below the primary beam, where radiation and occupancy are both limiting factors.  As a result, the silicon must be actively cooled to retard radiation damage, hits must be read out quickly and tagged with the best possible time resolution to reduce effective occupancies, and the tracker must operate in a vacuum to eliminate beam-gas secondaries.  At the limit of feasibility from these considerations, the silicon in the first layer is only 0.5 mm from the center of the beam, so prudence dictates that the tracker be retractable from the beam. Meanwhile, achieving the best possible acceptance at high mass means that the active volume of the tracker fill as much of the magnet bore as possible.  Finally, both the mass and vertex resolution that determine the experimental sensitivity are dominated by multiple scattering effects, so minimizing material in the tracker is the principle design goal.
 
-The HPS Test Run SVT, described and discussed in Chapter~\ref{chapter_HPSTest}, achieved these goals with the minimal possible apparatus capable of delivering A$^\prime$ physics during a short run. Unlike the inital proposal for the full experiment, this design used a single small module type with small angle stereo arranged into five layers and compromised redundancy, precision, and longevity in order to compress the project timeline and reduce the budget. In the process of developing this design, it was found that this simple system was capable of delivering a surprising fraction of the physics potential anticipated for the full experiment.  With this in mind, we now propose a design for the HPS SVT that builds upon the HPS Test  SVT, principally by addressing the compromises made for HPS Test to ensure the best possible performance for A$^\prime$ physics within the envelope of the existing beam line layout and analyzing magnet.  This design uses the exact same sensors and readout chips, retaining the most successful elements of the HPS Test design and addressing the weaknesses identified during assembly and operation to ensure the success of the experiment.
+The HPS Test Run SVT, described and discussed in Chapter~\ref{sec:testrun2012}, achieved these goals with the minimal possible apparatus capable of delivering A$^\prime$ physics during a short run. Unlike the initial proposal for the full experiment \cite{HPS_PROP}, this design used a single small module type with small angle stereo arranged into five layers and compromised redundancy, precision, and longevity in order to compress the project timeline and reduce the budget. In the process of developing this design, it was found that this simple system was capable of delivering a surprising fraction of the physics potential anticipated for the full experiment.  With this in mind, we now propose a design for the HPS SVT that builds upon the HPS Test  SVT, principally by addressing the compromises made for HPS Test to ensure the best possible performance for A$^\prime$ physics within the envelope of the existing beam line layout and analyzing magnet.  This design uses the exact same sensors and readout chips, retaining the most successful elements of the HPS Test design and addressing the weaknesses identified during assembly and operation to ensure the success of the experiment.
 
+
+The key requirements and design principles of the HPS Silicon Vertex Tracker (SVT) are discussed at length in the initial proposal to the JLab PAC~\cite{HPS_PROP}.  
 
 \subsubsection{Layout}
 
@@ -14,18 +16,18 @@ The layout of the HPS SVT is summarized in Table~\ref{table:svt_layout} and show
 \begin{center}
 \begin{tabular}{lcccccc}   
 \hline \hline 
-    Layer & 1 & 2 & 3 & 4 & 5 & 6 \\      
+    Layer number & 1 & 2 & 3 & 4 & 5 & 6 \\      
 \hline
     nominal $z$, from target (cm)  & 10 & 20 & 30 & 50 & 70  & 90 \\ 
     Stereo Angle (mrad)  & 100 & 100 & 100 & 50 & 50 & 50 \\ 
     Bend-plane resolution ($\mu m$)  & $\approx$60 & $\approx$60 & $\approx$60 & $\approx$120 & $\approx$120 & $\approx$120 \\ 
     Non-bend resolution ($\mu m$)  & $\approx$6 & $\approx$6 & $\approx$6 & $\approx$6 & $\approx$6  & $\approx$6 \\ 
-    \# sensors  & 4 & 4 & 4 & 8 & 8 & 8 \\ 
-    Nominal dead zone  & $\pm1.5$  & $\pm3.0$  & $\pm4.5$  & $\pm7.5$  & $\pm10.5$ & $\pm12.0$  \\ 
-    Power consumption & 6.9 & 6.9 & 6.9 & 13.8 & 13.8 & 13.8 \\
+    Number of sensors  & 4 & 4 & 4 & 8 & 8 & 8 \\ 
+    Nominal dead zone in $y$ (cm)  & $\pm1.5$  & $\pm3.0$  & $\pm4.5$  & $\pm7.5$  & $\pm10.5$ & $\pm12.0$  \\ 
+    Module power consumption (W) & 6.9 & 6.9 & 6.9 & 13.8 & 13.8 & 13.8 \\
 \hline \hline
 \end{tabular}
-\caption[]{Layout of the HPS SVT. }
+\caption[]{Layout of the HPS SVT.}
 \label{table:svt_layout} 
 \end{center}
 \end{table}
@@ -38,6 +40,8 @@ The layout of the HPS SVT is summarized in Table~\ref{table:svt_layout} and show
 %================
 
 The layout of the first three layers is the same as in the HPS Test SVT, with a single sensor of coverage both above and below the beam and 100 milliradian stereo angle to balance acceptance against the resolution required for vertexing.  The last three layers are two sensors wide in the bend direction to better match the ECal acceptance and use 50 milliradian stereo, as in HPS Test, to break the tracking degeneracy that creates fake tracks from ghost hits in layers with the same stereo angle.  The first five layers cover the full acceptance of the ECal with one redundant layer.  The sixth layer has only slightly less acceptance than the ECal and results in an extra safety factor in tracking purity and improved momentum resolution for the vast majority of tracks.  Altogether, this layout comprises 36 sensors and 180 readout chips for a total of 23040 readout channels.
+
+Acceptance for larger A$^\prime$ masses is limited by the size of the magnet but low-mass sensitivity depends on reconstructing tracks as close to the primary beam as possible; minimizing the so-called ``dead zone" surrounding the degraded primary beam in the mid-plane of the detector.  For the tracker, there are a number of considerations including proximity to beam halo and radiation damage in the first layer, ability to resolve time-overlapping hits, and the wall of pattern recognition errors at very high occupancies. With sensors capable of operation to $1.5 \times 10^{15}$ 1 MeV neq., readout with single-hit resolution of $\sim$2 ns and two-hit resolution of $\sim$50 ns, and pattern recognition robust to 2\% occupancy; the closest tolerable position of Layer 1 results in tracking acceptance outside of a 15 mrad dead zone around the beam plane.  In this configuration, the edge of the silicon in Layer 1 is 0.5 mm away from the center of the beam where occupancy from beam-gas curlers would be unacceptable. Therefore, along with the drive to minimize multiple scattering errors, the desire to maximize low-mass acceptance creates the principle design challenges for the SVT: a lightweight, movable, liquid-cooled tracker with superior time resolution and operated in vacuum.
 
 \subsubsection{Module Design}
 
@@ -55,7 +59,7 @@ For layers 1-3 of HPS, these same half-module structures will be tensioned, like
 \label{fig:newmodule_L1-3}
 \end{figure}
 %================
-Rather than building manifolds to provide cooling to these blocks and attempt to isolate them thermally from the underlying support structure as in HPS Test, the entire aluminum support structure will be cooled.  The block at the hybrid end of the module is fixed, while the other pivots on a shoulder screw with a small stainless compression spring providing tension of approximately 40 N and taking up the 60 micron differential contraction between the half module and the support structure during a 30 $^\circ$C cool down. The same low-viscosity thermal compound used in HPS Test will provide the thermal contact in the pivot joint between the grooved base and the pivoting block and generates a negligible temperature drop across the gap~\cite{ref:dow_5121}. This arrangement results in much flatter silicon, much better mechanical stability and much better cooling that provided by the previous design for layers 1-3. With temperature stability during running better than 1 $^\circ$C, dimensional stability of the tracker will be better than intrinsic measurement resolutions and more than an order of magnitude better than the resolution limitation from multiple scattering effects.
+Rather than building manifolds to provide cooling to these blocks and attempt to isolate them thermally from the underlying support structure as in HPS Test, the entire aluminum support structure will be cooled.  The block at the hybrid end of the module is fixed, while the other pivots on a shoulder screw with a small stainless compression spring providing tension of approximately 40 N and taking up the 60 micron differential contraction between the half module and the support structure during a 30 $^\circ$C cool down. The same low-viscosity thermal compound used in HPS Test will provide the thermal contact in the pivot joint between the grooved base and the pivoting block and generates a negligible temperature drop across the gap. This arrangement results in much flatter silicon, much better mechanical stability and much better cooling that provided by the previous design for layers 1-3. With temperature stability during running better than 1 $^\circ$C, dimensional stability of the tracker will be better than intrinsic measurement resolutions and more than an order of magnitude better than the resolution limitation from multiple scattering effects.
 
 More importantly, this scheme allows the ultra-thin design to be extended to the longer, double-sensor half-modules of layers 3-6 that have a pair of silicon sensors in the middle and a readout hybrid at each end, as shown in Figure~\ref{fig:newmodule_L4-6}.  
 %=================
