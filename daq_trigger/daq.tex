@@ -2,7 +2,7 @@
 The HPS experiment data acquisition (DAQ) and trigger system handles the acquisition of data and 
 generation and distribution of triggers for the three sub-detectors: the SVT, ECal and the Muon System. 
 HPS employs two DAQ architectures: the SVT is readout with 
-Advanced Telecom Communications Architecture~\cite{atca} (ATCA) hardware
+Advanced Telecom Communications Architecture (ATCA) hardware
 while the ECal and Muon System use VXS based hardware. The Level~1 trigger receives input from the 
 ECal and Muon system, and is distributed to all the detector systems to signal event 
 selection. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagram of the DAQ system.
@@ -127,22 +127,13 @@ that integrates the SVT event frames into the JLab DAQ
 
 
 
+
+
 \subsubsection{ECal and Muon Detector FADC Readout}
 \label{sec:fadc_daq}
-The readout of the ECal and Muon System are essentially identical. Signals from each 
-readout channel are sent to a signal splitter. For the ECal the signals from the APDs are 
-shaped and amplified as described in Sec.~\ref{sec:ecal}, then fed into the 
-splitter. For the Muon System, signals arise from phototubes recording scintillation light.
-One of the outputs of the splitter is input to a 
-JLab Flash ADC250 (FADC) channel, one of 16 in a FADC VXS module (see Fig.~\ref{fig:fadc}).
-\begin{figure}[]
-\includegraphics[scale=0.5]{daq_trigger/figures/FADC250_Photo_001.jpg}
-\caption{\small{Jefferson Lab FADC250 VXS module.}}
-\label{fig:fadc}
-\end{figure}
-
-
-Two 20-slot VXS crates are used to accommodate the two ECal 
+The readout of the ECal and Muon System are essentially identical. For the ECal the signals from the APDs are 
+shaped and amplified as described in Sec.~\ref{sec:ecal}. For the Muon System, signals arise from phototubes recording scintillation light.
+Analog signals are feed to input of JLAB FADC250 VXS module. Two 20-slot VXS crates are used to accommodate the two ECal 
 halves, each one with 221 channels, and one 20-slot VXS crate is used to readout the muon 
 detector. 
 
@@ -157,17 +148,21 @@ The FADCs are an integral part of the HPS calorimeter trigger system. Energies
 and times from each FADC channel in the same VXS crate are input to the crate trigger
 processor board (CTP) which groups adjacent channels with energy deposited into ``clusters,'' identifies the associated channels, and
 assigns an overall cluster energy. Clusters  
-from each CTP (one for the top ECal, one for the bottom) are combined in the sub-system processor module (SSP) 
+from each CTP (one for the top half of the Ecal, one for the bottom) are combined in the sub-system processor module (SSP) 
 which applies further selection criteria. Events with cluster combinations which pass the criteria are
 passed to the trigger supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow 
-coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the ECal 
+coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the Ecal
 and the other systems. 
 
-The main characteristics of the FADC are:
+
+
+
+
+The main characteristics of the Jefferson Lab Flash ADC are:
 \begin{itemize}
-\item 12-bit digitizer operating at 250~MHz, 
+\item 12 bits digitizer with 250~Mbit/s, 
 \item 50$\Omega$ termination input, 
-\item front-end input range:  -0.5~V, -1~V or -2~V (the input range must be above the maximum pulse height to 
+\item front-end input range:  -0.5V, -1V or -2V (the input range must be above the maximum pulse height to 
 ensure no signal clipping).
 \end{itemize}
 The FADC charge resolution as a function of the front-end input range is presented in 
@@ -262,7 +257,7 @@ fraction of backgrounds get larger opening angles and thus potentially higher th
 vertical dead zone angle. For a beam energy of 1.1~GeV, the average SVT event size is 2.5~kB and 
 the rate is 43~MB/s, well within the SVT DAQ capabilities. 
 The ECal and muon detectors, with occupancies between 3-10\%, each contribute with an event size of 
-approximately 0.3i~kB and maximum rates of about 12~MB/s for the 1.1~GeV run. 
+approximately 0.3~kB and maximum rates of about 12~MB/s for the 1.1~GeV run. 
 %Each calorimeter or muon hit consist of 8 bytes (4 byte energy, 4 byte time)
  %with a 12 byte header (4 byte trigger number, 8 byte trigger time) for each FADC board. 
  Such rates are well within the 100~MB/s limit for each VXS crate used in the ECal and muon 
