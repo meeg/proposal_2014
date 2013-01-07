@@ -14,9 +14,9 @@ from three hybrids were received by a single DPM.  The DPM then required that
 at least three of the six samples exceeded a threshold of two times the noise
 level for that channel.  An additional ``pile-up'' cut requiring that 
 (sample 2 $>$ sample 1) or (sample 3 $>$ sample 2) was also applied. This was
-meant to eliminate hits arising from shaper signal tails that were expected
-to occur when running in a high occupancy environment i.e. electron run.
-Signals from the photon run were unaffected by such a cut. 
+meant to eliminate hits arising from the falling edge of previous hits expected
+to occur when running at the highest occupancies.
+%Signals from the photon run were unaffected by such a cut. 
 
 All samples were placed into their own container along with the 
 channel number, hybrid identifier, chip address and DPM identifier. An 
@@ -56,10 +56,9 @@ corresponding event size and data rate are shown on Table~\ref{table:sim_rates}.
              converter thicknesses used in the test run.}
     \label{table:sim_rates}
 \end{table}
-The occupancies shown include an contribution of .02\% (3 hits) due to noise.  
-The data rates were estimated using the trigger rates observed during each
-of the dedicated photon runs. From the table, it can be seen that the 
-occupancies are as expected i.e. thicker targets correspond to higher 
+The occupancies shown include a contribution of .02\% (3 hits) due to noise and  
+data rates are estimated using the trigger rates observed during each
+of the dedicated photon runs. As expected i.e. thicker targets correspond to higher 
 occupancies. 
 
 Table~\ref{table:observed_rates} list the observed occupancy, event sizes and 
@@ -78,11 +77,10 @@ Table~\ref{table:observed_rates} list the observed occupancy, event sizes and
              converter thicknesses used in the test run.}
     \label{table:observed_rates}
 \end{table}    
-rates for each of the targets.  The data rates observed during the run were
-much higher than those expected.  This can be attributed to 1) a known
-noisy sensor and 2) noisy chips which appeared during certain runs.  The cause
-of both these issues are now well understood and will be resolved in time 
-for the upcoming run.
+rates for each of the targets.  The data rates observed during the test run were
+much higher than expected.  This can be attributed to a known
+noisy sensor and a few noisy chips which appeared during certain runs.  The causes
+of both these issues are now well understood and will be resolved for future running.
 
 A better comparison between simulated and observed data rates can be obtained
 by masking out all known noisy channels found during the commissioning of the 

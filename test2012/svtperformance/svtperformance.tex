@@ -2,28 +2,28 @@
 
 \input{test2012/svtperformance/svt_calib/svt_calibrations}
 
-As described in Sec.~\ref{sec:svt} the six sample readout is crucial in order to time-correlate 
-hits in the tracker to lower the confusion rate in the pattern recognition during electron running. 
-The time reconstruction algorithm described in Sec.~\ref{sec:svt} was used to fit a single hit to each SVT channel in each event. The fit quality $\chi^2$ was shown to agree with the expected distribution 
-for four degrees of freedom for an ideal $CR-RC$ function. 
+As discussed in Sec.~\ref{sec:svt} the multi-peak APV25 readout is crucial in order to time stamp
+hits in the tracker to lower effective occupancies for pattern recognition during electron running. 
+Six samples of the APV25 shaper output for each trigger are fitted to an ideal $CR-RC$ function to 
+extract the amplitude and hit time.  The $\chi^2$ distribution of these fits from test run data is as expected
+for four degrees of freedom.
 %\begin{figure}[]
 %	\includegraphics[width=0.6\textwidth]{test2012/svtperformance/apvfit_chisq}
 %	\caption{\small{Histogram of $\chi^2$ values for pulse fits for all channels on a representative sensor. The peak at 2 is consistent with 4 degrees of freedom (2 fit parameters), as expected. Pileup was not considered due to the very low hit rate in 
 %the SVT in this photon beam test. } }
 %	\label{fig:apvfit}
 %\end{figure}
-After clustering hits on a sensor, the hit time for each cluster is computed as the 
-amplitude-weighted average of the hit times for each channel that belong to that cluster. Since we have no measurement of the ``true'' hit time, we study the overall SVT hit 
+After clustering hits on a sensor, the hit time for the each cluster is computed as the 
+amplitude-weighted average of the channel hit times. Since we have no measurement of the ``true'' hit time, we study the overall SVT hit 
 timing performance using the average of all cluster times in a track as the ``track time,'' and take the
- residual of the cluster time relative to that. The observed track time, shown in Figure \ref{fig:tracktime}, has the expected amount of trigger jitter due to the readout clock and trigger 
- system jitter. After correcting for offsets for each sensor (time-of-flight, clock phase) the RMS 
+ residual of the cluster time relative to that. The observed track time, shown in Figure \ref{fig:tracktime}, has the expected amount of trigger jitter due to the readout clock and trigger system jitter. After correcting for offsets for each sensor (time-of-flight, clock phase) the RMS 
  of the final residual distribution is roughly 2.4~ns for each sensor. 
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/track_time_top}
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres}
 	\caption{\small{Track time distribution (top) and cluster time residual (bottom). The 
 	track time is measured relative to the APV25 clock. The width of the distribution is due to 
-	trigger jitter (24~ns jitter in tracker readout clock, plus 16~ns jitter in the trigger system). 
+	trigger jitter (24 ns jitter in tracker readout clock, plus 16 ns jitter in the trigger system). 
 	The cluster time residual is for a representative sensor relative to the track time.}}
 	\label{fig:tracktime}
 \end{figure}
@@ -31,7 +31,7 @@ Because the track time is calculated using the individual hit times, the hit tim
 with the track time; thus the RMS of the residual is slightly smaller than the true time resolution.
 The standard deviation of this residual for $n$-hit tracks where all hits have the same time resolution 
 is reduced by a factor of $\sqrt{(n-1)/n}$; since most of our tracks have 8 clusters, the true time 
-resolution is 2.6~ns. 
+resolution is 2.6 ns. 
 %\begin{figure}[ht]
 %	\includegraphics[width=\textwidth]{test2012/svtperformance/timeres}
 %	\caption{\small{Histogram and Gaussian fit of residual of cluster times for a representative sensor, relative to the track time. Because the cluster times and track time have positive covariance, the true time resolution is slightly larger than the standard deviation shown here.} }
@@ -42,7 +42,7 @@ resolution is 2.6~ns.
 %	\caption{\small{} }
 %	\label{fig:hit_dt}
 %\end{figure}
-This is somewhat worse than the $\approx 2$~ns resolution expected (see Fig.~\ref{fig:timeres} in 
+This is somewhat worse than the $\approx 2$ ns resolution expected (see Fig.~\ref{fig:timeres} in 
 Sec.~\ref{sec:performance}, but we believe this discrepancy is due to our fit function. Our pulse 
 shape fit assumes an ideal CR-RC pulse shape; since the actual pulse shape has a slower rise time, 
 there is a systematic pull on the hit time when a hit comes immediately before the APV clock time. 
@@ -54,9 +54,7 @@ This is visible in Figure \ref{fig:timeres_2D} as a shift in the residual at cer
 	\label{fig:timeres_2D}
 \end{figure}
 Work is in progress to use the actual pulse shape in time reconstruction; this should improve time resolution to that expected from previous studies. 
-It should be noted that the demonstrated time resolution above is still adequate to achieve a good 
-enough rejection due to pile-up hits in the HPS electron run. 
-
+However, it should be noted that the time resolution demonstrated above is still adequate for pileup rejection during electron running.
 %\vspace{1cm}{\bf Tracking algorithms [Matt/Omar]}
 
 \input{test2012/svtperformance/trk_performance/trk_performance}
