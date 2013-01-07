@@ -160,9 +160,9 @@ Disk space  & ???80???  & ???171??? \\
 
 %cpu requirements
 Approximately 0.1~CPU seconds are needed to reconstruct a data event on 
-a typical 2.4~GHz core. This would require a total of 1.5 million CPU hours of processing for the 
-entire dataset at the JLab processing center.  To simulate events, approximately 5 CPU seconds 
-are needed for each event. In total 0.8 million CPU hours is needed for Monte Carlo 
+a typical 2.4~GHz core. This would require a total of 1.6 million CPU hours of processing for the 
+entire dataset at the JLab processing center.  To simulate events, approximately 0.02 CPU seconds 
+are needed for a beam event and approximately 0.7 seconds for an A' event. In total 1.5 million CPU hours is needed for Monte Carlo 
 simulation which will be shared between SLAC and JLab. 
 Based on experience with previous experiments, it is reasonable to estimate that the net CPU needed for 
 analysis work (batch and interactive) will be comparable to that needed for production. We expect 
@@ -174,8 +174,8 @@ are summarized in Tab.~\ref{tab:computing}.
 \hline
 Computing category & 2014& 2015 \\
 \hline
-Raw data processing ($\times 10^{6}$~CPUh)  & 1.5 & 3.2 \\
-Simulation production ($\times 10^{6}$~CPUh) & 0.8 & 1.6 \\
+Raw data processing ($\times 10^{6}$~CPUh)  & 1.6 & 3.4 \\
+Simulation production ($\times 10^{6}$~CPUh) & 1.5 & 1.5 \\
 \hline
 \end{tabular}
 \caption{{\small Computing needs summary.}}
