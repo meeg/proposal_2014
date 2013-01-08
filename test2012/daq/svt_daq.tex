@@ -1,54 +1,103 @@
-%\subsubsection{SVT DAQ}
 
+%
+%   svt_daq.tex
+%       author: Omar Moreno <omoreno1@ucsc.edu>
+%               Santa Cruz Institute for Particle Physics
+%               University of California, Santa Cruz
+%      created: November 13, 2012
+%
 
+The expected data rates and event sizes for each of the dedicated photon runs
+were estimated using a full simulation of the SVT DAQ and compared to observed
+values. As discussed in Section~\ref{sec:testrun_daq}, the digitized samples
+from three hybrids were received by a single DPM.  The DPM then required that
+at least three of the six samples exceeded a threshold of two times the noise
+level for that channel.  An additional ``pile-up'' cut requiring that 
+(sample 2 $>$ sample 1) or (sample 3 $>$ sample 2) was also applied. This was
+meant to eliminate hits arising from the falling edge of previous hits expected
+to occur when running at the highest occupancies.
+%Signals from the photon run were unaffected by such a cut. 
 
-The SVT DAQ was designed to readout data continuously at 40~MHz from the SVT modules, and transfer data 
-to the JLab DAQ once a trigger signal is received. It is based on the same overall architecture as the system 
-described in Sec.~\ref{sec:svt_daq}. The largest difference was that with the SVT being only half the size in the 
-test run the power and signal aggregation inside the vacuum chamber, as well as the optical conversion part, 
-was not needed. This lowered complexity was key to deliver a new working DAQ system in time for the test 
-run. The SVT had a total of 20 silicon microstrip sensors, each one connected to an onboard hybrid readout 
-card similar to the HPS hybrid, each one holding five 128-channel APV25 integrated circuits, as 
-shown in Fig.~\ref{fig:hybrid_and_apv25_testrun}.
- \begin{figure*}[t]
-\includegraphics[ scale=0.3]{test2012/daq/svt_modules_on_sup_plate.png}
-\caption{\small{View from upstream of one half of the SVT modules mounted on the support plate. Signal, 
-power and control are soldered, and potted, to pads at one end while the five APV25 chips are wirebonded 
-to the silicon sensor at the other.}}
-\label{fig:hybrid_and_apv25_testrun}
-\end{figure*}
-Contrary to the SVT DAQ for HPS, where front end boards digitize the APV25 analog output signals 
-inside the vacuum chamber, the analog signal is carried directly to the ATCA crate located outside the 
-vacuum chamber via multi-twisted-pair cable. The amplification and digitization is carried out on the 
-Rear Transition Module (RTM) board designed specifically for the HPS test run. 
-On the RTM, a pre-amplifier converts the APV25 differential current output to a different voltage output 
-scaled to the sensitive range of a 14-bit ADC. The RTM is organized into four sections with each section 
-supporting 3 hybrids (15 channels). The ADC is operated at the system clock of 41.667~MHz. 
-%The RTM also includes a 4-channel Fiber Optic module and supporting logic which can be used to interface to the JLAB trigger supervisor card.
-The ATCA main board, the COB, is similar to the one described for the HPS DAQ 
-with the important exception that one of the DPMs functions as the trigger 
-interface only and there is no RCE module. Instead, the DPMs package and send the data from the hybrids to 
-an external PC through a 1~Gbit/s ethernet connection which serve the same purpose as the 
-RCE module in the HPS DAQ. Figure~\ref{fig:svtdaq} shows an overall layout of 
-the SVT DAQ system used for the test run (compare to Fig.~\ref{fig:svt_daq_overview}).
- \begin{figure}[t]
-\includegraphics[scale=0.9]{test2012/daq/svt_daq_diagram.png}
-\caption{\small{Schematic of the SVT DAQ used for the test run. Note that the hybrids are connected directly 
-to the RTM and that an external DAQ PC is used for control and transfer of data to the JLab DAQ.}}
-\label{fig:svtdaq}
+All samples were placed into their own container along with the 
+channel number, hybrid identifier, chip address and DPM identifier. An 
+additional layer of encapsulation or bank was used to store all samples 
+emerging from a single DPM along with the DPM identifier, the event number
+an error bit and hybrid temperatures. A diagram of the container along with
+the sizes of each of the elements is shown on Figure~\ref{fig:data_format}.
+\begin{figure}[h]
+    \begin{center}
+    	\includegraphics[width=0.60\textwidth]{test2012/svtperformance/daq/svt_data_format.pdf}
+        \caption{
+                    SVT data format. Samples readout from three hybrids are 
+                    processed by a single FPGA and are placed within a single
+                    container or FPGA bank.  An additional layer of 
+                    encapsulation is used to store all of the FPGA banks.
+                 } 
+	\label{fig:data_format}
+    \end{center}
 \end{figure}
-The ATCA crate hosts two COB cards, one supporting four data processing DPMs and the other supporting three data processing DPMs and one trigger DPM for a capacity of 21 hybrids, one more than required. 
-The test run RTM and COB boards are shown in Fig.~\ref{fig:rtm_testrun}. 
-\begin{figure*}[t]
-\includegraphics[ scale=0.25]{test2012/daq/rtm.png}
-\includegraphics[ scale=0.4]{test2012/daq/svt_daq_module_noted.png}
-\caption{\small{Picture of a RTM (top) and COB board (bottom) used in the HPS test run 2012.}}
-\label{fig:rtm_testrun}
-\end{figure*}
-The external PC supports three network interfaces, two standard 1~Gbit/s Ethernet and one custom low latency 
-data reception card. The first Ethernet interface is used for slow control and monitoring of the eight 
-DPM modules. 
-The second Ethernet interface serves as the interface to the JLAB data acquisition system. The third custom 
-low latency network interface is used to receive data from the SVT ATCA crate and supports a low latency, 
-reliable TTL trigger acknowledge interface to the trigger DPM. This PC hosts the SVT control and monitoring 
-software as well as the ROC application described above.
+Overall, the container overhead will contribute a total of 326 bytes to an event
+with an additional 16 bytes per hit.
+
+The occupancy expected for each of the converter thicknesses along with the 
+corresponding event size and data rate are shown on Table~\ref{table:sim_rates}.
+\begin{table}[h]
+    \scalebox{0.9}{
+    \begin{tabular}{ c | c | c | c }
+    \hline
+    %  Are the trigger rates going to be listed anywhere else? Otherwise, they should be listed here.
+    Converter Thickness (\%$X_0$) & Sim Occupancy (\%)  & Sim Event Size (kB) &   Sim Data Rate (Mb/s) \\      
+    \hline 
+    1.6                           & .438                & 1.22                &   2.07                 \\
+    0.45                          & .293                & .93                 &   .53                  \\
+    0.18                          & .118                & .56                 &   .24                  \\ 
+    \end{tabular} } 
+    \caption{Occupancy, event size and resulting data rate expected for each of the three 
+             converter thicknesses used in the test run.}
+    \label{table:sim_rates}
+\end{table}
+The occupancies shown include a contribution of .02\% (3 hits) due to noise and  
+data rates are estimated using the trigger rates observed during each
+of the dedicated photon runs. As expected i.e. thicker targets correspond to higher 
+occupancies. 
+
+Table~\ref{table:observed_rates} list the observed occupancy, event sizes and 
+\begin{table}[h]
+    \scalebox{0.9}{ 
+        \begin{tabular}{ c | c | c | c }
+            \hline
+            Converter Thickness (\%$X_0$)   & Obs. Occupancy (\%) & Obs. Event Size (kB) & Obs. Data Rate (Mb/s) \\
+            \hline
+            1.6                             & 1.03                & 2.43                 & 4.12                  \\
+            0.45                            & 1.22                & 2.82                 & 1.61                  \\
+            0.18                            & 1.23                & 2.84                 & 1.21                  \\
+        \end{tabular}
+    }
+    \caption{Occupancy, event size and resulting data rate observed for each of the three 
+             converter thicknesses used in the test run.}
+    \label{table:observed_rates}
+\end{table}    
+rates for each of the targets.  The data rates observed during the test run were
+much higher than expected.  This can be attributed to a known
+noisy sensor and a few noisy chips which appeared during certain runs.  The causes
+of both these issues are now well understood and will be resolved for future running.
+
+A better comparison between simulated and observed data rates can be obtained
+by masking out all known noisy channels found during the commissioning of the 
+SVT.  The resulting data rates are listed on Table~\ref{table:masked_rates}. 
+\begin{table}[h]
+    \scalebox{0.8}{ 
+        \begin{tabular}{ c | c | c | c }
+            \hline
+            Converter Thickness (\%$X_0$)   & Obs. (Sim) Occupancy (\%) & Obs. (Sim) Event Size (kB) & Obs. (Sim) Data Rate (Mb/s) \\
+            \hline
+            1.6                             &  ()               &  ()                &   ()                \\
+            0.45                            &  ()               &  ()                &   ()                \\
+            0.18                            &  ()               &  ()                &   ()                \\
+        \end{tabular}
+    }
+    \caption{Comparison of occupancy, event size and resulting data rate for each of the three 
+             converter thicknesses used in the test run after all bad channels are masked.}
+    \label{table:masked_rates}
+\end{table}    
+\textcolor{red}{Combine all tables into a single plot.}
