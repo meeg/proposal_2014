@@ -2,10 +2,11 @@
 
 \input{test2012/svtperformance/svt_calib/svt_calibrations}
 
-As described in Sec.~\ref{sec:svt} the six sample readout is crucial in order to time-correlate 
-hits in the tracker to lower the confusion rate in the pattern recognition during electron running. 
-The time reconstruction algorithm described in \ref{sec:svt} was used to fit a single hit to each SVT channel in each event. The fit quality $\chi^2$ was shown to agree with the expected distribution 
-for four degrees of freedom for an ideal $CR-RC$ function. 
+As discussed in Sec.~\ref{sec:svt} the multi-peak APV25 readout is crucial in order to time stamp
+hits in the tracker to lower effective occupancies for pattern recognition during electron running. 
+Six samples of the APV25 shaper output for each trigger are fitted to an ideal $CR-RC$ function to 
+extract the amplitude and hit time.  The $\chi^2$ distribution of these fits from test run data is as expected
+for four degrees of freedom.
 %\begin{figure}[]
 %	\includegraphics[width=0.6\textwidth]{test2012/svtperformance/apvfit_chisq}
 %	\caption{\small{Histogram of $\chi^2$ values for pulse fits for all channels on a representative sensor. The peak at 2 is consistent with 4 degrees of freedom (2 fit parameters), as expected. Pileup was not considered due to the very low hit rate in 
@@ -15,8 +16,7 @@ for four degrees of freedom for an ideal $CR-RC$ function.
 After clustering hits on a sensor, the hit time for the each cluster is computed as the 
 amplitude-weighted average of the channel hit times. Since we have no measurement of the ``true'' hit time, we study the overall SVT hit 
 timing performance using the average of all cluster times in a track as the ``track time,'' and take the
- residual of the cluster time relative to that. The observed track time, shown in Figure \ref{fig:tracktime}, has the expected amount of trigger jitter due to the readout clock and trigger 
- system jitter. After correcting for offsets for each sensor (time-of-flight, clock phase) the RMS 
+ residual of the cluster time relative to that. The observed track time, shown in Figure \ref{fig:tracktime}, has the expected amount of trigger jitter due to the readout clock and trigger system jitter. After correcting for offsets for each sensor (time-of-flight, clock phase) the RMS 
  of the final residual distribution is roughly 2.4~ns for each sensor. 
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/track_time_top}
@@ -54,9 +54,7 @@ This is visible in Figure \ref{fig:timeres_2D} as a shift in the residual at cer
 	\label{fig:timeres_2D}
 \end{figure}
 Work is in progress to use the actual pulse shape in time reconstruction; this should improve time resolution to that expected from previous studies. 
-It should be noted that the demonstrated time resolution above is still adequate to achieve a good 
-enough rejection due to pile-up hits in the HPS electron run. 
-
+However, it should be noted that the time resolution demonstrated above is still adequate for pileup rejection during electron running.
 %\vspace{1cm}{\bf Tracking algorithms [Matt/Omar]}
 
 \input{test2012/svtperformance/trk_performance/trk_performance}
@@ -75,4 +73,4 @@ enough rejection due to pile-up hits in the HPS electron run.
 %\vspace{1cm}{\bf SVT DAQ Performance [Pelle/Omar/Ryan]}
 %General discussion on SVT rates, event size.
 
-\input{test2012/svtperformance/daq/svt_daq.tex}
+\input{test2012/svtperformance/daq/svt_daq_perf.tex}
