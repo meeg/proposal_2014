@@ -1,34 +1,52 @@
 
 \subsubsection{Test Run Data Acquisition}
 \label{sec:testrun_daq}
-This section describes the overall design of the DAQ system used in the test run. 
-Considering the similarity to the 
-system proposed for HPS only a brief description is given here, with an emphasis on the differences. 
-Results, milestones and experiences attained from operating the DAQ in the test run is also presented. 
+%This section describes the overall design of the DAQ system used in the test run. 
+%Considering the similarity to the 
+%system proposed for HPS only a brief description is given here, with an emphasis on the differences. 
+%Results, milestones and experiences attained from operating the DAQ in the test run is also presented. 
 
 %The DAQ system for the HPS test run handles the data and trigger distribution for the ECal and SVT. 
-The DAQ system built for the HPS test run was a proof of principle for that proposed for HPS, described in 
-Sec.~\ref{sec:daq}. Consequently, the architecture of the systems are very similar. The main differences 
-for the ECal and trigger, in addition to the simpler trigger logic, is a different trigger and readout data 
-path. This resulted in a lower crystal energy resolution and no possibility of crystal gain calibration at the 
-trigger level. The smaller SVT relaxed the need for optical conversion and for signal and power aggregation 
-inside the vacuum chamber. 
-Most of the data links were 1~Gbit/s bandwidth, large enough given the data rates expected in the test run.
+
+The data acquisition system for the HPS test run was a somewhat simplified version of the DAQ proposed for the
+full experiment, described in Sec.~\ref{sec:daq}, and proves the principles of the design.  In addition to simpler trigger logic,
+the primary differences for the ECal are a different data path and simplified trigger logic that results in somewhat worse
+single-crystal energy resolution and precludes calibration of individual crystal gains at the trigger level.  For the SVT, the smaller
+number of channels eliminated the need for optical conversion and aggregation of data and detector power inside the vacuum chamber.
+Finally, most data links had 1 Gbit/s bandwidth, sufficient for the purposes of the test run.
+
+In other respects, the Test Run DAQ is essential identical to that proposed for HPS.  The ECal provides data to the FADC-based Level~1
+trigger system. Accepted events are read out from the ECal and SVT DAQ and processed by an event builder before output to disk.
+For the ECal, the Readout Crate Controllers (ROCs) are the same as those proposed for HPS and are installed in VME, VME64X and VXS 
+crates running mvme6100 controllers, with prpmc880 or pmc280 co-processor modules. For simplicity, a hybrid approach was 
+used for the SVT DAQ in the test run where the ROC ran on a external PC connected to the ATCA crate. As proposed for HPS, a 
+Foundry Router was used as the backbone of the DAQ system, providing 1~Gbit/s and 10~Gbit/s connections between components 
+and to the JLAB Computer Center. The Event Builder, Event Recorder, and other critical DAQ components ran on 4-CPU Opteron-based servers, 
+which was sufficient for the test run. The RAID5 storage system had 100~MB/s capability to handle the anticipated data rates for electron running.
 
 
-
-The two front-end electronics systems for the ECal and SVT are essentially unchanged compared to the HPS 
-DAQ system. The ECal provides 
-input to the Level~1 trigger system after which an accepted event is acquired from the two sub-systems 
-and are processed. The Readout Crate Controllers (ROCs)
- described for HPS are unchanged and installed in every VME, VME64X, VXS crates running 
- mvme6100 controllers with a prpmc880 or pmc280 co-processor modules. A hybrid approach was 
- used for the SVT DAQ in the test run where the ROC ran on a external PC connected to the ATCA crate. 
- Similar to HPS, a Foundry Router was used as the backbone of the DAQ system, providing 1~Gbit/s and 
- 10~Gbit/s connections between components and to the JLAB Computer Center. The Event Builder, Event 
- Recorder, and other critical DAQ components ran on 4-CPU Opteron-based servers, which was sufficient 
- for the test run. The RAID5 test run storage system had a 100~MB/s capability to handle the data rates 
- expected for the test run as described below.
+%The DAQ system built for the HPS test run was a proof of principle for that proposed for HPS, described in 
+%Sec.~\ref{sec:daq}. Consequently, the architecture of the systems are very similar. The main differences 
+%for the ECal and trigger, in addition to the simpler trigger logic, is a different trigger and readout data 
+%path. This resulted in a lower crystal energy resolution and no possibility of crystal gain calibration at the 
+%trigger level. The smaller SVT relaxed the need for optical conversion and for signal and power aggregation 
+%inside the vacuum chamber. 
+%Most of the data links were 1~Gbit/s bandwidth, large enough given the data rates expected in the test run.
+%
+%
+%
+%The two front-end electronics systems for the ECal and SVT are essentially unchanged compared to the HPS 
+%DAQ system. The ECal provides 
+%input to the Level~1 trigger system after which an accepted event is acquired from the two sub-systems 
+%and are processed. The Readout Crate Controllers (ROCs)
+% described for HPS are unchanged and installed in every VME, VME64X, VXS crates running 
+% mvme6100 controllers with a prpmc880 or pmc280 co-processor modules. A hybrid approach was 
+% used for the SVT DAQ in the test run where the ROC ran on a external PC connected to the ATCA crate. 
+% Similar to HPS, a Foundry Router was used as the backbone of the DAQ system, providing 1~Gbit/s and 
+% 10~Gbit/s connections between components and to the JLAB Computer Center. The Event Builder, Event 
+% Recorder, and other critical DAQ components ran on 4-CPU Opteron-based servers, which was sufficient 
+% for the test run. The RAID5 test run storage system had a 100~MB/s capability to handle the data rates 
+% expected for the test run as described below.
 
 \input{test2012/daq/svt_daq}
 
