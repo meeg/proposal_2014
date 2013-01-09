@@ -4,16 +4,16 @@ These occupancies are dominated by electrons scattered to large angles
 in the target. Because HPS is sensitive to scattering angles very far out 
 on the tail, beyond angles important in other experiments, care must be taken
 to ensure our simulations are correct in this regime.  In particular,
-Geant4 overestimates the multiple scattering rate by a factor of 2 (see Figure \ref{fig:egs_geant}) at large angles. 
+Geant4 overestimates the multiple scattering rate by a factor of two at large angles, see appendix and in particular Fig.~\ref{appendix:2}.
 One of the main goals of the test run in 2012 was to evaluate the description of the tails of the multiple scattering in order 
 to gain further confidence in our expected detector occupancy. As will be shown below, data from the 
 test run can be used to confirm our model of multiple coulomb scattering despite the fact that 
 all data was taken with a photon beam.
 
-\begin{figure*}[t]
-\includegraphics[ scale=0.7]{test2012/angular_measurement/pictures/egs_geant}
-\caption{\small{Comparison of EGS5 and Geant4 multiple scattering cross-sections.}}\label{fig:egs_geant}
-\end{figure*}
+%\begin{figure*}[t]
+%\includegraphics[ scale=0.7]{test2012/angular_measurement/pictures/egs_geant}
+%\caption{\small{Comparison of EGS5 and Geant4 multiple scattering cross-sections.}}\label{fig:egs_geant}
+%\end{figure*}
 
 Figure~\ref{fig:schematic_testrun_vs_erun} gives a schematic view of the main differences 
 between the photon and electron beam setup. 
@@ -51,8 +51,7 @@ $e^+e^-$ & 13169 & 9506 & 6060 \\
 photon & 2984 & 640 & 151 \\
 \hline
 \end{tabular}
-\caption{Sample composition for the photon test run. {\color{red} This needs to be updated 
-or removed.}}
+\caption{Sample composition for the photon test run.}
 \label{tab:sample_composition}
 \end{table}
 
@@ -110,7 +109,7 @@ background contribution.
 \includegraphics[ scale=0.65]{test2012/angular_measurement/pictures/rate_ecalrow_raw.png}
 \includegraphics[ scale=0.65]{test2012/angular_measurement/pictures/rate_ecalrow_norm_subtr.png}
 \caption{\small{Measured raw vertical angular distributions before (left) and after (right) 
-normalization and background subtraction.} {\color{red} Need update.}}
+normalization and background subtraction.}}
 \label{fig:ang_distr_data}
 \end{figure*}
 
@@ -122,8 +121,8 @@ Note that for HPS we are only interested in validating our description of the mu
 is our main background when running in an electron beam. Since 
 what we measure in ~\ref{fig:ang_distr_data} is a convolution of both we use a special event 
 generation procedure in the simulation to separate description of the multiple scattering and 
-pair production angle: we use EGS5~\cite{egs5} to generate the pair produced $e^+e^-$ pair 
-and then pass these four vectors to either {\sc EGS5} or {\sc Geant4}~\cite{geant4} which 
+pair production angle: we use {\sc EGS5} to generate the pair produced $e^+e^-$ pair 
+and then pass these four vectors to either {\sc EGS5} or {\sc Geant4} which 
 models the multiple Coulomb scattering in the target. Thus the {\sc EGS5} is used to normalize 
 the pair production angles and the remaining difference would be coming from the 
 multiple scattering description in the two different simulation programs. There exist an unlikely 
@@ -132,7 +131,7 @@ measured for different converter thickness. Since the pair production angle is i
 the converter thickness the relative change between data and simulation for different converter thicknesses only depends on the multiple scattering contribution. 
 
 Figure~\ref{fig:ang_distr_dataMC} shows a comparison between data and the {\sc EGS5} 
-simulation where the rates have been normalized to 1~s of beam at a current of 90nA. 
+simulation where the rates have been normalized to 1~s of beam at a current of 90~nA. 
 \begin{figure*}[t]
 \includegraphics[ scale=0.25]{test2012/angular_measurement/pictures/dataMC_1351_Hit_Y_top_norm_bkgsub.png}
 \includegraphics[ scale=0.25]{test2012/angular_measurement/pictures/dataMC_1354_Hit_Y_top_norm_bkgsub.png}
@@ -142,7 +141,7 @@ distribution using {\sc EGS5} for a converter thickness of 1.6\% (left), 0.45\% 
 (right).  Only statistical uncertainties are included. }}
 \label{fig:ang_distr_dataMC}
 \end{figure*}
-The total rate prediction for simulation and data are compared in Fig.~\ref{rate_vs_thickness} 
+The total rate prediction for simulation and data are compared in Fig.~\ref{fig:rate_vs_thickness} 
 and Tab.~\ref{tab:ang_distr_dataMC} summarizes the result. 
 \begin{figure*}[t]
 %\includegraphics[ scale=0.65]{test2012/angular_measurement/pictures/rate_vs_thickness_dataMC.png}
@@ -160,7 +159,7 @@ from the background normalization.
 \begin{table}
 \begin{tabular}{|l|c|c|c|}
 \hline
-Converter (\% r.l.) & 1.60\% & 0.45\% &	0.18\% \\
+Converter (\% r.l.) & 1.60 & 0.45 &	0.18 \\
 \hline
 {\sc EGS5} &	1162 $\pm$ 112 &	255 $\pm$ 28 &	94 $\pm$ 17	\\
 \hline
@@ -182,8 +181,8 @@ Observed 	& 1064 $\pm$ 2 & 196 $\pm$ 1 &	92 $\pm$ 1 \\
 \hline
 \end{tabular}
 \caption{ {\small Observed and predicted events for 1~s of beam at 90nA for different converter 
-thicknesses. The uncertainty on the predictions is the total uncertainty including estimated 
-systematic uncertainties. }}
+thicknesses. The uncertainty on the prediction includes systematic uncertainties. }}
+\label{tab:ang_distr_dataMC}
 \end{table}
 With the set of conservative systematics the total systematic uncertainty was between 10 and 18\%. 
 

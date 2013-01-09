@@ -1,5 +1,5 @@
 
-\vspace{1cm}{\bf ECal performance [Sho]}
+\vspace{1cm}{\bf ECal performance}
 
 The ECal preamplifiers shape the APD signal into a CR-RC pulse of rise time $\approx 14$~ns: this is sampled every 4~ns and stored in a pipeline on the FADC readout board. On receiving a trigger, the FADC searches for rising threshold crossings in the pipeline and integrates pulses by summing 5 samples before and 30 samples after each threshold crossing. The noise and pedestal of the readout chain are calibrated by running the ECal readout in a mode where the preamplifier output is sampled every 4~ns in a time window of 100 samples: by looking at a part of the window before the hit, we calibrate the readout channel.
 
@@ -28,7 +28,7 @@ We found that one quadrant of the ECal had been miswired in such a way as to fli
 \end{figure}
 For ECal analysis, cluster reconstruction was done using the algorithm described in \cite{HPS_PROP}: build clusters around seed hits (hits above a ``seed'' energy threshold and with greater energy than any neighboring hits), and add all neighboring hits above an ``add'' energy threshold.
 
-\vspace{1cm}{\bf ECal Calibration [Sho]}
+\vspace{1cm}{\bf ECal Calibration}
 
 We calibrate gain of the individual ECal channels using the SVT measurement of track momentum. 
 The ratio of cluster energy to track momentum is calculated both for Monte Carlo simulation and test run data at each point in the ECal, and we find the value of gain for each channel that brings the two into agreement.
@@ -50,7 +50,7 @@ The conventional sampling fraction---the fraction of incident energy that is dep
 For our readout, there is additional energy lost because crystals under the readout threshold are not read out.
 The weighted E/p used in calibration (see Figure \ref{fig:gains}) is an approximate measurement of sampling fraction, but the sampling fraction is energy-dependent because of the effect of readout threshold.
 
-\vspace{1cm}{\bf Trigger performance [Sho/Ben]}
+\vspace{1cm}{\bf Trigger performance}
 
 %\begin{figure}[ht]
 %	\includegraphics[width=\textwidth]{test2012/ecalperformance/trigtimes}
@@ -80,9 +80,9 @@ The trigger threshold in terms of cluster energy is very uneven for two reasons;
 \end{figure}
 Overall the trigger appears to have functioned exactly as intended. Changes planned for the next run (constant integration window and per-crystal gain calibration constants for the trigger) will solve both of the issues that led to threshold variations in the test run.
 
-{\color{red}
-What were the rates, lessons learned?
-
-Plots: rates vs time {\it Ben/Sho/Pelle}}
+%{\color{red}
+%What were the rates, lessons learned?
+%
+%Plots: rates vs time {\it Ben/Sho/Pelle}}
 
 
