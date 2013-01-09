@@ -41,7 +41,9 @@ resolution is 2.6 ns.
 %	\caption{\small{} }
 %	\label{fig:hit_dt}
 %\end{figure}
-This is somewhat worse than the $\approx 2$ ns resolution expected (see Fig.~\ref{fig:timeres} in 
+This is somewhat worse than the $\approx 2$ ns resolution expected 
+%(see Fig.~\ref{fig:timeres}) 
+in 
 Sec.~\ref{sec:performance}, but we believe this discrepancy is due to our fit function. Our pulse 
 shape fit assumes an ideal CR-RC pulse shape; since the actual pulse shape has a slower rise time, 
 there is a systematic pull on the hit time when a hit comes immediately before the APV clock time. 
@@ -49,11 +51,12 @@ This is visible in Figure \ref{fig:timeres_2D} as a shift in the residual at cer
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres_2D}
 	\caption{\small{Plot of the time residual for a representative sensor vs. the track time. 
-		The kinks in the horizontal band are caused by the fitter; without them the 1-D histogram in Figure \ref{fig:timeres} (the projection of this histogram) would be narrower.} }
+		The kinks in the horizontal band are caused by the fitter; without them the time resolution (measured by taking the projection of this histogram) would be better.} }
 	\label{fig:timeres_2D}
 \end{figure}
 Work is in progress to use the actual pulse shape in time reconstruction; this should improve time resolution to that expected from previous studies. 
-However, it should be noted that the time resolution demonstrated above is still adequate for pileup rejection during electron running.
+Reducing the APV25 pulse shaping time will also improve time resolution.
+In short, these results show that we can achieve time resolution adequate for pileup rejection during electron running.
 %\vspace{1cm}{\bf Tracking algorithms [Matt/Omar]}
 
 \input{test2012/svtperformance/trk_performance/trk_performance}
