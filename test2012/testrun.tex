@@ -21,13 +21,18 @@ Coulomb scattering of electrons in the conversion target.  Since scattered prima
 source of occupancy in running HPS in an electron beam, good agreement between data and simulation 
 confirm the background simulation used to benchmark the physics reach of the HPS Experiment.
 
-%In addition to this important test of our background simulation, the HPS parasitic tests, staged over the Hall-B Hide run (g14), accomplished the following: 
-%\begin{enumerate}
-%\item  integrated SLAC and JLAB readout systems into a single DAQ
-%\item fully tested the Level 1 trigger system based on FADCs
-%\item tested experimental monitoring and controls
-%\item gained experience with running the test apparatus, in particular running SVT in vacuum
-%\end{enumerate}
+In addition to this important test of our background simulation, the test run accomplished the following goals which are explained in Section \ref{sec:testrun_performance}:
+\begin{enumerate}
+	\item More than 97\% of SVT channels functioned properly
+	\item SVT readout signal to noise of 25.5
+	\item SVT hit time resolution of 2.6 ns; this proves time reconstruction will work for HPS
+	\item SVT hit efficiency greater than 95\%
+	\item SVT track reconstruction efficiency greater than 98\%
+	\item Survey-based SVT alignment performs as expected and will allow track-based alignment
+	\item 87\% of ECal crystals functioned properly, and defects will be corrected by planned ECal upgrades
+	\item Calibrated ECal using SVT tracks
+	\item Trigger functions as designed; deficiencies found in test run trigger performance are addressed for the 2014-2015 run
+\end{enumerate}
 
 \subsection{HPS Test Run Apparatus } 
 
@@ -119,6 +124,10 @@ In Figure \ref{fig:ecal_mounted} the ECal is shown in its installed position for
 
 
 
+\subsection{Multiple Coulomb Scattering Measurement}
+\label{sec:angular_measurement}
+\input{test2012/angular_measurement/angular_measurement}
+
 
 
 
@@ -138,10 +147,6 @@ This section will report on a few selected preliminary results that demonstrate 
 \subsubsection{ECal \& Trigger Performance}
 \input{test2012/ecalperformance/ecalperformance}
 \label{sec:ecalperformance}
-
-\subsubsection{Multiple Coulomb Scattering Measurement}
-\label{sec:angular_measurement}
-\input{test2012/angular_measurement/angular_measurement}
 
 
 
