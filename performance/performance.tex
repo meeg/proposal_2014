@@ -6,8 +6,8 @@ simulation of the passage and interaction of charged and neutral particles throu
 and the ECal to the muon detector. In the SVT, it creates realistic energy deposits in the silicon 
 microstrip detectors, accounts for dead material, simulates APV25 signal sampling every 25 ns, 
 creates clusters, and peforms track finding and reconstruction.
-In the ECal, the geometry for the flange and vaccum chamber is based on a tessellated 
-represantation imported directly from the CAD drawings. It creates energy deposits in individual 
+In the ECal, the geometry for the flange and vacuum chamber is based on a tessellated 
+representation imported directly from the CAD drawings. It creates energy deposits in individual 
 trapezoidal-shape $PbWO_4$ crystals, simulates FADC signal time evolution and sampling every 4 ns, and 
 generates triggers based on the  FPGA trigger algorithm implementation.
 To maintain the chicane beamline configuration, the field strength of the
@@ -32,7 +32,7 @@ The multiple Coulomb scattering and bremsstrahlung processes in the target will 
 intensity fluxes of electrons and photons in the very forward direction, while the large
 M{\o}ller interaction cross section with atomic electrons will generate high intensity low energy
 electrons. We use the high energy interaction simulation tools GEANT4 and EGS5 to simulate 
-these backgrounds. In the original HPS proposal to JLab PAC37, we described a siginificant 
+these backgrounds. In the original HPS proposal to JLab PAC37, we described a significant 
 disageement beween these tools. GEANT4 predicted a broader angular
 distribution of multiple scattered electrons than EGS5, resulting in twice the occupancy in the
 tracker near the dead zone and much higher ECal trigger rates. 
@@ -46,7 +46,7 @@ When bound electrons in the target are ionized by incoming electrons or secondar
 shell electron will fill the vacancy and characteristic X-rays are emitted. 
 These X-rays can contribute background hits in
 the SVT when a conversion takes place in the silicon sensors via the photoelectric effect 
-or pair productioncon. While the X-ray production is simulated in EGS5, the X-ray intensity at SVT layer 1
+or pair production. While the X-ray production is simulated in EGS5, the X-ray intensity at SVT layer 1
 can be estimated using  the impact ionization 
 cross section, $\sigma_I$, \cite{hoffmann}, the fluorescence yield, $\omega$, \cite{hubbell},
 the photoabsorption length in Tungsten, $\lambda_W$, to account for the self-absorption, and the solid 
@@ -68,8 +68,8 @@ M-shell  & 2 & 20000 & 0.02 & 0.2 & 0.1 \\ \hline
 \end{table}
 
 Hadrons are also produced in the target. The hadron production is at least three order
-of magnitude smaller than the electromagnic interaction. The polar angle of the hadron productions
-is predominantly at larger than 100 mrad, whereas the HPS detector acceptance is limitted to less than
+of magnitude smaller than the electromagnetic interaction. The polar angle of the hadron productions
+is predominantly at larger than 100 mrad, whereas the HPS detector acceptance is limited to less than
 100 mrad. Furthermore, the hadron energy spectrum is soft as they are produced from the 1/k bremsstrahlung
 spectrum and more than 90\% of the hadrons are swept away by the analysing magnet before reaching the ECal.
  The hadron production is simulated using GEANT4 and FLUKA. In the target thinner than
@@ -118,7 +118,7 @@ Synchrotron radiations
 
 Synchrotron radiations are produced from the last dipole magnet in the beam line in the vertical 
 plane, and from the chicane magnets in the horizontal plane. Since the characteristic energy is 
-proportional to $E_{beam}^2$, synchroton radiations are of concern 
+proportional to $E_{beam}^2$, synchrotron radiations are of concern 
 only at 6.6 GeV. The characteristic energy ($k_c$),
 the average energy ($k_{ave}$), and the power of synchrotron radiations are summarized in 
 Table \ref{tab:sync}.
@@ -130,7 +130,7 @@ none of the detector components are designed to intersect the beam plane.
 \begin{center}
 \begin{tabular}{|l|c|c|c|c|} \hline
   Source & $k_c$ (keV) & $k_{ave}$ (keV) & $N_\gamma$ per e- & Power (mW) at 100 nA \\ \hline
-  virtical bend & 19 & 5.9 & 4.0 & 2.4 \\ \hline
+  vertical bend & 19 & 5.9 & 4.0 & 2.4 \\ \hline
   Frascati Magnet & 52 & 16 & 4.6 & 7.4 \\ \hline
   PS magnet   & 44 & 14 & 9.3 & 13 \\ \hline
 \end{tabular}
@@ -146,7 +146,7 @@ EM induced backgrounds
 Electromagnetic fields induced by the high intensity beam could interfere with the SVT and its electronics
 as the detector is located as close as 0.5 mm from the beam. We have evaluated the direct beam field and its wake 
 field, the diffraction radiations from the beamline apertures, and the transition radiations from
-the target. The intensities of these EM induced backgrounds are small and no interferance with the SVT
+the target. The intensities of these EM induced backgrounds are small and no interference with the SVT
 is expected.
  
 \end{itemize}
@@ -182,7 +182,7 @@ decreases.
 
 \begin{figure}[t]
 \includegraphics[width=0.8\textwidth]{performance/occupancy.pdf}
-\caption{\small{Sillicon sensor layer 1 occupancy at 400 nA vs. distance from the
+\caption{\small{Silicon sensor layer 1 occupancy at 400 nA vs. distance from the
 beam in mm.}}
 \label{fig:occup}
 \end{figure}
