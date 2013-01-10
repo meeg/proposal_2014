@@ -32,8 +32,8 @@ The multiple Coulomb scattering and bremsstrahlung processes in the target will 
 intensity fluxes of electrons and photons in the very forward direction, while the large
 M{\o}ller interaction cross section with atomic electrons will generate high intensity low energy
 electrons. We use the high energy interaction simulation tools GEANT4 and EGS5 to simulate 
-these backgrounds. In the original HPS proposal to JLab PAC37, we described a significant 
-disageement beween these tools. GEANT4 predicted a broader angular
+these backgrounds. In the original HPS proposal to JLab PAC37 \cite{HPS_PROP}, we described a significant 
+disagreement between these tools. GEANT4 predicted a broader angular
 distribution of multiple scattered electrons than EGS5, resulting in twice the occupancy in the
 tracker near the dead zone and much higher ECal trigger rates. 
 To resolve this disagreement, we proposed a test run, and the outcome of the test run is described 
@@ -73,7 +73,7 @@ is predominantly at larger than 100 mrad, whereas the HPS detector acceptance is
 100 mrad. Furthermore, the hadron energy spectrum is soft as they are produced from the 1/k bremsstrahlung
 spectrum and more than 90\% of the hadrons are swept away by the analysing magnet before reaching the ECal.
  The hadron production is simulated using GEANT4 and FLUKA. In the target thinner than
-about 5\% $X_0$, the ``virtual'' photon interaction is dominant. \cite{mohring} The inclusive hadron
+about 5\% $X_0$, the ``virtual'' photon interaction is dominant \cite{mohring}. The inclusive hadron
 production ${\sigma (eA\rightarrow X)}$ is simulated from the photonuclear process ${\sigma (\gamma A
 \rightarrow X)}$ using the equivalent photon approximation,
 
@@ -81,7 +81,7 @@ $$ \sigma (eA \rightarrow X) = \int \sigma_k(\gamma A \rightarrow X) dn(k), $$
 
 \noindent
 where $dn(k)$ is the number of equivalent photons with energy $k$ \cite{budnev} and there are 
-approximately $8 \times 10^{10} $ photons in 6.6 GeV 100 nA beam. 
+approximately $8 \times 10^{10} $ photons/sec in 6.6 GeV 100 nA beam. 
 Table \ref{tab:pion} summarizes the pion single rates from 1\% $X_0$ Tungsten target
 and 6.6 GeV 100 nA beam. While the pion production is higher in GEANT4, the energy spectrum is softer and
 consequently the single rate of pions reaching the ECal is lower in GEANT4. While the pions look like a minimum 
@@ -161,9 +161,9 @@ which is located
 very few positrons. From these distributions, the detector occupancy in the horizontal Si strip
 sensor in the 8 ns time window is calculated for a 400 nA beam current and five different target
 thicknesses, 1.0\% $X_0$, 0.5\% $X_0$, 0.25\% $X_0$, 0.1\% $X_0$, and 0.05\% $X_0$, and is shown
-in Figure \ref{fig:occup}. As described in Section xx, the dead zone is defined by using 
-a criterion that the
-maximum occupancy in Layer 1 is 1\%. For a 0.25\% $X_0$ target and 430 nA beam, the occupancy is 
+in Figure \ref{fig:occup}. 
+%As described in Section xx, the dead zone is defined by using a criterion that the maximum occupancy in Layer 1 is 1\%. 
+For a 0.25\% $X_0$ target and 430 nA beam, the occupancy is 
 1\% at a distance of 1.5mm from the beam in Layer 1, which corresponds to a dead zone of $\pm$ 15
 mrad. As long as the product of target thickness (T) and beam current (I) is constant, the same 
 $A'$ production rate is maintained. Since the multiple scattering and hence the effective beam size 
@@ -251,12 +251,12 @@ with a threshold of 75 MeV for each crystal.}}
 	\label{fig:ecal_deadtime}
 \end{figure}
 
-\subsection{Trigger rates: ECal and muon detector}
+\subsection{ECal trigger rates}
 
-\subsubsection{ECal trigger performance}
+%\subsubsection{ECal trigger performance}
 \input{performance/trigger/ecal_trigger}
 
-\subsubsection{Muon trigger performance}
+%\subsubsection{Muon trigger performance}
 
 \subsection{Track reconstruction}
 \input{performance/tracking_performance/tracking_performance}
