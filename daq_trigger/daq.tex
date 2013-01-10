@@ -1,4 +1,5 @@
 \label{sec:daq}
+
 The HPS experiment data acquisition (DAQ) and trigger system handles the acquisition of data and 
 generation and distribution of triggers for the three sub-detectors: the SVT, ECal and the Muon System. 
 HPS employs two DAQ architectures: the SVT is readout with 
@@ -6,14 +7,15 @@ Advanced Telecom Communications Architecture (ATCA) hardware
 while the ECal and Muon System use VXS based hardware. The Level~1 trigger receives input from the 
 ECal and Muon system, and is distributed to all the detector systems to signal event 
 selection. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagram of the DAQ system.
-\begin{figure*}[t]
+
+\begin{figure*}[ht]
 %\includegraphics[ scale=0.25]{test2012/ecal_mounted.JPG}
 \includegraphics[ scale=0.3]{daq_trigger/figures/daq_schem.pdf}
 \caption{\small{Schematic block diagram of the data acquisition system.}}
 \label{fig:daq_hardware_overview}
 \end{figure*}
 
-For the ECal and Muon System, every VXS or VME crate contains a Readout Controller (ROC) that collects digitized information, 
+For the ECal and Muon System, every VXS crate contains a Readout Controller (ROC) that collects digitized information, 
 processes it, and sends it on to the
 Event Builder. The ROC is the single blade Intel-based CPU module running DAQ software under CentOS Linux OS. 
 For the SVT ATCA system the ROC application runs on an embedded 
@@ -133,30 +135,21 @@ that integrates the SVT event frames into the JLab DAQ
 \label{sec:fadc_daq}
 The readout of the ECal and Muon System are essentially identical. For the ECal the signals from the APDs are 
 shaped and amplified as described in Sec.~\ref{sec:ecal}. For the Muon System, signals arise from phototubes recording scintillation light.
-Analog signals are feed to input of JLAB FADC250 VXS module. Two 20-slot VXS crates are used to accommodate the two ECal 
-halves, each one with 221 channels, and one 20-slot VXS crate is used to readout the muon 
-detector. 
+Analog signals are feed to input of JLAB FADC250 VXS module, Figure.~\ref{fig:fadc}. Two 20-slot VXS crates are used to accommodate the two ECal 
+halves, each one with 221 channels, and one 20-slot VXS crate is used to readout the muon detector, total of 232 channels. 
+
+\begin{figure}[t]
+\includegraphics[scale=0.5]{daq_trigger/figures/FADC250_Photo_001.jpg}
+\caption{\small{Jefferson Lab FADC250 VXS module.}}
+\label{fig:fadc}
+\end{figure}
 
 The FADCs store 12-bit digitized samples at 250 MHz in 8~$\mu$s deep pipelines. 
 When a trigger is received, the appropriate part of the pipeline is accessed. If an FADC   
 signal exceeds a predefined threshold within that time window, the time the signal passed threshold and the integrated
-amplitude of X number of samples before and Y samples after the trigger time (X and Y can be varied in the readout code), 
-converted into units of deposited energy, are recorded. This data record significantly compactifies the  
-input FADC data. During data analysis, a pedestal value is subtracted to obtain actual summed energy.
+amplitude of X=NSB number of samples before and Y=NSA number of samples after the trigger time (X and Y can be varied in the readout code), are recorded, see Figure \ref{fig:hps_trigger_data}. This data record significantly compactifies the input FADC data. During data analysis, a pedestal value is subtracted to obtain actual summed energy.
 
-The FADCs are an integral part of the HPS calorimeter trigger system. Energies  
-and times from each FADC channel in the same VXS crate are input to the crate trigger
-processor board (CTP) which groups adjacent channels with energy deposited into ``clusters,'' identifies the associated channels, and
-assigns an overall cluster energy. Clusters  
-from each CTP (one for the top half of the Ecal, one for the bottom) are combined in the sub-system processor module (SSP) 
-which applies further selection criteria. Events with cluster combinations which pass the criteria are
-passed to the trigger supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow 
-coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the Ecal
-and the other systems. 
-
-
-
-
+%% Step %% The FADCs are an integral part of the HPS calorimeter trigger system. Energies  and times from each FADC channel in the same VXS crate are input to the crate trigger processor board (CTP) which groups adjacent channels with energy deposited into ``clusters,'' identifies the associated channels, andassigns an overall cluster energy. Clusters  from each CTP (one for the top half of the Ecal, one for the bottom) are combined in the sub-system processor module (SSP) which applies further selection criteria. Events with cluster combinations which pass the criteria are passed to the trigger supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the Ecal and the other systems. 
 
 The main characteristics of the Jefferson Lab Flash ADC are:
 \begin{itemize}
@@ -187,44 +180,34 @@ FADC data paths for the readout and trigger operation are presented in Fig.~\ref
 \caption{\small{FADC data paths}}
 \label{fig:hps_trigger_data}
 \end{figure}
-In readout mode, the FADC determines the energy of the one ECal channel that will be reported. 
-The channel integration occurs only if the input signal crosses the programmable threshold level.  
-Then a programmable number of samples around the threshold crossing are added together to form the 
-reported integral.  The readout  mode has the following parameters for every FADC channel (see 
+Parameters of the readout  mode for every FADC channel are the following (see 
 Fig.~\ref{fig:hps_trigger_data}, top panel):
  \begin{itemize}
  \item number of samples integrated before the threshold crossing (NSB), 
  \item number of samples integrated after the  threshold crossing (NSA),
  \item readout threshold, measured in ADC counts.
  \end{itemize}
-The number of samples for a given channel integration is the sum of NSB+NSA samples that will be stored in  
- the 17-bit FADC register. It is a fixed gate width pulse integration and there is no pedestal subtraction in the 
- sum (pedestal subtraction happens offline).
+The number of samples for a given channel integration is the sum of NSB+NSA samples. It is a fixed gate width pulse integration and there is no pedestal subtraction in the sum (pedestal subtraction happens offline). The sum will be stored in the 17-bit FADC register for readout. 
  
-
- 
-
-
-A block diagram of the HPS  trigger processing is shown in Fig.~\ref{fig:hps_trigger_data}, bottom panel. 
+A block diagram of the FADC trigger processing is shown in Fig.~\ref{fig:hps_trigger_data}, bottom panel. 
 The trigger processing mode has the following parameters for every FADC channel:
  \begin{itemize}
  \item number of samples integrated before the threshold crossing (NSB),
  \item number of samples integrated after the  threshold crossing (NSA),
- \item readout threshold, measured in ADC counts, 
+ \item trigger threshold, measured in ADC counts, 
  \item pedestal, 
  \item conversion factor (gain) that converts  ADC channel to MeV, from 0 to 8191 MeV, 13 bits, 
  \item energy discriminator (minimum energy cutoff).
  \end{itemize}
-The parameters NSB, NSA and readout threshold are the same as in the readout mode.
+The parameters NSB and NSA are the same as in the readout mode. The trigger threshold can be set independently from the readout threshold.
 The pedestal value is then subtracted from the integrated sum over NSB+NSA samples and this value is 
 converted to MeV units using the gain conversion factor. The energy can be discriminated to cut off low 
-energy pulses before reporting to the CTP. 
+energy pulses before reporting to the Crate Trigger Processor (CTP). 
 The value reported to the CTP is a 13-bit pulse energy and the time the pulse crossed the readout threshold. 
 Data for every channel is sent to the CTP every 32~ns (if there is no hit a 0 energy pulse is sent). 
 This sets a worst case double pulse resolution of 32~ns per channel, but it can be less than this if pulses occur in adjacent 32ns windows.
 
-
-See Sec.~\ref{sec:triggerdaq} below for more details on the operation of the trigger system.
+%See Sec.~\ref{sec:triggerdaq} below for more details on the operation of the trigger system.
 
 
 

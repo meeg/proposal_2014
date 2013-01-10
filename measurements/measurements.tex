@@ -6,6 +6,26 @@ HPS  ultimately relies upon the precision measurement of two quantities: the inv
 
 The HPS experiment also has the potential to discover ``true muonium'', a bound state of a $\mu^+ \mu^-$ pair and to search for non-minimal hidden sector final states.  
 
+HPS plans to execute the full experiment in two phases. The first phase, expected to run in 2014-2015, will consume the full beam time for the test and commissioning, and an 1/3 of the production running time at $2.2$ GeV and $6.6$ GeV beam energies. The second phase that will use remaining beam time can be completed any time after that.  
+
+Proposed experimental apparatus will be ready to be commissioned and take physics data in late summer of 2014. The HPS experiment will be ready to use the first physics quality beams available in Hall-B as early as fall of 2014. With assumption that an early running in Hall-B is possible, the run plan for the first phase of the HPS experiment will be the following: 
+
+\begin{itemize}
+\item {\bf Commissioning run in late 2014 - 2 weeks for setup and hot checkout, 6 weeks on the floor with beam (assuming 50\% combined efficiency for the accelerator and detector):}
+\begin{itemize}
+\item 2 weeks of detector commissioning
+\item 2 weeks of physics run at 2.2 GeV 
+\item 2 weeks of physics run at 1.1 GeV
+\end{itemize}
+\item{\bf Physics run in 2015, 10 weeks on the floor with beam (assuming 50\% combined efficiency for the accelerator and detector):}
+\begin{itemize}
+\item 2 weeks of detector commissioning
+\item 4 weeks of physics run at 2.2 GeV
+\item 4 weeks of physics run at 6.6 GeV
+\end{itemize}
+\end{itemize}
+
+
 \subsection{Search for the heavy photon}
 \def \ap {A^\prime}
 \def \map {m_{A^\prime}}
@@ -19,24 +39,8 @@ The HPS experiment also has the potential to discover ``true muonium'', a bound 
 \label{fig:reach}
 \end{figure}
 
-HPS plans to execute the experiment in two settings: first, perform a commissioning run with modest physics output, then a longer run at multiple energies to cover as much parameter space as possible. Experimental apparatus will be ready to be commissioned and take physics data in late summer of 2014. The HPS experiment will be ready to use the first physics quality beams available in Hall-B as early as fall of 2014. With assumption that an early running in Hall-B is possible, the run plan for the HPS experiment will be the following: 
-
-\begin{itemize}
-\item {\bf Commissioning run in 2014: 2 weeks for setup and hot checkout, 6 weeks on the floor with beam:}
-\begin{itemize}
-\item 2 weeks of detector commissioning
-\item 2 weeks physics run at 2.2 GeV
-\item 2 weeks physics run at 1.1 GeV
-\end{itemize}
-\item{\bf Physics run in 2015, 10 weeks on the floor with beam:}
-\begin{itemize}
-\item 2 weeks of detector commissioning
-\item 4 weeks physics run at 2.2 GeV
-\item 4 weeks physics run at 6.6 GeV
-\end{itemize}
-\end{itemize}
-
 The expected reach with proposed above run plan is shown in Figure \ref{fig:reach}. The reach in mass-coupling parameter space is calculated using the simulated detector response as shown in Section \ref{sec:performance}.  The plot shows two distinct regions,  one at larger coupling corresponding to a purely bump-hunt region and another at lower coupling where the vertex of the $\ap$ decay is displaced.  
+
 
 
 \begin{figure}
@@ -54,7 +58,7 @@ $\ap$ particles are generated in electron collisions on a fixed target by a proc
 \theta_{\ap,max}\sim max\left(\frac{\sqrt{\map m_e}}{E_0},\left(\map/E_0\right)^{3/2}\right),
 \end{equation}
 which is parametrically smaller than the opening angle of the $\ap$ decay product, $\sim  \map/E_0$.  Although this opening angle is small, the backgrounds mimicking the signal dominate at even smaller angles.
-\item {\bf Energy}:  $\ap$ bremsstrahlung is sharply peaked at $\approx 1$, where $U(x,0)$ is minimized.  When an $\ap$ is produced, it carries nearly the entire beam energy.  In fact, the median value of (1-x) is $\sim {\rm max}\left(\frac{m_e}{\map},\frac{\map}{E_0}\right)$.  
+\item {\bf Energy}:  $\ap$ bremsstrahlung is sharply peaked at $E_{A^\prime}/E_{beam}\approx 1$, where $U(x,0)$ is minimized.  When an $\ap$ is produced, it carries nearly the entire beam energy.  In fact, the median value of (1-x) is $\sim {\rm max}\left(\frac{m_e}{\map},\frac{\map}{E_0}\right)$.  
 \item{\bf Lifetime} For the ranges of $\epsilon$ and $\map$ probed by this experiment, the mean decay length $l_0$ of the $\ap$ can be prompt or as large as tens of centimeters. All of the background decays promptly at the target.  
 \end{itemize}
 The  latter three properties are quite important in resolving signal events from the main backgrounds, as discussed
@@ -68,14 +72,14 @@ The irreducible background rates are given by the diagrams shown in Figure \ref{
 \label{fig:radbhdiagram}
 \end{figure}
 
-The contribution from the radiative diagrams (Figure \ref{fig:radbhdiagram} (a)) alone is also useful as a guide to the behavior of $\ap$ signals at various masses. Indeed, the kinematics of the A' signal events is identical to the distribution of radiative trident events restricted in an invariant mass window near the A' mass. Moreover, the rate of the A' signal is simply related to the radiative trident cross-section within the spectrometer acceptance and a mass window of width $\delta m$ by 
+The contribution from the radiative diagrams (Figure \ref{fig:radbhdiagram} (a)) alone is also useful as a guide to the behavior of $\ap$ signals at various masses. Indeed, the kinematics of the $A'$ signal events is identical to the distribution of radiative trident events restricted in an invariant mass window near the $A'$ mass. Moreover, the rate of the $A'$ signal is simply related to the radiative trident cross-section within the spectrometer acceptance and a mass window of width $\delta m$ by 
 %\cite{4}
 \begin{equation}
 \frac{d\sigma\left(e^- Z \rarr e^- Z(\ap\rarr l^+l^-)\right)}{d\sigma\left(e^- Z \rarr e^- Z(\gamma^*\rarr l^+l^-)\right)}=\frac{3\pi\epsilon^2}{2 N_{eff}\alpha}\frac{\map}{\delta m}
 \end{equation}
 This exact analytic formula was also checked with a MC simulation of both the $\ap$ signal and the radiative trident background restricted to a small mass window $\delta m$, and we find nearly perfect agreement. Thus, the radiative subsample can be used to analyze the signal, which simplifies the analysis considerably.
 
- Although the Bethe-Heitler process has a much larger total cross-section than either the signal or the radiative trident background, it can be significantly reduced by exploiting its very different kinematics. In particular, the $\ap$ carries most of the beam energy (see discussion in Section \ref{sec:apsignal}), while the recoiling electron is very soft and scatters to a wide angle. In contrast, the Bethe-Heitler process is not enhanced at high pair energies. Moreover, Bethe-Heitler processes have a forward singularity that strongly favors asymmetric configurations with one energetic, forward electron or positron and the other constituent of the pair much softer.
+ Although the Bethe-Heitler process has a much larger total cross-section than either the signal or the radiative trident background, it can be significantly reduced by exploiting its very different kinematics. In particular, the $\ap$ carries most of the beam energy while the recoiling electron is very soft and scatters to a wide angle. In contrast, the Bethe-Heitler process is not enhanced at high pair energies. Moreover, Bethe-Heitler processes have a forward singularity that strongly favors asymmetric configurations with one energetic, forward electron or positron and the other constituent of the pair much softer.
 These properties are discussed further in the Appendix of [4], and illustrated in Figure \ref{fig:tridentkinematics}.
 
 \begin{figure}
@@ -116,14 +120,14 @@ of 450 nA beam current for 1 months ($\sim 2.6 \times 10^6$ s) on a single foil 
 The vertices near the cut of $1.5$ cm will be dominated by the 1S state, while 
 a tail of vertices extending out beyond a few cm is dominated by 2S and 2P. 
 
-Accounting for all the efficiencies associated with a separated vertex search, we would expect to see about 20--335 true muonium events 
+Accounting for all the efficiencies associated with a separated vertex search, we would expect to see about 20--30 true muonium events in 2 weeks of $6.6$ GeV run
 (we caution that the acceptance parameterization here is uncertain at the 50\% level).
 The HPS experiment should be able to identify enough events to claim a discovery, and in addition, should be able to measure the mass of true muonium.  There are certainly other properties of true muonium that would be interesting to measure.  A measurement of the lifetimes would be interesting, as the lifetimes are sensitive to physics that couples to leptonic currents.  With enough statistics, it should be possible to perform a measurement of the lifetimes of the 1S, 2S, and 2P states; work is ongoing to investigate this possibility.  
 
 \subsection{Other searches for hidden sector particles}
+\label{sec:hidden_ex}
 
-
-While the primary motivation for the conception of the HPS experiment is a search for $\ap$ decaying to lepton pairs, following Arkani-Hamed et al, we should make sure that HPS is sensitive to other kinds of Hidden Valley (HV) scenarios. As Strassler and Zurek pointed out, HV provide plethora of natural ways to explain the nature of the Dark Matter. The recent discovery of a boson that seems to have the properties of the Higgs boson of the Standard model also brings an old problem to the fore – why is the Higgs mass is so light compare to the Planck scale? Searches for supersymmetric partners and other particles with strong and/or weak charges at the energy frontier so far came out negative, pushing the range of allowed masses for such particles higher and higher. HPS will be the first in hopefully a series of experiments that complements the energy frontier by looking for light particles that couple to the SM particles through new, very weak forces. Just as exploring the energy frontier at the LHC one should be ready for unexpected, so should we be exploring the coupling frontier at the HPS.
+While the primary motivation for the conception of the HPS experiment is a search for $\ap$ decaying to lepton pairs, following Arkani-Hamed et al, we should make sure that HPS is sensitive to other kinds of Hidden Valley (HV) scenarios. As Strassler and Zurek pointed out, HV provide plethora of natural ways to explain the nature of the Dark Matter. The recent discovery of a boson that seems to have the properties of the Higgs boson of the Standard model also brings an old problem to the fore – why is the Higgs mass is so light compare to the Planck scale? Searches for supersymmetric partners and other particles with strong and/or weak charges at the energy frontier so far came out negative, pushing the range of allowed masses for such particles higher and higher. HPS will be hopefully the first in a series of experiments that complements the energy frontier by looking for light particles that couple to the SM particles through new, very weak forces. Just as exploring the energy frontier at the LHC one should be ready for unexpected, so should we be exploring the coupling frontier at the HPS.
 
 In a general HV scenario, the new fermions may be lighter then the $\ap$ and have their own QCD-like forces forming hidden mesons and baryons some of which could be constituents of Dark Matter. Some of such mesons would decay into SM fermion pairs – either democratically or with mass-dependent branchings. 
 \begin{figure}
