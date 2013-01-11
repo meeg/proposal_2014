@@ -1,6 +1,8 @@
-During the dedicated photon running the SVT had all 20 hybrids and the APV25 chips operating at their 
-nominal operating points~\cite{Jones:1069892} and the sensors reverse-bias at 180~V.  The sensors were 
-operated at X$^\circ$C throughout the test run. Multiple calibration runs established a noise level of 60-68 
+During the duration of the dedicated photon run all SVT hybrids and APV25 
+readout chips were configured to their nominal operating 
+points~\cite{Jones:1069892} while all sensors were reverse-bias at 180~V.  The 
+sensors were operated within a temperature range of  20 to 24$^\circ$C 
+throughout the test run. Multiple calibration runs established a noise level of 60-68 
 ADC counts (X-Y electrons) which was stable across all hybrids. With a linear gain up to $\approx 3$~MIPs, the 
 cluster charge for hits on a track follow the characteristic Landau shape (see Fig.~\ref{fig:cluster_pulse}) with a 
 mean of about 26,000~e$^{-}$ as expected. This signal response gives a signal-to-noise ratio of about 25.5. 
@@ -33,11 +35,14 @@ the fitted $t0$ channel times. The $t0$-resolution is studied by comparing the c
 \end{figure}
 After correcting for offsets from each sensor (time-of-flight, clock phase) the extracted $t0$ resolution is 2.6~ns (larger than the 2.4~ns due to correlations between the cluster and "track" times). This is somewhat worse than the $\approx 2$ ns resolution expected in Sec.~\ref{sec:performance} which we attribute to our pulse shape fit procedure function (see Appendix for more details). 
 
-Throughout the test run, approximately 97\% of the 12,780 channels in the SVT was functional. The identified dead or noisy channels were largely attributed to a 
+Throughout the duration of the test run, approximately 97\% of the 12,780 SVT 
+channels were found to be functional.
+The identified dead or noisy channels were largely attributed to a 
 known noisy sensor and a few noisy or misconfigured chips which will be resolved for future running. The 
-increased noise also led to higher occupancy and data rates than what was expected for the photon run. 
-Good agreement between simulation and test run data was achieved after masking out all known noisy 
-channels found during SVT commissioning, see Fig.~\ref{fig:data_rates_data_mc_cmp} (see Appendix for more details). 
+increased noise resulted in occupancies and data rates that were higher than what were expected from simulation.
+However, after masking out all known noisy channels found during the commissioning of the SVT, good agreement 
+between simulation and test run data was achieved as shown on Fig.~\ref{fig:data_rates_data_mc_cmp}.
+Further details can be found in the Appendix. 
 \begin{figure}[h]
     \includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/data_rates.pdf}
         \caption{ { \small
@@ -47,8 +52,9 @@ channels found during SVT commissioning, see Fig.~\ref{fig:data_rates_data_mc_cm
 \end{figure}
 
 
-Clustered hits within each sensor layers are combined to 2-dimensional stereo hits which used by the tracking 
-algorithm to form tracks. Figure~\ref{fig:hit_track_efficiency} shows the track finding efficiency estimated on simulated photon beam events to be about 98\%. 
+Clustered hits within each sensor layer are combined to form 2-dimensional stereo hits which are used by the tracking 
+algorithm to form tracks. Figure~\ref{fig:hit_track_efficiency} shows the track finding efficiency, estimated using
+simulated photon beam events, to be about 98\%. 
 \begin{figure}[h]
 %    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_layer.pdf}
     	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
@@ -56,6 +62,8 @@ algorithm to form tracks. Figure~\ref{fig:hit_track_efficiency} shows the track 
       	as a function of momentum.}} 
 	\label{fig:hit_track_efficiency}
 \end{figure}
-The hit efficiency in the sensor layers was measured in data with four hit tracks extrapolated to the remaining layer. Excluding the known bad channels and chips, the hit efficiency was approximately 99\%, more details are given in Appendix. 
+The hit efficiency of the sensor layers were measured using data as detailed in
+Appendix. Excluding known bad channels and chips, the hit efficiency was 
+found to be approximately 99\%. 
 
 
