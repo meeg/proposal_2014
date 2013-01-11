@@ -42,7 +42,6 @@ known noisy sensor and a few noisy or misconfigured chips which will be resolved
 increased noise resulted in occupancies and data rates that were higher than what were expected from simulation.
 However, after masking out all known noisy channels found during the commissioning of the SVT, good agreement 
 between simulation and test run data was achieved as shown on Fig.~\ref{fig:data_rates_data_mc_cmp}.
-Further details can be found in the Appendix. 
 \begin{figure}[h]
     \includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/data_rates.pdf}
         \caption{ { \small
@@ -50,20 +49,11 @@ Further details can be found in the Appendix.
                 } }
 	\label{fig:data_rates_data_mc_cmp}
 \end{figure}
-
-
-Clustered hits within each sensor layer are combined to form 2-dimensional stereo hits which are used by the tracking 
-algorithm to form tracks. Figure~\ref{fig:hit_track_efficiency} shows the track finding efficiency, estimated using
-simulated photon beam events, to be about 98\%. 
+Similarly, the hit efficiency was measured to be above 98\% for known good layers, see Fig.~\ref{fig:hit_efficiency}.
 \begin{figure}[h]
-%    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_layer.pdf}
-    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
-        \caption{{\small The track momentum and the track reconstruction efficiency
-      	as a function of momentum.}} 
+    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_layer.pdf}
+%    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
+        \caption{{\small The hit reconstruction efficiency as a function of detector layer. The variation across the layers can be explained by known DAQ issues.}} 
 	\label{fig:hit_track_efficiency}
 \end{figure}
-The hit efficiency of the sensor layers were measured using data as detailed in
-Appendix. Excluding known bad channels and chips, the hit efficiency was 
-found to be approximately 99\%. 
-
-
+Further details can be found in the Appendix. 
