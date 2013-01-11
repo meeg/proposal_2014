@@ -1,13 +1,13 @@
-Good alignment of the SVT is critical to achieving the expected tracking performance and physics reach. 
-The sensors must be aligned internally and with respect to the target and other beam line components for optimal performance. 
-The alignment of the test run apparatus proceeds in several steps which must be tied together to achieve the final alignment.
-These include survey measurements of various SVT assemblies, a beam line survey at JLab, and finally 
-a track-based alignment. 
+%Good alignment of the SVT is critical to achieving the expected tracking performance and physics reach. 
+%The sensors must be aligned internally and with respect to the target and other beam line components for optimal performance. 
+%The alignment of the test run apparatus proceeds in several steps which must be tied together to achieve the final alignment.
+%These include survey measurements of various SVT assemblies, a beam line survey at JLab, and finally 
+%a track-based alignment. 
 
-Optical surveys of individual modules with precision of a few microns are combined with a survey of the
-overall SVT support with overall precisions of 25-100 microns to arrive at the as-built alignment.  The sag
-of the long support plates and lever arms used in the test run are the dominant error in determining
-relative modules positions, a defect addressed in the proposed design for the SVT.
+The SVT was aligned using a combination of optical, laser and touch probe surveys at SLAC and JLab. The 
+optical survey of individual modules with precision of a few microns are combined with a touch-prove survey 
+of the overall SVT support structure, with 25-100 microns precision, to locate the silicon sensor layers with 
+respect to the support plates and the mechanical survey balls on the base plate.
 %Mechanical surveys using touch probes was performed on the two SVT tracker planes before 
 %shipping to JLab. This survey measured reference points on the base plate, C-support and on the surface of the tracker support plates. These positions where then tied to very precise optical survey of each sensor module, referencing the silicon sensor position w.r.t. to the cooling blocks. 
 %An important aspect of the mechanical survey is the relatively large sag of 
@@ -19,46 +19,52 @@ relative modules positions, a defect addressed in the proposed design for the SV
 %to reach a relative alignment of the 
 %silicon to about $100-200~\mu$m where alignment using tracks become feasible and the 
 %improvements from mechanical surveys become harder. 
-After full assembly and installation of the SVT at JLab, a survey of the SVT position inside the vacuum chamber
-is used to determine the location of the SVT with respect the the CEBAF beam line.
-
+After full assembly and installation of the SVT at JLab, a mechanical survey of the SVT base plate position 
+inside the pair spectrometer vacuum chamber is used to determine the global position of the SVT with respect 
+to CEBAF beam line. 
+%at the as-built alignment.  The sag
+%of the long support plates and lever arms used in the test run are the dominant error in determining
+%relative modules positions, a defect addressed in the proposed design for the SVT.
 %Finally at JLab, with a fully assembled 
 %tracker, an optical and touch probe survey was performed to locate 
 %the SVT inside the vacuum chamber, using the measurements of the base plate, in the reference coordinate system of 
 %the analyzing magnet. 
-
-The resulting alignment is then studied using reconstructed tracks in the SVT. The main observable of the internal alignment of the silicon 
-sensors is the so-called track residual. It is 
-defined as the difference of the measured and predicted track 
-position at that sensor. Figure~\ref{fig:res_top} 
-shows representable 3D space point track residuals, relative to track parameters determined at the target, for tracks reconstructed in the top half of the tracker.
+The resulting survey-based alignment have the position of the silicon sensors correct to within a few hundred 
+microns as shown in the reconstructed track residuals in Fig.~\ref{fig:res_top}. This level of internal alignment 
+shows that the survey approach, while not perfect, is adequate as a starting point to bootstrap the SVT 
+alignment. 
+%At this level of internal 
+%alignment   an internal SVT alignment with track residuals less than a few 
+%hundred microns shown in .  is then studied using reconstructed tracks in the SVT. The main observable of the internal alignment of the silicon 
+%sensors is the so-called track residual. It is 
+%defined as the difference of the measured and predicted track 
+%position at that sensor. Figure~\ref{fig:res_top} 
+%shows representable 3D space point track residuals, relative to track parameters determined at the target, for tracks reconstructed in the top half of the tracker.
 \begin{figure*}[]
 \includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-1.png}
 %\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-2.png}
 %\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-3.png}
-\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-4.png}
+%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-4.png}
 %\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-5.png}
 \includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-6.png}
 %\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-7.png}
 %\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-8.png}
-\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-9.png}
+%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-9.png}
 %\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-10.png}
-\caption{\small{Residuals in the bend (top) and non-bend (bottom) plane 
-for tracks reconstructed in the top half of the tracker after mechanical survey constants 
-are applied.  }}
+\caption{\small{Residual between the actual hit position and the predicted position in layer 1 from the reconstructed tracks in the bend (left) and non-bend (right) plane in the top half of the SVT after mechanical survey. The filled histogram show the predicted residual for simulated events with an ideal geometry.}}
 \label{fig:res_top}
 \end{figure*}
-These are compared to the residuals from an ideally aligned tracker with residuals centered at zero.
-Note the larger width for the downstream layers,highlighting the large 
-multiple scattering contribution in the track reconstruction. 
+%These are compared to the residuals from an ideally aligned tracker with residuals centered at zero.
+%Note the larger width for the downstream layers,highlighting the large 
+%multiple scattering contribution in the track reconstruction. 
 %The intrinsic single hit resolution of $\approx 6~\mu$m is negligible for layers beyond the second. 
-Fig.~\ref{fig:res_top_summary} shows a summary of the mean residuals for each layer of the tracker 
-after the mechanical survey alignment constants have been applied.
-\begin{figure*}[t]
-\includegraphics[ scale=0.7]{test2012/alignment/pictures/res_top/res_top_summary-1.png}
-\includegraphics[ scale=0.7]{test2012/alignment/pictures/res_top/res_top_summary-2.png}\caption{\small{Mean of the track residuals for each detector layer in the top tracker half 
-in the bend (left) and non-bend (right) plane after mechanical survey constants are applied.}}\label{fig:res_top_summary}
-\end{figure*}
+%Fig.~\ref{fig:res_top_summary} shows a summary of the mean residuals for each layer of the tracker 
+%after the mechanical survey alignment constants have been applied.
+%\begin{figure*}[t]
+%\includegraphics[ scale=0.7]{test2012/alignment/pictures/res_top/res_top_summary-1.png}
+%\includegraphics[ scale=0.7]{test2012/alignment/pictures/res_top/res_top_summary-2.png}\caption{\small{Mean of the track residuals for each detector layer in the top tracker half 
+%in the bend (left) and non-bend (right) plane after mechanical survey constants are applied.}}\label{fig:res_top_summary}
+%\end{figure*}
 %Note that these pull distributions come from biased 
 %residuals (the hit was used in the track fit) and are thus not expected to have a 
 %width of one. 
@@ -78,12 +84,11 @@ in the bend (left) and non-bend (right) plane after mechanical survey constants 
 %top half of the tracker.  }}
 %\label{fig:res_pull_top_nonbend}
 %\end{figure*}
-
-To understand the tracker alignment w.r.t. to the other components on the beam line we 
-use the reconstructed tracks and extrapolate them outside the tracking volume. 
-Figure ~\ref{fig:extrapol_converter} shows a comparison of the track position propagated 
-to the converter enabling us to get a better understanding of the tracker alignment with 
-respect to the beam line. 
+In electron running, the beam spot can be used as a constraint in the global track-based alignment. 
+In the test run we extrapolate the reconstructed tracks back to the converter located $\approx 77$~cm 
+from our first silicon layer to understand the tracker alignment w.r.t. to the other components on the 
+beam line. Figure ~\ref{fig:extrapol_converter} shows a comparison of the predicted track position 
+at the converter. 
 \begin{figure*}[t]
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_top.png}
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_bot.png}
@@ -91,22 +96,29 @@ respect to the beam line.
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_Y_converter_bot.png}
 \caption{\small{Extrapolated track position in the bend (top) and non-bend (bottom) 
 direction for tracks reconstructed in the top (left) and bottom (right) half of the SVT. 
-The extra bumps in the data at $\pm10$~mm comes from upstream backgrounds.}}
+The filled histograms show the prediction from simulation using an ideal geometry. 
+The extra bumps in the data at $\pm10$~mm arise from backgrounds originating upstream of the 
+converter.}}
 \label{fig:extrapol_converter}
 \end{figure*}
-The luminous region, inferred from harp scans of the photon beam profile, has a width of about 1~mm 
-%(best described by a double Gaussian: $0.71e^{\frac{x}{0.366}}\times 0.29e^{\frac{x}{1.111}}$)
-and a total beam envelope of around 7~mm. The small bumps in data at $\pm10$~mm 
-are from particles produced upstream of the converter. The width and position of the tracks 
-are roughly consistent with the expected distribution from an ideal geometry as shown by the simulated 
-tracks in the same figures. The larger shift in the bend direction for bottom tracks 
-is still under investigation. 
-
+The width is roughly consistent with between data and simulation with a shift in the bend-plane 
+coordinate for tracks in the bottom half which is likely due to alignment or incomplete description of the 
+magnetic field at the edge of the magnet. 
+There are two small bumps in the vertical position in the data arising from backgrounds 
+originating upstream of the converter verified using the run without a converter.
+%The luminous region, inferred from harp scans of the photon beam profile, has a width of about 1~mm 
+%%(best described by a double Gaussian: $0.71e^{\frac{x}{0.366}}\times 0.29e^{\frac{x}{1.111}}$)
+%and a total beam envelope of around 7~mm. The small bumps in data at $\pm10$~mm 
+%are from particles produced upstream of the converter. The width and position of the tracks 
+%are roughly consistent with the expected distribution from an ideal geometry as shown by the simulated 
+%tracks in the same figures. The larger shift in the bend direction for bottom tracks 
+%is still under investigation. 
 With initial residuals less than $\sim 500~\mu$m across all layers of 
 the tracker and a reconstructed beam profile similar to that expected from simulation, it appears these survey techniques 
-are adequate to bootstrap the SVT alignment. For HPS, we are developing 
-a more sophisticated track-based alignment that delivers the best possible constants.
-This framework will also enable us to explore and understand important details such as weak modes and how dedicated alignment runs 
+are adequate to bootstrap the SVT alignment. 
+For HPS, we are developing a more sophisticated global track-based alignment technique to reach 
+the final alignment precision. This framework will also enable us to explore and understand important details 
+such as weak modes and how dedicated alignment runs 
 (e.g. with magnetic field off or with different targets) may shape operational procedures during HPS running.
 %Fig.~\ref{fig:test_harpscan} shows a HARP scan taken during the test run. 
 %\begin{figure*}[t]

@@ -1,37 +1,39 @@
-The HPS Test Run was proposed to DOE early in 2011 as the first stage of the HPS experiment. Its
+The HPS Test run was proposed to DOE early in 2011 as the first stage of the HPS experiment. Its
 purposes included demonstrating that the apparatus and data acquisition systems are feasible and
 that the trigger rates and occupancies encountered in electron-beam running are as simulated.  It also
 provided valuable experience to the HPS Collaboration in all aspects of designing, building, installing,
 and running the experiment at JLab. Furthermore, in the case that HPS Test detector met all of the 
 performance goals and was given dedicated running time with an electron beam, the HPS Test Run 
-could provide new sensitivity to heavy photons. The HPS Test Run was installed on April 19, 2012, and 
+could provide new sensitivity to heavy photons. The HPS Test apparatus was installed on April 19, 2012, and 
 ran parasitically with the HDice experiment, using a photon beam, until May 18. The JLab run schedule 
 precluded any dedicated electron beam running, but the HPS Test Run was allowed a short and valuable
 dedicated run with the photon beam.
 
-This section briefly reviews the HPS Test Run apparatus, a simplified version of the apparatus
+This section briefly reviews the HPS Test Run apparatus, a simplified version of that 
 planned for the full HPS experiment, and demonstrates the feasibility of the detector
 technologies proposed for silicon tracker, ECal, and data acquisition systems. It documents the
-performance of the trigger, data acquisition, silicon vertex tracker, and electromagnetic calorimeter
+performance of the trigger, data acquisition, silicon tracker, and ECal
 and shows that the performance assumed in calculating the physics reach of the experiment is realistic.
 Of particular importance, data from dedicated photon beam running has been used to compare
 the observed trigger rates with that expected in simulation. The trigger rate is almost entirely due to
-photons which have converted to e$^+$e$^-$ upstream of the HPS trackers and is sensitive to the multiple
-Coulomb scattering of electrons in the conversion target.  Since scattered primary beam is the dominant 
+photons which have converted to e$^+$e$^-$ upstream of HPS and is sensitive to the multiple
+Coulomb scattering of electrons and positrons in the conversion target.  Since scattered primary beam is the dominant 
 source of occupancy in running HPS in an electron beam, good agreement between data and simulation 
-confirm the background simulation used to benchmark the physics reach of the HPS Experiment.
+confirm the background simulation used to benchmark the physics reach of the HPS experiment.
 
-In addition to this important test of our background simulation, the test run accomplished the following goals which are explained in Section \ref{sec:testrun_performance}:
+In addition to this important test of our background simulation, the test run accomplished the following goals which are explained below in Sec.~\ref{sec:testrun_performance}:
 \begin{enumerate}
 	\item More than 97\% of SVT channels functioned properly
 	\item SVT readout signal to noise of 25.5
-	\item SVT hit time resolution of 2.6 ns; this proves time reconstruction will work for HPS
+	\item SVT hit time resolution of 2.6 ns; this proves hit time reconstruction will work for HPS
 	\item SVT hit efficiency greater than 95\%
 	\item SVT track reconstruction efficiency greater than 98\%
 	\item Survey-based SVT alignment performs as expected and will allow track-based alignment
 	\item 87\% of ECal crystals functioned properly, and defects will be corrected by planned ECal upgrades
 	\item Calibrated ECal using SVT tracks
-	\item Trigger functions as designed; deficiencies found in test run trigger performance are addressed for the 2014-2015 run
+	\item Fully integrated SVT and JLab DAQ
+	\item Trigger functions as designed; FADC trigger rate tested to greater than 100~kHz
+	% deficiencies found in test run trigger performance are addressed for the 2014-2015 run
 \end{enumerate}
 
 \subsection{HPS Test Run Apparatus } 
@@ -45,7 +47,7 @@ Both the tracker and the ECal were retracted off the beam plane to allow clean p
 \label{fig:hpstest_layout}
 \end{figure}
 
-For dedicated HPS running the photon beam was generated in the interaction of the $5.5$ GeV electrons with a gold radiator of $10^{-4}$ r.l., located $\approx 8$ meters upstream of the PS pair converter. After collimation ($D=6.4$ mm), the photon beam passes through the pair converter and through the HPS system. Data were taken on different converters (empty, $1.8\times 10^{-3}$ r.l., $4.5\times 10^{-3}$ r.l., and $1.6\times 10^{-2}$ r.l.). These measurements were repeated for the reverse field setting of the pair spectrometer dipole.
+For dedicated HPS running the photon beam was generated in the interaction of the $5.5$ GeV electrons with a gold radiator of $10^{-4}$ r.l., located $\approx 8$ meters upstream of the PS pair converter. After collimation ($D=6.4$ mm), the photon beam passes through the pair converter and through the HPS system. The converter was located $\approx 77$~cm upstream of the first layer of the silicon vertex tracker. Data were taken on different converters (empty, $1.8\times 10^{-3}$ r.l., $4.5\times 10^{-3}$ r.l., and $1.6\times 10^{-2}$ r.l.). These measurements were repeated for the reverse field setting of the pair spectrometer dipole.
 
 \subsubsection{Test Run SVT}
 
@@ -95,21 +97,20 @@ The linear shifts that define the opening of the SVT are controlled by a pair of
 
 The electromagnetic calorimeter (ECal) for HPS, as described in Section \ref{sec:ecal}, was built and tested in the test run.
 The only differences between the test run ECal and what is proposed here for HPS are in the position and the vacuum chamber.
+The vacuum chamber between the two ECal modules was not used for the photon test run; instead a  2'' beam pipe was used to transport photon beam from the pair spectrometer vacuum chamber to the HDIce target.  
+The ECal was mounted downstream of the analyzing dipole magnet at the distance of $\sim 148$ cm from the upstream edge of the magnet. The two ECal modules were positioned just above and below the beam pipe such that the edge of the crystal closest to the beam was $3.7$ cm from it. 
 
-The vacuum chamber between the two ECal modules was not used for the photon test run; instead 2'' beam pipe was used to transport photon beam from the pair spectrometer vacuum chamber to the HDIce target.  
-The ECal was mounted downstream of the analyzing dipole magnet at the distance of $\sim 148$ cm from the upstream edge of the magnet. The two ECal modules were positioned just above and below the beam pipe such that the edge of the crystal closest to the beam is $3.7$ cm from it. 
 
+%In order to maintain stable performance of the PbWO$_4$ calorimeter, the crystals and APDs are enclosed within a temperature stabilized environment, held constant to a precision of $1~^o$F. The expected energy resolution of the system from operational experience with the IC is $\sigma_E/E \sim 4.5\% / \sqrt{E (GeV)}$. As in the IC, PbWO$_4$ modules are connected to a motherboard that provides power to and transmits signals from individual APDs and pre-amplifier boards. Crystals inside the box are supported by aluminum frames as shown in Figure \ref{fig:ecal_assembly}.
+
+For the test run, the ECal made use of the existing low and high voltage systems from the CLAS IC, as well as signal cables and splitters. Connectors on the existing signal cables were rearranged to accommodate the new layout of the channels. 
+ 
+As assembly of the bottom half to the ECal is shown in Fig.~\ref{fig:ecal_assembly}.
 \begin{figure*}[t]
 \includegraphics[ scale=0.25]{test2012/ecal_assembly.jpg}
 \caption{\small{Assembly of the ECal bottom module.}}\label{fig:ecal_assembly}
 \end{figure*}
-
-%In order to maintain stable performance of the PbWO$_4$ calorimeter, the crystals and APDs are enclosed within a temperature stabilized environment, held constant to a precision of $1~^o$F. The expected energy resolution of the system from operational experience with the IC is $\sigma_E/E \sim 4.5\% / \sqrt{E (GeV)}$. As in the IC, PbWO$_4$ modules are connected to a motherboard that provides power to and transmits signals from individual APDs and pre-amplifier boards. Crystals inside the box are supported by aluminum frames as shown in Figure \ref{fig:ecal_assembly}.
-
-For the HPS Test Run, the ECal made use of the existing low and high voltage systems from the CLAS IC, as well as signal cables and splitters. Connectors on the existing signal cables were rearranged to accommodate the new layout of the channels. 
- 
-Figure \ref{fig:ecal_assembly} shows assembly of the bottom half of the ECal. 
-In Figure \ref{fig:ecal_mounted} the ECal is shown in its installed position for the parasitic run with photon beam.
+Figure \ref{fig:ecal_mounted} shows the ECal in its installed position for the parasitic run with photon beam.
  
 \begin{figure*}[t]
 \includegraphics[ scale=0.25]{test2012/ecal_mounted}
@@ -135,7 +136,7 @@ In Figure \ref{fig:ecal_mounted} the ECal is shown in its installed position for
 \label{sec:testrun_performance}
 As previously noted, all running of the HPS Test apparatus was with photon beams, using the Hall-B pair 
 spectrometer (PS) pair converter as a target.  This target,  located $\sim67$~cm from the first layer 
-of the tracker, produced a sufficient flux of electron-positron pairs to test the principles of running the HPS experiment.
+of the tracker, produced a sufficient flux of electrons and positrons to test the principles of running the HPS experiment.
 This section will report on a few selected preliminary results that demonstrate our understanding of the system. 
 
 \subsubsection{SVT Performance}

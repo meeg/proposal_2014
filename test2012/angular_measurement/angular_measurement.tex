@@ -4,11 +4,11 @@ These occupancies are dominated by electrons scattered to large angles
 in the converter. Because HPS is sensitive to scattering angles very far out 
 on the tail, beyond angles important in other experiments, care must be taken
 to ensure our simulations are correct in this regime.  In particular,
-Geant4 overestimates the multiple coulomb scattering rate by a factor of two  
+Geant4 overestimates the multiple Coulomb scattering rate by a factor of two  
 at large angles as explained in detail in the appendix (see Fig.~\ref{appendix:2}).
-One of the main goals of the test run in 2012 was to evaluate the description of the tails of the multiple coulomb scattering in order 
+One of the main goals of the test run in 2012 was to evaluate the description of the tails of the multiple Coulomb scattering in order 
 to gain further confidence in our expected detector occupancy. As will be shown below, data from the 
-test run can be used to confirm our model of multiple coulomb scattering despite the fact that 
+test run can be used to confirm our model of multiple Coulomb scattering despite the fact that 
 all data was taken with a photon beam.
 
 Figure~\ref{fig:schematic_testrun_vs_erun} gives a schematic view of the main differences 
@@ -19,7 +19,7 @@ between the photon and electron beam setup.
 \end{figure*}
 In particular, the angular distribution of the pair produced electron and positions emerging 
 from the converter has comparable contributions from {\it i)} the pair production angle
-and {\it ii)} the multiple coulomb scattering of the electron and position in the converter after production, see  Fig.~\ref{fig:schematic_pair_prod}.
+and {\it ii)} the multiple Coulomb scattering of the electron and position in the converter after production, see  Fig.~\ref{fig:schematic_pair_prod}.
 \begin{figure*}[]
 \includegraphics[ scale=0.7]{test2012/angular_measurement/pictures/pair_prod_schematics.png}
 \caption{\small{Schematic description of the relevant angles for pair production in the 
@@ -112,8 +112,8 @@ sample was less than 2\% (without angular selections which would further reduce 
 %\end{figure*}
 
 
-These measured angular distributions are then compared to simulation to validate the modeling of the 
-multiple coulomb scattering. As described in more detail in the appendix, EGS5 is used to generate 
+These measured angular distributions are compared to simulation to validate the modeling of the 
+multiple Coulomb scattering. As described in more detail in the appendix, EGS5 is used to generate 
 the electromagnetic interactions in the converter while GEANT4 is used to simulate the particles after the converter.  Figure~\ref{fig:ang_distr_dataMC} shows the angular distribution comparing data and 
 EGS5 normalized to 1~s of beam at 90~nA beam current. 
 \begin{figure*}[t]
@@ -170,13 +170,13 @@ thicknesses. The uncertainty on the prediction includes systematic uncertainties
 \label{tab:ang_distr_dataMC}
 \end{table}
 
-In summary, the accurate modeling of the multiple coulomb scattering is a key aspect to estimate occupancies and trigger rates for HPS. EGS5 predicts the correct angular distribution across all converter thicknesses while GEANT4 overestimates the rates; with the disagreement increasing  with larger converter thickness. This preliminary result verifies our modeling of the multiple coulomb scattering using EGS5 for HPS.
+In summary, the accurate modeling of the multiple Coulomb scattering is fundamental to estimate occupancies and trigger rates for HPS. EGS5 predicts the correct angular distribution across all converter thicknesses while GEANT4 overestimates the rates; with the disagreement increasing  with larger converter thickness. This preliminary result verifies our modeling of the multiple Coulomb scattering using EGS5 for HPS.
 %Since EGS5 was used to generate the pair 
 %angle distribution for both simulation described in the result it's interesting to see that the 
 %ratio of data to the prediction varied from 0.91 (0.40), 0.77 (0.53) and 0.98 (0.81) for {\sc EGS} 
 %(GEANT4) at 1.6\%, 0.45\% and 0.18\% converter thickness, respectively. If the pair angle 
-%distribution were responsible for the difference between GEANT4  and EGS5 that would show up as a large shift in this ratio since the multiple coulomb scattering contribution varies. 
+%distribution were responsible for the difference between GEANT4  and EGS5 that would show up as a large shift in this ratio since the multiple Coulomb scattering contribution varies. 
 %There are more work needed to go from this preliminary result to a real 
 %measurement. However, this preliminary result further strengthens our confidence that 
-%EGS5 is able to properly describe the large angle multiple coulomb scattering events in the converter 
+%EGS5 is able to properly describe the large angle multiple Coulomb scattering events in the converter 
 %which is important to estimate our occupancy and trigger rates for HPS (see Sec.~\ref{sec:performance}).
