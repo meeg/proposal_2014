@@ -23,7 +23,7 @@ generated using the CR-RC shaper function with a time constant of 15 ns
 measured with the ECal crystals, amplitudes were sampled and pulse data 
 evaluated every 4 ns (simulating FADC), and the cluster 
 finding algorithm and trigger logic were applied (simulating CTP and SSP). 
-The simulaton has been tested against the actual performance of the test run detector and DAQ.
+The simulation has been tested against the actual performance of the test run detector and DAQ: see Section \ref{sec:ecalperformance}.
 
 The trigger parameters described in Section \ref{sec:triggerdaq} are 
 chosen by running the simulation and plotting the relevant variables 
@@ -33,7 +33,7 @@ Figure \ref{fig:coplanarity} shows the coplanarity angle vs. the azimuthal
 angle of the lower-energy cluster, indicating that A' events 
 tend to have small coplanarity angles. Figure \ref{fig:energy-distance} shows
 the distance from beam axis vs. energy of the lower-energy cluster,
-indicating that the energy-distant cut can reduce the beam background effectively.
+indicating that the energy-distance cut can reduce the beam background effectively.
 Figure \ref{fig:ediff} shows the cluster energy difference vs. energy sum,
 indicating that the energy sum cut can retain A' events effectively.       
 
@@ -41,22 +41,22 @@ indicating that the energy sum cut can retain A' events effectively.
 These cuts are chosen to lie between the loosest reasonable values (accept as many A' events as possible) and the tightest (reject as many background events as possible). In some cases this leads to different cut values at different beam energies---for example, the coplanarity cut is looser at 1.1 GeV because the background events are clustered at large uncoplanarity and a relatively loose cut rejects most of them, but the cut is tighter at higher beam energies.
 
 \begin{figure}[ht]
-	\includegraphics[width=0.4\textwidth]{performance/trigger/coplanarity_22}
-	\includegraphics[width=0.4\textwidth]{performance/trigger/coplanarity_22_075mev}
+	\includegraphics[width=0.45\textwidth]{performance/trigger/coplanarity_22}
+	\includegraphics[width=0.45\textwidth]{performance/trigger/coplanarity_22_075mev}
 	\caption{\small{Deviation of cluster pairs from coplanarity (units of degrees) for 2.2 GeV beam; background and 75 MeV A' tridents are shown. The X-axis is the azimuth around the beam axis ($\phi_1$) of the lower-energy cluster, such that 0 degrees is the positron side of the detector and 180 degrees is the electron side; the Y-axis is the difference between the azimuth angles ($\phi_1-\phi_2 - 180$) of the two clusters. The coplanarity cut's acceptance region is the space between the red lines.}}
 	\label{fig:coplanarity}
 \end{figure}
 
 \begin{figure}[ht]
-	\includegraphics[width=0.4\textwidth]{performance/trigger/energy-distance_22}
-	\includegraphics[width=0.4\textwidth]{performance/trigger/energy-distance_22_075mev}
+	\includegraphics[width=0.45\textwidth]{performance/trigger/energy-distance_22}
+	\includegraphics[width=0.45\textwidth]{performance/trigger/energy-distance_22_075mev}
 	\caption{\small{Energy and distance from beam axis of the lower-energy cluster, for 2.2 GeV beam; background and 75 MeV A' tridents are shown. The energy-distance cut's acceptance region is above the red line.}}
 	\label{fig:energy-distance}
 \end{figure}
 
 \begin{figure}[ht]
-	\includegraphics[width=0.4\textwidth]{performance/trigger/ediff_22}
-	\includegraphics[width=0.4\textwidth]{performance/trigger/ediff_22_075mev}
+	\includegraphics[width=0.45\textwidth]{performance/trigger/ediff_22}
+	\includegraphics[width=0.45\textwidth]{performance/trigger/ediff_22_075mev}
 	\caption{\small{Energy sum and difference of cluster pairs, for 2.2 GeV beam; background and 75 MeV A' tridents are shown. The energy difference cut's acceptance region is left of the red line.}}
 	\label{fig:ediff}
 \end{figure}

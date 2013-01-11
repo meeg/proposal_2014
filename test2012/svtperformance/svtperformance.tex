@@ -1,75 +1,59 @@
+During the duration of the dedicated photon run all SVT hybrids and APV25 
+readout chips were configured to their nominal operating 
+points~\cite{Jones:1069892} while all sensors were reverse-bias at 180~V.  The 
+sensors were operated within a temperature range of  20 to 24$^\circ$C 
+throughout the test run. Multiple calibration runs established a noise level of 60-68 
+ADC counts (X-Y electrons) which was stable across all hybrids. With a linear gain up to $\approx 3$~MIPs, the 
+cluster charge for hits on a track follow the characteristic Landau shape (see Fig.~\ref{fig:cluster_pulse}) with a 
+mean of about 26,000~e$^{-}$ as expected. This signal response gives a signal-to-noise ratio of about 25.5. 
+\begin{figure}[h]
+    % TODO: The pulse plot needs to be remade such that the x-axis is time 
+	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/svt_calib/08062012_run1351_samples_vs_amplitude.png}
+	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/svt_calib/run1351_mip_small.pdf}
+    \caption{The six pedestal subtracted samples associated with a hit on a track 
+             are shown on the left plot along with a distribution of the cluster
+             charge exhibiting the characteristic Landau shape on the right. 
+            }
+	\label{fig:cluster_pulse}
+\end{figure}
 
-\input{test2012/svtperformance/svt_calib/svt_calibrations}
 
-As discussed in Sec.~\ref{sec:svt} the multi-peak APV25 readout is crucial in order to time stamp
-hits in the tracker to lower effective occupancies for pattern recognition during electron running. 
-Six samples of the APV25 shaper output for each trigger are fitted to an ideal $CR-RC$ function to 
-extract the amplitude and hit time.  The $\chi^2$ distribution of these fits from test run data is as expected
-for four degrees of freedom.
-%\begin{figure}[]
-%	\includegraphics[width=0.6\textwidth]{test2012/svtperformance/apvfit_chisq}
-%	\caption{\small{Histogram of $\chi^2$ values for pulse fits for all channels on a representative sensor. The peak at 2 is consistent with 4 degrees of freedom (2 fit parameters), as expected. Pileup was not considered due to the very low hit rate in 
-%the SVT in this photon beam test. } }
-%	\label{fig:apvfit}
-%\end{figure}
-After clustering hits on a sensor, the hit time for the each cluster is computed as the 
-amplitude-weighted average of the channel hit times. Since we have no measurement of the ``true'' hit time, we study the overall SVT hit 
-timing performance using the average of all cluster times in a track as the ``track time,'' and take the
- residual of the cluster time relative to that. The observed track time, shown in Figure \ref{fig:tracktime}, has the expected amount of trigger jitter due to the readout clock and trigger system jitter. After correcting for offsets for each sensor (time-of-flight, clock phase) the RMS 
- of the final residual distribution is roughly 2.4~ns for each sensor. 
+One of the important tests of the SVT was the operation of the APV25 chips in multi-peak readout mode 
+discussed in Sec.~\ref{sec:svt}. The six samples of the APV25 pulse shaper output 
+are fitted to an ideal $CR-RC$ function to extract the amplitude and the $t0$ of the hit. 
+The typical cluster shape obtained is shown in Fig.~\ref{fig:cluster_pulse} also demonstrates that the SVT was well timed in to the trigger with the rise of the pulse at the 3rd sampling point.
+After clustering hits on a sensor, the hit time for each cluster is computed as the amplitude-weighted average of 
+the fitted $t0$ channel times. The $t0$-resolution is studied by comparing the cluster hit time with the average of all cluster hit times, the "track time". Figure~\ref{fig:} shows the track time, with the expected jitter due to clock phase and trigger, and the residual to the individual cluster times. 
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/track_time_top}
 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres}
 	\caption{\small{Track time distribution (top) and cluster time residual (bottom). The 
 	track time is measured relative to the APV25 clock. The width of the distribution is due to 
-	trigger jitter (24 ns jitter in tracker readout clock, plus 16 ns jitter in the trigger system). 
+	trigger jitter (24~ns jitter in the tracker readout clock, plus 16~ns jitter in the trigger system). 
 	The cluster time residual is for a representative sensor relative to the track time.}}
 	\label{fig:tracktime}
 \end{figure}
-Because the track time is calculated using the individual hit times, the hit time is positively correlated 
-with the track time; thus the RMS of the residual is slightly smaller than the true time resolution.
-The standard deviation of this residual for $n$-hit tracks where all hits have the same time resolution 
-is reduced by a factor of $\sqrt{(n-1)/n}$; since most of our tracks have 8 clusters, the true time 
-resolution is 2.6 ns. 
-%\begin{figure}[ht]
-%	\includegraphics[width=\textwidth]{test2012/svtperformance/timeres}
-%	\caption{\small{Histogram and Gaussian fit of residual of cluster times for a representative sensor, relative to the track time. Because the cluster times and track time have positive covariance, the true time resolution is slightly larger than the standard deviation shown here.} }
-%	\label{fig:timeres}
-%\end{figure}
-%\begin{figure}[ht]
-%	\includegraphics[width=\textwidth]{test2012/svtperformance/hit_dt}
-%	\caption{\small{} }
-%	\label{fig:hit_dt}
-%\end{figure}
-This is somewhat worse than the $\approx 2$ ns resolution expected (see Fig.~\ref{fig:timeres} in 
-Sec.~\ref{sec:performance}, but we believe this discrepancy is due to our fit function. Our pulse 
-shape fit assumes an ideal CR-RC pulse shape; since the actual pulse shape has a slower rise time, 
-there is a systematic pull on the hit time when a hit comes immediately before the APV clock time. 
-This is visible in Figure \ref{fig:timeres_2D} as a shift in the residual at certain values of track time.
+After correcting for offsets from each sensor (time-of-flight, clock phase) the extracted $t0$ resolution is 2.6~ns (larger than the 2.4~ns due to correlations between the cluster and "track" times). This is somewhat worse than the $\approx 2$ ns resolution expected in Sec.~\ref{sec:performance} which we attribute to our pulse shape fit procedure function (see Appendix for more details). 
+
+Throughout the duration of the test run, approximately 97\% of the 12,780 SVT 
+channels were found to be functional.
+The identified dead or noisy channels were largely attributed to a 
+known noisy sensor and a few noisy or misconfigured chips which will be resolved for future running. The 
+increased noise resulted in occupancies and data rates that were higher than what were expected from simulation.
+However, after masking out all known noisy channels found during the commissioning of the SVT, good agreement 
+between simulation and test run data was achieved as shown on Fig.~\ref{fig:data_rates_data_mc_cmp}.
 \begin{figure}[h]
-	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres_2D}
-	\caption{\small{Plot of the time residual for a representative sensor vs. the track time. 
-		The kinks in the horizontal band are caused by the fitter; without them the 1-D histogram in Figure \ref{fig:timeres} (the projection of this histogram) would be narrower.} }
-	\label{fig:timeres_2D}
+    \includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/data_rates.pdf}
+        \caption{ { \small
+                    Comparison of SVT occupancy and data rates between test run data and that expected from simulation after noisy channels are masked.
+                } }
+	\label{fig:data_rates_data_mc_cmp}
 \end{figure}
-Work is in progress to use the actual pulse shape in time reconstruction; this should improve time resolution to that expected from previous studies. 
-However, it should be noted that the time resolution demonstrated above is still adequate for pileup rejection during electron running.
-%\vspace{1cm}{\bf Tracking algorithms [Matt/Omar]}
-
-\input{test2012/svtperformance/trk_performance/trk_performance}
-
-%Pattern recognition/Stereo hit reconstruction and description of the tracking algorithm. 
-
-%Plots: tracking efficiency vs run nr, hit efficiency vs run nr for data. Overlay MC.
-
-%\vspace{1cm}{\bf Two track events analysis [Matt]}
-
-%Analysis of two track events. 
-
-%Plots: invariant mass, vertex position, 2-track event multiplicity. Compare with MC for all these 
-
-
-%\vspace{1cm}{\bf SVT DAQ Performance [Pelle/Omar/Ryan]}
-%General discussion on SVT rates, event size.
-
-\input{test2012/svtperformance/daq/svt_daq_perf.tex}
+Similarly, the hit efficiency was measured to be above 98\% for known good layers, see Fig.~\ref{fig:hit_efficiency}.
+\begin{figure}[h]
+    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_layer.pdf}
+%    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
+        \caption{{\small The hit reconstruction efficiency as a function of detector layer. The variation across the layers can be explained by known DAQ issues.}} 
+	\label{fig:hit_track_efficiency}
+\end{figure}
+Further details can be found in the Appendix. 
