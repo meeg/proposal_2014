@@ -35,7 +35,7 @@ conducted.  The hit efficiency was then determined as
 \]
 The hit efficiencies per layer were calculated using all dedicated runs. As 
 can be seen from Figure~\ref{fig:hit_track_efficiency}, the average hit efficiency
-per layer, excluding a small number of known bad readout chips, was found to be greater than
+per layer was found to be greater than
 95\% for the top SVT volume and greater than 92\% for the bottom volume.  The 
 larger hit inefficiencies observed for some layers was simply due to the 
 sensors composing the layer having a greater number of noisy channels.
@@ -49,22 +49,24 @@ sensors composing the layer having a greater number of noisy channels.
 %on the fit. Any kinematic constraints are also specified within the strategy.
 %A detailed account of the tracking algorithm can be found  here~\ref{}.
 
-In order to determine the efficiency of the track finding algorithm, a Monte
-Carlo sample containing pair produced electrons from photons incident on 
-a 1.6\% $X_0$ gold target was used.  The energy of the pair produced electrons
-ranged from .5 GeV to 5.5 GeV. An electron falling within the detector 
-acceptance was considered findable by the tracking algorithm if it 
-traversed through at least 4 of the SVT layers. The track reconstruction
-efficiency was then determined as
-\[
-    \varepsilon_{\mbox{track reco efficiency}} = \frac{\mbox{Tracks found}}
-                                            {\mbox{Tracks found to be findable}}.
-\]
-The resulting efficiency to find an electron which passes through the detector
-acceptance is shown in Figure~\ref{fig:hit_track_efficiency}. The average track
-reconstruction efficiency was found to be \% with the bulk of the inefficiency
-coming from the $\chi^2$ cut imposed on the fit to the six samples during
-the clustering stage.
+%% Track reco efficiency is no longer going to be included so remove this
+%% section
+%In order to determine the efficiency of the track finding algorithm, a Monte
+%Carlo sample containing pair produced electrons from photons incident on 
+%a 1.6\% $X_0$ gold target was used.  The energy of the pair produced electrons
+%ranged from .5 GeV to 5.5 GeV. An electron falling within the detector 
+%acceptance was considered findable by the tracking algorithm if it 
+%traversed through at least 4 of the SVT layers. The track reconstruction
+%efficiency was then determined as
+%\[
+%    \varepsilon_{\mbox{track reco efficiency}} = \frac{\mbox{Tracks found}}
+%                                            {\mbox{Tracks found to be findable}}.
+%\]
+%The resulting efficiency to find an electron which passes through the detector
+%acceptance is shown in Figure~\ref{fig:hit_track_efficiency}. The average track
+%reconstruction efficiency was found to be \% with the bulk of the inefficiency
+%coming from the $\chi^2$ cut imposed on the fit to the six samples during
+%the clustering stage.
 
 All events containing pairs of oppositely charged tracks were fit to a
 common vertex using a simple vertexing algorithm which searches for the distance

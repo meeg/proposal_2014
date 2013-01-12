@@ -65,19 +65,21 @@ As shown on Figure~\ref{fig:gain}, the response exhibits good linearity up
 to $\approx$ 3 MIPs while the gain uniformity was within the expected range 
 across all chips on a hybrid.
 
-All reconstructed hits in an event were used to form clusters of energy 
-depositions using a nearest neighbor algorithm. Figure~\ref{fig:cluster_pulse}
-shows the mean pulse shape of each of the hits associated with a track as a 
-function of time.  
-The figure also demonstrates that  the trigger system, described below, was well 
-timed in with the tracker. Figure~\ref{fig:cluster_pulse} also shows the MIP 
-% The MIP value seems small ... going to look at the gains again at some point
-% Update: Turns out the problem is with the scale i.e. 25,000 electrons is actually
-% 31,875 electrons. This doesn't affect the gains but it does cause the offsets
-% to change considerably.  I have wrote a quick hack in order to aleviate the issue
-% temporarily but everything needs to be recalculated. -- OM
-response to be 26,320 electrons. This yields a signal to noise ratio
-of 25.5 which is well matched to the value expected from first principles.
+%% This text isn't needed if this goes in the appendix
+%All reconstructed hits in an event were used to form clusters of energy 
+%depositions using a nearest neighbor algorithm. Figure~\ref{fig:cluster_pulse}
+%shows the mean pulse shape of each of the hits associated with a track as a 
+%function of time.  
+%The figure also demonstrates that  the trigger system, described below, was well 
+%timed in with the tracker. Figure~\ref{fig:cluster_pulse} also shows the MIP 
+%% NOTE:
+%% The MIP value seems small ... going to look at the gains again at some point
+%% Update: Turns out the problem is with the scale i.e. 25,000 electrons is actually
+%% 31,875 electrons. This doesn't affect the gains but it does cause the offsets
+%% to change considerably.  I have wrote a quick hack in order to aleviate the issue
+%% temporarily but everything needs to be recalculated. -- OM
+%response to be 26,320 electrons. This yields a signal to noise ratio
+%of 25.5 which is well matched to the value expected from first principles.
 
 \bibliography{svt_calib}
  
