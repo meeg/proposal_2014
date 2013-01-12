@@ -29,10 +29,11 @@ to CEBAF beam line.
 %tracker, an optical and touch probe survey was performed to locate 
 %the SVT inside the vacuum chamber, using the measurements of the base plate, in the reference coordinate system of 
 %the analyzing magnet. 
-The resulting survey-based alignment have the position of the silicon sensors correct to within a few hundred 
-microns as shown in the reconstructed track residuals in Fig.~\ref{fig:res_top}. This level of internal alignment 
-shows that the survey approach, while not perfect, is adequate as a starting point to bootstrap the SVT 
-alignment. 
+The resulting survey-based alignment has the position of the silicon sensors correct to within a few hundred 
+microns as shown in the reconstructed track residuals in Fig.~\ref{fig:res_top}. 
+%This level of internal alignment 
+%shows that the survey approach, while not perfect, is adequate as a starting point to bootstrap the SVT 
+%alignment. 
 %At this level of internal 
 %alignment   an internal SVT alignment with track residuals less than a few 
 %hundred microns shown in .  is then studied using reconstructed tracks in the SVT. The main observable of the internal alignment of the silicon 
@@ -84,11 +85,12 @@ alignment.
 %top half of the tracker.  }}
 %\label{fig:res_pull_top_nonbend}
 %\end{figure*}
-In electron running, the beam spot can be used as a constraint in the global track-based alignment. 
-In the test run we extrapolate the reconstructed tracks back to the converter located $\approx 77$~cm 
+
+%In electron running, the beam spot can be used as a constraint in the global track-based alignment. 
+We also extrapolate the reconstructed tracks back to the converter located $\approx 77$~cm 
 from our first silicon layer to understand the tracker alignment w.r.t. to the other components on the 
-beam line. Figure ~\ref{fig:extrapol_converter} shows a comparison of the predicted track position 
-at the converter. 
+beam line. Figure ~\ref{fig:extrapol_converter} shows good agreement of the reconstructed track position 
+at the converter with that predicted from simulation.
 \begin{figure*}[t]
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_top.png}
 \includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_bot.png}
@@ -97,15 +99,17 @@ at the converter.
 \caption{\small{Extrapolated track position in the bend (top) and non-bend (bottom) 
 direction for tracks reconstructed in the top (left) and bottom (right) half of the SVT. 
 The filled histograms show the prediction from simulation using an ideal geometry. 
+A shift in the bend-plane coordinate for tracks in the bottom half (top right) is likely due to alignment or incomplete description of the
+magnetic field at the edge of the magnet.
 The extra bumps in the data at $\pm10$~mm arise from backgrounds originating upstream of the 
 converter.}}
 \label{fig:extrapol_converter}
 \end{figure*}
-The width is roughly consistent with between data and simulation with a shift in the bend-plane 
-coordinate for tracks in the bottom half which is likely due to alignment or incomplete description of the 
-magnetic field at the edge of the magnet. 
-There are two small bumps in the vertical position in the data arising from backgrounds 
-originating upstream of the converter verified using the run without a converter.
+%The width is roughly consistent with between data and simulation with a shift in the bend-plane 
+%coordinate for tracks in the bottom half which is likely due to alignment or incomplete description of the 
+%magnetic field at the edge of the magnet. 
+%There are two small bumps in the vertical position in the data arising from backgrounds 
+%originating upstream of the converter verified using the run without a converter.
 %The luminous region, inferred from harp scans of the photon beam profile, has a width of about 1~mm 
 %%(best described by a double Gaussian: $0.71e^{\frac{x}{0.366}}\times 0.29e^{\frac{x}{1.111}}$)
 %and a total beam envelope of around 7~mm. The small bumps in data at $\pm10$~mm 
@@ -113,6 +117,7 @@ originating upstream of the converter verified using the run without a converter
 %are roughly consistent with the expected distribution from an ideal geometry as shown by the simulated 
 %tracks in the same figures. The larger shift in the bend direction for bottom tracks 
 %is still under investigation. 
+
 With initial residuals less than $\sim 500~\mu$m across all layers of 
 the tracker and a reconstructed beam profile similar to that expected from simulation, it appears these survey techniques 
 are adequate to bootstrap the SVT alignment. 
