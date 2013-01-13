@@ -12,38 +12,39 @@ We assume that the experiment collects data for all of its available beam time a
 \hline
 Run & $E_{beam}$ (GeV) & Time (days) & Events ($\times 10^9$) & Raw data (TB) & Processed data (TB)\\
 \hline
-2014 & 1.1 & 21 & 33 & 120 & 455 \\
-2014 & 2.2 & 21 & 29 & 103 & 393  \\
+2014 & 1.1 & 21 & 33 & 100 & 455 \\
+2014 & 2.2 & 21 & 29 & 63 & 393  \\
 %2014 & 6.6 & 14 & 15 & 55 & 209  \\
 \hline
-Total & - & 42 & 62 & 223  & 848 \\
+Total & - & 42 & 62 & 163  & 848 \\
 \hline
 %2015 & 1.1 & 30 & 47 & 171 & 650 \\
-2015 & 2.2 & 35 & 48 & 172 & 655 \\
-2015 & 6.6 & 35 & 38 & 137 & 522 \\
+2015 & 2.2 & 35 & 48 & 105 & 655 \\
+2015 & 6.6 & 35 & 38 & 76 & 522 \\
 \hline
-Total & - & 70 & 86 & 309 & 1177 \\
+Total & - & 70 & 86 & 181 & 1177 \\
 \hline
 \end{tabular}
 \caption{{\small Summary of the raw and processed data expected from the HPS runs. }}
 \label{tab:data_volume}
 \end{table}
-The raw data must be processed to produce physics data objects that can be analyzed. This reconstruction process will also include filters to select events of physics interest. The event size on disk is summarized 
-in Table~\ref{tab:raw_data_size}. 
-\begin{table}[]
-\centering
-\begin{tabular}{|l|c|}
-\hline
-Type & Event size (kB) \\ 
-\hline
-Raw (EVIO)  &  3.6 \\
-\hline
-Reconstructed LCIO & 13.7 \\
-\hline
-\end{tabular}
-\caption{{\small Data event sizes. }}
-\label{tab:raw_data_size}
-\end{table}
+The raw data must be processed to produce physics data objects that can be analyzed. This reconstruction process will also include filters to select events of physics interest. We use the event size estimates in \ref{tab:data_rates} for raw data, and an event size of 13.7 kB for reconstructed data.
+
+%in Table~\ref{tab:raw_data_size}. 
+%\begin{table}[]
+%\centering
+%%\begin{tabular}{|l|c|}
+%\hline
+%Type & Event size (kB) \\ 
+%\hline
+%Raw (EVIO)  &  3.6 \\
+%\hline
+%Reconstructed LCIO & 13.7 \\
+%\hline
+%\end{tabular}
+%\caption{{\small Data event sizes. }}
+%\label{tab:raw_data_size}
+%\end{table}
 
 For modeling signals, estimating backgrounds and confirming the understanding of the detector 
 performance, extensive Monte Carlo simulation is needed. Table~\ref{tab:mc_event_size} summarizes 
@@ -120,7 +121,7 @@ In total approximately 1/10th of the number of data events collected need to be 
 In addition, 100 million A' events must be simulated at each of 10 mass points at each beam energy. This totals 2 billion A' events.
 
 % storage description
-In total 2035 (2730)~Tb of storage for data is needed for the 2014 (2015) run.
+In total 1975 (2602)~Tb of storage for data is needed for the 2014 (2015) run.
 %(17600+15800+12600)*86400*14/500000*383*1e6/1e12=42,6215
 %                     #events/bunches*size in Mb*1M/1T= 
 
@@ -144,11 +145,11 @@ The HPS storage requirements are summarized in Tab.~\ref{tab:datastorage}.
 \hline
 Storage category & 2014 (TB) & 2015 (TB) \\
 \hline
-Raw data & 203 & 436 \\
+Raw data & 163 & 181 \\
 Processed raw data & 774 & 1658 \\
 Simulated data & 1025 & 1776 \\
 \hline
-Total tape space & 2035 & 2730 \\
+Total tape space & 1975 & 2602 \\
 \hline
 %90days/42days*43Tb = 92Tb
 Disk space  & ???80???  & ???171??? \\
