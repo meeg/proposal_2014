@@ -1,12 +1,10 @@
 \label{sec:daq}
 
-The HPS experiment data acquisition (DAQ) and trigger system handles the acquisition of data and 
-generation and distribution of triggers for the three sub-detectors: the SVT, ECal and the Muon System. 
-HPS employs two DAQ architectures: the SVT is readout with 
+The HPS experiment data acquisition (DAQ) handles the acquisition of data and for the three sub-detectors: the SVT, ECal and the Muon System. HPS employs two DAQ architectures: the SVT is readout with 
 Advanced Telecom Communications Architecture (ATCA) hardware
-while the ECal and Muon System use VXS based hardware. The Level~1 trigger receives input from the 
-ECal and Muon system, and is distributed to all the detector systems to signal event 
-selection. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagram of the DAQ system.
+while the ECal and Muon system use VXS based hardware. The trigger system receives input from the 
+ECal and Muon System, and distributes a trigger signal to all three detector sub-systems to readout a selected  event. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagram of the DAQ system.
+
 
 \begin{figure*}[ht]
 %\includegraphics[ scale=0.25]{test2012/ecal_mounted.JPG}
@@ -17,36 +15,35 @@ selection. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagra
 
 For the ECal and Muon System, every VXS crate contains a Readout Controller (ROC) that collects digitized information, 
 processes it, and sends it on to the
-Event Builder. The ROC is the single blade Intel-based CPU module running DAQ software under CentOS Linux OS. 
-For the SVT ATCA system the ROC application runs on an embedded 
-processor contained on the ATCA COB.
+Event Builder. The ROC is a single blade Intel-based CPU module running DAQ software under CentOS Linux OS. 
+For the SVT ATCA system, the ROC application runs on an embedded 
+processor situated on the ATCA main board.
 The Event Builder assembles 
 information from the SVT, ECal and Muon System ROCs into a single 
-event which is passed to the Event Recorder, which in turn writes it to a data storage system capable of handling up to 100MBytes/s.
+event which is passed to the Event Recorder that writes it to a data storage system capable of handling up to 100~MB/s.
 The Event Builder and other 
-critical components run on multicore Intel-based multi-CPU servers. The backbone of the DAQ network system is a 
-Foundry router providing 1Gbit and 10Gbit connections between DAQ components and 
-the JLab computing facility. The SVT ROC, which must handle large data volumes, has a 10Gbit link to the Foundry router, while the 
-ROCs for the ECal and Muon System connect through a 1Gbit network switch. The long 
-term data storage is handled by a 10Gbit uplink to the JLab computing facility. 
+critical components run on multicore Intel-based multi-CPU servers. The DAQ network system is a 
+Foundry router providing high-speed connections between the DAQ components and 
+to the JLab computing facility. The SVT ROC, which must handle large data volumes, has a 10~Gbit/s link to the Foundry router, while a 1~Gbit/s link is adequate for the ECal and Muon System. A 10~Gbit/s uplink to the JLab computing facility is used for long-term storage.
 
-Section~\ref{sec:svt_daq} describes the SVT DAQ in more detail. The VXS based readout for 
-the ECal and muon detector is described in Sec.~\ref{sec:fadc_daq} and the trigger 
+Section~\ref{sec:svt_daq} describes the SVT DAQ in more detail while the VXS based readout for 
+the ECal and muon detector is described in Sec.~\ref{sec:fadc_daq}. The trigger 
 system is explained in more detail in Sec.~\ref{sec:triggerdaq}.
 
 \subsubsection{SVT Data Acquisition}
 \label{sec:svt_daq}
 The goal of the SVT DAQ is to support the continuous 40~MHz readout and processing of signals from 
-the 36 silicon strip sensors of the SVT and to select those events that were identified by the 
-Level 1 trigger system for transfer to the JLab DAQ for further event processing at rates 
+the 36 silicon strip sensors of the SVT. I also selects and transfers those events that were identified by the 
+trigger system to the JLab DAQ for further event processing at rates 
 close to 50~kHz. High data volumes result from high occupancy in the detector, pile-up from multiple bunches,
 and sampling pulse heights in six consecutive time buckets for each hit in order to facilitate 
 reconstruction of the hit time to high accuracy.
 
-The system adopted is an evolution of the SVT DAQ used for the HPS Test Run. Several features changed in
+The system adopted is an evolution of the SVT DAQ used for the HPS Test Run, described in 
+Sec.~\ref{sec:testrun_daq}. Several features changed in
 response to the new SVT design and the evolution of SLAC's ATCA system. The new SVT has nearly twice 
 the number of sensors as the Test Run detector, 
-necessitating a more compact way to transfer data and power to the individual sensor modules to the
+necessitating a more compact way to transfer data and power to the individual sensor modules through the
 vacuum flanges. Accordingly, the new system incorporates a front end board within the vacuum volume for 
 power distribution and signal digitization,
 allowing many fewer vacuum connections per sensor and less interference within the vacuum volume. 
@@ -99,7 +96,7 @@ Each section of the RTM connects to one of four FPGA units on the main ATCA boar
 the COB (Cluster On Board). Each FPGA is housed on a 
 separate daughter board called a Data Processing Module (DPM). The modular ATCA design permits the 
 HPS DAQ to re-use architecture and functionality from other DAQ system such as the ATLAS muon 
-system which components are similar to that used by HPS. Figure~\ref{fig:rtm_testrun} shows the boards designed and used for the HPS test.
+system which components are similar to that used by HPS. Figure~\ref{fig:rtm_testrun} shows the boards designed and used for the HPS Test run.
 In order to minimize the complexity of the system inside the vacuum chamber, all signal processing is 
 done at the DPM.  Each DPM receives the digitized signals 
 from the RTM, applies thresholds for data reduction and organizes the sample data 
@@ -115,8 +112,7 @@ The RCE receives and buffers UDP datagrams from the data and trigger DPMs and
  assembles them into full event frames. The RCE also runs an implementation of the JLab ROC application 
 that integrates the SVT event frames into the JLab DAQ 
  system described above. The RCE node transfers data to the JLab DAQ  
- through a 10~Gbit Ethernet backend interface. The maximum readout rate of the SVT is approximately 
-~50 kHz, limited by the APV25 readout rate. 
+ through a 10~Gbit/s Ethernet backend interface. The maximum readout rate of the SVT is approximately 50~kHz, limited by the APV25 readout rate. 
 %The maximum readout rate of the SVT DAQ  is limited by the readout time 
 %of the APV25 chip. Using overlapping trigger and readout functionality, where the 
 %APV25 chip can buffer up to 5 triggers, the maximum average readout rate expected for 
@@ -133,33 +129,30 @@ that integrates the SVT event frames into the JLab DAQ
 
 \subsubsection{ECal and Muon Detector FADC Readout}
 \label{sec:fadc_daq}
-The readout of the ECal and Muon System are essentially identical. For the ECal the signals from the APDs are 
-shaped and amplified as described in Sec.~\ref{sec:ecal}. For the Muon System, signals arise from phototubes recording scintillation light.
-Analog signals are feed to input of JLAB FADC250 VXS module, Figure.~\ref{fig:fadc}. Two 20-slot VXS crates are used to accommodate the two ECal 
-halves, each one with 221 channels, and one 20-slot VXS crate is used to readout the muon detector, total of 232 channels. 
+The readout of the ECal and Muon System are essentially identical. 
+The analog signals from the individual APD's of the ECal (shaped and amplified as described in Sec.~\ref{sec:ecal}) and phototubes of the Muon System are input to a single channel on the 16-channel JLab FADC250 VXS module (FADC), shown in Fig. ~\ref{fig:fadc}. 
+
+Three 20-slot VXS crates needed to accommodate the system: one for each half of the ECal with 221 channels and one for the muon detector with a total of 232 channels.
 
 \begin{figure}[t]
 \includegraphics[scale=0.5]{daq_trigger/figures/FADC250_Photo_001.jpg}
-\caption{\small{Jefferson Lab FADC250 VXS module.}}
+\caption{\small{A Jefferson Lab FADC250 VXS module.}}
 \label{fig:fadc}
 \end{figure}
 
-The FADCs store 12-bit digitized samples at 250 MHz in 8~$\mu$s deep pipelines. 
-When a trigger is received, the appropriate part of the pipeline is accessed. If an FADC   
-signal exceeds a predefined threshold within that time window, the time the signal passed threshold and the integrated
-amplitude of X=NSB number of samples before and Y=NSA number of samples after the trigger time (X and Y can be varied in the readout code), are recorded, see Figure \ref{fig:hps_trigger_data}. This data record significantly compactifies the input FADC data. During data analysis, a pedestal value is subtracted to obtain actual summed energy.
+The FADC store 12-bit digitized samples at 250~MHz in 8~$\mu$s deep pipelines. 
+When a trigger is received, the appropriate part of the pipeline is accessed. If a FADC   
+signal exceeds a predefined threshold within that time window, the integrated amplitude of a pre-defined  number of samples before (NSB) and after (NSA) the signal passed threshold in addition to the time are recorded as explained in Fig.~\ref{fig:hps_trigger_data}. This scheme significantly compresses the data input to the FADC. During data analysis, a pedestal value is subtracted to obtain the actual summed energy.
 
 %% Step %% The FADCs are an integral part of the HPS calorimeter trigger system. Energies  and times from each FADC channel in the same VXS crate are input to the crate trigger processor board (CTP) which groups adjacent channels with energy deposited into ``clusters,'' identifies the associated channels, andassigns an overall cluster energy. Clusters  from each CTP (one for the top half of the Ecal, one for the bottom) are combined in the sub-system processor module (SSP) which applies further selection criteria. Events with cluster combinations which pass the criteria are passed to the trigger supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the Ecal and the other systems. 
 
-The main characteristics of the Jefferson Lab Flash ADC are:
+The main characteristics of the FADC are:
 \begin{itemize}
-\item 12 bits digitizer with 250~Mbit/s, 
+\item 12-bit digitizer with 250~Mbit/s, 
 \item 50$\Omega$ termination input, 
-\item front-end input range:  -0.5V, -1V or -2V (the input range must be above the maximum pulse height to 
-ensure no signal clipping).
+\item front-end input range:  -0.5V, -1V or -2V (sufficient to avoid signal clipping for large pulse heights),
+\item nominal charge resolution between 10-39~fC per ADC (see Tab.~\ref{tab:charge_resolution}.
 \end{itemize}
-The FADC charge resolution as a function of the front-end input range is presented in 
-Tab.~\ref{tab:charge_resolution}.
 \begin{table}[h]
 \centering
 \begin{tabular}{|c|c|}
@@ -170,42 +163,36 @@ Input range & Nominal charge resolution\\
 -1.0 & 19.53  \\\hline
 -2.0 & 39.06 \\\hline
 \end{tabular}
-\caption{FADC charge resolution for different front-end input ranges.}
+\caption{Nominal FADC charge resolution for different front-end input ranges.}
 \label{tab:charge_resolution}
 \end{table}
-There are two FADC operation modes: the readout mode and trigger mode.
-FADC data paths for the readout and trigger operation are presented in Fig.~\ref{fig:hps_trigger_data}.
+The FADC will be operated in two modes, see Fig.~\ref{fig:hps_trigger_data}, that have different data paths:  the readout and trigger mode. 
+In readout mode, every FADC have the following parameters:
+ \begin{itemize}
+ \item the number of samples integrated before the signal crossed threshold (NSB), 
+ \item the number of samples integrated after the signal crossed threshold (NSA),
+ \item the readout threshold, measured in ADC counts.
+ \end{itemize}
+The number of samples for a given channel integration is the sum of NSB+NSA samples. It is a fixed gate width pulse integration with no pedestal subtraction where the sum is stored in a 17-bit register for readout (pedestal subtraction happens offline). 
 \begin{figure}[t]
 \includegraphics[scale=0.4]{daq_trigger/figures/hps_trigger_data}
 \caption{\small{FADC data paths}}
 \label{fig:hps_trigger_data}
 \end{figure}
-Parameters of the readout  mode for every FADC channel are the following (see 
-Fig.~\ref{fig:hps_trigger_data}, top panel):
- \begin{itemize}
- \item number of samples integrated before the threshold crossing (NSB), 
- \item number of samples integrated after the  threshold crossing (NSA),
- \item readout threshold, measured in ADC counts.
+
+In the trigger mode, every channel has, in addition to the NSB, NSA and the threshold for the readout mode:  \begin{itemize}
+% \item number of samples integrated before the threshold crossing (NSB),
+ %\item number of samples integrated after the  threshold crossing (NSA),
+ %\item trigger threshold, measured in ADC counts, 
+ \item a pedestal, 
+ \item a conversion factor (gain) that converts the ADC counts to energy in MeV (with 13 bits:  from 0 to 8191~MeV), 
+ \item an energy discriminator threshold.
  \end{itemize}
-The number of samples for a given channel integration is the sum of NSB+NSA samples. It is a fixed gate width pulse integration and there is no pedestal subtraction in the sum (pedestal subtraction happens offline). The sum will be stored in the 17-bit FADC register for readout. 
- 
-A block diagram of the FADC trigger processing is shown in Fig.~\ref{fig:hps_trigger_data}, bottom panel. 
-The trigger processing mode has the following parameters for every FADC channel:
- \begin{itemize}
- \item number of samples integrated before the threshold crossing (NSB),
- \item number of samples integrated after the  threshold crossing (NSA),
- \item trigger threshold, measured in ADC counts, 
- \item pedestal, 
- \item conversion factor (gain) that converts  ADC channel to MeV, from 0 to 8191 MeV, 13 bits, 
- \item energy discriminator (minimum energy cutoff).
- \end{itemize}
-The parameters NSB and NSA are the same as in the readout mode. The trigger threshold can be set independently from the readout threshold.
-The pedestal value is then subtracted from the integrated sum over NSB+NSA samples and this value is 
-converted to MeV units using the gain conversion factor. The energy can be discriminated to cut off low 
-energy pulses before reporting to the Crate Trigger Processor (CTP). 
-The value reported to the CTP is a 13-bit pulse energy and the time the pulse crossed the readout threshold. 
-Data for every channel is sent to the CTP every 32~ns (if there is no hit a 0 energy pulse is sent). 
-This sets a worst case double pulse resolution of 32~ns per channel, but it can be less than this if pulses occur in adjacent 32ns windows.
+Note that the threshold for the trigger mode can be set independently from the threshold used in readout mode.
+The pedestal value is subtracted from the integrated sum over NSB+NSA samples and 
+converted to MeV units using supplied gain conversion factor. The energy discriminator can be used to cut off low energy pulses before reporting to the Crate Trigger Processor (CTP). 
+The values reported to the CTP are the 13-bit pulse energy and the time at which the pulse crossed the threshold. 
+Data for every channel is sent to the CTP every 32~ns (if there is no hit a 0 energy pulse is sent) which sets a worst case double pulse resolution of 32~ns for individual channels, but less if pulses occur in adjacent 32ns windows.
 
 %See Sec.~\ref{sec:triggerdaq} below for more details on the operation of the trigger system.
 
