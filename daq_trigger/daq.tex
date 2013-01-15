@@ -180,7 +180,8 @@ The number of samples for a given channel integration is the sum of NSB+NSA samp
 \label{fig:hps_trigger_data}
 \end{figure}
 
-In the trigger mode, every channel has, in addition to the NSB, NSA and the threshold for the readout mode:  \begin{itemize}
+In the trigger mode, every channel has, in addition to the NSB, NSA and the threshold: 
+\begin{itemize}
 % \item number of samples integrated before the threshold crossing (NSB),
  %\item number of samples integrated after the  threshold crossing (NSA),
  %\item trigger threshold, measured in ADC counts, 
@@ -188,7 +189,7 @@ In the trigger mode, every channel has, in addition to the NSB, NSA and the thre
  \item a conversion factor (gain) that converts the ADC counts to energy in MeV (with 13 bits:  from 0 to 8191~MeV), 
  \item an energy discriminator threshold.
  \end{itemize}
-Note that the threshold for the trigger mode can be set independently from the threshold used in readout mode.
+Note that the threshold for the trigger mode can be set independently from the readout threshold.
 The pedestal value is subtracted from the integrated sum over NSB+NSA samples and 
 converted to MeV units using supplied gain conversion factor. The energy discriminator can be used to cut off low energy pulses before reporting to the Crate Trigger Processor (CTP). 
 The values reported to the CTP are the 13-bit pulse energy and the time at which the pulse crossed the threshold. 
