@@ -26,7 +26,7 @@
     }%
     $^{\ref{#1}}$%
 }
-%\usepackage[center]{background} 
+\usepackage{setspace} 
 %\SetBgContents{DRAFT}
 %\SetBgPosition{8.5cm,-11.5cm}
 %\backgroundsetup{contents=Confidential,color=blue!30}
@@ -69,11 +69,15 @@
 \date{\today}
 
 \begin{abstract}
-%\vspace{2.cm}
 \clearpage
+\begin{centerline}
+{\bf {\large ABASTRACT}}
+\vspace{0.5cm}
+\end{centerline}
+\begin{singlespace}
 
 The Heavy Photon Search (HPS) is an experiment proposed for Jefferson Laboratory to search for new heavy vector boson(s), aka “heavy photons” or “dark photons” or “hidden sector photons”, in the mass range of 20 MeV/c$^2$ to 1000 MeV/c$^2$. Such particles will arise if there are additional U(1) gauge bosons in nature, and they will couple, albeit weakly, to electric charge through kinetic mixing. Many BSM theories predict the existence of additional U(1)’s, and recent observations of high energy electrons and positrons in the cosmic rays may be the result of primordial dark matter annihilating into heavy photons. Since they couple to electrons, heavy photons are radiated in electron scattering and will subsequently decay into narrow $e^+e^ -$ resonances, observable above the copious QED trident background.  For suitably small couplings, heavy photons travel detectable distances before decaying, providing a second signature. HPS exploits both these signatures to search for heavy photons in virgin territory, over a wide range of couplings and masses, using a compact, large acceptance forward spectrometer. The first stage of HPS, the HPS Test Run, was approved by the Jefferson Lab PAC37 on January 14, 2011, after which it was proposed to DOE HEP for funding.  DOE approved it in late Spring 2011 and subsequently funded it. Construction, installation, and data taking followed; the Test Run was completed by late Spring 2012 at JLAB.  PAC39 reviewed HPS in June, 2012,  granted it an "A" rating, approved a commissioning run with electron beams, and granted approval (C1) of the full experiment contingent only on final approval from JLAB management. This proposal reviews the scientific motivation of HPS; describes the proposed apparatus, data acquisition system, and trigger; reviews the results of the HPS Test Run which demonstrated that the experiment is technically feasible and that electron beam backgrounds are well-understood; summarizes expected performance and experimental reach; and concludes with budget and schedule information and a proposed run plan. Preliminary schedules at Jefferson Laboratory admit time for an HPS commissioning run in Hall B in the Fall of 2014 and a data taking run beginning in Spring 2015. With final approval from JLAB management, and with timely DOE approval and funding, the HPS Collaboration can design, build, test, and commission HPS in time to take advantage of these scheduling opportunities, and begin in earnest its search for spectacular new physics at the Intensity Frontier.  
-
+\end{singlespace}
 \end{abstract}
 
 \maketitle
@@ -128,7 +132,7 @@ The Heavy Photon Search (HPS) is an experiment proposed for Jefferson Laboratory
 \input{performance/performance}
 
 \clearpage
-
+\input{reach/reach}
 
 %\clearpage
 
@@ -139,11 +143,14 @@ The Heavy Photon Search (HPS) is an experiment proposed for Jefferson Laboratory
 \section{Schedule and Cost Baseline}
 \input{cost_schedule/schedulecost}
 
-\input{bibl}
-
 
 \clearpage
 
 \input{appendix/appendix}
+
+\clearpage
+
+\input{bibl}
+
 
 \end{document}

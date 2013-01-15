@@ -1,0 +1,46 @@
+\section{Apendix II: Production and Decay of the $A^\prime$}
+\label{app:ProdAndDecay}
+
+\def \ap {A^\prime}
+\def \map {m_{A^\prime}}
+\def \thap {\theta_{A^\prime}}
+
+
+$\ap$ particles are generated in electron collisions on a fixed target by a process analogous to ordinary photon bremsstrahlung, see Figure \ref{fig:apdiagram}.  This can be reliably estimated in the Weizsäcker-Williams approximation (see [1-4]).  When the incoming electron has energy E0, the differential cross-section to produce an $\ap$ of mass $m_{\ap}$ with energy $E_{\ap}\equiv x E_0$ is 
+\begin{equation}
+\frac{d\sigma}{dxd\cos{\theta_{\ap}}}\approx \frac{8Z^2\alpha^3\epsilon^2 E_0^2 x}{U^2}\tilde{\chi}\times\left[\left(1-x+\frac{x^2}{2}\right)-\frac{x(1-x)m_{\ap}^2E_0^2x\theta_{\ap}^2}{U^2}\right]
+\end{equation}
+where Z is the atomic number of the target atoms, $\alpha = 1/137$,  is the angle in the lab frame between the emitted A' and the incoming electron, 
+\begin{equation}
+U(x,\theta_{\ap})=E_0^2x\theta_{\ap}^2+m_{\ap}^2\frac{1-x}{x}+m_e^2x
+\end{equation}
+is the virtuality of the intermediate electron in initial-state bremsstrahlung, and  is the Weizsacker-Williams effective photon flux, with an overall factor of  removed.  The form of  and its dependence on the $\ap$ mass, beam energy, and target nucleus are discussed in \ref{something}.  For HPS with $E_0$ = 6.6 GeV, we find $\tilde{\chi}\sim 7 (4, 1)$ for $m_{\ap}$ = 100 (200, 500) MeV/$c^2$.
+The above results are valid for 
+\begin{equation}
+m_e\ll m_{\ap}\ll E_0  , ~~ x\theta_{\ap}^2\ll 1.
+\end{equation}
+For $m_e\ll m_{\ap}$, the angular integration gives
+\begin{equation}
+\frac{d\sigma}{dx}\approx \frac{8Z^2\alpha^3\epsilon^2 x}{m_{\ap}^2}\left(1+\frac{x^2}{3(1-x)}\right)\tilde{\chi} .
+\end{equation}
+
+Assuming the $\ap$ decays into Standard Model particles rather than exotic, it's boosted lifetime is
+\begin{equation}
+l_0 \equiv \gamma c\tau \approx \frac{0.8 cm}{N_{eff}} \left(\frac{E_0}{10 GeV}\right)\left(\frac{10^{-4}}{\epsilon}\right)^2\left(\frac{100 MeV}{\map}\right)^2,
+\end{equation}
+where we have neglected phase-space corrections, and $N_{eff}$ counts the number of available decay channels.  If the $\ap$ couples only to electrons, then $N_{eff}=1$.  If the $\ap$ mixes kinetically with the photon, the $N_{eff}=1$ for $\map < 2m_\mu$ and $2+R(\map)$ for $\map \geq 2 m_\mu$, where \cite{eehadrons}
+\begin{equation}
+R  =\left. \frac{\sigma(e^+e^-\rarr hadrons)}{\sigma (e^+e^- \rarr \mu^2\mu^-)}\right|_{E=\map} . 
+\end{equation} 
+For th ranges of $\epsilon$ and $\map$ probed by this experiment, the mean decay length $l_0$ can be prompt or as large as tens of centimeters.  
+
+The total number of $ap$ produced when $N_e$ electrons scatter in a target of $T\ll 1 $ radiation lengths is
+\begin{equation}
+N\sim N_e\frac{N_0 X_0}{A}T\frac{Z^2\alpha^2\epsilon^2}{\map^2}\tilde{\chi}\sim N_e C T \frac{\epsilon m_e^2}{\map^2},
+\end{equation}
+where $X_0$ is the radiation length of the target in g/cm$^2$, $N_0 \approx 6\times 10^{23} mole^{-1}$ is Avogadro's number, and $A$ is the target atomic mass in g/mole.  The numerical factor $C\approx 5$ is logarithmically dependent on the choice of nucleus (at least in the range of masses where the form-factor is only slowly varying) and on $\map$, because, roughly, $X_0 \propto \frac{A}{Z^2}$ (see \cite{Kim:1973he, Essig:2010xa,Bjorken:2009mm}).  For a Coulomb of incident
+electrons, the total number of $\ap$s produced is given by
+\begin{equation}
+N\sim 10^5 \left(\frac{N_e}{1 C}\right)\tilde{\chi}\left(\frac{T}{0.1}\right)\left(\frac{\epsilon}{10^{-4}}\right)^2\left(\frac{100 MeV}{\map}\right)^2.
+\end{equation}
+
