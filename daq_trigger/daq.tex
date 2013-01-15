@@ -33,7 +33,7 @@ system is explained in more detail in Sec.~\ref{sec:triggerdaq}.
 \subsubsection{SVT Data Acquisition}
 \label{sec:svt_daq}
 The goal of the SVT DAQ is to support the continuous 40~MHz readout and processing of signals from 
-the 36 silicon strip sensors of the SVT. I also selects and transfers those events that were identified by the 
+the 36 silicon strip sensors of the SVT. It also selects and transfers those events that were identified by the 
 trigger system to the JLab DAQ for further event processing at rates 
 close to 50~kHz. High data volumes result from high occupancy in the detector, pile-up from multiple bunches,
 and sampling pulse heights in six consecutive time buckets for each hit in order to facilitate 
@@ -166,8 +166,9 @@ Input range & Nominal charge resolution\\
 \caption{Nominal FADC charge resolution for different front-end input ranges.}
 \label{tab:charge_resolution}
 \end{table}
-The FADC will be operated in two modes, see Fig.~\ref{fig:hps_trigger_data}, that have different data paths:  the readout and trigger mode. 
-In readout mode, every FADC have the following parameters:
+The FADC has two parallel data paths, shown in Fig.~\ref{fig:hps_trigger_data}: the readout and trigger paths. The trigger path runs continuously to report hits to the trigger system. The readout path only reports hits to the DAQ when the FADC receives a trigger.
+
+For the readout path, every FADC has the following parameters:
  \begin{itemize}
  \item the number of samples integrated before the signal crossed threshold (NSB), 
  \item the number of samples integrated after the signal crossed threshold (NSA),
@@ -180,16 +181,16 @@ The number of samples for a given channel integration is the sum of NSB+NSA samp
 \label{fig:hps_trigger_data}
 \end{figure}
 
-In the trigger mode, every channel has, in addition to the NSB, NSA and the threshold: 
+For the trigger path, every channel has, in addition to NSB and NSA: 
 \begin{itemize}
 % \item number of samples integrated before the threshold crossing (NSB),
  %\item number of samples integrated after the  threshold crossing (NSA),
- %\item trigger threshold, measured in ADC counts, 
+ \item trigger threshold, measured in ADC counts, 
  \item a pedestal, 
  \item a conversion factor (gain) that converts the ADC counts to energy in MeV (with 13 bits:  from 0 to 8191~MeV), 
- \item an energy discriminator threshold.
+ \item an energy discriminator threshold (minimum energy cutoff).
  \end{itemize}
-Note that the threshold for the trigger mode can be set independently from the readout threshold.
+Note that the threshold for the trigger path can be set independently from the readout threshold.
 The pedestal value is subtracted from the integrated sum over NSB+NSA samples and 
 converted to MeV units using supplied gain conversion factor. The energy discriminator can be used to cut off low energy pulses before reporting to the Crate Trigger Processor (CTP). 
 The values reported to the CTP are the 13-bit pulse energy and the time at which the pulse crossed the threshold. 
