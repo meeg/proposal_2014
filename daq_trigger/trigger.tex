@@ -3,7 +3,7 @@
 
 
 The proposed trigger system is nearly deadtimeless. 
- The trigger logic will search for a time coincidence between two clusters in opposite halves of ECal for ($e^+e^-$) trigger and two MIP signatures in opposite halves of ECal and at least in the first 2 layers of the muon hodoscopes for ($\mu^+\mu^-$) trigger. The coincidence time window is programmable with 4ns resolution. The maximum trigger decision time (latency) is currently set to 3 $\mu$s for Level 1. That value is defined by the SVT readout APV25 chip.
+The trigger logic will search for a time coincidence between two clusters in opposite halves of the ECal for ($e^+e^-$) trigger and two MIP signatures in opposite halves of ECal and at least in the first 2 layers of the muon hodoscopes for ($\mu^+\mu^-$) trigger. The coincidence time window is programmable with 4ns resolution. The maximum trigger decision time (latency) is currently set to 3 $\mu$s for Level 1. That value is defined by the SVT readout APV25 chip.
 
 The Trigger Supervisor generates all necessary signals, and controls the entire DAQ system readout through the Trigger Interface units. The Trigger Interface (TI) units installed in every crate participate in the readout process. The trigger supervisor can apply deadtime if necessary, for example on a 'busy' or 'full' condition from front-end electronics. The system is free-running and driven by a 250MHz global clock. The maximum trigger accept rate is 50 KHz.
 
