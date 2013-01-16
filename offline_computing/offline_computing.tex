@@ -67,77 +67,23 @@ A'+beam bkg & MC output	& 82.0	& 10	\\
 \label{tab:mc_event_size}
 \end{table}
 
-%\begin{table}[]
-%\centering
-%\begin{tabular}{|lccc|}
-%\hline
-%Event type & Sim. stage & Size/500k bunches (MB) & Mass points  \\
-%\hline 
-%A' signal & evgen & 22 & 10  \\
-%Beam bkg. (incl. brems. events) & evgen & 331 & -\\ 
-%Trident bkg. & evgen & 139 & - \\
-%\hline
-%Total & evgen & 431 & -\\
-%\hline
-%A' signal & Merged evgen & 134 & 10 \\
-%Beam bkg. & Merged evgen & 141 & - \\ 
-%Trident bkg. & Merged evgen & 134 & - \\
-%Beam+trident bkg. overlay & Merged evgen & 187 & - \\ 
-%A'+Beam+trident bkg. overlay & Merged evgen & 233 & 10 \\ 
-%\hline
-%Total & Merged evgen & 829 & - \\
-%\hline
-%A' signal & Reco. LCIO  & 284 & 10 \\
-%Beam bkg. & Reco. LCIO  & 366 & - \\ 
-%Trident bkg. & Reco. LCIO  & ???284??? & - \\
-%Beam+trident bkg. overlay & Reco. LCIO  & 379 & - \\ 
-%A'+Beam+trident bkg. overlay & Reco. LCIO  & 383 & 10 \\ 
-%\hline
-%Total & Reco. LCIO  & ??? & - \\
-%\hline
-%\end{tabular}
-%\caption{{\small Event sizes in MB per 500k simulated bunches. }}
-%\label{tab:mc_event_size}
-%\end{table}
-%LCIO
-%Beam bkg plus trident: 379 Mb per 500,000 bunches
-%Beam: 366 Mb per 500,000 bunches
-%AP/Beam/Trident: 383 Mb per 500,000 bunches at 7 different masses
-%Ap: 284 Mb per 500,000
-%
-%Merged StdHep:
-%Beam bkg plus trident: 187 Mb per 500,000 bunches
-%Beam: 141 Mb per 500,000 bunches
-%AP/Beam/Trident: 233 Mb per 500,000 bunches at 10 different masses
-%Ap: 134 Mb per 500,000 bunches at 10 different ap masses
-%Trident: 134 Mb per 500,000 bunches
-%
-%Raw StdHep: 
-%Ap: 22 Mb per 500,000 bunches at 10 different ap masses
-%Beam: 270 Mb per 500,000 bunches + an additional 61 Mb for brem events (500,000?)
-%Trident: 139 Mb per 500,000 bunches
 In total approximately 1/10th of the number of data events collected need to be simulated. For the 2014 run this amounts to 8.0 billion events.
 In addition, 100 million A' events must be simulated at each of 10 mass points at each beam energy. 
 This totals 2 billion A' events in each of 2014 and 2015, assuming that changes in running conditions prevent us from using the same simulated data set for both 2.2 GeV run periods.
 
-% storage description
 In total 2324 (2935)~Tb of storage for data is needed for the 2014 (2015) run.
-%(17600+15800+12600)*86400*14/500000*383*1e6/1e12=42,6215
-%                     #events/bunches*size in Mb*1M/1T= 
 
 Tape is currently the only economical storage
 solution for storing all of the raw, simulated and processed data.
-The processing of the raw data is foreseen to occur at JLAB. Given a
+The processing of the raw data is foreseen to occur at JLab. Given a
 typical bandwidth between sites of 3 to 4 Tb/day, analyses needing
-access to the hit level information will need to be run at JLAB or run
+access to the hit level information will need to be run at JLab or run
 on small samples of exported data unless they can take advantage of the
 analysis streams. Analysis streams of events satisfying
 pre-selections criteria for targeted analyses will be exported to remote
-sites. Likewise, the simulated data is foreseen to be processed at the
-remote sites and the equivalent analysis streams for the simulated data
-will be used for sharing among the sites. In addition, disk space will be 
-needed for ntuples, code releases, and scratch areas and approximately 10\% of the 
-processed data. To accommodate this, 290(367)~TB will be needed for the 2014 (2015) run. 
+sites. Likewise, the simulated data is foreseen to be processed JLab
+and the equivalent analysis streams for the simulated data
+will be used for sharing among the sites.
 The HPS storage requirements are summarized in Tab.~\ref{tab:datastorage}.
 \begin{table}[tbp]
 \centering
@@ -151,26 +97,22 @@ Simulated data & 1176 & 1596 \\
 \hline
 Total tape space & 2324 & 2935 \\
 \hline
-%90days/42days*43Tb = 92Tb
-Disk space  & 290  & 367 \\
-\hline
 \end{tabular}
 \caption{{\small Data storage summary.}}
 \label{tab:datastorage}
 \end{table}
-%(17600+15800+12600)*86400*14=55641600000 events
-%(17600+15800+12600)*86400*14*0.1/3600}=1545600 cpu hours
 
+In addition, disk space will be 
+needed for ntuples, code releases, and scratch areas, as well as staging data being written to or read from tape. {\color{red} Size of requirement here?}
 
-%cpu requirements
 Approximately 0.1~CPU seconds are needed to reconstruct a data event on 
 a typical 2.4~GHz core. This would require a total of 2.2 million CPU hours of processing for the 
 entire 2014 dataset at the JLab processing center.  To simulate events, approximately 0.02 CPU seconds 
 are needed for a beam event and approximately 0.7 seconds for an A' event. In total 9.8 million CPU hours are needed for Monte Carlo 
 simulation for the 2014 run. 
 Based on experience with previous experiments, it is reasonable to estimate that the net CPU needed for 
-analysis work (batch and interactive) will be comparable to that needed for production. {\color{red} We expect 
-that this will be shared relatively evenly between JLab and SLAC.} The HPS offline computing requirements 
+analysis work (batch and interactive) will be comparable to that needed for production. 
+The HPS offline computing requirements 
 are summarized in Tab.~\ref{tab:computing}.
 \begin{table}[tbp]
 \centering
@@ -187,3 +129,6 @@ Total ($\times 10^{6}$~CPUh) & 12.0 & 15.0 \\
 \caption{{\small Computing needs summary.}}
 \label{tab:computing}
 \end{table}
+
+The Jefferson Lab Computing Center provides computing and storage for experiments at JLab. 
+A request will be submitted for data storage (tape and disk), computing resources (CPU hours for simulation and production), and data transfers to/from JLab.
