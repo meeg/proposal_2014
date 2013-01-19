@@ -1,6 +1,3 @@
-\def\etal{{\it et al.\/}}
-
-
 We use the HPS detector simulation system based on SLAC's org.lcsim infrastructure for full GEANT4
 simulation of the passage and interaction of charged and neutral particles through the SVT 
 and the ECal to the muon detector. In the SVT, it creates realistic energy deposits in the silicon 
@@ -40,7 +37,7 @@ To resolve this disagreement, we proposed a test run, and the outcome of the tes
 in the previous section. The algorithms used 
 in the codes to simulate the multiple scattering have been studied, and the findings are summarized in
 Appendix. The test run result and the algorithm studies have concluded that EGS5 can describe the multiple scattering 
-tails more correctly than GEANT4. All the electromagnetic interactions in the target are simulated using EGS5.   
+tails more accurately than GEANT4. All the electromagnetic interactions in the target are simulated with EGS5.   
 
 When bound electrons in the target are ionized by incoming electrons or secondary photons, outer 
 shell electron will fill the vacancy and characteristic X-rays are emitted. 
@@ -67,8 +64,8 @@ M-shell  & 2 & 20000 & 0.02 & 0.2 & 0.1 \\ \hline
 \label{tab:xray}
 \end{table}
 
-Hadrons are also produced in the target. The hadron production is at least three order
-of magnitude smaller than the electromagnetic interaction. The polar angle of the hadron productions
+Hadrons are also produced in the target. Hadron production is at least three order
+of magnitude smaller than the electromagnetic interaction. The polar angle for hadron production
 is predominantly at larger than 100 mrad, whereas the HPS detector acceptance is limited to less than
 100 mrad. Furthermore, the hadron energy spectrum is soft as they are produced from the 1/k bremsstrahlung
 spectrum and more than 90\% of the hadrons are swept away by the analysing magnet before reaching the ECal.
@@ -83,9 +80,9 @@ $$ \sigma (eA \rightarrow X) = \int \sigma_k(\gamma A \rightarrow X) dn(k), $$
 where $dn(k)$ is the number of equivalent photons with energy $k$ \cite{budnev} and there are 
 approximately $8 \times 10^{10} $ photons/sec in 6.6 GeV 100 nA beam. 
 Table \ref{tab:pion} summarizes the pion single rates from 1\% $X_0$ Tungsten target
-and 6.6 GeV 100 nA beam. While the pion production is higher in GEANT4, the energy spectrum is softer and
-consequently the single rate of pions reaching the ECal is lower in GEANT4. While the pions look like a minimum 
-ionizing particle in the ECal most of the time, they can deposit a significant energy when ${\pi^0}$ are
+and 6.6 GeV 100 nA beam. While pion production is larger in GEANT4, the energy spectrum is softer and
+consequently the single rate of pions reaching the ECal is lower in GEANT4. While pions look like a minimum 
+ionizing particle in the ECal most of the time, they can deposit significant energy when ${\pi^0}$ are
 produced in the ECal crystals, and together with the beam background, they contribute accidental coincident triggers. 
 
 \begin{table}[h]
@@ -114,16 +111,16 @@ the SVT occupancy is negligible. It is expected that behavior of the 12 GeV mach
 understood at the same level.
 
 \item
-Synchrotron radiations
+Synchrotron radiation
 
-Synchrotron radiations are produced from the last dipole magnet in the beam line in the vertical 
+Synchrotron radiation is produced from the last dipole magnet in the beam line in the vertical 
 plane, and from the chicane magnets in the horizontal plane. Since the characteristic energy is 
-proportional to $E_{beam}^2$, synchrotron radiations are of concern 
+proportional to $E_{beam}^2$, synchrotron radiation is of concern 
 only at 6.6 GeV. The characteristic energy ($k_c$),
-the average energy ($k_{ave}$), and the power of synchrotron radiations are summarized in 
+the average energy ($k_{ave}$), and the power of the synchrotron radiation is summarized in 
 Table \ref{tab:sync}.
-None of the radiations from the last dipole will enter the HPS detector as the radiations will be intersected 
-by the beamline collimator. The radiations from the chicane magnets are in the dead zone, and
+None of the radiation from the last dipole will enter the HPS detector as the radiation will be intersected 
+by the beamline collimator. The radiation from the chicane magnets is in the dead zone, and
 none of the detector components are designed to intersect the beam plane.   
 
 \begin{table}[h]
@@ -156,17 +153,17 @@ is expected.
 Figure \ref{fig:scatt} shows the distribution of charged particle hits in Si tracker layer 1 
 which is located 
 10 cm from the target. The beam energy is 6.6 GeV, and the target thickness is 
-0.25\% $X_0$. Multiple Coulomb scattered beam electrons are confined within 0.5 cm of the beam axis
+0.25\% $X_0$. Multiple Coulomb scattered beam electrons are confined to within 0.5 cm of the beam axis
 (x=y=0), while the low energy M{\o}ller electrons are distributed in a parabolic shape. There are
 very few positrons. From these distributions, the detector occupancy in the horizontal Si strip
 sensor in the 8 ns time window is calculated for a 400 nA beam current and five different target
-thicknesses, 1.0\% $X_0$, 0.5\% $X_0$, 0.25\% $X_0$, 0.1\% $X_0$, and 0.05\% $X_0$, and is shown
+thicknesses, 1.0\% $X_0$, 0.5\% $X_0$, 0.25\% $X_0$, 0.1\% $X_0$, and 0.05\% $X_0$, as shown
 in Figure \ref{fig:occup}. 
 %As described in Section xx, the dead zone is defined by using a criterion that the maximum occupancy in Layer 1 is 1\%. 
 For a 0.25\% $X_0$ target and 430 nA beam, the occupancy is 
 1\% at a distance of 1.5mm from the beam in Layer 1, which corresponds to a dead zone of $\pm$ 15
 mrad. As long as the product of target thickness (T) and beam current (I) is constant, the same 
-$A'$ production rate is maintained. Since the multiple scattering and hence the effective beam size 
+$A'$ production rate is maintained. Since multiple scattering and hence the effective beam size 
 is reduced in a thinner target, it is advantageous to use a thinner target and a higher current.
 Using the constraint that the occupancy is 1\% at 15 mrad, we find the beam current $I$ which 
 gives this occupancy for each of several potential target thicknesses $T$. The quantity 
