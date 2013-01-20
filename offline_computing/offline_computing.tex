@@ -81,9 +81,14 @@ access to the hit level information will need to be run at JLab or run
 on small samples of exported data unless they can take advantage of the
 analysis streams. Analysis streams of events satisfying
 pre-selections criteria for targeted analyses will be exported to remote
-sites. Likewise, the simulated data is foreseen to be processed JLab
-and the equivalent analysis streams for the simulated data
-will be used for sharing among the sites.
+sites. Likewise, the size of the simulated data samples suggests that
+the simulation should be processed and stored at JLAB and that 
+only analysis streams or small samples of the full data will be
+exported.
+Disk space at JLAB and SLAC will be 
+needed for ntuples, code releases, and scratch areas. Additionally, disk space at SLAC will be needed for the imported analysis streams. It is estimated that
+100 TBytes will accomodate the needs for for the 2014 data analysis work
+and an additional 100 TBytes would be needed for 2015.
 The HPS storage requirements are summarized in Tab.~\ref{tab:datastorage}.
 \begin{table}[tbp]
 \centering
@@ -96,6 +101,8 @@ Processed raw data & 938 & 1094 \\
 Simulated data & 1176 & 1596 \\
 \hline
 Total tape space & 2324 & 2935 \\
+\hline
+Disk space  & 100  & 100 \\
 \hline
 \end{tabular}
 \caption{{\small Data storage summary.}}
