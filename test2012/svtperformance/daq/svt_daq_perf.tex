@@ -43,15 +43,16 @@ The observed occupancy expected for each of the converter thicknesses along with
 corresponding data rate are shown on Figure~\ref{fig:data_rates}.
 \begin{figure}[h]
     \begin{center}
-    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/n_dead_channels.pdf}
+    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/n_dead_channels_v2.pdf}
     	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/data_rates.pdf}
         \caption{
-                    The plot on the left shows the percentage of bad/noisy channels observed
-                    during each of the runs (green) along with the number of noisy/misconfigured 
-                    readout chips (blue).  Most of the noisy channels present during runs were
-                    due to misconfigured chips.  The  plot on the right shows the occupancies (blue)
-                    and data rates (black) observed for each of the targets used.  Once all noisy channels
-                    are masked, the observed data rates agree well with those predicted by the
+                    The plots on the left shows the percentage of bad/noisy channels observed
+                    during each of the runs (top left) along with the number of noisy/misconfigured 
+                    readout chips (bottom left).  Most of the noisy channels present during runs were
+                    due to misconfigured chips.  The  plots on the right shows the occupancies (top right)
+                    and data rates (bottom right) observed for each of the targets used before and after 
+                    noisy channels were masked. Once all noisy channels
+                    were masked, the observed data rates agree well with those predicted by the
                     SVT readout simulation. 
                 } 
 	\label{fig:data_rates}

@@ -16,14 +16,13 @@ SVT layers. The resulting track was then extrapolated to the layer omitted
 \begin{figure}[h]
         % TODO: Need to update the plot so that Layer 2 on the bottom doesn't 
         % look terrible. It's probably easiest to just remove the point altogether.
-    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_layer.pdf}
+    	\includegraphics[width=0.95\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_layer.pdf}
     	%\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
         \caption{{\small
-                    Average hit efficiency
+                    Average hit efficiency, excluding known bad channels, 
                     from all dedicated photon runs as a function of layer
-                    number.  Excluding known bad channels, the hit efficiency
-                    is greater than 96\% except for a known bad layer.
-                                    }} 
+                    number.  
+                }} 
 	\label{fig:hit_track_efficiency}
 \end{figure}
 from the fit. If the track was found to lie within the sensitive volume
@@ -33,14 +32,15 @@ conducted.  The hit efficiency was then determined as
     \varepsilon_{\mbox{hit efficiency}} = \frac{\mbox{Tracks with hit on missing layer}}
                                             {\mbox{Tracks within layer acceptance}}.
 \]
-The hit efficiencies per layer were calculated using all dedicated runs. As 
+The hit efficiencies per layer were calculated using all dedicated runs. It must 
+be noted that those tracks found to intersect bad channels as well as those that 
+lie on the sensor edges were excluded from the calculation. As 
 can be seen from Figure~\ref{fig:hit_track_efficiency}, the average hit efficiency
-per layer was found to be greater than
-95\% for the top SVT volume and greater than 92\% for the bottom volume.  The 
-larger hit inefficiencies observed for some layers was simply due to the 
-sensors composing the layer having a greater number of noisy channels.
-% The single hit efficiencies need to be updated to reflect changes that were 
-% made to the tracking code
+per layer was found to be $\approx$ 99\%. 
+
+%95\% for the top SVT volume and greater than 92\% for the bottom volume.  The 
+%larger hit inefficiencies observed for some layers was simply due to the 
+%sensors composing the layer having a greater number of noisy channels.
 
 %As mentioned above, the standard pattern recognition algorithm is designed to 
 %find tracks using the reconstructed stereo hits.  A set of tracking strategies
@@ -83,7 +83,7 @@ Figure~\ref{fig:vz_position}.
 	\label{fig:vz_position}
     \end{center}
 \end{figure}
-Because of the geometric setup of the SVT, observation of pairs produced by
+The positioning of the test run SVT layers was such that observation of pairs produced by
 the incident photon required both electrons to experience a hard scatter
 within the target.  This results in a broadening of the Gaussian 
 distributed reconstructed vertex position. 
