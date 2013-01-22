@@ -1,8 +1,8 @@
 We use the HPS detector simulation system based on SLAC's org.lcsim infrastructure for full GEANT4
 simulation of the passage and interaction of charged and neutral particles through the SVT 
-and the ECal to the muon detector. In the SVT, it creates realistic energy deposits in the silicon 
+and the ECal to the muon detector. In the SVT, the simulation creates realistic energy deposits in the silicon 
 microstrip detectors, accounts for dead material, simulates APV25 signal sampling every 25 ns, 
-creates clusters, and peforms track finding and reconstruction.
+creates clusters, and performs track finding and reconstruction.
 In the ECal, the geometry for the flange and vacuum chamber is based on a tessellated 
 representation imported directly from the CAD drawings. It creates energy deposits in individual 
 trapezoidal-shape $PbWO_4$ crystals, simulates FADC signal time evolution and sampling every 4 ns, and 
@@ -33,23 +33,24 @@ these backgrounds. In the original HPS proposal to JLab PAC37 \cite{HPS_PROP}, w
 disagreement between these tools. GEANT4 predicted a broader angular
 distribution of multiple scattered electrons than EGS5, resulting in twice the occupancy in the
 tracker near the dead zone and much higher ECal trigger rates. 
-To resolve this disagreement, we proposed a test run, and the outcome of the test run is described 
+The HPS Test run was motivated in part by the need to resolve this discrepancy, and the outcome of the test run is described 
 in the previous section. The algorithms used 
 in the codes to simulate the multiple scattering have been studied, and the findings are summarized in
-Appendix. The test run result and the algorithm studies have concluded that EGS5 can describe the multiple scattering 
+Appendix \ref{app:sim}. The test run result and the algorithm studies have confirmed that EGS5 can describe the multiple scattering 
 tails more accurately than GEANT4. All the electromagnetic interactions in the target are simulated with EGS5.   
 
 When bound electrons in the target are ionized by incoming electrons or secondary photons, outer 
-shell electron will fill the vacancy and characteristic X-rays are emitted. 
+shell electrons will fill the vacancy and characteristic X-rays are emitted. 
 These X-rays can contribute background hits in
 the SVT when a conversion takes place in the silicon sensors via the photoelectric effect 
-or pair production. While the X-ray production is simulated in EGS5, the X-ray intensity at SVT layer 1
+or pair production. While the X-ray production is not simulated in EGS5, the X-ray intensity at SVT layer 1
 can be estimated using  the impact ionization 
 cross section, $\sigma_I$, \cite{hoffmann}, the fluorescence yield, $\omega$, \cite{hubbell},
 the photoabsorption length in Tungsten, $\lambda_W$, to account for the self-absorption, and the solid 
 angle of the SVT layer 1.
 Table \ref{tab:xray} summarizes these parameters and the expected X-ray
 fluxes at SVT Layer 1 for 0.25\% $X_0$ Tungsten and 100 nA beam current in 8 nsec time window. 
+X-ray backgrounds are not a concern.
 
 \begin{table}[h]
 \begin{center}
@@ -66,10 +67,10 @@ M-shell  & 2 & 20000 & 0.02 & 0.2 & 0.1 \\ \hline
 
 Hadrons are also produced in the target. Hadron production is at least three orders
 of magnitude smaller than the electromagnetic interaction. The polar angle for hadron production
-is predominantly at larger than 100 mrad, whereas the HPS detector acceptance is limited to less than
+is predominantly larger than 100 mrad, whereas the HPS detector acceptance is limited to less than
 100 mrad. Furthermore, the hadron energy spectrum is soft as they are produced from the 1/k bremsstrahlung
 spectrum and more than 90\% of the hadrons are swept away by the analysing magnet before reaching the ECal.
- The hadron production is simulated using GEANT4 and FLUKA. In the target thinner than
+ The hadron production is simulated using GEANT4 and FLUKA. In a target thinner than
 about 5\% $X_0$, the ``virtual'' photon interaction is dominant \cite{mohring}. The inclusive hadron
 production ${\sigma (eA\rightarrow X)}$ is simulated from the photonuclear process ${\sigma (\gamma A
 \rightarrow X)}$ using the equivalent photon approximation,
@@ -143,8 +144,7 @@ EM induced backgrounds
 Electromagnetic fields induced by the high intensity beam could interfere with the SVT and its electronics
 as the detector is located as close as 0.5 mm from the beam. We have evaluated the direct beam field and its wake 
 field, the diffraction radiations from the beamline apertures, and the transition radiations from
-the target. The intensities of these EM induced backgrounds are small and no interference with the SVT
-is expected.
+the target. The intensities of these EM induced backgrounds are small and no interference with the SVT is expected. he beam charge per 2ns CEBAF bunch is only ~few thousand electrons, many orders of magnitude lower than that in other experiments which have chosen to shield against it.
  
 \end{itemize}
 

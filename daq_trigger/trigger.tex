@@ -2,7 +2,7 @@
 %\subsubsection{ECal Trigger overview}
 
 The trigger system is designed to efficiently select e$^{+}$e$^{-}$ and $\mu^{+}\mu^{-}$ events by 
-using information from the ECal and Muon System. For e$^{+}$e$^{-}$ events, the trigger looks for time coincidences of clusters in the top and bottom half of the ECal. The clusters also has to satisfy loose topological selections optimized on A$^{\prime}$ events to further reduce the rate. For $\mu^{+}\mu^{-}$ events, signals from at least the first two layers of the muon hodoscopes are combined with an ECal signal consistent with a minimum ionizing particle (MIP). 
+using information from the ECal and Muon System. For e$^{+}$e$^{-}$ events, the trigger looks for time coincidences of clusters in the top and bottom half of the ECal. The clusters also have to satisfy loose topological selections optimized on A$^{\prime}$ events to further reduce the rate. For $\mu^{+}\mu^{-}$ events, signals from at least the first two layers of the muon hodoscopes are combined with an ECal signal consistent with a minimum ionizing particle (MIP). 
 
 As described above in Sec.~\ref{sec:fadc_daq}, the first stage of the trigger logic is incorporated into the FPGA's on the FADC boards which sends crystal energy and time information to the CTP. With the available 3-bit time information, the CTP can in principle look for time coincidence of crystal signals with 4~ns resolution (HPS will use a 8~ns time coincidence interval). The final trigger decision is made in the CTP and Sub-System Processor (SSP). The Trigger Supervisor generates all necessary signals and controls the entire DAQ system readout through the Trigger Interface (TI) units. The TI units are installed in every crate that participate in the readout process. 
 
@@ -111,7 +111,7 @@ The muon trigger will look for an energy deposition consistent with that of a MI
 \vspace{1cm}
 {\bf Diagnostic Tools}
 
-The previous experience with the similar (but much more simpler) trigger system showed that diagnostic tools are necessary to make sure that the calorimeter and trigger electronics work as expected. 
+The previous experience with the similar (but much simpler) trigger system showed that diagnostic tools are necessary to make sure that the calorimeter and trigger electronics work as expected. 
 
 Scalers will be implemented for every ECal channel. The example of this diagnostic tool is presented in Fig.~\ref{fig:dvcs_beam}
 from the previous version of the calorimeter. Hot or dead channels are easily identified and disabled online.
@@ -128,7 +128,7 @@ Diagnostic scope permits to analyze on-line  the trigger logic. The goal to have
 \item Logic analyzer runs in parallel, non-intrusive, to the calorimeter trigger
 \item Can setup trigger on any ECal pixel arrangement and/or cluster count
 \item Can move forward/backward in time by ~250 ns to see timing details
-\item Will be customize for HPS geometry and hardware
+\item Will be customized for HPS geometry and hardware
 \end{itemize}
 
 The example of the 2D analyzer is presented in Fig.~\ref{fig:dvcs_2_cluster}. Two clusters are displayed

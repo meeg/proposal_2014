@@ -1,6 +1,6 @@
 \label{sec:daq}
 
-The HPS experiment data acquisition (DAQ) handles the acquisition of data and for the three sub-detectors: the SVT, ECal and the Muon System. HPS employs two DAQ architectures: the SVT is readout with 
+The HPS experiment data acquisition (DAQ) handles the acquisition of data for the three sub-detectors: the SVT, ECal and the Muon System. HPS employs two DAQ architectures: the SVT is readout with 
 Advanced Telecom Communications Architecture (ATCA) hardware
 while the ECal and Muon system use VXS based hardware. The trigger system receives input from the 
 ECal and Muon System, and distributes a trigger signal to all three detector sub-systems to readout a selected  event. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagram of the DAQ system.
@@ -95,7 +95,7 @@ ATCA crate, see Fig.~\ref{fig:svt_daq_overview}.
 Each section of the RTM connects to one of four FPGA units on the main ATCA board, 
 the COB (Cluster On Board). Each FPGA is housed on a 
 separate daughter board called a Data Processing Module (DPM). The modular ATCA design permits the 
-HPS DAQ to re-use architecture and functionality from other DAQ system such as the ATLAS muon 
+HPS DAQ to re-use architecture and functionality from other DAQ systems such as the ATLAS muon 
 system which components are similar to that used by HPS. Figure~\ref{fig:rtm_testrun} shows the boards designed and used for the HPS Test run.
 In order to minimize the complexity of the system inside the vacuum chamber, all signal processing is 
 done at the DPM.  Each DPM receives the digitized signals 
@@ -132,7 +132,7 @@ that integrates the SVT event frames into the JLab DAQ
 The readout of the ECal and Muon System are essentially identical. 
 The analog signals from the individual APD's of the ECal (shaped and amplified as described in Sec.~\ref{sec:ecal}) and phototubes of the Muon System are input to a single channel on the 16-channel JLab FADC250 VXS module (FADC), shown in Fig. ~\ref{fig:fadc}. 
 
-Three 20-slot VXS crates needed to accommodate the system: one for each half of the ECal with 221 channels and one for the muon detector with a total of 232 channels.
+Three 20-slot VXS crates are needed to accommodate the system: one for each half of the ECal with 221 channels and one for the muon detector with a total of 232 channels.
 
 \begin{figure}[t]
 \includegraphics[scale=0.5]{daq_trigger/figures/FADC250_Photo_001.jpg}
@@ -140,7 +140,7 @@ Three 20-slot VXS crates needed to accommodate the system: one for each half of 
 \label{fig:fadc}
 \end{figure}
 
-The FADC store 12-bit digitized samples at 250~MHz in 8~$\mu$s deep pipelines. 
+The FADCs store 12-bit digitized samples at 250~MHz in 8~$\mu$s deep pipelines. 
 When a trigger is received, the appropriate part of the pipeline is accessed. If a FADC   
 signal exceeds a predefined threshold within that time window, the integrated amplitude of a pre-defined  number of samples before (NSB) and after (NSA) the signal passed threshold in addition to the time are recorded as explained in Fig.~\ref{fig:hps_trigger_data}. This scheme significantly compresses the data input to the FADC. During data analysis, a pedestal value is subtracted to obtain the actual summed energy.
 
@@ -192,7 +192,7 @@ For the trigger path, every channel has, in addition to NSB and NSA:
  \end{itemize}
 Note that the threshold for the trigger path can be set independently from the readout threshold.
 The pedestal value is subtracted from the integrated sum over NSB+NSA samples and 
-converted to MeV units using supplied gain conversion factor. The energy discriminator can be used to cut off low energy pulses before reporting to the Crate Trigger Processor (CTP). 
+converted to MeV units using a supplied gain conversion factor. The energy discriminator can be used to cut off low energy pulses before reporting to the Crate Trigger Processor (CTP). 
 The values reported to the CTP are the 13-bit pulse energy and the time at which the pulse crossed the threshold. 
 Data for every channel is sent to the CTP every 32~ns (if there is no hit a 0 energy pulse is sent) which sets a worst case double pulse resolution of 32~ns for individual channels, but less if pulses occur in adjacent 32ns windows.
 
@@ -209,7 +209,7 @@ Data for every channel is sent to the CTP every 32~ns (if there is no hit a 0 en
 
 \subsubsection{Event Size and Data Rates}
 
-The high occupancies in the detector requires a high readout bandwidth to be able to transfer hits from the 
+The high occupancies in the detector require a high readout bandwidth to be able to transfer hits from the 
 detectors to disk. The event sizes and rates are based on estimates from full Geant4-based simulations 
 including all known backgrounds. As expected the SVT dominates the expected rates. 
 The noise hit occupancy in the SVT is kept low by requiring that three of the six samples are above an
