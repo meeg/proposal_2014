@@ -51,7 +51,7 @@ for electron (black) and positron (blue) tracks.   }
 
 The momentum resolution is shown in Figure \ref{fig:trkmom} as a function of momentum for tracks with 
 0 bad hits and for tracks with one or more.  The momentum resolution for well-reconstructed 
-tracks is $\delta p/p$ = 3.5\% (this is dependent on the beam energy and magnetic field) while for hits with bad hits it is slightly worse. 
+tracks is $\delta p/p$ = 3.5\% for B=1.0T (appropriate for a beam energy of 4.4 GeV) and is roughly inversely proportional to B.  
 %This momemtum 
 %resolution is considerably worse than that in the full HPS proposal (~1.5\%) because small 
 %angle stereo, which is used in the test run, provides much less precision in the bend plane 
@@ -61,7 +61,7 @@ tracks is $\delta p/p$ = 3.5\% (this is dependent on the beam energy and magneti
 
 \begin{figure}
 \includegraphics[scale=0.8]{performance/tracking_performance/momResvsMom.pdf}
-\caption{  Fractional momentum resolution versus momentum. } 
+\caption{  Fractional momentum resolution versus momentum for a beam energy of 4.4 GeV and a magnetic field of 1.0 T. } 
 \label{fig:trkmom}
 \end{figure}
 
@@ -88,7 +88,8 @@ simulated beam background events.
 \includegraphics[scale=0.4]{performance/tracking_performance/yoca-MomResolution.pdf}
 \includegraphics[scale=0.4]{performance/tracking_performance/xoca-MomResolution.pdf}
 \caption{The resolution of the position of closest approach to the beam axis 
-versus track momentum in the (left) non-bend direction and (right) bend direction.}
+versus track momentum in the (left) non-bend direction and (right) bend direction.  
+The dots represent tracks with 0 bad hits and triangles with one or more. }
  \label{fig:doca}
 \end{figure}
 

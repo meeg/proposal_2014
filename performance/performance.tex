@@ -43,9 +43,7 @@ When bound electrons in the target are ionized by incoming electrons or secondar
 shell electrons will fill the vacancy and characteristic X-rays are emitted. 
 These X-rays can contribute background hits in
 the SVT when a conversion takes place in the silicon sensors via the photoelectric effect 
-or pair production. While the X-ray production is not simulated in EGS5, the X-ray intensity at SVT layer 1
-can be estimated using  the impact ionization 
-cross section, $\sigma_I$, \cite{hoffmann}, the fluorescence yield, $\omega$, \cite{hubbell},
+or Compton scattering. Since X-ray production from electrons interactions is not fully simulated in EGS5, we estimate the X-ray intensity at SVT layer 1 using the impact ionization cross section, $\sigma_I$, \cite{hoffmann}, the fluorescence yield, $\omega$, \cite{hubbell},
 the photoabsorption length in Tungsten, $\lambda_W$, to account for the self-absorption, and the solid 
 angle of the SVT layer 1.
 Table \ref{tab:xray} summarizes these parameters and the expected X-ray
@@ -254,6 +252,8 @@ with a threshold of 75 MeV for each crystal.}}
 
 %\subsubsection{ECal trigger performance}
 \input{performance/trigger/ecal_trigger}
+
+\input{performance/trigger/muon_trigger_rates}
 
 %\subsubsection{Muon trigger performance}
 
