@@ -10,19 +10,19 @@ generates triggers based on the  FPGA trigger algorithm implementation.
 To maintain the chicane beamline configuration, the field strength of the
 chicane magnets must scale with the beam energy. The performance studies were 
 made using the field strength of the 
-analyzing magnet of 0.25 Tesla at 1.1 GeV, 0.5 Tesla at 2.2 GeV, and 
-1.5 Tesla at 6.6 GeV.
+analyzing magnet of 0.25 Tesla at 1.1~GeV, 0.5 Tesla at 2.2~GeV, and 
+1.5 Tesla at 6.6~GeV.
 Figure  \ref{fig:lcsim} shows a lcsim rendering of the HPS detector.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth]{performance/lcsimDetector}
-\caption{\small{ Rendering of the HPS detector simulation}}
+\caption{\small{ Rendering of the HPS detector simulation.}}
 \label{fig:lcsim}
 \end{figure}
 
-\subsection{Simulation of backgrounds and detector occupancies}
+\subsection{Simulation of Backgrounds and Detector Occupancies}
 
-\subsubsection{Simulation of backgrounds}
+\subsubsection{Simulation of Backgrounds}
 \label{sec:backgrounds}
 
 The multiple Coulomb scattering and bremsstrahlung processes in the target will generate high 
@@ -43,11 +43,11 @@ When bound electrons in the target are ionized by incoming electrons or secondar
 shell electrons will fill the vacancy and characteristic X-rays are emitted. 
 These X-rays can contribute background hits in
 the SVT when a conversion takes place in the silicon sensors via the photoelectric effect 
-or Compton scattering. Since X-ray production from electrons interactions is not fully simulated in EGS5, we estimate the X-ray intensity at SVT layer 1 using the impact ionization cross section, $\sigma_I$, \cite{hoffmann}, the fluorescence yield, $\omega$, \cite{hubbell},
+or Compton scattering. Since X-ray production from electrons interactions is not fully simulated in EGS5, we estimate the X-ray intensity at SVT Layer 1 using the impact ionization cross section, $\sigma_I$, \cite{hoffmann}, the fluorescence yield, $\omega$, \cite{hubbell},
 the photoabsorption length in Tungsten, $\lambda_W$, to account for the self-absorption, and the solid 
-angle of the SVT layer 1.
+angle of the SVT Layer 1.
 Table \ref{tab:xray} summarizes these parameters and the expected X-ray
-fluxes at SVT Layer 1 for 0.25\% $X_0$ Tungsten and 100 nA beam current in 8 nsec time window. 
+fluxes at SVT Layer 1 for 0.25\% $X_0$ Tungsten and 100~nA beam current in 8~ns time window. 
 X-ray backgrounds are not a concern.
 
 \begin{table}[h]
@@ -59,7 +59,7 @@ L-shell  & 10 & 1000 & 0.30 & 5 & 2 \\ \hline
 M-shell  & 2 & 20000 & 0.02 & 0.2 & 0.1 \\ \hline
 \end{tabular}
 \end{center}
-\caption{\small{X-ray intensities}}
+\caption{\small{X-ray intensities.}}
 \label{tab:xray}
 \end{table}
 
@@ -77,9 +77,9 @@ $$ \sigma (eA \rightarrow X) = \int \sigma_k(\gamma A \rightarrow X) dn(k), $$
 
 \noindent
 where $dn(k)$ is the number of equivalent photons with energy $k$ \cite{budnev} and there are 
-approximately $8 \times 10^{10} $ photons/sec in 6.6 GeV 100 nA beam. 
+approximately $8 \times 10^{10} $ photons/sec in 6.6~GeV 100~nA beam. 
 Table \ref{tab:pion} summarizes the pion single rates from 1\% $X_0$ Tungsten target
-and 6.6 GeV 100 nA beam. While pion production is larger in GEANT4, the energy spectrum is softer and
+and 6.6~GeV 100~nA beam. While pion production is larger in GEANT4, the energy spectrum is softer and
 consequently the single rate of pions reaching the ECal is lower in GEANT4. While pions look like a minimum 
 ionizing particle in the ECal most of the time, they can deposit significant energy when ${\pi^0}$ are
 produced in the ECal crystals, and together with the beam background, they contribute accidental coincident triggers. 
@@ -92,7 +92,7 @@ GEANT4 & 410 & 8 \\ \hline
 FLUKA  & 240 & 15 \\ \hline
 \end{tabular}
 \end{center}
-\caption{\small{Pion single rates from 1\% $X_0$ Tungsten target at 6.6 GeV 100 nA}}
+\caption{\small{Pion single rates from 1\% $X_0$ Tungsten target at 6.6~GeV 100~nA.}}
 \label{tab:pion}
 \end{table}
 
@@ -104,9 +104,9 @@ Other beam induced background we considered are:
 \item
 Beam halo
 
-Beam halo was measured using a large dynamic range halo monitor during the 6 GeV era. The beam halo 
+Beam halo was measured using a large dynamic range halo monitor during the 6~GeV era. The beam halo 
 that extends to 2 mm was found at the level of $10^{-7}$. At this level, the halo contribution in 
-the SVT occupancy is negligible. It is expected that behavior of the 12 GeV machine will be
+the SVT occupancy is negligible. It is expected that the behavior of the 12~GeV machine will be
 understood at the same level.
 
 \item
@@ -115,7 +115,7 @@ Synchrotron radiation
 Synchrotron radiation is produced from the last dipole magnet in the beam line in the vertical 
 plane, and from the chicane magnets in the horizontal plane. Since the characteristic energy is 
 proportional to $E_{beam}^2$, synchrotron radiation is of concern 
-only at 6.6 GeV. The characteristic energy ($k_c$),
+only at 6.6~GeV. The characteristic energy ($k_c$),
 the average energy ($k_{ave}$), and the power of the synchrotron radiation is summarized in 
 Table \ref{tab:sync}.
 None of the radiation from the last dipole will enter the HPS detector as the radiation will be intersected 
@@ -125,13 +125,13 @@ none of the detector components are designed to intersect the beam plane.
 \begin{table}[h]
 \begin{center}
 \begin{tabular}{|l|c|c|c|c|} \hline
-  Source & $k_c$ (keV) & $k_{ave}$ (keV) & $N_\gamma$ per e- & Power (mW) at 100 nA \\ \hline
-  vertical bend & 19 & 5.9 & 4.0 & 2.4 \\ \hline
+  Source & $k_c$ (keV) & $k_{ave}$ (keV) & $N_\gamma$ per e- & Power (mW) at 100~nA \\ \hline
+  Vertical bend & 19 & 5.9 & 4.0 & 2.4 \\ \hline
   Frascati Magnet & 52 & 16 & 4.6 & 7.4 \\ \hline
   PS magnet   & 44 & 14 & 9.3 & 13 \\ \hline
 \end{tabular}
 \end{center}
-\caption{\small{Synchrotron radiations at 6.6 GeV}}
+\caption{\small{Synchrotron radiations at 6.6~GeV.}}
 \label{tab:sync}
 \end{table}
 
@@ -142,23 +142,23 @@ EM induced backgrounds
 Electromagnetic fields induced by the high intensity beam could interfere with the SVT and its electronics
 as the detector is located as close as 0.5 mm from the beam. We have evaluated the direct beam field and its wake 
 field, the diffraction radiations from the beamline apertures, and the transition radiations from
-the target. The intensities of these EM induced backgrounds are small and no interference with the SVT is expected. The beam charge per 2ns CEBAF bunch is only ~few thousand electrons, many orders of magnitude lower than that in other experiments which have chosen to shield against it.
+the target. The intensities of these EM induced backgrounds are small and no interference with the SVT is expected. The beam charge per 2ns CEBAF bunch is only $~$few thousand electrons, many orders of magnitude lower than that in other experiments which have chosen to shield against it.
  
 \end{itemize}
 
 \subsubsection{Simulated Tracker Occupancies}
 
-Figure \ref{fig:scatt} shows the distribution of charged particle hits in Si tracker layer 1 
+Figure~\ref{fig:scatt} shows the distribution of charged particle hits in the SVT Layer 1 
 which is located 
-10 cm from the target. The beam energy is 6.6 GeV, and the target thickness is 
+10~cm from the target. The beam energy is 6.6~GeV, and the target thickness is 
 0.25\% $X_0$. Multiple Coulomb scattered beam electrons are confined to within 0.5 cm of the beam axis
 (x=y=0), while the low energy M{\o}ller electrons are distributed in a parabolic shape. There are
-very few positrons. From these distributions, the detector occupancy in the horizontal Si strip
-sensor in the 8 ns time window is calculated for a 400 nA beam current and five different target
+very few positrons. From these distributions, the detector occupancy in the horizontal silicon strip
+in the 8 ns time window is calculated for a 400~nA beam current and five different target
 thicknesses, 1.0\% $X_0$, 0.5\% $X_0$, 0.25\% $X_0$, 0.1\% $X_0$, and 0.05\% $X_0$, as shown
-in Figure \ref{fig:occup}. 
+in Fig.~\ref{fig:occup}. 
 %As described in Section xx, the dead zone is defined by using a criterion that the maximum occupancy in Layer 1 is 1\%. 
-For a 0.25\% $X_0$ target and 430 nA beam, the occupancy is 
+For a 0.25\% $X_0$ target and 430~nA beam, the occupancy is 
 1\% at a distance of 1.5mm from the beam in Layer 1, which corresponds to a dead zone of $\pm$ 15
 mrad. As long as the product of target thickness (T) and beam current (I) is constant, the same 
 $A'$ production rate is maintained. Since multiple scattering and hence the effective beam size 
@@ -171,13 +171,13 @@ decreases.
 
 \begin{figure}[h]
 \includegraphics[width= 0.7\textwidth]{performance/scatterplot.pdf}
-\caption{\small{Charged particle distribution in SVT layer 1.}}
+\caption{\small{Charged particle distribution in SVT Layer 1.}}
 \label{fig:scatt}
 \end{figure}
 
 \begin{figure}[t]
 \includegraphics[width=0.8\textwidth]{performance/occupancy.pdf}
-\caption{\small{Silicon sensor layer 1 occupancy at 400 nA vs. distance from the
+\caption{\small{Layer 1 silicon strip occupancy at 400~nA vs. distance from the
 beam in mm.}}
 \label{fig:occup}
 \end{figure}
@@ -194,7 +194,7 @@ beam in mm.}}
 \end{tabular}
 \end{center}
 \caption{\small{Beam current yielding 1\% occupancy in SVT layer 1 for various target 
-thicknesses at 6.6 GeV, and the relative experimental sensitivities which result.}}
+thicknesses at 6.6~GeV, and the relative experimental sensitivities which result.}}
 \label{tab:occup}
 \end{table}
 
@@ -211,24 +211,23 @@ in SVT Layer 1 does not exceed 1\%. Table \ref{tab:runc} summarizes the target t
   6.6 & 0.25 & 450 \\ \hline
 \end{tabular}
 \end{center}
-\caption{\small{Run Conditions}}
+\caption{\small{Run conditions.}}
 \label{tab:runc}
 \end{table}
 
 \clearpage
 
-\subsubsection{Simulated ECal occupancies}
+\subsubsection{Simulated ECal Occupancies}
 
 There are two factors limiting the allowable ECal occupancy. First, the ECal 
 readout algorithm uses a window of fixed size to integrate hit energy. This 
 window was set to 140 ns ($35 \times 4$ ns) for the test run, and so the 
 number of hits above readout threshold in a 140-ns time window should be well 
-below 1. Figure \ref{fig:ecal_rate} shows that the maximum rate in any crystal 
-is 500 kHz, which translates to 0.07 hits in 140 ns.
-
+below 1. Figure~\ref{fig:ecal_rate} shows that the maximum rate in any crystal 
+is 500 kHz, which translates to 0.07 hits in 140 ns. 
 Second, because the FADC only reads out on a rising threshold crossing, each 
-hit above threshold causes dead time for that crystal until the preamp output 
-falls back below threshold. Figure \ref{fig:ecal_deadtime} shows the fraction 
+hit above threshold causes dead time for that crystal until the pre-amplifier output 
+falls back below threshold. Figure~\ref{fig:ecal_deadtime} shows the fraction 
 of time each crystal spends above threshold. The maximum dead time is 0.03, 
 meaning that even the hottest crystal is sensitive to new hits 97\% of the time.
 
@@ -236,19 +235,19 @@ meaning that even the hottest crystal is sensitive to new hits 97\% of the time.
 	\includegraphics[width=0.7\textwidth]{performance/ecal_rate_100mev_22}
 
 	\includegraphics[width=0.7\textwidth]{performance/ecal_rate_100mev_22_log}
-	\caption{\small{Rate of hits over 100 MeV (units of kHz) per crystal (X and Y axes are the crystal index), 
-for 2.2 GeV beam at 200 nA. Top plot uses linear scale for the Z-axis; bottom plot is log scale.}}
+	\caption{\small{Rate of hits over 100~MeV (units of kHz) per crystal (X and Y axes are the crystal index), 
+for 2.2~GeV beam at 200~nA. Top plot uses linear scale for the Z-axis; bottom plot is log scale.}}
 	\label{fig:ecal_rate}
 \end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[width=0.7\textwidth]{performance/ecal_deadtime_22}
-	\caption{\small{ECal readout deadtime fraction for 2.2 GeV beam at 200 nA, 
-with a threshold of 75 MeV for each crystal.}}
+	\caption{\small{ECal readout deadtime fraction for 2.2~GeV beam at 200~nA, 
+with a threshold of 75~MeV for each crystal.}}
 	\label{fig:ecal_deadtime}
 \end{figure}
 
-\subsection{ECal trigger rates}
+\subsection{ECal Trigger Rates}
 \label{sec:ecaltrigg}
 %\subsubsection{ECal trigger performance}
 \input{performance/trigger/ecal_trigger}
@@ -257,7 +256,7 @@ with a threshold of 75 MeV for each crystal.}}
 
 %\subsubsection{Muon trigger performance}
 
-\subsection{Track reconstruction}
+\subsection{Track Reconstruction}
 \input{performance/tracking_performance/tracking_performance}
 
 %\subsection{Cluster reconstruction}

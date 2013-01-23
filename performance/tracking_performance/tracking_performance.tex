@@ -7,27 +7,27 @@ produced by the passage of  beam electrons equivalent to our optimized run condi
 different beam energies and with a W target and a beamspot with a Gaussian sigma of 40$\mu$m in the vertical direction and 
 200$\mu$m in the horizontal. The beam energies, currents, target thickness and analyzing magnetic field  used for these simulations are:
 \begin{itemize}
-\item 50nA at 1.1 GeV with $X_0=0.125$\% and  B=0.25 T
-\item 200nA at 2.2 GeV with $X_0=0.125$\% and  B=0.5 T
-\item 300nA at 4.4 GeV with $X_0=0.25$\% and  B=1.0 T
-\item 450nA at 6.6 GeV with $X_0=0.25$\% and  B=1.5 T
+\item 50nA at 1.1~GeV with $X_0=0.125$\% and  B=0.25 T
+\item 200nA at 2.2~GeV with $X_0=0.125$\% and  B=0.5 T
+\item 300nA at 4.4~GeV with $X_0=0.25$\% and  B=1.0 T
+\item 450nA at 6.6~GeV with $X_0=0.25$\% and  B=1.5 T
 \end{itemize}
-At each energy, we evaluate momentum, invariant mass, and vertex resolution.  The plots shown in the following section typically use the 4.4 GeV beam as an example.  
+At each energy, we evaluate momentum, invariant mass, and vertex resolution.  The plots shown in the following section typically use the 4.4~GeV beam as an example.  
 
 \subsection{Tracking Efficiency, Pattern Recognition and Fake Rates}
 
 Due to the requirements imposed on the tracks, the efficiency for finding tracks in the 
-geometric acceptance is not 1. The average track reconstruction efficiency is 98\% (Figure \ref{fig:trkeffic}) and 
+geometric acceptance is not 1. The average track reconstruction efficiency is 98\% (Fig.~\ref{fig:trkeffic}) and 
 the bulk of the inefficiency comes from the cut on the total $\chi^2$ of the track. 
 Of the reconstructed tracks, a small percentage include a hit that is not from 
 the correct electron.  These ``bad'' hits may be from one of the high energy beam 
 electrons scattered from the target into the detector or from a lower energy secondary.  
-The left plot of Figure \ref{fig:badhits} shows the number of bad hits/track for both the electron 
+The left plot of Fig.~\ref{fig:badhits} shows the number of bad hits/track for both the electron 
 and positron from the A' decay.  The number of tracks with 0 bad hits is $>$ 98\%.
 % and 
 %the positrons are slightly cleaner since occupancy of the positron side of the detector 
 %is smaller.  
-The right plot of Figure \ref{fig:badhits} shows the layer number of the bad hit.  
+The right plot of Fig.~\ref{fig:badhits} shows the layer number of the bad hit.  
 The rate of mishits are slightly higher in the downstream 3 modules due to the larger stereo angle % and are larger for positrons because they dip into the dead zone???%.  
 We'll show how these bad hits affect the track parameters in the next section.
 
@@ -49,9 +49,9 @@ for electron (black) and positron (blue) tracks.   }
 
 \subsection{Track Momentum and Spatial Resolution}
 
-The momentum resolution is shown in Figure \ref{fig:trkmom} as a function of momentum for tracks with 
+The momentum resolution is shown in Fig.~\ref{fig:trkmom} as a function of momentum for tracks with 
 0 bad hits and for tracks with one or more.  The momentum resolution for well-reconstructed 
-tracks is $\delta p/p$ = 3.5\% for B=1.0T (appropriate for a beam energy of 4.4 GeV) and is roughly inversely proportional to B.  
+tracks is $\delta p/p$ = 3.5\% for B=1.0T (appropriate for a beam energy of 4.4~GeV) and is roughly inversely proportional to B.  
 %This momemtum 
 %resolution is considerably worse than that in the full HPS proposal (~1.5\%) because small 
 %angle stereo, which is used in the test run, provides much less precision in the bend plane 
@@ -61,7 +61,7 @@ tracks is $\delta p/p$ = 3.5\% for B=1.0T (appropriate for a beam energy of 4.4 
 
 \begin{figure}
 \includegraphics[scale=0.8]{performance/tracking_performance/momResvsMom.pdf}
-\caption{  Fractional momentum resolution versus momentum for a beam energy of 4.4 GeV and a magnetic field of 1.0 T. } 
+\caption{  Fractional momentum resolution versus momentum for a beam energy of 4.4~GeV and a magnetic field of 1.0 T. } 
 \label{fig:trkmom}
 \end{figure}
 
@@ -70,7 +70,7 @@ One quantity we use to determine track quality is the distance of closest approa
 to the beam axis.  We use this instead of the DOCA to the target beam spot since we are 
 interested in long-lived decays and tracks from those will not point back to the target. 
 We separate the distance into the bend plane (XOCA) and non-bend plane (YOCA) distances.  
-Below, in Figure \ref{fig:doca}, is the resolution of these quantities as function of momentum.  
+Below, in Fig.~\ref{fig:doca}, is the resolution of these quantities as function of momentum.  
 The resolution is, on average, about 100$\mu$m (300 $\mu$m) 
 in the non-bend (bend) direction but increases significantly at low momentum.  The position 
 resolution for tracks with one or more bad hits is somewhat worse, depending on which layer 
@@ -109,7 +109,7 @@ This fit will be used for the bump-hunt only search.
 
 For each electron/positron pair reconstructed in the tracker, we compute the invariant mass based 
 on the fitted momenta of the tracks.  The mass resolution depends on the invariant mass of the pair 
-and is shown in Figure \ref{fig:massres}.  The closed circles  in Figure \ref{fig:massres} shows the improvement 
+and is shown in Fig.~\ref{fig:massres}.  The closed circles  in Fig.~\ref{fig:massres} shows the improvement 
 in the resolution for the second fit, where the decay is assumed to occur in the target.  
 
 \begin{figure}
@@ -123,7 +123,7 @@ and the closed circles are without this constraint.    }
 
 
 Even for prompt decays, the z vertex position (Vz) distribution of all reconstructed $e^+e^-$ pairs
-  (solid black histogram, Figure \ref{fig:vtxResolutionRaw}) shows a long tail, still significant beyond 5cm.   
+  (solid black histogram, Fig.~\ref{fig:vtxResolutionRaw}) shows a long tail, still significant beyond 5cm.   
 This tail is primarily comprised of events where one or both of the tracks use one or 
 more bad hits.  Fortunately there are a number of quantities we can use to minimize the tails.  
 Namely, for purposes of this proposal, we make the following cuts:
@@ -137,15 +137,15 @@ Namely, for purposes of this proposal, we make the following cuts:
 \end{itemize}
 
 The vertex resolution depends on the invariant mass of the particles being vertexed. 
-Lower masses have worse Gaussian resolutions as shown in Figure \ref{fig:vtxResolutionGauss}.  This is expected 
+Lower masses have worse Gaussian resolutions as shown in Fig.~\ref{fig:vtxResolutionGauss}.  This is expected 
 since the error on the opening angle ($\theta$), due to multiple scattering, scales like: 
  $\sigma (\theta )/\theta \sim (1/E)/(m/E) \sim 1/m$.
  
-Figure \ref{fig:vtxResolutionRaw} shows the vertex resolution for samples of 80 MeV and 160 MeV A' events. 
-The cuts above remove almost all of the tail past ~1.5cm (points with errors in Figure \ref{fig:vtxResolutionRaw}) 
+Figure~\ref{fig:vtxResolutionRaw} shows the vertex resolution for samples of 80 MeV and 160 MeV A' events. 
+The cuts above remove almost all of the tail past ~1.5cm (points with errors in Fig.~\ref{fig:vtxResolutionRaw}) 
 while retaining ~50\% of the $e^+e^-$ pairs from the A' candidate. The events on the tail are 
 enhanced with vertices where there are one or more bad hits on the track (represented by the 
-blue histogram in Figure \ref{fig:vtxResolutionRaw}), although there is still a contribution from well-reconstructed 
+blue histogram in Fig.~\ref{fig:vtxResolutionRaw}), although there is still a contribution from well-reconstructed 
 tracks.  The rejection of tracks with bad hits depends strongly on the precision of the virtual A' 
 trajectory, which in turn depends on the size of the beamspot. Having a beamspot significantly 
 smaller than the intrinsic tracker resolution, 100$\mu$m in the non-bend and 300$\mu$m in 
