@@ -96,7 +96,7 @@ Each section of the RTM connects to one of four FPGA units on the main ATCA boar
 the COB (Cluster On Board). Each FPGA is housed on a 
 separate daughter board called a Data Processing Module (DPM). The modular ATCA design permits the 
 HPS DAQ to re-use architecture and functionality from other DAQ systems such as the ATLAS muon 
-system which components are similar to that used by HPS. Figure~\ref{fig:rtm_testrun} shows the boards designed and used for the HPS Test run.
+system whose components are similar to that used by HPS. Figure~\ref{fig:rtm_testrun} shows the boards designed and used for the HPS Test run.
 In order to minimize the complexity of the system inside the vacuum chamber, all signal processing is 
 done at the DPM.  Each DPM receives the digitized signals 
 from the RTM, applies thresholds for data reduction and organizes the sample data 
@@ -105,7 +105,7 @@ signals from the optical fiber module on the RTM, distributes clock and trigger 
 and handles communication with the JLab trigger supervisor and the RCE. The 
 RCE (Reconfigurable Cluster Element) is a generic computational building block 
 on the trigger interface DPM running a 450~MHz PPC processor with 2~GB of DDR3 
-memory. Four COBs housed in a two ATCA crates is sufficient to handle 
+memory. Four COBs housed in two ATCA crates are sufficient to handle 
 the 36 hybrids of the SVT.
 
 The RCE receives and buffers UDP datagrams from the data and trigger DPMs and
