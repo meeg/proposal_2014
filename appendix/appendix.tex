@@ -142,8 +142,9 @@ simulation system based on GEANT4.
 \input{test2012/svtperformance/svt_calib/svt_calibrations}
 
 \subsection*{SVT Hit Time Resolution}
-As discussed in Sec.~\ref{sec:svt} the multi-peak APV25 readout is crucial in order to time stamp
-hits in the tracker to lower effective occupancies for pattern recognition during electron running. 
+As discussed in Sec.~\ref{sec:svt}, the APV25 multi-peak readout is crucial to the time stamping on hits
+in the SVT. This, in turn, allows the effective occupancies to be lowered for pattern recognition
+during electron running. 
 Six samples of the APV25 shaper output for each trigger are fitted to an ideal $CR-RC$ function to 
 extract the amplitude and hit time.  The $\chi^2$ distribution of these fits from test run data is as expected
 for four degrees of freedom.
@@ -153,7 +154,7 @@ for four degrees of freedom.
 %the SVT in this photon beam test. } }
 %	\label{fig:apvfit}
 %\end{figure}
-After clustering hits on a sensor, the hit time for the each cluster is computed as the 
+After clustering hits on a sensor, the hit time for each cluster is computed as the 
 amplitude-weighted average of the channel hit times. Since we have no measurement of the ``true'' hit time, we study the overall SVT hit 
 timing performance using the average of all cluster times in a track as the ``track time,'' and take the
  residual of the cluster time relative to that. The observed track time, shown in Fig.~\ref{fig:tracktime}, has the expected amount of trigger jitter due to the readout clock and trigger system jitter. After correcting for offsets for each sensor (time-of-flight, clock phase) the RMS 
