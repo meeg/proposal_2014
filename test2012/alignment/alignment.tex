@@ -89,19 +89,19 @@ microns as shown in the reconstructed track residuals in Fig.~\ref{fig:res_top}.
 %In electron running, the beam spot can be used as a constraint in the global track-based alignment. 
 We also extrapolate the reconstructed tracks back to the converter located $\approx 77$~cm 
 from our first silicon layer to understand the tracker alignment w.r.t. to the other components on the 
-beam line. Figure~\ref{fig:extrapol_converter} shows good agreement of the reconstructed track position at the converter with that predicted from simulation. The offset of the horizontal position simply reflects the fact that the positions are reconstructed in an SVT-centered coordinate system, which is tilted with respect to the beam coordinate system.
+beam line. Figure~\ref{fig:extrapol_converter} shows good agreement of the reconstructed track position at the converter with that predicted from simulation using the measured field map of the analyzing magnet to take into account the fringe field. The offset of the horizontal position simply reflects the fact that the positions are reconstructed in an SVT-centered coordinate system, which is tilted with respect to the beam coordinate system.
 \begin{figure*}[t]
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_top.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_X_converter_bot.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_Y_converter_top.png}
-\includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_Y_converter_bot.png}
-\caption{\small{Extrapolated track position in the bend (top) and non-bend (bottom) 
-direction for tracks reconstructed in the top (left) and bottom (right) half of the SVT. 
+\includegraphics[ scale=0.25]{test2012/alignment/pictures/extrapolation_converter/h_trk_top_fr_conv_y_h_trk_top_conv_y_dataMC_twotrksel.png}
+\includegraphics[ scale=0.25]{test2012/alignment/pictures/extrapolation_converter/h_trk_top_fr_conv_z_h_trk_top_conv_z_dataMC_twotrksel.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_Y_converter_top.png}
+%\includegraphics[ scale=0.5]{test2012/alignment/pictures/extrapolation_converter/extrapolation_Y_converter_bot.png}
+\caption{\small{Extrapolated track positions for reconstructed e$^{+}$e$^{-}$ pairs in the SVT taking into account the measured fringe field of the analyzing magnet. 
 The filled histograms show the prediction from simulation using an ideal geometry. 
 A shift in the bend-plane coordinate for tracks in the bottom half (top right) is likely due to alignment or incomplete description of the
 magnetic field at the edge of the magnet.
-The extra bumps in the data at $\pm10$~mm arise from backgrounds originating upstream of the 
-converter.}}
+%The extra bumps in the data at $\pm10$~mm arise from backgrounds originating upstream of the 
+converter.
+}}
 \label{fig:extrapol_converter}
 \end{figure*}
 %The width is roughly consistent with between data and simulation with a shift in the bend-plane 
