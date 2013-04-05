@@ -30,7 +30,7 @@ to CEBAF beam line.
 %the SVT inside the vacuum chamber, using the measurements of the base plate, in the reference coordinate system of 
 %the analyzing magnet. 
 The resulting survey-based alignment has the position of the silicon sensors correct to within a few hundred 
-microns as shown in the reconstructed track residuals in Fig.~\ref{fig:res_top}. 
+microns as shown in the mean of the biased reconstructed track residuals in Fig.~\ref{fig:res_top}.  The large multiple scattering contribution can be seen by the large increase in the width of the residuals in the later layers. The agreement with simulation is reasonable; a slight track reconstruction algorithm bias can be seen in the mean for the simulation in later layers which will be fixed in the future. 
 %This level of internal alignment 
 %shows that the survey approach, while not perfect, is adequate as a starting point to bootstrap the SVT 
 %alignment. 
@@ -42,17 +42,11 @@ microns as shown in the reconstructed track residuals in Fig.~\ref{fig:res_top}.
 %position at that sensor. Figure~\ref{fig:res_top} 
 %shows representable 3D space point track residuals, relative to track parameters determined at the target, for tracks reconstructed in the top half of the tracker.
 \begin{figure*}[]
-\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-1.png}
-%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-2.png}
-%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-3.png}
-%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-4.png}
-%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-5.png}
-\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-6.png}
-%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-7.png}
-%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-8.png}
-%\includegraphics[ scale=1.2]{test2012/alignment/pictures/res_top/res_top-9.png}
-%\includegraphics[ scale=0.5]{test2012/alignment/pictures/res_top/res_top-10.png}
-\caption{\small{Residual between the actual hit position and the predicted position in layer 1 from the reconstructed tracks in the bend (left) and non-bend (right) plane in the top half of the SVT after mechanical survey. The filled histogram show the predicted residual for simulated events with an ideal geometry. The X-scale is in mm.}}
+\includegraphics[ scale=0.3]{test2012/alignment/pictures/res_top/h_trk_top_res_y_mean_h_trk_top_res_y_mean_dataMC_1351.png}
+\includegraphics[ scale=0.3]{test2012/alignment/pictures/res_top/h_trk_top_res_z_mean_h_trk_top_res_z_mean_dataMC_1351.png}
+\includegraphics[ scale=0.3]{test2012/alignment/pictures/res_top/h_trk_top_res_y_sigma_h_trk_top_res_y_sigma_dataMC_1351.png}
+\includegraphics[ scale=0.3]{test2012/alignment/pictures/res_top/h_trk_top_res_z_sigma_h_trk_top_res_z_sigma_dataMC_1351.png}
+\caption{\small{Mean (top) and standard deviation (bottom) of biased residuals (hits included in track fit) between the actual hit position and the predicted position from the reconstructed tracks in the bend (left) and non-bend (right) plane in the top half of the SVT after mechanical survey. }}
 \label{fig:res_top}
 \end{figure*}
 %These are compared to the residuals from an ideally aligned tracker with residuals centered at zero.
