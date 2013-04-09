@@ -1,4 +1,78 @@
 \appendix
+\section{Additions and improvements to the HPS setup using non-DOE sources of funding}
+
+While the proposed baseline equipment will be sufficient to carry out proposed measurements, the HPS collaboration is seeking funding from non-DOE sources to improve and enhance capabilities of the HPS detector. Plans for improvements include light monitoring system and large area APDs for ECal.  The HPS collaborators from IPN Orsay have applied for a number of European grants, including European Research Council (ERC) Advanced Grant 2013 to purchase APDs, for manpower costs to replace the old ones, to design and build 
+new preamplifier boards, and to assemble and test the ECal with the new modules. The total cost of replacing all ECal APDs is about $500$K\$. 
+These grants also include light monitoring system. If successful European funding will cover most of the ECal modifications, and will significantly reduce the support needed from DOE for the more modest upgrades we have proposed above. 
+
+Besides ECal improvements, collaboration intend to add muon detector to the HPS setup. Collaborators from the Collage of William\&Mary (PI Prof. Keith Griffion) togetehr with collaborators from Rutgers University (PI Prof. Yuri Gerstein) and Old Dominion University (PI Prof. Lary Weinstein) submitted an MRI proposal to NSF for the Muon System, requesting $\sim 300$k.  
+
+Below the details of ECal improvements, and the motivation and description of the muon system are presented. 
+
+\subsection{Improvements to ECal}
+
+\begin{enumerate}
+\item {\bf Light monitoring system}
+
+For an experiment like HPS, where backgrounds must be well understood and need to be strongly suppressed, the trigger bias must be minimized. In particular, having stable, known, and uniform thresholds at the trigger readout is necessary in order to avoid  bias in the 
+event selection. Such uniformity and stability can be achieved with the installation of an online gain monitoring 
+system. This system will introduce short light pulses into the front face of the crystals. The crystals already have fiber holders attached, allowing implementation of this system without having to modify the crystals or wrapping. 
+
+Optical fibers will be used to transmit light from a calibration  source to the crystals to test the response of the APDs. The response of the system could change in time because of 
+losses in crystal transparency due to radiation damage or because of gain variations of the APDs. 
+Such a calibration system has been developed for several experiments (CMS at CERN for instance) with various light sources. The system for the ECal 
+will be developed at IPN Orsay during 2013 and in the first half of 2014, and will be ready for installation at JLAB for the commissioning run in the fall of 2014. Each module will have a red and blue mono-color LED light source for monitoring purposes. 
+Blue light transmission, corresponding to the domain of the crystal's emission spectrum, is very sensitive to the presence of color centers which are produced by radiation damage. So the blue light source will monitor variations of the response in the main domain of the spectrum.
+ %Impurities can anneal at room temperature and such monitoring can be sensitive to increasing of output as well, when the radiation exposure is reduced for a long period of time. 
+The response to red light is less sensitive to the color centers,  and so permits monitoring the APD gains more directly. Thus the use of two colors separates gain variations due to the 
+APD and electronics from those due to changes in the crystal transparency, and provides clear information on the state of the electronics. 
+The main challenge for the system is to guarantee stability at a level of $2\%$. The test of the system will be carried-out at
+IPN Orsay, in order to study its efficacy and also to test the radiation resistance of the various materials.
+
+\item {\bf Modifications to the side brackets to accommodate fiber bundles for the light monitoring system} -
+A light monitoring system was not used during the test run. While the design of the ECal enclosure was done in such a way that it can 
+accommodate optical fibers attached to the front face of crystals, the side plates that hold the crystal frames do not have inlets for the accompanying fiber bundles.
+Space is available on the side plates for a straight-forward modification which will allow the addition of a light monitoring system.  
+    
+\item {\bf New low-voltage power supply} - The existing low voltage power supply is a manually controlled, single output power supply 
+that feeds the four ECal motherboards through a custom-made patch panel. The present system cannot control the voltage supplied to preamplifiers at different
+parts of the ECal, and controlling or resetting them remotely has proved to be very inconvenient, requiring frequent access to the Hall, especially during commissioning. Newly available low voltage power supplies are much more flexible. The one that is the most suitable for the
+ECal APD preamplifiers is the WIENER MPV 8008LD. This power supply is being used at JLAB and the control software exists, so it will be easy to incorporate it into HPS.     
+
+\item{\bf Possibilities with new APDs} - Installing new APDs on the current crystals will significantly improve the ECal performance, but doing so is expensive,  so replacement is only being considered if a funding source beyond DOE HEP is secured. Replacing the old $5\times 5$ mm$^2$ 
+Hamamatsu S8664-55 APDs with $10\times 10$ mm$^2$, Hamamatsu S8664-1010 will improve two critical characteristics of the present calorimeter modules. First, the new APDs from Hamamatsu have much better performance than the ones which are currently installed. Data from Hamamatsu shows that APDs made from the same wafer have excellent gain uniformity. With $\pm 10\%$ known uniformity 
+at the gain of $100$, the required variations in bias voltage are only $\sim 4.5$ V. Even for large samples of APDs (~1300),  the required bias voltage differences are ~50 V, which is half that of the current APDS. The ECal supplies bias voltage to groups of APDs, so with new APDs, with their smaller voltage-gain variations, it will be possible to achieve much better 
+uniformity in the response of the calorimeter modules, and consequently better uniformity in trigger thresholds. 
+
+Secondly, the new APDs have a $4$ times larger readout area, ensuring $4$ times more light collection and therefore $4$ times larger signals. This will allow the use of lower gain amplifier modules which in turn will decrease electronic noise. Tests 
+performed for another calorimeter, now in production at INFN Genova for JLAB Hall-B, showed that amplifier boards 
+with a factor 2 lower gains have a noise level $<5$ MeV. The energy deposition in the HPS PbWO$_4$ crystals  
+from minimum ionizing cosmic muons passing transversely to the crystal axis is $\sim 15$ MeV. Moving the energy thresholds 
+close to $5$ MeV will allow the MIP peak to be clearly distinguished, and will let the calorimeter  be calibrated and monitored with cosmic muons. The HPS collaborators 
+from the INFN group have performed the first tests of the Hamamtsu $10\times 10$ mm$^2$ APDs and a new amplifier board on HPS crystals. In 
+Figure \ref{fig:mip10x10}, the charge distribution of a single crystal system is shown for $5\times 5$ mm$^2$ (left) and $10\times 
+10$ mm$^2$ (right) APDs. A coincidence signal from scintillator telescopes positioned above and below the module provides the trigger. 
+The crystal was positioned horizontally as it would be in HPS, so the cosmic muons would pass through it perpendicular to the crystal axis. The red line 
+histogram is for all events triggered by the scintillation telescope and corresponds to the noise. The black line histogram corresponds 
+to the charge detected within $100$ ns of the trigger time. The MIP peak is clearly visible and well isolated from the noise 
+for the S8664-1010 APD readout. For  the S8664-55 APD, the MIP signal is also seen, but its charge distribution is under the noise peak and it
+does not have well defined peak position. Using MIP calibration in conjunction with the light monitoring system will ensure stable and reliable performance of the ECal and the trigger system. As a bonus, the lower noise will allow the use of lower  thresholds and improve the calorimeter's energy resolution. The new amplifier boards have to be designed to work with new APDs. 
+
+\begin{figure*}[t]
+\includegraphics[scale=0.37]{ecal/MIP_5x5_APD.png}
+\includegraphics[scale=0.37]{ecal/MIP_10x10_APD.png}
+\caption{\small{Charge distribution from readout of the HPS calorimeter crystal with Hamamatsu S8664-55 (left) and S8664-1010 
+(right) APDs, and the new low noise amplifier board. The red line histogram corresponds to the charge distribution for all triggers 
+comming from the scintillators positioned above and below the crystal. The black line shows the distribution for hits in the crystal 
+within $100$ ns of the trigger signal. }}\label{fig:mip10x10}
+\end{figure*}
+
+\end{enumerate}
+
+
+\input{muon/muon_system}
+\clearpage
+
 \section{Simulation tools}
 \label{app:sim}
 
