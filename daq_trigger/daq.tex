@@ -212,34 +212,36 @@ The high occupancies in the detector require a high readout bandwidth to be able
 detectors to disk. The event sizes and rates are based on estimates from full Geant4-based simulations 
 including all known backgrounds. As expected the SVT dominates the expected rates. 
 The noise hit occupancy in the SVT is kept low by requiring that three of the six samples are above an
-effective threshold of three times the noise level. The dominant contribution to the occupancy is instead 
+effective threshold of twice the noise level, and that the signal rises either from the second to the third sampl, or from the third to the fourth. 
+The dominant contribution to the occupancy is then 
 the estimated high rate of beam background hits. This is estimated 
-from detailed full simulation resulting in an occupancy of around 0.3\% or an average of 61 channels above threshold.  
+from detailed full simulation resulting in an occupancy of around 0.4\% or an average of 80 channels above threshold.  
 %Background studies (see Sec.~\ref{sec:hps_perf}) show that 
 %there are on average 10 tracks per event at a beam energy of 2.2~GeV and current of 
 %200~nA. With each track 
 %having on average 2 strips above threshold for each sensor there are on average 160 channels above threshold. Each of these channels will result in six digitized samples of the 
 %pulse shape giving in total of 1084 samples per event for the SVT.
-Each SVT channel has, in addition to the six digitized samples,  header information that identifies the 
-the channel number and it's chip address. The complete SVT event size also 
+Each SVT hit has, in addition to the six digitized samples,  header information that identifies the 
+the channel number and its chip address. The complete SVT event size also 
 include the overhead from each FPGA and the JLab data stream bank header.  
 The maximum average event size increased with decreasing beam energy since a larger 
 fraction of backgrounds get larger opening angles and thus potentially higher than the 15~mrad 
-vertical dead zone angle. For a beam energy of 1.1~GeV, the average SVT event size is 2.5~kB and 
-the rate is 43~MB/s, well within the SVT DAQ capabilities. 
-The ECal and Muon System each contribute with an event size of 
-approximately 0.3~kB and maximum rates of about 5~MB/s. Further studies will determine the exact 
-Muon System occupancy. For the data rates a conservative estimate of 10\% is used.
+vertical dead zone angle. For a beam energy of 1.1~GeV, the average SVT event size is 1.8~kB and 
+the rate is 33~MB/s, well within the SVT DAQ capabilities. 
+
+The two VXS crates in the ECal system contribute a total of 
+approximately 0.5~kB to each event, and maximum rate across the crates of about 7~MB/s, well below the limit of 100~MB/s per crate. 
+
+The Muon System is still under study, but data rates are expected to be less than those of the ECal since the Muon System uses only one VXS crate, uses the same data format as the ECal and is expected to have similar or lower occupancy. 
+As this implies a 10\% contribution to data rates (at most), we omit the Muon System from our estimates.
 %Each calorimeter or muon hit consist of 8 bytes (4 byte energy, 4 byte time)
  %with a 12 byte header (4 byte trigger number, 8 byte trigger time) for each FADC board. 
-The rates expected are well within the 100~MB/s limit for each VXS crate used in the ECal and muon 
-DAQ system.
  % for both the The main limitation is of the order of 100Mbytes/s from each VXS crate. For a 
 % 10\% occupancy estimated in Sec.~\ref{sec:trig_rate} the ECal event size is approximately 0.7~kbytes which translates to a total data rate of approximately 31.5~Mbytes/s 
 %(split between the two VXS crates), well within the DAQ system design. 
 %The contribution from the muon system is small due to it's significantly lower number of channels. The system is readout by nine FADC boards in a single VXS crate. The event 
 %size for a 10\% occupancy level is 0.2~kbytes which translates to a data rate of 10~Mbytes/s. 
-Table~\ref{tab:data_rates} summarizes the event size and data rates. The highest overall rate, for a 1.1~GeV run, and that needs to be written to disk is 52~MB/s which is within the current 
+Table~\ref{tab:data_rates} summarizes the event size and data rates. The highest overall rate, for a 1.1~GeV run, that needs to be written to disk is 40~MB/s which is within the current 
 DAQ system design limit of 100~MB/s. 
 \begin{table}[]
 \centering
@@ -249,11 +251,11 @@ DAQ system design limit of 100~MB/s.
 \hline
 Beam energy (GeV) & 1.1 & 2.2 & 6.6 & 1.1 & 2.2 & 6.6 & 1.1 & 2.2 & 6.6 \\
 \hline
-SVT & 0.5 & 0.3  & 0.3  & 2.5 & 1.7 & 1.5 & 43.1 & 27.2 & 18.9\\
-ECal & 3.0 & 4.2  & 4.7 & 0.3 & 0.3  & 0.3 & 4.9 & 4.8  & 3.9 \\
-Muon & 10.0 &  10.0 & 10.0  & 0.2 & 0.2 & 0.2 & 3.8 & 3.4 & 2.7 \\
+SVT & 0.4 & 0.4  & 0.3  & 1.8 & 1.8 & 1.6 & 33.1 & 29.2 & 19.8\\
+ECal & 3.0 & 4.1  & 4.5 & 0.4 & 0.5  & 0.5 & 7.0 & 7.9  & 6.7 \\
+%Muon & 10.0 &  10.0 & 10.0  & 0.2 & 0.2 & 0.2 & 3.8 & 3.4 & 2.7 \\
 \hline
-Total& \multicolumn{3}{|c|}{-} & 3.0 & 2.2 & 2.0 & 51.9 & 35.4 & 25.6 \\
+Total& \multicolumn{3}{|c|}{-} & 3.0 & 2.2 & 2.0 & 40.1 & 37.1 & 26.4 \\
 \hline
 \end{tabular}
 \caption{{\small Summary of the occupancy, event size and data rate expected for the runs at the three beam 
