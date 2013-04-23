@@ -41,7 +41,7 @@ After correcting for offsets from each sensor (time-of-flight, clock phase) the 
 Throughout the duration of the test run, approximately 97\% of the 12,780 SVT 
 channels were found to be functional.
 The identified dead or noisy channels were largely attributed to a 
-known noisy sensor and a few noisy or misconfigured chips which will be resolved for future running. The 
+known noisy half-module and a few noisy or misconfigured chips which will be resolved for future running. The 
 increased noise resulted in occupancies and data rates that were higher than what were expected from simulation.
 However, after masking out all known noisy channels found during the commissioning of the SVT, good agreement 
 between simulation and test run data was achieved as shown on Figure~\ref{fig:data_rates_data_mc_cmp}.
@@ -62,6 +62,8 @@ Similarly, the hit efficiency was measured to be above 98\% for known good layer
 \end{figure}
 Further details can be found in the Appendix \ref{app:svt}. 
 
-The spatial resolution of the microstrip sensor discussed in With tracks of only a few GeV multiple scattering prohibits the measurement of spatial hit resolution.  However, as discussed in Sec.~\ref{sec:svt_testrun} the 
-spatial resolution of the microstrip tracker depends mostly on the signal to noise ratio. The measured signal 
-to noise ratio in the test run detector indicates a spatial hit resolution as predicted.
+The spatial resolution of similar microstrip sensors is well established by test beam data, against which the charge deposition model in the lcsim Monte Carlo is validated.  This resolution can be parameterized as a function of the total signal to single-strip noise (S/N) and the crossing angle of tracks through the sensor.  The single-hit resolution for charged particles with $S/N > 20$, as demonstrated here, is relatively constant at approximately 6 $\mu$m for tracks that are close to normal to the sensors as in HPS.
+
+%The spatial resolution of the microstrip sensor discussed in With tracks of only a few GeV multiple scattering prohibits the measurement of spatial hit resolution.  However, as discussed in Sec.~\ref{sec:svt_testrun} the 
+%spatial resolution of the microstrip tracker depends mostly on the signal to noise ratio. The measured signal 
+%to noise ratio in the test run detector indicates a spatial hit resolution as predicted.
