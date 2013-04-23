@@ -73,7 +73,7 @@ within $100$ ns of the trigger signal. }}\label{fig:mip10x10}
 \input{muon/muon_system}
 \clearpage
 
-\section{Simulation tools}
+\section{Simulation Tools}
 \label{app:sim}
 
 The simulation tools play a critical role in simulating the background
@@ -85,9 +85,10 @@ found on secondary particle yields or energy spectra. However, we have found
 significant disagreements on the angular distributions in the multiple
 scattering, bremsstrahlung and pair production processes.  
 
-\vspace{1cm}
-\noindent
-{\bf Multiple Scattering}
+%\vspace{1cm}
+%\noindent
+%{\bf Multiple Scattering}
+\subsection*{Multiple Scattering Simulation}
 
 EGS5 simulates the electron elastic scattering using the Moli\`{e}re theory 
 \cite{moliere} as formulated by Bethe. \cite{bethe}
@@ -146,9 +147,10 @@ target materials.
 \label{appendix:2}
 \end{figure}
 
-\vspace{1cm}
-\noindent
-{\bf Angular distributions in the bremsstrahlung and pair production processes}
+%\vspace{1cm}
+%\noindent
+%{\bf Angular distributions in the bremsstrahlung and pair production processes}
+\subsection*{Angular Distributions}
 
 While GEANT4 and EGS5 are in good agreement in the production rates and the secondary particle
 energy spectra, there are significant differences in the angular distribution in the secondary
@@ -190,19 +192,20 @@ $\theta_\gamma$ of the bremsstrahlung photon, and $u=E_{\pm}\theta_{\pm}$ for th
 energy $E_\pm$ and polar angle $\theta_\pm$ in the pair production. Since the production angle
 is typically $1/\gamma$, GEANT4's approximations are acceptable
 for most of the high energy detector simulations. However, GEANT4
-simulations are inconsistent with the data in the following two cases in the HPS Test Run,
-
-1) GEANT4 prediction on the bremsstrahlung photon angular distribution is too narrow, 
-resulting in too few collimator scattering, and
-
-2) GEANT4 prediction on the pair angular distribution is too narrow, resulting in 
+simulations are inconsistent with the data in the following two cases in the HPS Test Run:
+\begin{itemize}
+\item The bremsstrahlung photon angular distribution is too narrow, 
+resulting in too few scatters in the collimator.
+\item The prediction on the pair angular distribution is too narrow, resulting in 
 too few Ecal trigger rates.
+\end{itemize}
 
-\vspace{1cm}
-\noindent
-{\bf Conclusions}
+%\vspace{1cm}
+%\noindent
+%{\bf Conclusions}
+\subsection*{Simulation Tools Setup in HPS}
 
-Because of these inaccuracies in GEANT4 the electromagnetic interactions in the target are simulated 
+Because of the inaccuracies in GEANT4 described above the electromagnetic interactions in the target are simulated 
 by EGS5, and all the particles that come out of the target are passed on to the HPS detector 
 simulation system based on GEANT4.
 
