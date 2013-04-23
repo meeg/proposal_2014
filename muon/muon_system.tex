@@ -7,7 +7,7 @@ The muon detector will match the geometrical acceptances of the tracker and ECal
 geometrical coverage, the efficiency of detecting high mass A$^\prime$s in the $\mu^+\mu^-$ decay channel will be higher than for $e^+e^-$ 
 decays, see Figure \ref{fig:muacc}. The di-muon decay channel of the A$^\prime$ has the advantage of having greatly reduced electromagnetic 
 backgrounds.  In this case, the only particle background in a muon counter would come from the photoproduction of $\pi^+$ and $\pi^-$ pairs
-that are not fully stopped in the ECal or absorber.  The expected low background and the high detection efficiency make the di-muon final state an
+that are not fully stopped in the ECal or absorber.  The expected low background and the high detection efficiency makes the di-muon final state an
 attractive complement to the $e^+e^-$ final state. It will add substantial territory in the mass and coupling
 parameter space as show in Figure \ref{fig:mureach} and will offer valuable cross-checks. With the addition of a muon system, HPS will be the 
 only fixed target experiment proposed to date to search for heavy photons in an alternative to the $e^+e^-$ decay mode.
@@ -147,4 +147,22 @@ Full Monte Carlo simulations with realistic event rates are currently under stud
 The crucial issues are the event rates in the scintillators near the beamline (which already has initiated a redesign of the vacuum chamber 
 to reduce background), the target-to-muon-counter tracking resolution and the detection efficiency, and the achievable trigger rates.  
 Any changes to the detector as a result of these studies are expected to be minor and will not alter the conceptual design presented here.
+
+\subsubsection{ $\mu^+\mu^-$ Trigger} 
+
+%The muon trigger will look for an energy deposition consistent with that of a MIP particle in single ECal channels and in the muon hodoscopes from a $\mu^+\mu^-$ pairs.  The CTPs in the three VXS crates (two for each half of the ECal and one for the Muon System) will search for MIP hits using energy selections on the hits reported by the FADCs satisfying: $E_{MIP}^{min}<E_{ECal\_channel}<E_{MIP}^{max}$ for the ECal and $E_{MIP_thr}<E_{\mu\_hodo}$ for the Muon System. The CTP in the Muon System will use time information of the reported MIP hits to select coincidences in three planes of each hodoscope layer according to the geometry of horizontal and vertical strips. After the MIP hits in the ECal and in the muon system are selected, the CTP sends the time and position information of each selected hit to the SSP. The SSP will look for time and position coincidence of MIP hits in the ECal with hits in at least the tthree first layers of the Muon System, treating the top and bottom halves of the detector separately. To form the final $\mu^+\mu^-$ trigger decision it will select pairs of MIP hits in opposite quadrants of the detector (similar to the coplanarity requirements described above) that are within a programmable coincidence time window. 
+
+The muon trigger will look for 
+$\mu^+\mu^-$ pairs by finding energy depositions consistent with those expected from minimum ionizing particles in the layers of the muon system.  
+The trigger algorithm in the CTP of the muon system  VXS crate will produce a muon pair trigger in four steps:
+\begin{itemize}
+\item search for MIP hits using energy selections on the hits reported by the FADCs which satisfy $E_{MIP}^{thr}<E_{\mu\_hodo}$
+\item use the time information of the reported MIP hits to select coincidences between the two planes of each hodoscope layer, quadrant by quadrant.  
+\item look for coincidences in successive quadrants of at least the first three layers of the muon hodoscopes 
+\item select pairs of triple coincidences in opposite quadrants of the detector and report the times and positions of coincident triple hits 
+to the SSP 
+\end{itemize}
+If it is necessary to reduce the rate further, the SSP can in addition look for time and position coincidences of MIP hits in the ECal, defined in the ECal 
+crate CTPs as hits with 1 or 2 crystals and energy within predefined thresholds: $E_{MIP}^{min}<E_{ECal\_channel}<E_{MIP}^{max}$. 
+The SSP will send the final decision regarding the $\mu^+\mu^-$ trigger to the Trigger Supervisor  board. 
 

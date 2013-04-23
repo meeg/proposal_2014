@@ -39,7 +39,16 @@ that feeds the four ECal motherboards through a custom-made patch panel. The pre
 parts of the ECal, and controlling or resetting them remotely has proved to be very inconvenient, requiring frequent access to the Hall, especially during commissioning. Newly available low voltage power supplies are much more flexible. The one that is the most suitable for the
 ECal APD preamplifiers is the WIENER MPV 8008LD. This power supply is being used at JLAB and the control software exists, so it will be easy to incorporate it into HPS.     
 
-\item{\bf Possibilities with new APDs} - Installing new APDs on the current crystals will significantly improve the ECal performance, but doing so is expensive,  so replacement is only being considered if a funding source beyond DOE HEP is secured. Replacing the old $5\times 5$ mm$^2$ 
+\item {\bf New preamplifiers} - A low noise, low gain preamplifiers will be needed to take advantage of increased signal on the input of FADC after removing the spliter. The impact of the lower noise/threshold system is twofold: first it 
+will improve the ECal's energy resolution; and second it will make the ECal sensitive to minimum ionizing particles which pass through the crystals transversely. With sensitivity to cosmic ray muons, which will pass through the ECal transversely when it is installed in HPS, the Ecal crystals can be calibrated for MIPS, and their effective gains balanced.  HPS collaborators from INFN Genova have shown that with such a low noise, low threshold system, the ECal can distinguish the MIP energy deposition from noise, see left plot on Figure \ref{fig:mip10x10}.
+
+%\begin{figure*}[t]
+%\includegraphics[scale=0.4]{ecal/MIP_5x5_APD.png}
+%\caption{\small{Charge distribution from readout of the HPS calorimeter crystal with Hamamatsu S8664-55 APD, and the new low noise amplifier board. The red line histogram corresponds to the charge distribution for all triggers coming from the scintillators positioned above and below the crystal. The black line shows the distribution for hits in the crystal within $100$ ns of the trigger signal. }}\label{fig:mip5x5}
+%\end{figure*}
+
+
+\item{\bf Possibilities with new APDs} - Installing new APDs on the existing crystals will significantly improve the ECal performance, but doing so is expensive,  so replacement is only being considered if a funding source beyond DOE HEP is secured. Replacing the old $5\times 5$ mm$^2$ 
 Hamamatsu S8664-55 APDs with $10\times 10$ mm$^2$, Hamamatsu S8664-1010 will improve two critical characteristics of the present calorimeter modules. First, the new APDs from Hamamatsu have much better performance than the ones which are currently installed. Data from Hamamatsu shows that APDs made from the same wafer have excellent gain uniformity. With $\pm 10\%$ known uniformity 
 at the gain of $100$, the required variations in bias voltage are only $\sim 4.5$ V. Even for large samples of APDs (~1300),  the required bias voltage differences are ~50 V, which is half that of the current APDS. The ECal supplies bias voltage to groups of APDs, so with new APDs, with their smaller voltage-gain variations, it will be possible to achieve much better 
 uniformity in the response of the calorimeter modules, and consequently better uniformity in trigger thresholds. 

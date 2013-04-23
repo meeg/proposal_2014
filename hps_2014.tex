@@ -1,4 +1,4 @@
-\documentclass[prc,12pt]{revtex4}
+\documentclass[prc,12pt,nofootinbib]{revtex4}
 %\documentclass[12pt]{article}
 
 %\usepackage{graphics}
@@ -17,15 +17,15 @@
 %\usepackage{subfigure}
 \usepackage{hyperref}
 \usepackage{float}
-\newcommand{\footlabel}[2]{%
-    \addtocounter{footnote}{1}
-    \footnotetext[\thefootnote]{%
-        \addtocounter{footnote}{-1}%
-        \refstepcounter{footnote}\label{#1}%
-        #2%
-    }%
-    $^{\ref{#1}}$%
-}
+%\newcommand{\footlabel}[2]{%
+ %   \addtocounter{footnote}{1}
+    %\footnotetext[\thefootnote]{%
+       % \addtocounter{footnote}{-1}%
+        %\refstepcounter{footnote}\label{#1}%
+        %#2%
+    %}%
+    %$^{\ref{#1}}$%
+%}
 \usepackage{setspace} 
 \usepackage{rotating}
 
@@ -106,6 +106,9 @@ The Heavy Photon Search (HPS) is an experiment proposed for Jefferson Laboratory
 \input{hps_setup}
 
 \input{beamline/beamline}
+\clearpage
+
+\input{slow_control/slow_controls.tex}
 \clearpage
 
 \input{svt/svt}
