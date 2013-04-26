@@ -290,14 +290,13 @@ simulation system based on GEANT4.
 
 The noise and pedestal of the readout chain are calibrated by running the ECal readout in a mode where the preamplifier output is sampled every 4~ns in a time window of 100 samples: by looking at a part of the window before the hit, we calibrate the readout channel.
 
-We calibrate gain of the individual ECal channels using the SVT measurement of track momentum. 
-The ratio of cluster energy to track momentum is calculated both for Monte Carlo simulation and test run data at each point in the ECal, and we find the value of gain for each channel that brings the two into agreement.
-We use a formula to compute the ``weighted E/p'' for a crystal, representing the average E/p for clusters that include the crystal: $\frac{\sum_j w_{j,i}}{\sum_j\frac{P_j}{E_j}w_{j,i}}$.
-We disable all SVT and ECal channels in the simulation that were inoperable or noisy in the test run, so any efficiency or bias effects that affect the real data should be reflected in the simulation as well.
+We calibrate gain of the individual ECal channels using the SVT measurement of track momentum and comparison to Monte Carlo simulation. 
+% The ratio of cluster energy to track momentum is calculated both for Monte Carlo simulation and test run data at each point in the ECal, and we find the value of gain for each channel that brings the two into agreement.
+We disable all SVT and ECal channels in the simulation that were inoperable or noisy in the test run, so any efficiency or bias effects that affect the real data should be reflected in the simulation as well; then we use a formula to compute the ``weighted E/p'' for a crystal, representing the average E/p for clusters that include the crystal: $\frac{\sum_j w_{j,i}}{\sum_j\frac{P_j}{E_j}w_{j,i}}$, and iteratively adjust the gains until the weighted E/p is equal for test run data and simulation.
 
-The calibrated gains are corrected by the ratio between the weighted E/p values from Monte Carlo and real data.
-The E/p in Monte Carlo data is also affected by the gain because the trigger thresholds change, so both Monte Carlo and data reconstruction are rerun with each iteration of gain calibration.
-It takes up to 4 iterations for the gains to stabilize; the final values are shown in Figure \ref{fig:gains}.
+% The calibrated gains are corrected by the ratio between the weighted E/p values from Monte Carlo and real data.
+% The E/p in Monte Carlo data is also affected by the gain because the trigger thresholds change, so both Monte Carlo and data reconstruction are rerun with each iteration of gain calibration.
+% It takes up to 4 iterations for the gains to stabilize; the final values are shown in Figure \ref{fig:gains}.
 \begin{figure}[ht]
 	\includegraphics[width=0.45\textwidth]{test2012/ecalperformance/ecalgainplots_corr_sim}
 	\includegraphics[width=0.45\textwidth]{test2012/ecalperformance/gains}
@@ -305,7 +304,7 @@ It takes up to 4 iterations for the gains to stabilize; the final values are sho
 	\label{fig:gains}
 \end{figure}
 
-These gains can then be used to convert from ADC counts in a channel to energy deposited into that ECal crystal.
+These gains can then be used to convert from ADC counts in a channel to the energy deposited into that ECal crystal.
 The other information needed to find the energy of an incident particle is the sampling fraction---the ratio of energy read out from crystals to energy of an incident particle.
 The conventional sampling fraction---the fraction of incident energy that is deposited in crystals---is approximately 0.9 for our ECal, and less at edges.
 For our readout, there is additional energy lost because crystals under the readout threshold are not read out.

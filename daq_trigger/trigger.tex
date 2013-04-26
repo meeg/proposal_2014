@@ -4,9 +4,9 @@
 The trigger system is designed to efficiently select e$^{+}$e$^{-}$ events by 
 using information from the ECal. The trigger looks for time coincidences of clusters in the top and bottom half of the ECal. The clusters also have to satisfy loose topological selections optimized on A$^{\prime}$ events to further reduce the rate. 
 
-As described above in Sec.~\ref{sec:fadc_daq}, the first stage of the trigger logic is incorporated into the FPGA's on the FADC boards which sends crystal energy and time information to the CTP. With the available 3-bit time information, the CTP can in principle look for time coincidence of crystal signals with 4~ns resolution (HPS will use a 8~ns time coincidence interval). The final trigger decision is made in the CTP and Sub-System Processor (SSP). The trigger supervisor generates all necessary signals and controls the entire DAQ system readout through the Trigger Interface (TI) units. The TI units are installed in every crate that participate in the readout process. 
+As described above in Sec.~\ref{sec:fadc_daq}, the first stage of the trigger logic is incorporated into the FPGA's on the FADC boards which sends crystal energy and time information to the CTP. With the available 3-bit time information, the CTP can in principle look for time coincidence of crystal signals with 4~ns resolution (HPS will use a 8~ns time coincidence interval). The final trigger decision is made in the CTP and Sub-System Processor (SSP). The Trigger Supervisor generates all necessary signals and controls the entire DAQ system readout through the Trigger Interface (TI) units. The TI units are installed in every crate that participate in the readout process. 
 
-The trigger system is free-running and driven by the 250~MHz global clock and has essentially zero dead time at occupancies expected by HPS. The trigger supervisor can apply dead time if necessary, for example on a 'busy' or 'full' condition from front-end electronics. The system is designed to handle trigger rates above 50~kHz and a latency set to $\approx 3~\mu$s to match that required by the SVT APV25 chips. 
+The trigger system is free-running and driven by the 250~MHz global clock and has essentially zero dead time at occupancies expected by HPS. The Trigger Supervisor can apply dead time if necessary, for example on a `busy' or `full' condition from front-end electronics. The system is designed to handle trigger rates above 50~kHz and a latency set to $\approx 3~\mu$s to match that required by the SVT APV25 chip. 
 
 
  
@@ -70,7 +70,7 @@ The CTP sends the following information about the clusters to the SSP:
 The cluster position is the coordinate of the peak crystal energy as seen from a 3x3 view. The 3x3 cluster hit pattern can be used by the SSP to help filter strange cluster patterns and/or make a low resolution cluster centroid computation.
 %{\bf Sub-System Processor} 
 %The cluster's time, energy, position and 3x3 pattern found in two VXS crates are reported to the Sub-System Processor. 
-The SSP collects the cluster information from the two halves of the ECal and further applies optimized selections optimized to further reduce background rates with small impact on the A' signal:
+The SSP collects the cluster information from the two halves of the calorimeter and applies selections optimized to further reduce background rates with small impact on the A' signal:
 \begin{itemize}
 \item Energy sum,  
 $E_{min}\le E_{top}+E_{bottom}\le E_{max}$
@@ -96,6 +96,7 @@ $HitThreshold$ are programmable parameters.
 The SSP can also create a trigger decision based on the existence of a single cluster in the ECal exceeding the energy threshold which is  useful for commissioning and calibration runs. 
 
 Online event analysis will be provided to be compared against trigger event data for immediate verification (on each trigger cut: cluster energies, positions, timing, energy slope, coplanarity and hit threshold). With identical trigger and data readout paths and high energy resolution, very precise agreement can be expected between trigger and readout.
+
 
 
 \vspace{1cm}
