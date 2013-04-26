@@ -1,9 +1,9 @@
 \label{sec:daq}
 
-The HPS experiment data acquisition (DAQ) handles the acquisition of data for the two sub-detectors: the SVT and ECal. HPS employs two DAQ architectures: the SVT is readout with 
+The HPS experiment data acquisition (DAQ) handles the acquisition of data for the three sub-detectors: the SVT, ECal and the Muon System. HPS employs two DAQ architectures: the SVT is readout with 
 Advanced Telecom Communications Architecture (ATCA) hardware
-while the ECal use VXS based hardware. The trigger system receives input from the 
-ECal and distributes a trigger signal to all detector sub-systems to readout a selected  event. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagram of the DAQ system.
+while the ECal and Muon System use VXS based hardware. The trigger system receives input from the 
+ECal and Muon System, and distributes a trigger signal to all detector sub-systems to read out a selected event. Figure~\ref{fig:daq_hardware_overview} gives a schematic block diagram of the DAQ system.
 
 
 \begin{figure*}[ht]
@@ -13,21 +13,21 @@ ECal and distributes a trigger signal to all detector sub-systems to readout a s
 \label{fig:daq_hardware_overview}
 \end{figure*}
 
-For the ECal, every VXS crate contains a Readout Controller (ROC) that collects digitized information, 
+For the ECal and Muon System, every VXS crate contains a Readout Controller (ROC) that collects digitized information, 
 processes it, and sends it on to the
 Event Builder (EB). The ROC is a single blade Intel-based CPU module running DAQ software under CentOS Linux OS. 
 For the SVT ATCA system, the ROC application runs on an embedded 
 processor situated on the ATCA main board.
 The EB assembles 
-information from the SVT, and ECal ROCs into a single 
-event which is passed to the Event Recorder that writes it to a RAID5-based data storage system capable of handling up to 100~MB/s.
+information from the SVT, ECal and Muon System ROCs into a single 
+event which is passed to the Event Recorder (ER) that writes it to a RAID5-based data storage system capable of handling up to 100~MB/s.
 The EB and other 
 critical components run on multicore Intel-based multi-CPU servers. The DAQ network system is a 
 Foundry router providing high-speed connections between the DAQ components and 
-to the JLab computing facility. The SVT ROC, which must handle large data volumes, has a 10~Gbit/s link to the Foundry router, while a 1~Gbit/s link is adequate for the ECal. A 10~Gbit/s uplink to the JLab computing facility is used for long-term storage.
+to the JLab computing facility. The SVT ROC, which must handle large data volumes, has a 10~Gbit/s link to the Foundry router, while a 1~Gbit/s link is adequate for the ECal and Muon System. A 10~Gbit/s uplink to the JLab computing facility is used for long-term storage.
 
-Section~\ref{sec:svt_daq} describes the SVT DAQ in more detail while the VXS based readout for 
-the ECal is described in Sec.~\ref{sec:fadc_daq}. The trigger 
+Section~\ref{sec:svt_daq} describes the SVT DAQ in more detail while the VXS-based readout for 
+the ECal and Muon System is described in Sec.~\ref{sec:fadc_daq}. The trigger 
 system is explained in more detail in Sec.~\ref{sec:triggerdaq}.
 
 \subsubsection{SVT DAQ}
@@ -128,20 +128,20 @@ that integrates the SVT event frames into the JLab DAQ
 
 
 
-\subsubsection{ECal FADC Readout}
+\subsubsection{ECal and Muon System FADC Readout}
 \label{sec:fadc_daq}
-The analog signals from the individual APD's of the ECal (shaped and amplified as described in Sec.~\ref{sec:ecal}) are input to a single channel on the 16-channel JLab FADC250 VXS module (FADC), shown in Fig. ~\ref{fig:fadc}. 
+The analog signals from the individual APD's of the ECal (shaped and amplified as described in Sec.~\ref{sec:ecal}) and phototubes of the Muon System are input to a single channel on the 16-channel JLab FADC250 VXS module (FADC), shown in Fig. ~\ref{fig:fadc}. 
 \begin{figure}[t]
 \includegraphics[scale=0.5]{daq_trigger/figures/FADC250_Photo_001.jpg}
-\caption{\small{A JLab FADC250 VXS module.}}
+\caption{\small{A Jefferson Lab FADC250 VXS module.}}
 \label{fig:fadc}
 \end{figure}
 
-Two 20-slot VXS crates are needed to accommodate the system: one for each half of the ECal with 221 channels. 
+Three 20-slot VXS crates are needed to accommodate the system: one for each half of the ECal with 221 channels and one for the Muon System with a total of 232 channels. 
 
 The FADCs store 12-bit digitized samples at 250~MHz in 8~$\mu$s deep pipelines. 
 When a trigger is received, the appropriate part of the pipeline is accessed. If a FADC   
-signal exceeds a predefined threshold within that time window, the integrated amplitude of a pre-defined  number of samples before (NSB) and after (NSA) the signal passed threshold, in addition to the time, are recorded as explained in Fig.~\ref{fig:hps_trigger_data}. This scheme significantly compresses the data input to the FADC. During data analysis, a pedestal value is subtracted to obtain the actual summed energy.
+signal exceeds a predefined threshold within that time window, the integrated amplitude of a pre-defined number of samples before (NSB) and after (NSA) the signal passed threshold, in addition to the time, are recorded as explained in Fig.~\ref{fig:hps_trigger_data}. This scheme significantly compresses the data input to the FADC. During data analysis, a pedestal value is subtracted to obtain the actual summed energy.
 
 %% Step %% The FADCs are an integral part of the HPS calorimeter trigger system. Energies  and times from each FADC channel in the same VXS crate are input to the crate trigger processor board (CTP) which groups adjacent channels with energy deposited into ``clusters,'' identifies the associated channels, andassigns an overall cluster energy. Clusters  from each CTP (one for the top half of the Ecal, one for the bottom) are combined in the sub-system processor module (SSP) which applies further selection criteria. Events with cluster combinations which pass the criteria are passed to the trigger supervisor. The trigger process has a pulse timing resolution of 4~ns. This allows a narrow coincidence window of 8~ns to be used when searching for clusters, and reduces accidental and out of time coincidences in the Ecal and the other systems. 
 
@@ -165,7 +165,7 @@ Input range & Nominal charge resolution\\
 \caption{Nominal FADC charge resolution for different front-end input ranges.}
 \label{tab:charge_resolution}
 \end{table}
-As shown in Fig.~\ref{fig:hps_trigger_data} the FADC has two parallel data paths: the readout and trigger paths. The trigger path runs continuously to report hits to the trigger system. The readout path only reports hits to the DAQ when the FADC receives a trigger.
+As shown in Fig.~\ref{fig:hps_trigger_data}, the FADC has two parallel data paths: the readout and trigger paths. The trigger path runs continuously to report hits to the trigger system. The readout path only reports hits to the DAQ when the FADC receives a trigger.
 
 For the readout path, every FADC has the following parameters:
  \begin{itemize}
