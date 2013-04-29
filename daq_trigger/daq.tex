@@ -55,8 +55,9 @@ this change lets HPS optimally piggyback on SLAC's ATCA system development.
 
 Each of the 36 silicon strip sensors is connected to a 
 hybrid board incorporating five 128-channel APV25 front-end 
-ASICs~\cite{Jones:1069892,Raymond:2002yr}, see Figure~\ref{fig:hybrid_and_apv25_testrun}.
-The APV25 ASIC, initially developed for the Compact Muon Solenoid silicon tracker  at the Large Hadron 
+ASICs~\cite{Jones:1069892,Raymond:2002yr}.  Figure~\ref{fig:hybrid_and_apv25_testrun} in 
+Sec.~\ref{sec:testrun_daq} shows a picture of a hybrid board from the 2012 Test Run.
+The APV25 ASIC, initially developed for the Compact Muon Solenoid silicon tracker at the Large Hadron 
 Collider at CERN, was chosen because it provides excellent signal to noise, analog output for optimal 
 spatial resolution, and signal pulse shape sampling capability for good hit time resolution. 
 Each hybrid board has five analog output lines (one for each of the APV25 ASICs) which are sent to the  
@@ -70,8 +71,8 @@ The front-end readout board houses a FPGA and buffers to allow for control of th
 distribution of clock, trigger and I$^{2}$C communication with the APV25 ASICs. 
 To further simplify the services and minimize cabling that enter through the vacuum flanges, it contains 
 linear regulators to distribute and regulate three low voltage power lines to each of the APV25 ASICs and
-the high voltage bias. Figure~\ref{fig:svt_daq_flange_fe_boards} shows a schematic layout of this part of the 
-readout chain.
+the high voltage bias. Figure~\ref{fig:svt_daq_flange_fe_boards} shows a schematic layout of this part of 
+the readout chain.
  \begin{figure*}[]
 \includegraphics[ scale=0.6]{daq_trigger/figures/daq_hps_2014_schematics_fe_flange_boards.pdf} 
 \caption{\small{Schematic overview of the front end and flange boards of the downstream part of 
@@ -82,37 +83,39 @@ SVT DAQ.}}
 The digitized signals are converted to optical signals just outside the vacuum flange on custom built  
 flange boards. Each flange board houses optical drivers to handle the electrical-optical 
 conversion and to transmit the optical signals over $\sim 10$~m fibers to the ATCA crate. 
-The flange board also interfaces the low- and high voltage power transmission from the power 
-supplies to the front-end boards located inside the vacuum chamber.  
+The flange board also interfaces the low- and high voltage power transmission from the 
+Wiener MPOD power supplies to the front-end boards located inside the vacuum chamber.  
 
-The main SVT DAQ uses the ATCA system for high speed data transfer. The optical signals from four hybrids, 
-one half flange board, are received at one of four sections of the Rear Transition Module (RTM) board in the 
-ATCA crate, see Fig.~\ref{fig:svt_daq_overview}.
+The main SVT DAQ uses the ATCA system for high speed data transfer. The optical signals from four 
+hybrids, one half flange board, are received at one of four sections of the Rear Transition Module (RTM) 
+board in the ATCA crate as shown schematically in Fig.~\ref{fig:svt_daq_overview}.
 \begin{figure*}[]
 \includegraphics[ scale=0.6]{daq_trigger/figures/daq_hps_2014_schematics_atca.pdf} 
 \caption{\small{Schematic block diagrams of the SVT data acquisition system.}}
 \label{fig:svt_daq_overview}
 \end{figure*}
-Each section of the RTM connects to one of four FPGA units on the main ATCA board, 
-the COB (Cluster On Board). Each FPGA is housed on a 
-separate daughter board called a Data Processing Module (DPM). The modular ATCA design permits 
+Each section of the RTM connects to one of four Data Processing Processing Modules (DPM) on the 
+main ATCA board, the COB (Cluster On Board). The modular ATCA design permits 
 HPS to re-use architecture and functionality from other DAQ systems such as the ATLAS muon 
-system whose components are similar to those used by HPS. Figure~\ref{fig:rtm_testrun} shows the boards designed and used for the HPS Test run.
+system whose components are similar to those used by HPS. Figure~\ref{fig:rtm_testrun} shows the boards 
+designed and used for the HPS Test run.
 In order to minimize the complexity of the system inside the vacuum chamber, all signal processing is 
-done at the DPM.  Each DPM receives the digitized signals 
-from the RTM, applies thresholds for data reduction and organizes the sample data 
-into UDP datagrams. One of the DPMs functions as the trigger interface which receives trigger 
-signals from the optical fiber module on the RTM, distributes clock and trigger signals, 
-and handles communication with the JLab trigger supervisor and the RCE. The 
-RCE (Reconfigurable Cluster Element) is a generic computational building block 
-on the trigger interface DPM running a 450~MHz PPC processor with 2~GB of DDR3 
-memory. Four COBs housed in two ATCA crates are sufficient to handle 
-the 36 hybrids of the SVT.
+done at the DPM. Each DPM consists of two RCEs (Reconfigurable Cluster Elements) which are 
+generic computational building block based on Xilinx Zynq 7 System-On-Chip technology running 
+a dual core 1~GHz ARM processor with 4~GB of DDR3 memory tightly integrated with on-chip 
+programmable logic (FPGA).
 
-The RCE receives and buffers UDP datagrams from the data and trigger DPMs and
- assembles them into full event frames. The RCE also runs an implementation of the JLab ROC application 
-that integrates the SVT event frames into the JLab DAQ 
- system described above. The RCE node transfers data to the JLab DAQ  
+Each data DPM receives the digitized signals 
+from the RTM, applies thresholds for data reduction and organizes the sample data 
+into ethernet frames. One of the DPMs functions as the trigger interface which receives trigger 
+signals from the optical fiber module on the RTM, distributes clock and trigger signals, 
+and handles communication with the JLab trigger supervisor and the RCEs. Four COBs housed in two 
+ATCA crates are sufficient to handle the 36 hybrids of the SVT.
+
+One of the RCEs receives and buffers ethernet 
+frames from the data and trigger DPMs and assembles them into full event frames. This RCE 
+runs an implementation of the JLab ROC application that integrates the SVT event frames into the JLab 
+DAQ system described above. The RCE node transfers data to the JLab DAQ  
  through a 10~Gbit/s Ethernet backend interface. The maximum readout rate of the SVT is approximately 50~kHz, limited by the APV25 readout rate. 
 %The maximum readout rate of the SVT DAQ  is limited by the readout time 
 %of the APV25 chip. Using overlapping trigger and readout functionality, where the 
