@@ -1,13 +1,32 @@
 
 The following is an outline of the offline computing model envisioned for satisfying the analysis needs of the HPS experiment. The raw data collected over the running periods must be processed through calibration passes, reconstructed into calibrated objects useful for analysis and separated into analysis streams. Corresponding Monte Carlo will also need to be produced and separated into the same analysis streams.
 
+The raw data must be processed to produce physics data objects that can be analyzed. 
+This reconstruction process will also include filters to select events of physics interest. We use the event size estimates 
+in Table~\ref{tab:raw_data_size}, which are based on Table~\ref{tab:data_rates} from the previous section and object sizes 
+in EVIO (raw data) and LCIO (processed data) formats. 
+\begin{table}[ht]
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Beam energy & Raw (EVIO) event size (kB) & Reconstructed (LCIO) event size (kB) \\ 
+\hline
+1.1 GeV  &  2.2 & 4.8 \\
+2.2 GeV  &  2.3 & 5.0 \\
+6.6 GeV  &  2.1 & 4.0 \\
+\hline
+\end{tabular}
+\caption{{\small Data event sizes. }}
+\label{tab:raw_data_size}
+\end{table}
+
 Table~\ref{tab:data_volume} shows the expected number of triggered events and
 %the average trigger rate and 
 the total amount of data expected over the 
 different runs. 
 We assume that the experiment collects data for all of its available beam time and the time allocated for detector commissioning, even though the experiment reach only assumes 50\% availability; this gives a conservative estimate of computing requirements. 
 For trigger rate estimates, we use the ECal trigger rate from Section \ref{sec:ecaltrigg}; based on Appendix \ref{sec:muontrigg}, the muon system trigger rate is expected to be negligible.
-\begin{table}[]
+\begin{table}[ht]
 \centering
 \begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
@@ -28,23 +47,6 @@ Total & - & 70 & 86 & 192 & 394 \\
 \label{tab:data_volume}
 \end{table}
 
-The raw data must be processed to produce physics data objects that can be analyzed. 
-This reconstruction process will also include filters to select events of physics interest. We use the event size estimates 
-in Table~\ref{tab:raw_data_size}, which are based on Table~\ref{tab:data_rates} from the previous section. 
-\begin{table}[]
-\centering
-\begin{tabular}{|l|c|c|}
-\hline
-Beam energy & Raw (EVIO) event size (kB) & Reconstructed (LCIO) event size (kB) \\ 
-\hline
-1.1 GeV  &  2.2 & 4.8 \\
-2.2 GeV  &  2.3 & 5.0 \\
-6.6 GeV  &  2.1 & 4.0 \\
-\hline
-\end{tabular}
-\caption{{\small Data event sizes. }}
-\label{tab:raw_data_size}
-\end{table}
 
 For modeling signals, estimating backgrounds and confirming the understanding of the detector 
 performance, extensive Monte Carlo simulation is needed. 
@@ -79,30 +81,34 @@ The amount of triggered trident events to be simulated is 10\% of the amount exp
 the number of triggered A' events to be simulated is 100 million at each of 10 mass points at each beam energy. 
 These will be used to test the analysis.
 
-In total 472 (618)~Tb of storage for data (raw, reconstructed and simulated) is needed for the 2014 (2015) run.
-
+In total 472 (618)~TB of storage for data (raw, reconstructed and simulated) is needed for the 2014 (2015) run.
 Tape is currently the only economical storage
 solution for storing all of the raw, simulated and processed data.
+
 The processing of the raw data is foreseen to occur at JLab. Given a
-typical bandwidth between sites of 3 to 4 Tb/day, analyses needing
-access to the hit level information will need to be run at JLab or run
-on small samples of exported data unless they can take advantage of the
-analysis streams. Analysis streams of events satisfying
-pre-selections criteria for targeted analyses will be exported to remote
+typical bandwidth between sites of 3 to 4 TB/day, 
+only data summaries of events satisfying
+pre-selection criteria for targeted analyses will be exported to remote
 sites. Likewise, the size of the simulated data samples suggests that
 the simulation should be processed and stored at JLAB and that 
-only analysis streams or small samples of the full data will be
+only data summaries or small samples of the full data will be
 exported.
 
+Analyses needing
+access to the hit level information will need to be run at JLab or run
+on small samples of exported data unless they can take advantage of the
+data summaries.
+
+Data summaries will be written as ROOT trees. 65 (89) TB of DSTs will be generated 
+in the 2014 (2015) run. These will be generated and stored on tape at JLab, and mirrored on tape at SLAC.
+
 Disk space at JLAB will be 
-needed for data summaries (in the form of ROOT trees), code releases and scratch areas. 
-The ROOT trees will also be transferred to SLAC for analysis work there.
-Therefore the disk space requirements at JLab and SLAC are roughly equal, and it is estimated that
-100 TB will accomodate the needs for the 2014 data analysis work
-and an additional 100 TB would be needed for 2015.
+needed for staging, code releases and scratch areas. 
+Disk space will also be needed at SLAC for code releases and scratch areas. 
+Both needs are covered by existing computing infrastructure.
 
 The HPS storage requirements are summarized in Tab.~\ref{tab:datastorage}.
-\begin{table}[tbp]
+\begin{table}[ht]
 \centering
 \begin{tabular}{|l|c|c|}
 \hline
@@ -112,15 +118,15 @@ Raw data & 140 & 192 \\
 Reconstructed data & 304 & 394 \\
 Simulated data (raw and reconstructed) & 27 & 31 \\
 \hline
-Total tape space & 472 & 618 \\
+Total data & 472 & 618 \\
 \hline
 DST (run data) & 62 & 86 \\
 DST (simulated data) & 3 & 3 \\
 \hline
-Disk space  & 65  & 89 \\
+Total DST  & 65  & 89 \\
 \hline
 \end{tabular}
-\caption{{\small Data storage summary.}}
+\caption{{\small Data storage summary; data storage is at JLab only, while DST storage is common to JLab and SLAC.}}
 \label{tab:datastorage}
 \end{table}
 
@@ -133,7 +139,7 @@ Disk space  & 65  & 89 \\
 % analysis work (batch and interactive) will be comparable to that needed for production. 
 Simulation production and data reconstruction will be done on the batch farm at JLab. The CPU requirements 
 are summarized in Tab.~\ref{tab:computing}.
-\begin{table}[tbp]
+\begin{table}[ht]
 \centering
 \begin{tabular}{|l|c|c|}
 \hline
