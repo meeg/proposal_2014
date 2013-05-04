@@ -1,0 +1,16 @@
+% HPS Proposal 2014 -  Software sub section.
+%
+\label{sec:software}
+
+The main HPS data analysis software is built onto the org.lcsim framework, a set of software tools written in Java originally for detector studies for the International Linear Collider (ILC).
+The detector simulation is done with SLIC, a GEANT4 based Monte Carlo simulation that allows for a very flexible geometry setup, which is identical to the geometry used by the analysis software. 
+The MC output or the actual raw data are analyzed for tracks and particle identification using a dedicated reconstruction code written using the org.lcsim framework. 
+The output is in the LCIO format and can be further analyzed for physics signals directly or by transforming it to a set of ROOT based data summary tape (DST). 
+
+For successful data taking, besides the DAQ system described in section~\ref{sec:daq}, a number of monitoring and calibration programs will be required. The Event Transport ring (ET), part of the 
+Jefferson Lab DAQ system, allows a number of client programs to attach to the raw data stream and receive a predetermined fraction of the events, or events on demand. 
+Several client monitoring programs will look at the low level raw data, including a standalone raw data event display and data quality monitors. 
+An interface from the ET ring to the full analysis system also exists, allowing for high level histograms which can also monitor the data quality and a Wired based event display. The underlying histogramming system automatically provides live updates of the histograms.
+ Specific monitoring for the sub-detectors will be contributed by the detector sub-groups, as will the needed calibration code. 
+
+The HPS code base is maintained by the HPS Software group, chaired by M. Holtrop, and the Data Analysis Group, chaired by M. Graham. Around ten members of the HPS collaboration participate very actively in the development of the HPS software. 
