@@ -10,7 +10,7 @@ Experimental Physics and Industrial Control System (EPICS) framework. This choic
 driven by the necessity to be compatible with the existing Hall B and CEBAF slow controls systems. 
 It will allow us to control  hardware used in the experiment from the counting house 
 over the Ethernet, and we will benefit from numerous existing software components developed by the EPICS 
-community, such us alarm systems, archivers, setpoint save-and-restore software. EPICS Input/Output 
+community, such as alarm systems, archivers, and setpoint save-and-restore software. EPICS Input/Output 
 Controllers (IOC's)  will run on the rack-mountable 
 Linux servers in the rack-room of the Hall B counting house and on the VME controllers in the Hall 
 running either VxWorks or Linux operating systems. These IOC's will serve EPICS process variables 
@@ -35,7 +35,7 @@ AVDD and V125 (see Sec.~\ref{sec:svt} and Ref.~\cite{HPS_PROP}). Bias voltages w
 will be provided by two different models of Wiener MPOD based boards: the MPV8008 8-channel low voltage boards and 
 the EHS F205-F 16 channel high voltage boards. Because HPS silicon detectors use 36 hybrids and each hybrid requires 
 three low voltage channels and one high voltage channel, we will need total of 14 MPV8008 boards and four EHS F205-F boards. 
-The MPV8008 boards allows for voltage regulation at the desired sensors location to account for the voltage drop due to the 
+The MPV8008 boards allow for voltage regulation at the desired sensor locations to account for the voltage drop due to the 
 current draw in the low voltage circuits. Bias voltages can only be regulated only at the terminals, 
 but their current draws are negligible. Wiener MPOD chassis can be remotely controlled and monitored over Ethernet using 
 standard SNMP protocol. EPICS support for these boards and chassis already exists and has been successfully used at Jefferson Lab. 
@@ -75,9 +75,9 @@ well as of the trip state of the channels set by the chassis itself.
 
 \subsubsection{Motor controls}
 \label{sec:ctrls:motor}
-HPS experiment will use total of eight applications require motion control. Three of them 
+The HPS experiment will use eight applications requiring motion control. Three of them 
 are the standard Hall B PMT-based beamline harps at 2C21, 2C24 and 2H00 locations,  and the controls 
-and analysis software for them will not change.  HPS will use the ``long radiator`` ladder of CLAS to align  
+and analysis software for them will not change.  HPS will use the ``long radiator'' ladder of CLAS to align  
 the SVT collimator with the electron beamline as described in Sec.~\ref{setup:beamline}, and only minor 
 modifications to the existing software will be required to control the position of the collimator.
 Another Hall B piece of equipment that was used by a number of experiments is the beam blocker that is inserted 
@@ -114,9 +114,9 @@ distribution, one should be able to optimize the alignment of silicon detectors 
 \label{sec:ctrls:magnet}
 During the HPS run in 2014 we plan to use existing magnets that were used in previous Hall B experiments: 
 the tagger magnet to bend the electrons into the tagger dump during beam tuning; Hall B pair spectrometer dipole magnet 
-as the analyzing magnet, and two H-type chicane magnets. As described in Sec,~\ref{setup:layout}, all four magnets have 
-fully operational power supplies with  controls hardware and software already installed. Therefore, no additional 
-efforts will be required to be able to control the HPS magnets.     
+as the analyzing magnet, and two H-type chicane magnets. As described in Section~\ref{setup:layout}, all four magnets have 
+fully operational power supplies with controls hardware and software already installed. Therefore, no additional 
+effort will be required to be able to control the HPS magnets.     
    
 
 
@@ -135,7 +135,7 @@ used during the 2012 HPS beam test. The SVT temperature monitoring will be done 
 sensors read out by the SVT data acquisition system. An EPICS IOC will serve records to hold the SVT temperature 
 values while a client on the SVT DAQ will regularly update the values of these records. In addition, 
 the temperature at the entrance and the exit of the vacuum chamber will also be measured  
-using thermocouples similar to thosed used for ECal which will allow us to continuously monitor the SVT ambient 
+using thermocouples similar to those used for ECal which will allow us to continuously monitor the SVT ambient 
 temperature independent of the SVT DAQ status.  
 
 In order to safely operate silicon detectors a number of interlocks will need to be set similar to those 
