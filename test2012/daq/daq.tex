@@ -14,11 +14,15 @@ Finally, most data links had 1 Gbit bandwidth, sufficient for the purposes of th
 
 In other respects, the HPS Test run DAQ was essentially identical to that proposed for HPS and used to verify the overall technical approach of the system. The ECal provides data to the FADC-based Level~1
 trigger system. Accepted events are read out from the ECal and SVT DAQ and processed by an event builder before output to disk.
-For the ECal, the Readout Crate Controllers (ROCs) were the same as those proposed for HPS and are installed in VME, VME64X and VXS 
-crates running mvme6100 controllers, with prpmc880 or pmc280 co-processor modules. For simplicity, a hybrid approach was 
+For the ECal, the Readout Crate Controllers (ROCs) were the same as those proposed for HPS.
+% and are installed in VME, VME64X and VXS 
+%crates running mvme6100 controllers, with prpmc880 or pmc280 co-processor modules. 
+For simplicity, a hybrid approach was 
 used for the SVT DAQ in the test run where the ROC ran on a external PC connected to the ATCA crate. Similar to that proposed for HPS, a 
-Foundry Router was used as the backbone of the DAQ system, providing 1~Gbit and 10~Gbit connections between components 
-and to the JLAB Computer Center. The Event Builder, Event Recorder, and other critical DAQ components ran on 4-CPU Opteron-based servers, 
+Foundry Router was used as the backbone of the DAQ system
+%, providing 1~Gbit and 10~Gbit connections between components 
+and to the JLAB Computer Center. 
+%The Event Builder, Event Recorder, and other critical DAQ components ran on 4-CPU Opteron-based servers, 
 which was sufficient for the test run. The RAID5 storage system had 100~MB/s capability, sufficient to handle the anticipated data rates for electron running.
 
 
