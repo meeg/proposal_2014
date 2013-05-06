@@ -23,11 +23,11 @@ to the silicon sensor at the other.}}
 \label{fig:hybrid_and_apv25_testrun}
 \end{figure*}
 Without optical conversion inside the chamber as proposed for HPS, analog signals from the APV25 chips are 
-carried directly via multi-twisted-pair cable to the Rear Transition Module (RTM), see Fig.~\ref{fig:rtm_testrun}, in the ATCA crate located outside the vacuum chamber. 
+carried directly via multi-twisted-pair cable to ADCs on the Rear Transition Module (RTM), see Fig.~\ref{fig:rtm_testrun}, in the ATCA crate located outside the vacuum chamber. 
 %The amplification and digitization is carried out on a Rear Transition Module (RTM) board designed specifically for the HPS test run. 
-On the RTM, a pre-amplifier converts the APV25 differential current output to a voltage output 
-scaled to the sensitive range of a 14-bit ADC. The RTM is organized into four sections with each section 
-supporting 3 hybrids (15 channels). The ADC is operated at the system clock of 41.667~MHz. 
+%On the RTM, a pre-amplifier converts the APV25 differential current output to a voltage output 
+%scaled to the sensitive range of a 14-bit ADC. The RTM is organized into four sections with each section 
+%supporting 3 hybrids (15 channels). The ADC is operated at the system clock of 41.667~MHz. 
 %The RTM also includes a 4-channel Fiber Optic module and supporting logic which can be used to interface to the JLAB trigger supervisor card.
 The ATCA main board, the Cluster on Board or COB (see Fig.~\ref{fig:rtm_testrun}), is similar to the one described for the HPS DAQ 
 with the important exception that one of the Data Processing Modules (DPMs) functions as the trigger 
@@ -41,13 +41,13 @@ interface and there is no Reconfigurable Cluster Element (RCE) module.
 Instead, the DPMs package and send the data from the hybrids through a 1~Gbit ethernet connection to 
 an external PC which serves the same purpose as the 
 RCE module in the HPS DAQ. 
-The ATCA crate hosts two COB cards, one supporting four data processing DPMs and the other supporting three data processing DPMs and one trigger DPM for a total capacity of 21 hybrids, one more than required. 
-The external PC supports three network interfaces; two standard 1~Gbit ethernet interfaces used for slow control, monitoring and communication with JLab DAQ and one low latency custom reception card supporting TTL trigger acknowledge interface to the trigger DPM in the ATCA crate. 
+%The ATCA crate hosts two COB cards, one supporting four data processing DPMs and the other supporting three data processing DPMs and one trigger DPM for a total capacity of 21 hybrids, one more than required. 
+The external PC also supports slow control and monitoring, communication with JLab DAQ, and trigger acknowledge interface to the trigger DPM in the ATCA crate. 
 %to receive data from the ATCA crate. 
 % , two standard 1~Gbit Ethernet and one custom low latency 
 %data reception card. The first Ethernet interface is used for slow control and monitoring of the eight 
 %DPM modules. The second Ethernet interface serves as the interface to the JLAB data acquisition system. The
 %low latency network interface is used to receive data from the SVT ATCA crate and supports a low latency, 
 %reliable, TTL trigger acknowledge interface to the trigger DPM. 
-This PC hosts the SVT control and monitoring 
-software as well as the ROC application described above.
+%This PC hosts the SVT control and monitoring 
+%software as well as the ROC application described above.
