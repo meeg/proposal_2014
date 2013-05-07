@@ -15,9 +15,9 @@ mass window near the A' mass.  Moreover, the rate of the A' signal is simply rel
 the radiative trident cross-section within a small mass window of width $\delta m_{A'}$  
 by [1],
 \begin{equation}
- {{d\sigma(e^-Z\rightarrow e^-Z(A'\rightarrow e^+e^-))} \over
+ {\frac{d\sigma(e^-Z\rightarrow e^-Z(A'\rightarrow e^+e^-))}
     {d\sigma(e^-Z\rightarrow e^-Z(\gamma^*\rightarrow e^+e^-))}} =
-    ({{3\pi \epsilon^2} \over {2N_{eff}\alpha}}) ({{m_{A'}} \over {\delta m_{A'}}})
+    \left({\frac{3\pi \epsilon^2}{2N_{eff}\alpha}}\right) \left({\frac{m_{A'}}{\delta m_{A'}}}\right)
   \label{eqn:radToAprime}
 \end{equation}
 where $N_{eff}$ counts the number of available decay states.  A fraction $\epsilon_{bin}$ 
@@ -119,12 +119,12 @@ The significance is then determined by the ratio of the signal within an invaria
 window to $\sqrt{N_{bin}}$, where $N_{bin}$ is the total background statistics in the 
 same window. Using equation \ref{eqn:radToAprime}, the sensitivity for a resonance search is determined by
 \begin{equation}
- \left({{S} \over {\sqrt{B}}}\right)_{bin}=\left({{N_{radiative}} \over {N_{total}}}\right) \sqrt{N_{bin}} 
-\left({{3\pi \epsilon^2} \over {2 N_{eff}\alpha}}\right)\left({{m_{A'}} \over {\delta m_{A'}}}\right)
+ \left({\frac{S} {\sqrt{B}}}\right)_{bin}=\left({\frac{N_{radiative}} {N_{total}}}\right) \sqrt{N_{bin}} 
+\left({\frac{3\pi \epsilon^2} {2 N_{eff}\alpha}}\right)\left({\frac{m_{A'}} {\delta m_{A'}}}\right)
 \epsilon_{bin}
 \label{eqn:signifBumpHunt}
 \end{equation}   
-Here, $({{N_{radiative}} \over {N_{total}}})$ is the fraction of radiative reactions 
+Here, $\left({\frac{N_{radiative}} {N_{total}}}\right)$ is the fraction of radiative reactions 
 among all QED trident events in the search region. This quantity is determined by 
 simulation as described below. $N_{bin}$ is the total number of QED trident events 
 residing in a given invariant mass search bin, and is determined by
@@ -191,7 +191,7 @@ to bring the expected background to 0.5 events in each resolution-limited mass w
 For simplicity we compute reach using the geometric acceptance for z=0, but only considering 
 decays with $z<zmax$=10 cm, so that the fraction of signal events included in the vertex search is
 \begin{equation}
-\epsilon_{sig} (zcut) \cong \epsilon_{vtx} \times\left (e^{-{{zcut} \over {\gamma c\tau}}} - e^{-{{zmax} \over {\gamma c\tau}}}\right).
+\epsilon_{sig} (zcut) \cong \epsilon_{vtx} \times\left (e^{-{\frac{zcut} {\gamma c\tau}}} - e^{-{\frac{zmax} {\gamma c\tau}}}\right).
 \end{equation}
 
 Accounting for the reduced acceptance of both signal and background events, the statistical 
@@ -199,18 +199,18 @@ significance expected  can be computed from that of the pure resonance
 search as:  
 
 \begin{equation}
- \left({{S} \over {\sqrt{B}}}\right)_{bin,zcut}=\left ({{S} \over {\sqrt{B}}}\right)_{bin}  
-{{\epsilon_{sig} (zcut)} \over {\sqrt{\epsilon_{rejection} (zcut)}}}
+ \left({\frac{S} {\sqrt{B}}}\right)_{bin,zcut}=\left ({\frac{S} {\sqrt{B}}}\right)_{bin}  
+{\frac{\epsilon_{sig} (zcut)} {\sqrt{\epsilon_{rejection} (zcut)}}}
 \label{eqn:signifVertex}
 \end{equation}
-where $({{S} \over {\sqrt{B}}})_{bin}$ is given by \eqref{eqn:signifBumpHunt}. For the small expected background rate 
+where $\left({\frac{S} {\sqrt{B}}}\right)_{bin}$ is given by \eqref{eqn:signifBumpHunt}. For the small expected background rate 
 (0.5 events/bin), however, this formula becomes irrelevant, as the exclusion sensitivity of 
 the experiment is limited by the probability of a downward fluctuation in the signal.  
 Thus, for the vertex reach contours in Figure \ref{fig:reach}, we additionally require 
 an expected signal
 \begin{equation}
- S_{bin,zcut}=\left({{N_{radiative} \over {N_{total}}}}\right) N_{bin} 
-\left({{3\pi \epsilon^2} \over {2 N_{eff}\alpha}}\right) \left({{m_{A'}} \over {\delta m_{A'}}}\right) \epsilon_{sig}
+ S_{bin,zcut}=\left({{\frac{N_{radiative}} {N_{total}}}}\right) N_{bin} 
+\left({\frac{3\pi \epsilon^2} {2 N_{eff}\alpha}}\right) \left({\frac{m_{A'}} {\delta m_{A'}}}\right) \epsilon_{sig}
  (zcut) > 2.4~ {\rm events} 
  \label{eqn:signalVertex}
 \end{equation}

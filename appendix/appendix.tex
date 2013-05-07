@@ -109,15 +109,17 @@ It is based on a small angle approximation
 ($\theta \ll$ 1 radian), and the angular distribution approaches asymptotically
 to Gaussian at small angles, and to Rutherford's Coulomb scattering function at 
 large angles given by, 
-
-$$ F(\theta) \sim  { 1 \over {(1-cos\theta + {\chi^2 \over 2})^2}}.    \hspace{2 cm} (1) $$
+\begin{equation}
+F(\theta) \sim  { \frac{1} {(1-cos\theta + {\frac{\chi^2} {2}})^2}}
+\label{eq:rutherford}
+\end{equation}
 
 Instead of using the complex and time consuming Moli\`{e}re's formula,
 GEANT4 uses two functions explicitly, Gaussian at small angles and the
-Rutherford function Eq. (1) at large angles with a requirement that these two
+Rutherford function Eq.~\ref{eq:rutherford} at large angles with a requirement that these two
 functions and their first derivatives are joined continuously. 
 GEANT4, however, uses a different power
-in the denominator in Eq. (1) which is close to 2 but not exactly equal to 2 and is 
+in the denominator in Eq.~\ref{eq:rutherford} which is close to 2 but not exactly equal to 2 and is 
 dependent on the target material and thickness.
 
 Several comparisons have been made in the angular distribution $F(\theta)$ in the
@@ -135,7 +137,7 @@ the Goudsmit-Saunderson theory as shown in Figure \ref{appendix:1}(b),
 demonstrating that the Moli\`{e}re theory is accurate in the angular region
 of the HPS detector. 
 
-\begin{figure*}[h]
+\begin{figure*}[ht]
 \includegraphics[height=3 in]{appendix/appendix_1-eps-converted-to.pdf}
 \caption{\small{ (a) Moli\`{e}re vs. EGS5 \hspace{1 cm} (b) Moli\`{e}re vs. Goudsmit-Saunderson}}
 \label{appendix:1}
@@ -154,7 +156,7 @@ with the Moli\`{e}re theory. G. Shen et al.~ \cite{shen} and B. Gottschalk et al
 also showed that the Moli\`{e}re theory was consistent with the measurements on a wide variety of
 target materials.
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \includegraphics[height= 3 in]{appendix/appendix_2-eps-converted-to.pdf}
 \caption{\small{ Moli\`{e}re vs. GEANT4 }}
 \label{appendix:2}
@@ -170,28 +172,28 @@ energy spectra, there are significant differences in the angular distribution in
 particles. In EGS5, the angular distributions are sampled from the following differential
 cross section for the bremsstrahlung process, \cite{koch}
 
-$$d\sigma(k,\theta_\gamma) = {{4Z^2r_0^2} \over 137} {dk \over k} ydy\{{{16y^2E} \over 
+$$d\sigma(k,\theta_\gamma) = {\frac{4Z^2r_0^2} {137}} {\frac{dk} {k}} ydy\{{\frac{16y^2E} 
 {(y^2+1)^4E_0}}
- -{{(E_0+E)^2} \over {(y^2+1)^2E_0^2}}+\{{{E_0^2+E^2} \over {(y^2+1)^2E_0^2}} -
- {{4y^2E} \over {(y^2+1)^4E_0}}\} lnM(y) \}, $$
+ -{\frac{(E_0+E)^2} {(y^2+1)^2E_0^2}}+\{{\frac{E_0^2+E^2} {(y^2+1)^2E_0^2}} -
+ {\frac{4y^2E} {(y^2+1)^4E_0}}\} lnM(y) \}, $$
 
 \noindent
 where $k$ photon energy, $\theta_\gamma$ photon polar angle, $E_0$ and $E$ are initial and final 
 electron energy, and
 
-$$y=E_0\theta_\gamma; {1 \over {M(y)}} = ({k \over {2E_0E}})^2 + ({{Z^{1/3}} \over {111(y^2+1)}})^2, $$
+$$y=E_0\theta_\gamma; {\frac{1} {M(y)}} = ({\frac{k} {2E_0E}})^2 + ({\frac{Z^{1/3}} {111(y^2+1)}})^2, $$
 
 \noindent
 and for the pair production process, \cite{motz}
 
-$${{d\sigma} \over {dE_\pm d\Omega_\pm}} = {{2\alpha Z^2r_0^2} \over \pi} {E_\pm^2 \over k^3}
-\{-{{(E_+-E_-)^2} \over {(u^2+1)^2}}-{{16u^2E_+E_-} \over {(u^2+1)^4}} + \{ {{E_+^2+E_-^2} \over
-{(u^2+1)^2}} + {{4u^2E_+E_-} \over {(u^2+1)^4}} \} lnM(u)\},$$
+$${\frac{d\sigma} {dE_\pm d\Omega_\pm}} = {\frac{2\alpha Z^2r_0^2} {\pi}} {\frac{E_\pm^2} {k^3}}
+\{-{\frac{(E_+-E_-)^2} {(u^2+1)^2}}-{\frac{16u^2E_+E_-} {(u^2+1)^4}} + \{ {\frac{E_+^2+E_-^2} 
+{(u^2+1)^2}} + {\frac{4u^2E_+E_-} {(u^2+1)^4}} \} lnM(u)\},$$
 
 \noindent
 where $k$ photon energy, $E_\pm$ $e^{\pm}$ energy, $\theta_\pm$ $e^{\pm}$ polar angle, and
 
-$$u=E_\pm\theta_\pm; {1 \over {M(u)}} = ({k \over {2E_+E_-}})^2+({Z^{1/3} \over {111(u^2+1)}})^2.$$
+$$u=E_\pm\theta_\pm; {\frac{1} {M(u)}} = ({\frac{k} {2E_+E_-}})^2+({\frac{Z^{1/3}} {111(u^2+1)}})^2.$$
 
 \noindent
 GEANT4 uses an approximate function to simulate the angular distributions in the 
@@ -271,7 +273,7 @@ simulation system based on GEANT4.
 % shape fit assumes an ideal CR-RC pulse shape; since the actual pulse shape has a slower rise time, 
 % there is a systematic pull on the hit time when a hit comes immediately before the APV clock time. 
 % This is visible in Figure \ref{fig:timeres_2D} as a shift in the residual at certain values of track time.
-% \begin{figure}[h]
+% \begin{figure}[ht]
 % 	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres_2D}
 % 	\caption{\small{Plot of the time residual for a representative sensor vs. the track time. 
 % 		The kinks in the horizontal band are caused by the fitter; without them the time resolution (measured by taking the projection of this histogram) would be better.} }

@@ -46,7 +46,7 @@ The time coincidence window of pairs of clusters in the top and bottom half of t
 % \end{itemize}
 The cluster finding algorithm is very fast and makes use of the parallel processing nature of FPGA's by simultaneously searching for 125 clusters, up to 3x3 in size, across the calorimeter crystal array, see 
 Fig.~\ref{fig:hps_trigger_3x3}. 
-\begin{figure}[h]
+\begin{figure}[ht]
 \includegraphics[scale=0.4]{daq_trigger/figures/hps_trigger_3x3}
 \caption{\small{Cluster finding algorithm.}}
 \label{fig:hps_trigger_3x3}
@@ -107,7 +107,7 @@ Previous experience with similar (but much simpler) trigger systems showed that 
 
 Scalers will be implemented for every ECal channel. An example of such a diagnostic tool is presented in Fig.~\ref{fig:dvcs_beam}
 from the previous version of the ECal. Hot or dead channels are easily identified and disabled online.
-\begin{figure}[h]
+\begin{figure}[ht]
 \includegraphics[scale=0.52]{daq_trigger/figures/dvcs_beam}
 \caption{\small{Scalers (example from the previous version of the calorimeter).}}
 \label{fig:dvcs_beam}

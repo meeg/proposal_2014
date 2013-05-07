@@ -7,7 +7,7 @@ ADC counts ($\approx$ 750 - 850 electrons)  which was stable across all hybrids.
 cluster charge for hits associated with a track follow the characteristic Landau shape with a 
 mean of about 25,500~e$^{-}$ as expected, see Fig.~\ref{fig:cluster_pulse}.
 %This signal response gives a signal-to-noise ratio of about 25.5. 
-\begin{figure}[h]
+\begin{figure}[ht]
     % TODO: The pulse plot needs to be remade such that the x-axis is time 
 	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/svt_calib/08062012_run1351_samples_vs_amplitude.png}
 	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/svt_calib/run1351_mip_small.pdf}
@@ -25,7 +25,7 @@ are fitted to an ideal $CR-RC$ function to extract the amplitude and the $t0$ of
 The typical pulse shape obtained is shown in Figure~\ref{fig:cluster_pulse} also demonstrates that the SVT was well timed in to the trigger with the rise of the pulse at the 3rd sampling point.
 After clustering hits on a sensor, the hit time for each cluster is computed as the amplitude-weighted average of 
 the fitted $t0$ channel times. The $t0$-resolution is studied by comparing the cluster hit time with the average of all cluster hit times, the ``track time''. Figure~\ref{fig:tracktime} shows the track time, with the expected jitter due to clock phase and trigger, and the residual to the individual cluster times. 
-\begin{figure}[h]
+\begin{figure}[ht]
 %	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/track_time_top}
 %	\includegraphics[width=0.7\textwidth]{test2012/svtperformance/timeres}
 	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/top_track_time.pdf}
@@ -55,7 +55,7 @@ the maximum data rate observed in the SVT was 4.1 MB/s.
 However, after masking out all known noisy channels found during the commissioning of the SVT, good agreement 
 between simulation and test run occupancies was achieved as shown on Figure~\ref{fig:data_rates_data_mc_cmp}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
     \includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/occupancy_vs_target_thick.pdf}
     % \includegraphics[width=0.49\textwidth]{test2012/svtperformance/daq/data_rate_vs_target_thick.pdf}
         \caption{ { \small
@@ -64,7 +64,7 @@ between simulation and test run occupancies was achieved as shown on Figure~\ref
 	\label{fig:data_rates_data_mc_cmp}
 \end{figure}
 Similarly, the hit efficiency was measured to be above 98\% for known good layers, see Figure~\ref{fig:hit_efficiency}.
-\begin{figure}[h]
+\begin{figure}[ht]
     	\includegraphics[width=.95\textwidth]{test2012/svtperformance/trk_performance/hit_efficiency_vs_layer.pdf}
 %    	\includegraphics[width=0.49\textwidth]{test2012/svtperformance/trk_performance/track_reco_efficiency.pdf}
         \caption{{\small The hit reconstruction efficiency as a function of detector layer. The variation across the layers can be explained by known DAQ issues.}} 
