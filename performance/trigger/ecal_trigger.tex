@@ -25,6 +25,8 @@ evaluated every 4 ns (simulating FADC), and the cluster
 finding algorithm and trigger logic were applied (simulating CTP and SSP). 
 The simulation has been tested against the actual performance of the test run detector and DAQ: see Sec.~\ref{sec:ecalperformance}.
 
+The cluster energy used in the trigger decision is not corrected for sampling fraction.
+
 The trigger parameters described in Sec.~\ref{sec:triggerdaq} are 
 chosen by running the simulation and plotting the relevant variables 
 for beam background and A' events. This is done for each beam energy 
@@ -50,14 +52,14 @@ These cuts are chosen to lie between the loosest reasonable values (accept as ma
 \begin{figure}[ht]
 	\includegraphics[width=0.45\textwidth]{performance/trigger/energy-distance_22}
 	\includegraphics[width=0.45\textwidth]{performance/trigger/energy-distance_22_075mev}
-	\caption{\small{Energy and distance from beam axis of the lower-energy cluster, for 2.2~GeV beam; background and 75~MeV A' tridents are shown. The energy-distance acceptance region is above the red line.}}
+	\caption{\small{Energy and distance from beam axis of the lower-energy cluster, for 2.2~GeV beam; background and 75~MeV A' tridents are shown. Cluster energy is not corrected for sampling fraction. The energy-distance acceptance region is above the red line.}}
 	\label{fig:energy-distance}
 \end{figure}
 
 \begin{figure}[ht]
 	\includegraphics[width=0.45\textwidth]{performance/trigger/ediff_22}
 	\includegraphics[width=0.45\textwidth]{performance/trigger/ediff_22_075mev}
-	\caption{\small{Energy sum and difference of cluster pairs, for 2.2~GeV beam; background and 75~MeV A' tridents are shown. The energy difference acceptance region is left of the red line.}}
+	\caption{\small{Energy sum and difference of cluster pairs, for 2.2~GeV beam; background and 75~MeV A' tridents are shown. Cluster energy is not corrected for sampling fraction. The energy sum acceptance region is left of the red line.}}
 	\label{fig:ediff}
 \end{figure}
 
