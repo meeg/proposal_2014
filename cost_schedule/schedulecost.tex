@@ -12,8 +12,10 @@ development of an ATCA readout system, and incorporates many of its existing des
 contributed engineering and design efforts for the ECal support structure, enclosure, and vacuum chamber, affording additional savings. It will
 contribute manpower for Ecal reassembly and test.  
 
-HPS costs are given in an accompanying WBS summary table, Table \ref{tb:wbs}, which itemizes the major items subsystem by subsystem, and 
-indicates whether JLab (J) or SLAC (S) takes responsibility for construction. Engineering, design, and technician labor rates are fully loaded, 
+HPS costs are given in an accompanying WBS summary table, Table \ref{tb:wbs_summary}, which itemizes the major items subsystem by subsystem, and 
+indicates whether JLab (J) or SLAC (S) takes responsibility for construction. 
+The full WBS is given in Appendix \ref{sec:wbs}.
+Engineering, design, and technician labor rates are fully loaded, 
 including benefits and lab overheads, which differ between the two laboratories. Our 
 DAQ and beamline cost estimates have been made by engineering groups at SLAC and JLab which are experienced in cost estimation and 
 actively involved in many related projects including the recent HPS Test run experiment. The SVT estimates came from HPS physicists and engineers  with
@@ -22,6 +24,39 @@ The Ecal estimates come from physicists and engineers at
 JLab and Orsay who have constructed a similar system, the CLAS IC, in the recent past, and assembled the Ecal for the Test Run.
 Scheduling and budgeting the Test Run provided the entire HPS team valuable experience and a good reality check. 
 
+
+\begin{table}[htdp]
+\begin{center}
+\caption{Summary of HPS Budget.}
+\rotatebox{90}{
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
+%WBS&&&&&&&
+WBS&	Name&	Labor&	Labor &	Material&	Material &	Total&	Spares	&Proto. &Oper.&Infra.&Capital Eq. \\
+&	&	&	w/Cont&	&	w/Cont.&	&		& &&& \\
+\hline\hline
+1	&HPS	&\$1,303K	&\$1,681K 	&\$1,038K 	&\$1,209K	&\$2,891K 	&\$77K 	&\$21K&\$847K&\$238K&\$1,796K \\
+\hline
+1.1	&Beamline (J)	&\$70K 	&\$91K 	&\$101K 	&\$131K 	&\$223K 	&\$0 	&\$0&\$0&\$5.8K &\$217K\\
+1.2	&SVT (S)	&\$346K 	&\$451K 	&\$161K 	&\$204K 	&\$656K 	&\$8.4K 	&\$10K&\$75K&\$43K&\$539K \\
+1.3	&SVT DAQ (S)	&\$342K 	&\$430K 	&\$264K 	&\$352K 	&\$782K 	&\$70K 	&\$11K &\$80K&\$162K&\$540K\\
+1.4	 &ECAL (J)	&\$28K 	&\$36K 	&\$9K 	&\$12K 	&\$48K 	&\$0 	&\$0&\$0&\$0&\$48 \\
+1.5	&TDAQ (J)	&\$116K 	&\$151K 	&\$10K 	&\$10K 	&\$161K 	&\$0 	&\$0 &\$0&\$10K&\$151K\\
+1.6	&Slow Control (J)	&\$76K 	&\$94K 	&\$31K 	&\$39K 	&\$134K 	&\$0K&\$0&\$0	&\$28K  &\$106K\\
+1.7	&Installation \& 	&	&	& 	& 	& 	& 	&  &&&\\
+	&Commissioning (S)	&\$45K	&\$58K	&\$0	&\$0 	& \$58K	& \$0	&\$0&\$55K&\$0&\$3K \\
+1.9	&SLAC Travel 	&	&	&	&	& 	& 	& &&&\\
+	&Meetings (S)	&\$73K	&\$88K	&\$0 	& \$0  	&\$88K 	&\$0 &\$0 &\$88K&\$0&\$0 \\
+1.10	&SLAC Travel 	for & 	& 	& 	& 	&	& 	&&&& \\
+	&Setup and Running (S)	&\$78	&\$113 	& \$0	& \$0	&\$113K&\$0 &\$0&\$87K&\$0&\$167K\\
+1.13	&Project 	&	&	&	& 	& 	& 	&&&& \\
+	&management (S)	&\$128K 	&\$167K 	&\$0 	&\$0 	&\$167K 	&\$0 	&\$0&\$0&\$0&\$167K \\
+1.12	&UCSC&\$0 	&\$0	&\$462K 	&\$462K 	&\$462K 	&\$0 	&\$0&\$462K&\$0&\$0\\
+\end{tabular}
+}
+\end{center}
+\label{tb:wbs_summary}
+\end{table}%
+
 The HPS Schedule is discussed below, including a brief description of the schedule for the each 
 different subsystems. The overall schedule contingency is about 20\%, and depends critically on the assumption that 
 funding is available by beginning FY2014. Keep-alive funding is currently being used to advance the engineering design and R\&D to the point
@@ -29,7 +64,7 @@ that DOE support in FY2014 will be adequate to maintain project readiness for th
 into a Work Breakdown Structure (WBS) for purposes of planning, 
 managing and reporting project activities. Work elements are defined to be consistent with discrete increments of project work. 
 Project Management efforts are distributed throughout the project, including conceptual design and R\&D. The HPS has 12 WBS
- Level-2 elements, see Table \ref{tb:wbs}. 
+ Level-2 elements, see Table \ref{tb:wbs_categories}. 
 
 \begin{table}[htdp]
 \caption{Project WBS structure.}
@@ -67,7 +102,7 @@ WBS& NAME \\
 \hline
 \end{tabular}
 \end{center}
-\label{tb:wbs}
+\label{tb:wbs_categories}
 \end{table}%
 
 \subsection{Cost}
@@ -80,6 +115,14 @@ and M\&S, being respectively 53\% and 7.65\% at SLAC, 49\% for both labor and M\
 Contingencies have been set at 10\% for catalogue items,  20-25\% for items similar to previous design, and 30-50\%  if the design is new.
 Since the project is staged 
 over three years, an annual inflation rate of 2.5\%  is included in the FY15 and FY16 costs.
+
+Most aspects of HPS are costed in the WBS tables. However, as the host laboratory, JLab provides
+support for certain specific aspects of the experiment, including labor by certain JLab physicists, engineering and design
+oversight and coordination within Hall B, existing beamline apparatus in Hall B, and commissioning and operations of the beam
+delivery system and system maintenance. JLab is supported by this proposal for specific engineering and design
+tasks, fabrication and testing of some HPS specific hardware, and software and programming support for the TDAQ and Slow control
+systems. SLAC likewise provides support for SLAC physicists working on HPS, and is supported by this proposal
+for engineering, design, and fabrication of parts of the HPS apparatus.
 
 The costs have been divided into three broad categories, Capital Equipment (CE), Infrastructure (INFRA), and Operations (OP). 
 The categories are explained in the following table. DOE limits Capital Equipment support for small projects to \$2 M, so the HPS budget lists these
@@ -164,12 +207,12 @@ funds, and total \$87k. The total travel expense, including both operations and 
 Project management for HPS is provided by our project engineer, Marco Oriunno. Project management costs total \$167K as capital equipment.
 
 The University of California at Santa Cruz is funded through the SLAC contract to provide support for graduate student Omar Moreno, 20\% of physicist
-Vitaliy Fadeyev, travel funds for commuting to SLAC and attending collaboration meetings and occasional conferences, and a little M\&S. Over the three
+Vitaliy Fadeyev, travel funds for commuting to SLAC, attending collaboration meetings and running shifts, and a little M\&S. Over the three
 years of this proposal, the costs totals \$462K, which are accounted as operations.
 
 
 {\bf The total cost for HPS is \$2,891 M, consisting of \$1,796 M capital equipment, \$847 K operations, and \$238 K infrastructure. }
-The spending profile for HPS is given in Figure \ref{fig:spending}. The full WBS for HPS is provided in Appendix \ref{sec:wbs}.
+The spending profile for HPS is given in Figure \ref{fig:spending_profile}.
 
 HPS is seeking funding from other sources for the Muon System and upgrades to the Ecal.
 William\&Mary has submitted an MRI proposal to NSF for the Muon System, requesting $\sim \$200$k. IPN ORSAY (France) 
@@ -178,8 +221,16 @@ high performance  APD's to improve sensitivity (\$500k), and other expenses rela
 Note that the new APDs are not part of this proposal. If these requests are approved, the supplemental funding for any items in the present 
 budget will be subtracted from the total cost of the HPS. The disposition of these requests should be known before the beginning of FY2014.
 
+\begin{figure}[ht]
+\centering
+%\vspace*{-5mm}
+\includegraphics[width=0.9\textwidth]{cost_schedule/spending} 
+\caption{Spending profile (costs after overheads and contingency).}
+\label{fig:spending_profile}
+\end{figure}
+
 \subsection{Schedule}
-Our goal is to be ready to install the HPS at JLab by September 2014, and to proceed with commissioning on beam early in FY2014. Data taking 
+Our goal is to be ready to install the HPS at JLab by September 2014, and to proceed with commissioning on beam early in FY2015. Data taking 
 would begin in Spring 2015 and last until Summer. Meeting this schedule has required keep-alive funding at SLAC for the period April-September, 2013, 
 to begin critical long leadtime engineering and prototyping, and it will need  approval and funding from DOE by the beginning of FY2014. Schedules 
 for each of the major subsystems of the experiment are given in Figures \ref{fig:schedulea} and \ref{fig:scheduleb} and summarized here. The total construction schedule extends over 16 months, 
@@ -279,12 +330,37 @@ WBS&Engineering Reviews& Data\\
 \label{tb:reviews}
 \end{table}%
 
+\begin{figure}[H]
+\centering
+%\vspace*{-5mm}
+\includegraphics[angle=90,width=0.75\textwidth]{cost_schedule/ScheduleHPSV470-1.jpg} 
+\caption{HPS schedule.}
+\label{fig:schedulea}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+%\vspace*{-5mm}
+\includegraphics[angle=90,width=0.85\textwidth]{cost_schedule/ScheduleHPSV470-2.jpg} 
+\caption{HPS schedule.}
+\label{fig:scheduleb}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+%\vspace*{-5mm}
+\includegraphics[angle=90,width=0.85\textwidth]{cost_schedule/ScheduleHPSV470-3.jpg} 
+\caption{HPS schedule.}
+\label{fig:schedulec}
+\end{figure}
+
 \subsection{Manpower}
 
 The manpower needed to design, fabricate, assemble, test, install, and commission the HPS is captured in the WBS tables. 
 The HPS Collaboration successfully mounted the HPS Test Run experiment on a very aggressive schedule, and has the personnel needed to realize full HPS.
 
-Beamline design work will be done at JLab by Arne Freyberger, F-X Girod and Stepan Stepanyan and at SLAC by Ken Moffeit. 
+Beamline conceptual design will be done at JLab by Arne Freyberger, F-X Girod and Stepan Stepanyan and at SLAC by Ken Moffeit. 
+Mechanical design will be done at JLab.
 Engineering at SLAC will be done by Marco Oriunno, Clive Field, and Takashi Maruyama. Fabrication will be done in the 
 JLab shops, and installation by the crews at JLab. 
 
@@ -316,7 +392,38 @@ Students are actively being engaged.
 
 The total technical labor needed for HPS, divided by category for each of SLAC and JLab, over the next three years, is given in Table \ref{tb:engin}.
 
-% put Table XXIII here
+\begin{table}[htdp]
+\caption{Total Labor (FTE).}
+\begin{center}
+\parbox{.45\linewidth}{
+\begin{tabular}{c||cccc}
+\multicolumn{5}{c}{SLAC}\\
+ FTE	&FY13	&FY14	&FY15&	FY16\\
+ \hline\hline
+ME	&0.19	&0.64&	0.14&	0.02\\
+MD&	0.09	&0.30&	0.00&	0.00\\
+MT&	0.08	&0.49&	0.00	&0.00\\
+EE &	0.58	&0.76&	0.05	&0.02\\
+ET&	0.01	&0.04&	0.00	&0.00\\
+\end{tabular}
+%\end{center}
+}
+\parbox{.45\linewidth}{
+%\begin{center}
+\begin{tabular}{c||cccc}
+\multicolumn{4}{c}{JLab}\\
+ FTE	&FY13	&FY14	&	FY15&FY16\\
+ \hline\hline
+ME	&0.00	&0.03&	0&0 \\
+MD&	0.05	&0.06&	0 &0\\
+MT&	0.00	&0.14& 0&0\\
+EE &	0.12	&1.19&0&0\\
+ET&	0.02	&0.07&0&0\\
+\end{tabular}
+}
+\end{center}
+\label{tb:engin}
+\end{table}%
 
 \subsection{Project Management}
 
@@ -373,99 +480,3 @@ Project Management &	M. Oriunno (S. Stepanyan, J. Jaros)\\
 \label{tb:groups}
 \end{table}%
 
-\begin{table}[htdp]
-\caption{Total Labor (FTE).}
-\begin{center}
-\parbox{.45\linewidth}{
-\begin{tabular}{c||cccc}
-\multicolumn{5}{c}{SLAC}\\
- FTE	&FY13	&FY14	&FY15&	FY16\\
- \hline\hline
-ME	&0.19	&0.64&	0.14&	0.02\\
-MD&	0.09	&0.30&	0.00&	0.00\\
-MT&	0.08	&0.49&	0.00	&0.00\\
-EE &	0.58	&0.76&	0.05	&0.02\\
-ET&	0.01	&0.04&	0.00	&0.00\\
-\end{tabular}
-%\end{center}
-}
-\parbox{.45\linewidth}{
-%\begin{center}
-\begin{tabular}{c||cccc}
-\multicolumn{4}{c}{JLab}\\
- FTE	&FY13	&FY14	&	FY15&FY16\\
- \hline\hline
-ME	&0.00	&0.03&	0&0 \\
-MD&	0.05	&0.06&	0 &0\\
-MT&	0.00	&0.14& 0&0\\
-EE &	0.12	&1.19&0&0\\
-ET&	0.02	&0.07&0&0\\
-\end{tabular}
-}
-\end{center}
-\label{tb:engin}
-\end{table}%
-
-\begin{table}[htdp]
-\begin{center}
-\caption{Summary of HPS Budget.}
-\rotatebox{90}{
-\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c|c}
-%WBS&&&&&&&
-WBS&	Name&	Labor&	Labor &	Material&	Material &	Total&	Spares	&Proto. &Oper.&Infra.&Capital Eq. \\
-&	&	&	w/Cont&	&	w/Cont.&	&		& &&& \\
-\hline\hline
-1	&HPS	&\$1,303K	&\$1,681K 	&\$1,038K 	&\$1,209K	&\$2,891K 	&\$77K 	&\$21K&\$847K&\$238K&\$1,796K \\
-\hline
-1.1	&Beamline (J)	&\$70K 	&\$91K 	&\$101K 	&\$131K 	&\$223K 	&\$0 	&\$0&\$0&\$5.8K &\$217K\\
-1.2	&SVT (S)	&\$346K 	&\$451K 	&\$161K 	&\$204K 	&\$656K 	&\$8.4K 	&\$10K&\$75K&\$43K&\$539K \\
-1.3	&SVT DAQ (S)	&\$342K 	&\$430K 	&\$264K 	&\$352K 	&\$782K 	&\$70K 	&\$11K &\$80K&\$162K&\$540K\\
-1.4	 &ECAL (J)	&\$28K 	&\$36K 	&\$9K 	&\$12K 	&\$48K 	&\$0 	&\$0&\$0&\$0&\$48 \\
-1.5	&TDAQ (J)	&\$116K 	&\$151K 	&\$10K 	&\$10K 	&\$161K 	&\$0 	&\$0 &\$0&\$10K&\$151K\\
-1.6	&Slow Control (J)	&\$76K 	&\$94K 	&\$31K 	&\$39K 	&\$134K 	&\$0K&\$0&\$0	&\$28K  &\$106K\\
-1.7	&Installation \& 	&	&	& 	& 	& 	& 	&  &&&\\
-	&Commissioning (S)	&\$45K	&\$58K	&\$0	&\$0 	& \$58K	& \$0	&\$0&\$55K&\$0&\$3K \\
-1.9	&SLAC Travel 	&	&	&	&	& 	& 	& &&&\\
-	&Meetings (S)	&\$73K	&\$88K	&\$0 	& \$0  	&\$88K 	&\$0 &\$0 &\$88K&\$0&\$0 \\
-1.10	&SLAC Travel 	for & 	& 	& 	& 	&	& 	&&&& \\
-	&Setup and Running (S)	&\$78	&\$113 	& \$0	& \$0	&\$113K&\$0 &\$0&\$87K&\$0&\$167K\\
-1.13	&Project 	&	&	&	& 	& 	& 	&&&& \\
-	&management (S)	&\$128K 	&\$167K 	&\$0 	&\$0 	&\$167K 	&\$0 	&\$0&\$0&\$0&\$167K \\
-1.12	&UCSC&\$0 	&\$0	&\$462K 	&\$462K 	&\$462K 	&\$0 	&\$0&\$462K&\$0&\$0\\
-\end{tabular}
-}
-\end{center}
-\label{tb:budget}
-\end{table}%
-
-
-\begin{figure*}[ht]
-\centering
-%\vspace*{-5mm}
-\includegraphics[width=0.9\textwidth]{cost_schedule/spending} 
-\caption{Spending profile (costs after overheads and contingency).}
-\label{fig:spending}
-\end{figure*}
-
-\begin{figure*}[ht]
-\centering
-%\vspace*{-5mm}
-\includegraphics*[angle=90,width=0.75\textwidth]{cost_schedule/ScheduleHPSV470-1.jpg} 
-\caption{HPS schedule.}
-\label{fig:schedulea}
-\end{figure*}
-\begin{figure*}[ht]
-\centering
-%\vspace*{-5mm}
-\includegraphics*[angle=90,width=0.85\textwidth]{cost_schedule/ScheduleHPSV470-2.jpg} 
-\caption{HPS schedule.}
-\label{fig:scheduleb}
-\end{figure*}
-
-\begin{figure*}[ht]
-\centering
-%\vspace*{-5mm}
-\includegraphics*[angle=90,width=0.85\textwidth]{cost_schedule/ScheduleHPSV470-3.jpg} 
-\caption{HPS schedule.}
-\label{fig:schedulec}
-\end{figure*}
